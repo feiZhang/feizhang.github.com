@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">张非飞</a></h1>
-  <h2><a href="/">我是一个农民</a></h2>
+  <h2><a href="/">享受慢生活</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -395,7 +395,7 @@
 <li><p>在系统选择主题时，会将主题系统的设置进行处理并缓存，1.按照模块去生成主题信息缓存，比如node.tpl.php第一个选择是node模块的，2.根据主题引擎对主题信息进行补充 3.根据自定义主题对主题信息进行缓存。</p>
 </li>
 <li>在主题系统中可以通过 phptemplate_preprocess_node 函数，增加新的模板文件选择。比如：<br><coolcode><br>function phptemplate_preprocess_node(&amp;$vars) {<br>if (drupal_is_front_page()) {<br>$vars[&#39;template_files&#39;][] = ‘node-front’;<br>}<br>}<br></coolcode><br>算是重新定义了一个node模板。</li>
-<li>子主题继承基主题的内容，但是必须自定一个css文件，<strong>如2一样要增加模板选择则必须在此主题下有父模板（node.tpl.php）的存在</strong>（因为这个问题，让我调试了1整天程序），如果没有node.tpl.php，则系统直接向基主题寻找node的模板，而忽略了子主题定义的新模板（这里我认为是系统的一个问题，也许遇到问题时我们应该先去查看系统bug列表，也许里面有呢，只不过我���英文太烂，所以只能自己去测试，我不能保证是不是如此，但根据我的调试，认为确实如此）</li>
+<li>子主题继承基主题的内容，但是必须自定一个css文件，<strong>如2一样要增加模板选择则必须在此主题下有父模板（node.tpl.php）的存在</strong>（因为这个问题，让我调试了1整天程序），如果没有node.tpl.php，则系统直接向基主题寻找node的模板，而忽略了子主题定义的新模板（这里我认为是系统的一个问题，也许遇到问题时我们应该先去查看系统bug列表，也许里面有呢，只不过我的���文太烂，所以只能自己去测试，我不能保证是不是如此，但根据我的调试，认为确实如此）</li>
 </ol>
 
       

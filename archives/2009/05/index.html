@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">张非飞</a></h1>
-  <h2><a href="/">我是一个农民</a></h2>
+  <h2><a href="/">享受慢生活</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -259,7 +259,7 @@
     </header>
     <div class="entry">
       
-        <div>使用netsh命令却换ip设置，具体可通过netsh ？获取帮助，帮助写的很详细，下面是网上找的winxp下的脚本，其中的local貌似是本地连接名字。</div><br><div>在Win7和vista下，应该是这样（看见那个本地连接没？就是你的网卡的名字，用他来指定网卡还真有点晕）：记着要以管理员权限执行..</div><br><div><br><div>@echo ip197</div><br><div>netsh interface ipv4 set address “本地连接” static 192.168.0.197 255.255.255.0 192.168.0.1</div><br><div>netsh interface ipv4 set dnsservers “本地连接” static 192.168.0.1 primary</div><br></div><br><div></div><br><div></div><br><div><strong>WinXP下</strong></div><br><div>@echo ip_beijing</div><br><div>netsh interface ip set address local source=static addr=10.56.100.112 mask=255.255.255.0</div><br><div>netsh interface ip set address name=local gateway=10.56.100.254 gwmetric=1</div><br><div>netsh interface ip set dns local static 10.68.100.211</div><br><div></div><br><div>如果需要为IE设代理服务器（我上网主用Firefox，IE代理是为了msn），则可以加一句 call ipbj.reg此reg文件，比如</div><br><div>Windows Registry Editor Version 5.00</div><br><div></div><br><div>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]</div><br><div>“ProxyServer”=“10.18.100.133:8080”</div><br><div>“ProxyOverride”=&quot;10.<em>.</em>.*;&lt;local&gt;&quot;</div><br><div>“ProxyEnable”=dword:00000001</div><br><div></div><br><div>最后面的1代表启动，0代表关闭</div>
+        <div>使用netsh命令却换ip设置，具体可通过netsh ？获取帮助，帮助写的很详细，下面是网上找的winxp下的脚本，其中的local貌似是本地连接名字。</div><br><div>���Win7和vista下，应该是这样（看见那个本地连接没？就是你的网卡的名字，用他来指定网卡还真有点晕）：记着要以管理员权限执行..</div><br><div><br><div>@echo ip197</div><br><div>netsh interface ipv4 set address “本地连接” static 192.168.0.197 255.255.255.0 192.168.0.1</div><br><div>netsh interface ipv4 set dnsservers “本地连接” static 192.168.0.1 primary</div><br></div><br><div></div><br><div></div><br><div><strong>WinXP下</strong></div><br><div>@echo ip_beijing</div><br><div>netsh interface ip set address local source=static addr=10.56.100.112 mask=255.255.255.0</div><br><div>netsh interface ip set address name=local gateway=10.56.100.254 gwmetric=1</div><br><div>netsh interface ip set dns local static 10.68.100.211</div><br><div></div><br><div>如果需要为IE设代理服务器（我上网主用Firefox，IE代理是为了msn），则可以加一句 call ipbj.reg此reg文件，比如</div><br><div>Windows Registry Editor Version 5.00</div><br><div></div><br><div>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]</div><br><div>“ProxyServer”=“10.18.100.133:8080”</div><br><div>“ProxyOverride”=&quot;10.<em>.</em>.*;&lt;local&gt;&quot;</div><br><div>“ProxyEnable”=dword:00000001</div><br><div></div><br><div>最后面的1代表启动，0代表关闭</div>
       
     </div>
     <footer>

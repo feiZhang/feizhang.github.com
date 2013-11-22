@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">张非飞</a></h1>
-  <h2><a href="/">我是一个农民</a></h2>
+  <h2><a href="/">享受慢生活</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -353,7 +353,7 @@
 <p>7.按照6方法执行过后，会影响之后4的速度，使4的速度提高到6低点的水平，不知道为什么。</p>
 <p>测试不太精确，大概意思可以得到，如果强制使用事务提交，可以增加插入速度2倍多，但是事务处理过程中，会锁表，影响其他线程数据插入，对于多线程有些问题。</p>
 <p>偶也不是DBA，所以只能做些粗略的测试，看起来偶的程序，主要瓶颈不是在与数据存储（尚未测试多线程插入是不是会更慢）。</p>
-<coolcode>select getdate()<br>DECLARE    @i    int,@return_value int,@ReturnValue int<br>set @i=0<br>BEGIN TRAN<br>while(@i&lt;200000)<br>begin<br>    INSERT INTO <a href="[FNetWorkName],[FZhongJiQunMing],[FZhongJiQunHao],[FStatus],[FBenDuanXinLingDian],[FDuiDuanXinLingDian],[FJuXiangMing],[FJuXiangHao],[FQiShiCic],[FJieShuCic],[FZhongJiQunFangXiang],[FDianLuTuoPuLeiXing],[FDaiKuan],[FLeiXing],[FVMGW]">ZhongJiQun</a>VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)<br>    set @i=@i+1<br>end<br>commit TRAN<br>select getdate()<br>select count(*) from zhongjiqun<br>EXEC    @return_value = [dbo].[proc_cj_Insert_ZhongJiQun]<br>                @FNetWorkName = ‘eee’,<br>                @FZhongJiQunMing = ‘eee’,<br>                @FZhongJiQunHao = ‘eee’,<br>                @FStatus = ‘eee’,<br>                @FBenDuanXinLingDian = ‘eee’,<br>                @FDuiDuanXinLingDian = ‘eee’,<br>                @FJuXiangMing = ‘eee’,<br>                @FJuXiangHao = ‘eee’,<br>                @FQiShiCic = ‘eee���,<br>                @FJieShuCic = ‘eee’,<br>                @FZhongJiQunFangXiang = ‘eee’,<br>                @FDianLuTuoPuLeiXing = ‘eee’,<br>                @FDaiKuan = ‘eee’,<br>                @FLeiXing = ‘eee’,<br>                @FVMGW = ‘eee’,<br>                @ReturnValue = @ReturnValue OUTPUT</coolcode>
+<coolcode>select getdate()<br>DECLARE    @i    int,@return_value int,@ReturnValue int<br>set @i=0<br>BEGIN TRAN<br>while(@i&lt;200000)<br>begin<br>    INSERT INTO <a href="[FNetWorkName],[FZhongJiQunMing],[FZhongJiQunHao],[FStatus],[FBenDuanXinLingDian],[FDuiDuanXinLingDian],[FJuXiangMing],[FJuXiangHao],[FQiShiCic],[FJieShuCic],[FZhongJiQunFangXiang],[FDianLuTuoPuLeiXing],[FDaiKuan],[FLeiXing],[FVMGW]">ZhongJiQun</a>VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)<br>    set @i=@i+1<br>end<br>commit TRAN<br>select getdate()<br>select count(*) from zhongjiqun<br>EXEC    @return_value = [dbo].[proc_cj_Insert_ZhongJiQun]<br>                @FNetWorkName = ‘eee’,<br>                @FZhongJiQunMing = ‘eee’,<br>                @FZhongJiQunHao = ‘eee’,<br>                @FStatus = ‘eee’,<br>                @FBenDuanXinLingDian = ‘eee’,<br>                @FDuiDuanXinLingDian = ‘eee’,<br>                @FJuXiangMing = ‘eee’,<br>                @FJuXiangHao = ‘eee’,<br>                @FQiShiCic = ‘eee’,<br>                @FJieShuCic = ‘eee’,<br>                @FZhongJiQunFangXiang = ‘eee’,<br>                @FDianLuTuoPuLeiXing = ‘eee’,<br>                @FDaiKuan = ‘eee’,<br>                @FLeiXing = ‘eee’,<br>                @FVMGW = ‘eee’,<br>                @ReturnValue = @ReturnValue OUTPUT</coolcode>
       
     </div>
     <footer>

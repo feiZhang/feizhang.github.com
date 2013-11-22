@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">张非飞</a></h1>
-  <h2><a href="/">我是一个农民</a></h2>
+  <h2><a href="/">享受慢生活</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -261,7 +261,7 @@
     </header>
     <div class="entry">
       
-        <p>自己近来一直使用FireFox，所以很少使用IE，由于将我QQ空间转向到Liangpeng.net，所以有了一部分IE的“忠实”用户，偶尔回来的偶的blog，普遍反应，“打不开”，为啥呢，我自己试了，没问题呀，自己用IE试了也没问题���用家里的娱乐电脑一试，还真是有这个问题，于是乎，找了半天的原因，html内容已经下载完成，就是不显示，开始以为是自己页面的编码问题，找了半天原因，也没搞定，突然想起IE的编码设置，一看，居然是GB2312，晕，偶明明添加 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 了，为啥还是GB2312，郁闷，点成自动，居然就没问题了，但是后来发现普遍用户都没有点选自动识别，所以还得找原因，原来IE还真有点弱智，是根据HTML解析时的第一个字符来进行编码判断的，所以一般会根据&lt;title&gt;里面的中文内容进行识别，而很容易识别成GB2312，所以需要将 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 放在&lt;title&gt;前面，首先告诉IE，我他妈的是UTF-8，随之问题解决。<br>真是浪费时间呀。</p>
+        <p>自己近来一直使用FireFox，所以很少使用IE，由于将我QQ空间转向到Liangpeng.net，所以有了一部分IE的“忠实”用户，偶尔回来的偶的blog，普遍反应，“打不开”，为啥呢，我自己试了，没问题呀，自己用IE试了也没问题，���家里的娱乐电脑一试，还真是有这个问题，于是乎，找了半天的原因，html内容已经下载完成，就是不显示，开始以为是自己页面的编码问题，找了半天原因，也没搞定，突然想起IE的编码设置，一看，居然是GB2312，晕，偶明明添加 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 了，为啥还是GB2312，郁闷，点成自动，居然就没问题了，但是后来发现普遍用户都没有点选自动识别，所以还得找原因，原来IE还真有点弱智，是根据HTML解析时的第一个字符来进行编码判断的，所以一般会根据&lt;title&gt;里面的中文内容进行识别，而很容易识别成GB2312，所以需要将 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 放在&lt;title&gt;前面，首先告诉IE，我他妈的是UTF-8，随之问题解决。<br>真是浪费时间呀。</p>
 
       
     </div>

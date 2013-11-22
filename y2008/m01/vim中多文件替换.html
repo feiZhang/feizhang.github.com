@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">张非飞</a></h1>
-  <h2><a href="/">我是一个农民</a></h2>
+  <h2><a href="/">享受慢生活</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -223,7 +223,7 @@
 <p>假定你有个变量名为 &quot;x_cnt“ 而你要把他改为 ”x_counter&quot;。这个变量在多个 C 文件都<br>被用到了。你需要在所有文件中作此改动。你得这么做。<br>把所有相关文件放进参数列表: &gt;</p>
 <p>:args *.c<br>&lt;<br>这个命令会找到所有的 C 文件并编辑其中的第一个。现在你可以对所有这些文件执行<br>置换命令: &gt;<br><a id="more"></a><br>:argdo %s/\&lt;x_cnt\&gt;/x_counter/ge | update</p>
 <p>命令 “:argdo” 把另一个命令当作其参数。而后者将对参数列表内所有的文件执行。<br>作为参数的替换命令 “%s” 作用于所有文本行。它用 &quot;\&lt;x_cnt\&gt;&quot; 来查找<br>&quot;x_cnt“。 ”\&lt;“ 和 ”\&gt;“ 用来指定仅匹配那些完整的词，而不是 ”px_cnt&quot; 或<br>&quot;x_cnt2&quot;。<br>替换命令的标记中包含 “g”，用以置换同一行文本内出现的所有的匹配词 &quot;x_cnt&quot;。<br>标记 “e” 用于避免因文件中找不到 &quot;x_cnt“ 而出现错误信息。否则 ”:argdo&quot; 命令<br>就会在遇到第一个找不到 &quot;x_cnt&quot; 的文件时中断。<br>字符 “|” 分隔两条命令。后面的 “update” 命令将那些有改动的文件存盘。如果<br>没有 &quot;x_cnt“ 被改成 ”x_counter&quot;，这个命令什么也不做。</p>
-<p>还有一个 “:windo” 命令，用于在所有视窗内执行其参数所规定的命令。以及 “:bufdo”<br>命令，对所有缓冲执行其参数所规定的命令。使用中要小心，因为你在缓冲列表中的文<br>件数量可能超过你能想像的。请用 “:buffers” 命令 (或 “:ls”) 来检查缓冲列���。</p>
+<p>还有一个 “:windo” 命令，用于在所有视窗内执行其参数所规定的命令。以及 “:bufdo”<br>命令，对所有缓冲执行其参数所规定的命令。使用中要小心，因为你在缓冲列表中的文<br>件数量可能超过你能想像的。请用 “:buffers” 命令 (或 “:ls”) 来检查缓冲列表���</p>
 <p>==============================================================================</p>
 <p>或在直接些<br>进入目录<br>查找<br>:args *.cpp<br>:argdu /word</p>
 <p>替换<br>:args *.cpp<br>:argdu %s/word/NEW/eg | update</p>

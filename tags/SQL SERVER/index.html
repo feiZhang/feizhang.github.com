@@ -29,7 +29,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">张非飞</a></h1>
-  <h2><a href="/">我是一个农民</a></h2>
+  <h2><a href="/">享受慢生活</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -230,7 +230,7 @@
 <p>具体做法：</p>
 <p>1.如果不是必须，把数据库的恢复模式改为“简单”</p>
 <p>2.使用如下的方式插入数据：最好直接作为一条SQL语句直接执行，但是不要写太多条进去，貌似有人说大于1000了，应该有慢下来的，我每次插入20性能已经相当不错，所以就先这样把任务完成先，以后再研究最好的方法。</p>
-<p>BEGIN TRANSACTION<br>INSERT …<br>INSERT ���<br>INSERT …<br>COMMIT  TRANSACTION</p>
+<p>BEGIN TRANSACTION<br>INSERT …<br>INSERT …<br>INSERT …<br>COMMIT  TRANSACTION</p>
 <p>具体实现方法比较：</p>
 <ol>
 <li>将一次要提交的SQL语句，无论多少条Insert全部组合成为一条SQL语句，以BEGIN TRAN;开始，以COMMIT TRAN;结束。这样的操作速度最快可达1万/秒。</li>
