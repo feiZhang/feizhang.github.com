@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>项目设计与代码组织-案例分析 | 张非飞</title>
+  <title>需求分析与功能设计 案例分析 | 张非飞</title>
   <meta name="author" content="张飞">
   
   <meta name="description" content="技术,独立思考,梁鹏,张飞">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="项目设计与代码组织-案例分析"/>
+  <meta property="og:title" content="需求分析与功能设计 案例分析"/>
   <meta property="og:site_name" content="张非飞"/>
 
   
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html' />
 </head>
 
 
@@ -205,68 +206,95 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-11-20T04:28:14.000Z"><a href="/y2013/m11/project-design-and-code-organization-case-study.html">2013-11-20</a></time>
+        <time datetime="2013-11-20T02:26:38.000Z"><a href="/y2013/m11/project-design-and-code-organization-case-study.html">2013-11-20</a></time>
       
       
   
-    <h1 class="title">项目设计与代码组织-案例分析</h1>
+    <h1 class="title">需求分析与功能设计 案例分析</h1>
   
 
     </header>
     <div class="entry">
       
         <p>注：本实例绝非虚构，针对初级开发者，改变<code>程序员＝打字</code>的困境</p>
-<h2>案例描述</h2>
+<h2 id="-">需求分析</h2>
 <p>背景：证书打印功能，能够打印3份证书：正本（机构名称、住所）、副本第一页（编号、发证机关）、副本第二页（机构名称、法人）</p>
-<p>客户描述：需要在证书打印功能中增加打印记录功能，要求1天完成。</p>
-<h2>明确目地</h2>
-<p>简单的描述，可以设想出两种不同的目的：</p>
+<ol>
+<li>第一次需求描述：需要个能够打印证书的功能</li>
+<li>第二次需求变更：经营范围固定为某段文字，不能修改，自动生成证书编号</li>
+<li>第三次需求变更：需要在证书打印功能中增加打印记录功能，要求1天完成</li>
+<li>第四次需求变更：打印第一页时填写的内容，能够在第二页复用，要求尽快完成</li>
+<li>第五次需求变更：增删改查打印内容，之后根据填写的打印内容打印证书，并能导出打印内容列表（作为绩效）</li>
+</ol>
+<p>问题总结：</p>
+<ol>
+<li>每次都是听客户两句话就要求开发完成功能，未深入挖掘需求</li>
+<li>第五次需求完成时间比第三次需求要求时间晚2周，而每次要求都是紧急，导致无法全面规划功能设计</li>
+<li>第五次需求完全覆盖第四次需求，浪费开发资源</li>
+</ol>
+<p>解决方法：</p>
+<ol>
+<li>充分与客户沟通，深入分析客户需要，完善需求。参阅 <a href="http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document_2181.html"><strong>写出一份有意义的需求文档</strong></a></li>
+<li>尽量争取合适的开发时间</li>
+</ol>
+<h2 id="-">功能设计</h2>
+<p>在需求挖掘不够充分，描述不清时，开发人员有责任通过自己的主观分析来引导需求完善</p>
+<p>此次分析，依据：<code>第三次需求变更</code></p>
+<h4 id="-">明确目地</h4>
+<p>第三次需求变更，可以设想出两种不同的目的：</p>
 <ol>
 <li>客户是希望知道谁在什么时候打印了什么，打印了多少次</li>
 <li>证书需要每年更换，第二次打印希望能够复用上一次的打印数据</li>
 </ol>
 <p>不同的目地有不同的设计思路</p>
-<p>目的一：关注于什么人什么时间打印了什么；错误的打印如何处理；<br>目的二：关注于如何减少用户的工作量；如何组织机构档案、机构年审、证书打印的业务关系；</p>
-<p>本案例，目的一与目的二不冲突。完全可以同时实现，但功能实现的时间要求有限，所以只能选择其一，此时就要与客户沟通，明确真实的目的。</p>
-<p><code>向错误的方向走的越远，错的越远。</code></p>
-<h2>设计分析</h2>
+<p>目的一：关注于什么人什么时间打印了什么；此时要注意：打印错误如何标记；
+目的二：关注于如何减少用户的工作量；此时要注意：是否可以结合 机构档案、机构年审功能 来处理 证书打印功能；</p>
+<p>本案例，目的一与目的二不冲突。完全可以同时实现，但功能实现的时间要求有限，同时也没必要完成客户不需要的功能，所以选择哪个方向，应继续与客户沟通。</p>
+<p><code>错误的方向，走的越远，错的越远。</code></p>
+<h4 id="-">设计分析</h4>
 <p>背景：选定实现第一个目的</p>
-<h5>第一次设计</h5>
+<h6 id="-">第一次设计</h6>
 <p>打印记录表结构：机构名称、住所、编号、发证机关、机构名称、法人、打印时间、打印人</p>
 <p>功能：没点击一次打印，增加一条打印记录</p>
 <p>缺点：3个不同的打印，能够填充的字段不同，记录看起来总是不完整的。</p>
-<h5>第二次设计</h5>
+<h6 id="-">第二次设计</h6>
 <p>表机构修改为：打印人、打印内容、打印时间</p>
-<p>功能修正���将所有的打印数据整合为一个字段－打印内容</p>
-<h5>第三次设计</h5>
+<p>功能修正：将所有的打印数据整合为一个字段－打印内容</p>
+<h6 id="-">第三次设计</h6>
 <p>表结构修改为：机构名称、打印人、打印内容、打印时间</p>
 <p>功能修正：将机构名称独立出来，作为数据整合的基准，比如：要查看某个机构的所有打印记录</p>
-<p>缺点：3份打印内容，才是一次完整的打印记录，现在的设计还不能体现这个概念</p>
-<h5>总结</h5>
-<p>iphone发布前，进行过无数次的设计修正，那可是世界顶级的设计师，而我们每次写代码前都是不加思索，错误百出，为何不在开工前向想好呢？无论你是什么等级的工程师，<code>请在编码前，将自己的设计思路推翻两次以上</code></p>
-<p>关于项目分析方法，可参考 <a href="http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document_2181.html">写出一份有意义的需求文档</a></p>
-<h2>代码组织</h2>
+<p>缺点：实际上3份打印内容，才算一次完整的打印记录，现在的设计无法体现这个概念</p>
+<h6 id="-">总结</h6>
+<p>iphone发布前，进行过无数次的设计修正，那可是世界顶级的设计师，而我们每次写代码前都是不加思索，错误百出，为何不在开工前先想好呢？无论你是什么等级的工程师，<code>请在编码前，将自己的设计思路推翻两次以上</code></p>
+<h2 id="-">代码组织</h2>
 <p>此次分析并不涉及代码组织的分析，为了突出代码组织的重要性，在这里再次说明<code>请在编码前，将自己的代码组织思路推翻两次以上</code>。</p>
-<p>材料管理是我们公司最有技术能力的人独立完成的项目，此人熟知各种技术、能够解决各种疑难杂症，但是这个项目却久经维护，依然破烂不堪，让人头痛。代码是需要组织的，不是拼凑起来就管用。<code>能够驾驭千军万马才是真技术</code></p>
+<p>案例：材料管理是我们公司最有技术能力的人独立完成的项目，此人熟知各种技术、能够解决各种疑难杂症，但是这个项目却久经维护，依然破烂不堪，让人头痛。代码是需要组织的，不是拼凑起来就管用。<code>能够驾驭万行代码才是真技术</code></p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/团队/">团队</a>, <a href="/categories/团队/技术/">技术</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
   
   <div class="tags">
-    <a href="/tags/代码组织/">代码组织</a>, <a href="/tags/案例分析/">案例分析</a>, <a href="/tags/项目设计/">项目设计</a>
+    <a href="/tags/团队/">团队</a>, <a href="/tags/需求/">需求</a>
   </div>
 
 
@@ -314,11 +342,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -326,23 +391,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -358,12 +423,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -372,7 +443,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

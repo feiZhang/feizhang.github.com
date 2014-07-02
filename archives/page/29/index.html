@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/page/29/' />
 </head>
 
 
@@ -210,28 +211,88 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2009-12-16T03:50:03.000Z"><a href="/y2009/m12/zhuanbiqiangengzhongyao.html">2009-12-16</a></time>
+        <time datetime="2009-11-27T03:36:17.000Z"><a href="/y2009/m11/oraclebiaoshanchudaliangshujuhouchaxunbianmanwentizhuan.html">2009-11-27</a></time>
       
       
   
-    <h1 class="title"><a href="/y2009/m12/zhuanbiqiangengzhongyao.html">转《比钱更重要》</a></h1>
+    <h1 class="title"><a href="/y2009/m11/oraclebiaoshanchudaliangshujuhouchaxunbianmanwentizhuan.html">Oracle 表删除大量数据后查询变慢问题(转)</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>转自：<a href="http://www.52freelancer.com/2009/12/beyond-the-money/" target="_blank">http://www.52freelancer.com/2009/12/beyond-the-money/</a></p>
-<p><em>很不错的一篇文章，对我们做项目的心态很有指导意义，对于需求的把握很深刻。</em></p>
-<p><strong>从最初的到处乱接项目以求生存, 过渡到有持续的项目源能保证稳定的收入, 再到之后可以从心的选择项目来接以达到生活和工作的正常平衡,  一路走来, 我们就这样的成长成熟起来.</strong></p>
-<p><strong>想做好一个freelancer, 重要的就是如何满足客户的需求. 谈起容易, 放之实际何难也只有经验多次的人能从心底体会这句的份量. 应付一个project或一个customer实在是容易之事, 然而无法应付一辈子, 只有真货, 买家才不会找上门退货, 这是自古不变的道理.  多次项目经验, 让我们明白, 抓住客户的真正需求是一门很大的学问, 软件工程上一大部分就是在讲如何挖掘需求, 真正的需求. 各种软件理论, 如果没有能抓住需求的能力, 都是纸上空谈.</strong></p>
-<p><strong>真正的需求是什么? 我们都知道绝对不是客户写的123, 那是什么? 是感觉. 是一种设身处地换位思考的感觉, 是态度, 是一种以事谋事的态度. 接一个项目, 我们最希望拿到是需求明确的功能列表, 写明哪里该怎么做, 哪里该怎么展示等等. 然而即使当前工具再厉害, 再完美, 也仍然无法做到把一个人的思想一点不丢失的表达出来. 更何况你应该知道, 大部分客户的想法本身就不成熟. 那我们怎么办?</strong></p>
-<p><strong>把项目当成自己的项目. 如果是你自己的项目, 你会怎么做? 这种感觉就好像是借鸡生蛋. 我们���用客户的idea, 然后自己考虑怎么去实现它, 能不能挣钱? 现实不现实? 市场怎么样? 虽然我们跟客户的行业背景不一样, 但是以一个常人的思考, 差距不会太大. 以这样的心态去考虑客户的项目, 与客户交流需求, 并且无所保留表达你的观点. 哪怕有些时候, 告诉客户 :”坦白来说, 我觉得按着你这个做法, 没戏. 但是如果你坚持, 我会做下去.”</strong></p>
-<p><strong>这样做一方面是因为这是做好一个项目,让客户满意的最佳心态. 另一个方面,  我们也要历练自己的想法, 要强制自己去思考, 去学习如何从idea to money.  用别人的风险来提高自己的经验, 这是世界上最便宜我们的事.</strong></p>
-<p><strong>世界之大, 能让我们学习的东西太多太多, 不要错过走过你身边的每一个项目, 除了得到钱, 还应该得到更重要的经验.</strong></p>
+        <div id="blog_text">
+
+转自：<a href="http://hi.baidu.com/bbz_dd_a/blog/item/1c962bf4b69666dff2d38588.html" target="_blank">http://hi.baidu.com/bbz_dd_a/blog/item/1c962bf4b69666dff2d38588.html</a>
+
+<em>公司的oracle狂慢，估计是配置没搞好吧，自己也不会只能凑合用了，google发现如下好文章，收藏之</em>
+
+Oracle 表删除大量数据后，即使表中只有几行记录，但用select count(*) from table 来查询发觉都不会马上出来，原因是该表的空间大了，查询起来很慢。解决的方法是把该表所占用的表空间缩小，或者说释放表空间。
+
+alter table XXXX move; 这样处理后就释放了表空间了。但是释放表空间后，表的行号rowid会发生变化，而基于rowid的索引则会变成无效。因此该操作后必须重建索引。否则会 提示“ORA-01502: 索引&#39;SMP.ITEMLOG_MID_IDX&#39;或这类索引的分区处于不可用状态” 而重建索引的方法当然可以先drop掉再create ，但是这样太麻烦了，用alter index XXX rebuild 这样最快了，不会改变原来的索引结构。</div>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2009-11-19T02:22:04.000Z"><a href="/y2009/m11/tiyanyidongg3hehuaweiet.html">2009-11-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2009/m11/tiyanyidongg3hehuaweiet.html">体验移动G3和华为Et128</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在网上看到一个比较便宜的G3套餐，平均也就每月60快，跟家里宽带差不多，所以就买了，本想代替宽带使用，也就是上上网而已，在线视频基本没奢望，就是这样的需求，看来也难满足了，打开网页速度较慢，信号在90%以上，下载还算凑合，能达到40KB，总计来讲十分不满意，本来打算买联通呢，不过联通一直不争气，市面上很少，所以无奈选择了TD，看来TD还是需要长足发展的，移动已经在布局LET了（4G），应该就是明白了TD是靠不住的，所以需要更进一步，哎，既然买来了，就凑合着用吧，能满足炒股的需求。而且确实比2G是快多了。</p>
+<p>关于华为的ET128，其自带一个小优盘功能，驱动都在里面，插上后会自动安装驱动，在我机器上出现个问题：提示安装驱动了，我也点确定了，进度条也走完了，可是实际上根本没装，所以宽带连接软件G3客户端总是提示“无设备或设备不可用”，无论我重启，还是手工安装驱动，都不行，无解，只好死马当活马医，创建一个新用户，在新用户里面进行驱动安装，居然安装成功了。设备管理器也多了华为的调制解调器，再切换会老账号，发现新硬件，可以用了。哎，看来换用户这个大法还是真有用，但是还是浪费了我半个小时时间，看来操作系统的问题，真是很莫名其妙的，有些奇怪的问题，确实很难解释，所以才会很多人经验性的重装系统。呵呵。无语。</p>
+<p>不仅xp如此，现在的塞班更是如此，操作系统要想提高一个档次，任重而道远呀，或者说，这种问题根本是人力所不能及的，因为他确实太复杂了，除非出现智能，能自动修复，那时候，也许就是人类灭亡之时了。。</p>
 
       
     </div>
@@ -251,21 +312,51 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2009-12-12T03:23:10.000Z"><a href="/y2009/m12/maochiyugouchirou-zheyangyinggaijiubuleiliaoba.html">2009-12-12</a></time>
+        <time datetime="2009-11-18T03:32:33.000Z"><a href="/y2009/m11/xinmimingchi.html">2009-11-18</a></time>
       
       
   
-    <h1 class="title"><a href="/y2009/m12/maochiyugouchirou-zheyangyinggaijiubuleiliaoba.html">猫吃鱼狗吃肉--这样应该就不累了吧</a></h1>
+    <h1 class="title"><a href="/y2009/m11/xinmimingchi.html">新密名吃</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>忘了是什么触动了我，最近总是想到这句话“幸福就是猫吃鱼，狗吃肉，奥特曼打怪兽”，那我呢？<br>哎，如此说来，人，真是最贱的动物。<br>人应该说基本性也是动物，最基本的要求无非也就是吃喝睡，然后就是娱乐，狗屁什么工作也仅仅应该是“猎食”而已，偏偏人类将吃喝睡给提高化，更是把娱乐给搞得高不可攀，从而导致了，工作成为了人生的最大头，貌似人活着就是为了工作一样，奶奶的，真是2呀，可是既然你生为人了，就得像个人样，这个狗样猫样是一个道理，那么我这个人样到底是该干点什么呢？这是郁闷，我不知道。。可悲可叹。。<br>昨天突然将这个问题联系到了所谓的女权，感觉有些意思，女人嘛也就应该有个女人样，为啥非要整出来个女权呢？如果人类文明已经把你定义成那样了，何必非要去争呢？就如人类要跟狗去争骨头，跟猫争安逸一样..何必呢..该去争的人，你就默默无闻去争吧，不该去争的，也就别去凑那份热闹了，得到的无非是一份烦恼。<br>有此看来，所谓的不自然就是“争”了，庄子老人家千年以前都总结的道理“此之为物化”，到如今偶还是真没领悟其神髓。<br>那么我看我还是回归我的游戏、电影中去吧，哪天不喜欢了，自然会改变，何必非要强求自己呢，人生在世也不过数十年，睁眼闭眼的事，也要搞得那么复杂。</p>
+        <p>超化福祥的卷煎，
+大隗的荷叶饼、马永信牛肉、炖甲鱼,
+米村街卤肉、米村矿南井烧鸡、新农村虎皮辣椒、虎百汉烩面，
+平陌界河蒜泥白肉，
+白寨老陈家的素粉皮、烤鱼、炒红薯面条，
+老城桑记丸子汤、老城炒面、老城酥肉，
+青屏山后炖柴鸡，
+袁庄手工豆面条，
+岳村白石坡烩面、烧羊肉，
+来集赵坡鸿雁餐馆排骨酥肉、条子肉，
+牛店李湾烤鱼、野兔等野味，
+下庄河老街俊杰豆面条、烩羊肉（雪花巷有分店）
+矿务局铁记羊肉串、拉面，
+县城的更多：
+夜市上的：五妞担担面、六香猪蹄、不一样涮牛肚、张军豆面条、万客隆后面炒大虾、哑巴猫耳面
+中餐馆：武装部后面小米饭炖菜、晏月厅的生鱼片排骨、美食区怀亮大酒店
+赵庆利大盘鸡、姐妹粥棚
+小吃：兴华公学对面热干面、文峰路糊辣汤、开阳路卤肉夹烧饼、幸福街陈芬小吃店
+涮锅：三和、彩虹，连锁的有煳辣鱼、小肥羊，京福华肥牛</p>
 
       
     </div>
@@ -285,26 +376,34 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2009-12-10T08:13:58.000Z"><a href="/y2009/m12/haoleiya.html">2009-12-10</a></time>
+        <time datetime="2009-11-16T02:27:33.000Z"><a href="/y2009/m11/qingxuyuchulifangshishijianguanli.html">2009-11-16</a></time>
       
       
   
-    <h1 class="title"><a href="/y2009/m12/haoleiya.html">好累呀--矛盾产生疲惫</a></h1>
+    <h1 class="title"><a href="/y2009/m11/qingxuyuchulifangshishijianguanli.html">情绪与处理方式,时间管理</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近感觉这么累呢？</p>
-<p>也许是最近炒股闹的？很是不爽呀，还是没有收成。（今天的重仓，居然上演了从+6%到-1%的戏剧，靠，搞死我吧）。</p>
-<p>一方面是自己过于心急了，一方面自己也不认同现在的投资环境，搞得很是疲惫，我看，算了，还是先撤出吧（周五撤出，无论什么情况），目前的把握真是不大，还是等待真正的机会来临吧，省的每天心急火燎的。</p>
-<p>决定了，就执行吧！</p>
-<p>自从炒股一来，虽然储蓄多了，但是活得真是不舒服呀，每天都感觉没钱花，很是不爽呀，忍忍吧，实现个目标，真难！</p>
-<p>仔细想来，最终的原因应该是由于自己目前的心理与生活产生着矛盾。<br>主观上我是希望自己将时间合理应用，比如：维护下自己的站点、学习下新知识、学习股票研究、读下新书，而事实上我却把时间都花在了诸如：网上漫游、游戏、看电影上了，而这些东西实质上多我没有任何用处，实在搞不清楚自己到底能否自制了，看来需要制定计划了，这样才能更好的控制自己。<br>又想起胡适的讲述：每天写着计划，每天的生活还是“打牌、打牌”。<br>也许最好的约束方式是“兴趣吧”，不过不入门是不会产生兴趣的，而且，对于学习，必须要有总结才会实质性提高吧，否则总是感觉混乱。</p>
+        <p>近来，性情稍微平缓了些，对于大多事情都不会过于干戈，不是本质有影响的事情，基本也就不去理睬了。可是本性其实没变，如果稍动下肝火，还是有点过旺，哎，看来还是不动为好，反正也没什么大不了的事情。只是这样看起来，我确实冷漠多了，那没法，谁让咱有品呢。也许达到更高的境界，需要更多的努力，那就继续吧。</p>
+<p>学问这东西还是有些神奇的，不同层次的差别确实极大，看来还是需要进一步提高，但是却总是把时间花费在娱乐上面（也就是被暴雪给搞的，如果出了暗黑3和星际2，还让人活不让了），需要定一个死目标了。就如储蓄由结余=收入-支出 转变为 支出=收入-结余一样（也是股票给我折腾的，也算是意外收获吧），时间改为 娱乐=空闲-看书1小时，总体时间分配为工作时间处理工作的事情，业余时间看书+娱乐+锻炼。必须坚持的两点，工作时间要充分利用，看书1小时不能压缩。</p>
 
       
     </div>
@@ -324,60 +423,36 @@
   
     <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2009-12-02T08:54:29.000Z"><a href="/y2009/m12/kaitongbguliao.html">2009-12-02</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2009/m12/kaitongbguliao.html">开通b股了</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>鉴于B股的估值低，分红高（相对），决定投部分资金到B股，以作长线。</p>
-<p>B股目前的性质感觉最适合做长线了，价值低估、分红高、改革可能性，所以转移一部分资产到B股去，作为最稳定的长线。</p>
-<p>以前已经有A股账号了，此次B股直接去证券公司办理：<br>填了几个表格之后，拿着一张办理银行资金保证金的单子去银行继续办理，最终银行给我个小本就说完了，幸好我没走，对曰：“还没购汇呢”，答：“还要购汇？”，我说：“是”，偌大的一个建行，居然说购汇的机器没开，让我等，结果就让我等了有20分钟之多，郁闷，看来开B股的人确实不多，银行业务不熟。</p>
-<p>注意两点：<br>1.先去券商填单，主要还得拿着一张单子去银行，上面有你的资金账号的编号，开始我打算先去银行购汇的，转念间先去了券商。<br>2.购汇分两种“现汇”，“现钞”，一般来说现汇比现钞贵，但是，貌似对于银行来说，卖出现汇或现钞都一个鸟样，但是买进就不一样了，而对于买卖B股，无所谓现汇现钞的，所以你可以购便宜的，如果银行没有现钞，那也没办法了。</p>
-<p>本次办理业务相对比较顺利，花费的时间都是因为银行对业务的不熟，貌似现在很多银行对于，兑换外汇、光票托收等业务不熟。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
   </div>
-</article>
-
-
-
-
-  
-    <article class="post">
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2009-12-01T08:46:42.000Z"><a href="/y2009/m12/guanyuyinxingguyixiewentidejiehuo.html">2009-12-01</a></time>
+        <time datetime="2009-11-02T07:38:57.000Z"><a href="/y2009/m11/shengmingliwanqiangdezhiwu.html">2009-11-02</a></time>
       
       
   
-    <h1 class="title"><a href="/y2009/m12/guanyuyinxingguyixiewentidejiehuo.html">关于银行股一些问题的解惑</a></h1>
+    <h1 class="title"><a href="/y2009/m11/shengmingliwanqiangdezhiwu.html">生命力顽强的植物</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>呵呵，最近在研究银行股，对于银行股高于10%的净资产收益率，一直有些迷糊，所谓利差怎么说也是低于5%的，为何净资产收益率却高于10%呢，仔细研究才明白，所谓的净资产是银行的资产，不包���储蓄，而储蓄是远远高于银行净资产的，甚至高过20倍，而银行的收益是来自于存款的，所以说，利差大于1%都能获得净资产收益率大于10%的结果，哎，是自己没理解透。<br>而资本金充足率，则也约等于上市公司资产与存款的比率，在存款不变的情况下，则要提高上市公司总资产从而提高资本金充足率，而提高了资本金充足率，也就可以吸收更多的存款，而获得更多的经营利润，所以，在公司总资产不变的情况下，不能过度的扩张银行的规模，因为这会导致资本金充足率过低，这是国家规定不允许的，所以，最近民生、招商都要再融资，而传闻的国家要提高资本金充足率，也导致国有银行融资的需求，从而导致了股市大跌。。</p>
-<p>呵呵，终于理解清楚了一些，那么是不是说民生提前完成了融资，就有些优势，难说呀，融资后的资本金充足率还是不高，看来是因为民生前几年扩张太快了，而且个股还受大势的影响。</p>
+        <p>上次在老家带来一些花上，刚从地里挖出来的，放了几天没去晒干，结果又部分已经发芽，随即把那些芽发的好的，放到花盆里，看他们能长成什么样，结果2天就冒出了绿芽，现在两周过去了，都长的像模像样的了。</p>
+<p>真是有生命力呀，仅仅给他们一份不大的土壤，然后只要有水，他们就能茁壮的成长起来。这份简单的成长，却那么的稳固、持续。
+我把那盆吊蓝也放到卧室了，现在家里有三种植物了，吊兰、花生、大蒜，另一番景观了。
+<img src="http://www.liangpeng.net/wp-content/uploads/2009/11/DSC05521-275x300.jpg" alt="顽强的植物--花生" title="顽强的植物--花生"></p>
 
       
     </div>
@@ -405,14 +480,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -420,23 +533,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -452,12 +565,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -466,7 +585,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

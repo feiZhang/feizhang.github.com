@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Cookie禁用下使用session | 张非飞</title>
+  <title>Cookie禁用下使用Session | 张非飞</title>
   <meta name="author" content="张飞">
   
   <meta name="description" content="技术,独立思考,梁鹏,张飞">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Cookie禁用下使用session"/>
+  <meta property="og:title" content="Cookie禁用下使用Session"/>
   <meta property="og:site_name" content="张非飞"/>
 
   
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2008/m12/cookie_jinyong_shiyong_session.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -213,37 +226,64 @@
       
       
   
-    <h1 class="title">Cookie禁用下使用session</h1>
+    <h1 class="title">Cookie禁用下使用Session</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>抛开cookie使用session<br>PHP中SESSION不能跨页传递问题的解决办法</p>
-<p>在PHP中使用过SESSION的朋友可能会碰到这么一个问题，SESSION变量不能跨页传递。这令我苦恼了好些日子，最终通过查资料思考并解决了这个问题。我认为，出现这个问题的原因有以下几点：<br>1、客户端禁用了cookie<br>2、浏览器出现问题，暂时无法存取cookie<br>3、php.ini中的session.use_trans_sid = 0或者编译时没有打开—enable-trans-sid选项<br><a id="more"></a><br>为什么会这样呢？下面我解释一下：<br>Session储存于服务器端（默认以文件方式存储session），根据客户端提供的session id来得到用户的文件，取得变量的值，session id可以使用客户端的Cookie或者Http1.1协议的Query_String（就是访问的URL的“?”后面的部分）来传送给服务器，然后服务器 读取Session的目录……。也就是说，session id是取得存储在服务上的session变量的身份证。当代码session_start();运行的时候，就在服务器上产生了一个session文件， 随之也产生了与之唯一对应的一个session id，定义session变量以一定形式存储在刚才产生的session文件中。通过session id，可以取出定义的变量。跨页后，为了使用session，你必须又执行session_start();将又会产生一个session文件，与之对应 产生相应的session id，用这个session id是取不出前面提到的第一个session文件中的变量的，因为这个session id不是打开它的“钥匙”。如果在session_start();之前加代码session_id($session id);将不产生新的session文件，直接读取与这个id对应的session文件。<br>PHP中的session在默认情况下是使用客户端的Cookie来保存session id的,所以当客户端的cookie出现问题的时候就会影响session了。必须注意的是：session不一定必须依赖cookie，这也是 session相比cookie的高明之处。当客户端的Cookie被禁用或出现问题时，PHP会自动把session id附着在URL中,这样再通过session id就能跨页使用session变量了。但这种附着也是有一定条件的，即“php.ini中的session.use_trans_sid = 1或者编译时打开打开了—enable-trans-sid选项”。</p>
+        <p>抛开cookie使用session
+PHP中SESSION不能跨页传递问题的解决办法</p>
+<p>在PHP中使用过SESSION的朋友可能会碰到这么一个问题，SESSION变量不能跨页传递。这令我苦恼了好些日子，最终通过查资料思考并解决了这个问题。我认为，出现这个问题的原因有以下几点：
+1、客户端禁用了cookie
+2、浏览器出现问题，暂时无法存取cookie
+3、php.ini中的session.use_trans_sid = 0或者编译时没有打开--enable-trans-sid选项
+<a id="more"></a>
+为什么会这样呢？下面我解释一下：
+Session储存于服务器端（默认以文件方式存储session），根据客户端提供的session id来得到用户的文件，取得变量的值，session id可以使用客户端的Cookie或者Http1.1协议的Query_String（就是访问的URL的“?”后面的部分）来传送给服务器，然后服务器 读取Session的目录……。也就是说，session id是取得存储在服务上的session变量的身份证。当代码session_start();运行的时候，就在服务器上产生了一个session文件， 随之也产生了与之唯一对应的一个session id，定义session变量以一定形式存储在刚才产生的session文件中。通过session id，可以取出定义的变量。跨页后，为了使用session，你必须又执行session_start();将又会产生一个session文件，与之对应 产生相应的session id，用这个session id是取不出前面提到的第一个session文件中的变量的，因为这个session id不是打开它的“钥匙”。如果在session_start();之前加代码session_id($session id);将不产生新的session文件，直接读取与这个id对应的session文件。
+PHP中的session在默认情况下是使用客户端的Cookie来保存session id的,所以当客户端的cookie出现问题的时候就会影响session了。必须注意的是：session不一定必须依赖cookie，这也是 session相比cookie的高明之处。当客户端的Cookie被禁用或出现问题时，PHP会自动把session id附着在URL中,这样再通过session id就能跨页使用session变量了。但这种附着也是有一定条件的，即“php.ini中的session.use_trans_sid = 1或者编译时打开打开了--enable-trans-sid选项”。</p>
 <p>明白了以上的道理，现在我们来抛开cookie使用session,主要途径有三条：</p>
-<p>1、设置php.ini中的session.use_trans_sid = 1或者编译时打开打开了—enable-trans-sid选项，让PHP自动跨页传递session id。<br>2、手动通过URL传值、隐藏表单传递session id。<br>3、用文件、数据库等形式保存session_id,在跨页过程中手动调用。</p>
-<p>通过例子来说明吧：<br>s1.php</p>
-<p>&lt;?php<br>session_start();<br>$_SESSION[‘var1’]=“中华人民共和国”;<br>$url=“&lt;a href=”.&quot;\&quot;s2.php\“&gt;下一页&lt;/a&gt;”;<br>echo $url;<br>?&gt;</p>
+<p>1、设置php.ini中的session.use_trans_sid = 1或者编译时打开打开了--enable-trans-sid选项，让PHP自动跨页传递session id。
+2、手动通过URL传值、隐藏表单传递session id。
+3、用文件、数据库等形式保存session_id,在跨页过程中手动调用。</p>
+<p>通过例子来说明吧：
+s1.php</p>
+<p>&lt;?php
+session_start();
+$_SESSION[&#39;var1&#39;]=&quot;中华人民共和国&quot;;
+$url=&quot;&lt;a href=&quot;.&quot;\&quot;s2.php\&quot;&gt;下一页&lt;/a&gt;&quot;;
+echo $url;
+?&gt;</p>
 <p>s2.php</p>
-<p>&lt;?php<br>session_start();<br>echo “传递的session变量var1的值为：”.$_SESSION[‘var1’];<br>?&gt;<br>运行以上代码，在客户端cookie正常的情况下，应该可以在得到结果“中华人民共和国”。<br>现在你手动关闭客户端的cookie，再运行，可能得不到结果了吧。如果得不到结果，再“设置php.ini中的session.use_trans_sid = 1或者编译时打开打开了—enable-trans-sid选项”，又得到结果“中华人民共和国”</p>
+<p>&lt;?php
+session_start();
+echo &quot;传递的session变量var1的值为：&quot;.$_SESSION[&#39;var1&#39;];
+?&gt;
+运行以上代码，在客户端cookie正常的情况下，应该可以在得到结果“中华人民共和国”。
+现在你手动关闭客户端的cookie，再运行，可能得不到结果了吧。如果得不到结果，再“设置php.ini中的session.use_trans_sid = 1或者编译时打开打开了--enable-trans-sid选项”，又得到结果“中华人民共和国”</p>
 <p>这也就是上面所说的途径1。</p>
 <p>下面再说途径2：</p>
-<p>修改的代码如下：<br>s1.php</p>
-<p>&lt;?php<br>session_start();<br>$_SESSION[‘var1’]=“中华人民共和国”;<br>$sn = session_id();<br>$url=“&lt;a href=”.&quot;\“s2.php?s=”.$sn.&quot;\“&gt;下一页&lt;/a&gt;”;<br>echo $url;<br>?&gt;</p>
+<p>修改的代码如下：
+s1.php</p>
+<p>&lt;?php
+session_start();
+$_SESSION[&#39;var1&#39;]=&quot;中华人民共和国&quot;;
+$sn = session_id();
+$url=&quot;&lt;a href=&quot;.&quot;\&quot;s2.php?s=&quot;.$sn.&quot;\&quot;&gt;下一页&lt;/a&gt;&quot;;
+echo $url;
+?&gt;</p>
 <p>s2.php</p>
-<p>&lt;?php<br>session_id($_GET[‘s’]);<br>session_start();<br>echo “传递的session变量var1的值为：”.$_SESSION[‘var1’];<br>?&gt;</p>
+<p>&lt;?php
+session_id($_GET[&#39;s&#39;]);
+session_start();
+echo &quot;传递的session变量var1的值为：&quot;.$_SESSION[&#39;var1&#39;];
+?&gt;</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/技术/">技术</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
   
   <div class="tags">
@@ -295,11 +335,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -307,23 +384,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -339,12 +416,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -353,7 +436,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

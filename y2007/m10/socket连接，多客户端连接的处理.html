@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2007/m10/socket连接，多客户端连接的处理.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -226,7 +239,10 @@ CSocket:TCustomWinSocket;    //客户端套接字
 CName:string;                //客户端计算机名称
 CAddress:string;             //客户端计算机IP地址
 CUsed: boolean;               //客户端联机标志
-end;</code><br>定义一个结构体，存储已经连接的套接字，进行连接判断“二是当有多个客户端同时连接到服务器端时，服务器端如何识别每个客户端，并对请求给出相应的回复”<br><code>//将从客户端读取的信息添加到Memo1中</code><a id="more"></a><br><code>Memo1.Lines.Add(Socket.ReceiveText);
+end;</code>
+定义一个结构体，存储已经连接的套接字，进行连接判断“二是当有多个客户端同时连接到服务器端时，服务器端如何识别每个客户端，并对请求给出相应的回复”
+<code>//将从客户端读取的信息添加到Memo1中</code><a id="more"></a>
+<code>Memo1.Lines.Add(Socket.ReceiveText);
 for i:=0 to sessions do
 begin
 //取得匹配的客户端
@@ -236,18 +252,43 @@ session[i].CSocket.SendText(&#39;回复客户端&#39;+session[i].CAddress+&#39; 
 end;
 end;</code></p>
 <p>================</p>
-<p>procedure TfrmServerMain.ServerSocketClientConnect(Sender: TObject;<br>Socket: TCustomWinSocket);<br>var<br>i,j:integer;<br>begin<br>j:=-1;<br>for i:=0 to sessions do<br>begin<br>//在原有的客户端连接数组中有中断的客户端连接<br>if not session[i].CUsed then<br>begin<br>session[i].CHandle := Socket.SocketHandle ;//客户端套接字句柄<br>session[i].CSocket := Socket;                //客户端套接字<br>session[i].CName := Socket.RemoteHost ;      //客户端计算机名称<br>session[i].CAddress := Socket.RemoteAddress ;//客户端计算机IP<br>session[i].CUsed := True;                     //连接数组当前位置已经占用<br>Break;<br>end;<br>j:=i;<br>end;<br>if j=sessions then<br>begin<br>inc(sessions);<br>session[j].CHandle := Socket.SocketHandle ;<br>session[j].CSocket := Socket;<br>session[j].CName := Socket.RemoteHost ;<br>session[j].CAddress := Socket.RemoteAddress ;<br>session[j].CUsed := True;<br>end;<br>StatusBar.Panels[0].Text := ‘客户端 ’+Socket.RemoteHost + ‘ 已经连接’;<br>end;</p>
+<p>procedure TfrmServerMain.ServerSocketClientConnect(Sender: TObject;
+Socket: TCustomWinSocket);
+var
+i,j:integer;
+begin
+j:=-1;
+for i:=0 to sessions do
+begin
+//在原有的客户端连接数组中有中断的客户端连接
+if not session[i].CUsed then
+begin
+session[i].CHandle := Socket.SocketHandle ;//客户端套接字句柄
+session[i].CSocket := Socket;                //客户端套接字
+session[i].CName := Socket.RemoteHost ;      //客户端计算机名称
+session[i].CAddress := Socket.RemoteAddress ;//客户端计算机IP
+session[i].CUsed := True;                     //连接数组当前位置已经占用
+Break;
+end;
+j:=i;
+end;
+if j=sessions then
+begin
+inc(sessions);
+session[j].CHandle := Socket.SocketHandle ;
+session[j].CSocket := Socket;
+session[j].CName := Socket.RemoteHost ;
+session[j].CAddress := Socket.RemoteAddress ;
+session[j].CUsed := True;
+end;
+StatusBar.Panels[0].Text := &#39;客户端 &#39;+Socket.RemoteHost + &#39; 已经连接&#39;;
+end;</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
 
 <!-- JiaThis Button BEGIN -->
@@ -294,11 +335,48 @@ end;</code></p>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -306,23 +384,23 @@ end;</code></p>
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -338,12 +416,18 @@ end;</code></p>
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -352,7 +436,7 @@ end;</code></p>
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

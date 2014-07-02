@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/ubuntu/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,14 +231,14 @@
       
       
   
-    <h1 class="title"><a href="/y2010/m03/ubuntuxiaeclipsebianyidejavaxiangmuluanmawentidejiejue.html">Ubuntu下eclipse编译的java项目乱码问题的解决</a></h1>
+    <h1 class="title"><a href="/y2010/m03/ubuntuxiaeclipsebianyidejavaxiangmuluanmawentidejiejue.html">Ubuntu下Eclipse编译的Java项目乱码问题的解决</a></h1>
   
 
     </header>
     <div class="entry">
       
         <p>最近使用linux系统(ubuntu)开发，由于公司的java项目都是使用的GBK编码，发现，我打的war包发布后，中文很多是乱码，在编辑器已经选择为GBK，并且能正常打开，查看代码中的汉字。</p>
-<p>经过n此google后，终于找到了问题的所在，原来java程序在javac编译为class时，要对汉字进行16进制的转换，而转换的字符集是按照系统当前进行转换的，所以，虽然在eclipse是使用gbk打开的，但是在编译时，则使用的utf-8，从而导致中文乱码，在<strong><span style="color: #ff0000;">javac</span></strong>编译是，设置参数<strong> <span style="color: #ff0000;">-encoding GBK</span> </strong>即可，在builde文件中，可以在javac里面增加<strong> <span style="color: #ff0000;">&lt;compilerarg line=“-encoding GBK”/&gt;</span></strong> 则可以解决。</p>
+<p>经过n此google后，终于找到了问题的所在，原来java程序在javac编译为class时，要对汉字进行16进制的转换，而转换的字符集是按照系统当前进行转换的，所以，虽然在eclipse是使用gbk打开的，但是在编译时，则使用的utf-8，从而导致中文乱码，在<strong><span style="color: #ff0000;">javac</span></strong>编译是，设置参数<strong> <span style="color: #ff0000;">-encoding GBK</span> </strong>即可，在builde文件中，可以在javac里面增加<strong> <span style="color: #ff0000;">&lt;compilerarg line=&quot;-encoding GBK&quot;/&gt;</span></strong> 则可以解决。</p>
 <p>同时，在google过程中，发现一个java程序使用字体的问题，同事最仅在作的项目是一个java应用程序，使用的swing，其程序在我的ubuntu下运行，中文部分为口，无法显示，在google过程中，有人讲解说，java实现了自己的一套中文字体加载使用体系，在jdk的jre/lib下有fonts目录，里面有java使用的字体，同时还有fontconfig等配置文件，从而实现，java程序的汉字显示，所以在跨jdk，执行java程序时，则有可能出现中文无法显示，具体的处理方法，暂未找到。</p>
 
       
@@ -246,6 +259,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -254,14 +279,26 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m08/ubuntuzhonggnomekdexfacezhuomianhuanjinganzhuanghexiezai.html">Ubuntu中gnome、kde、xface桌面环境安装和卸载</a></h1>
+    <h1 class="title"><a href="/y2009/m08/ubuntuzhonggnomekdexfacezhuomianhuanjinganzhuanghexiezai.html">Ubuntu中Gnome、Kde、Xface桌面环境安装和卸载</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>&lt;转&gt;<br>（一）在终端中运行安装：<br>1、安装XFACE： sudo apt-get install xubuntu-desktop 点上面的菜单“应用程序－附件－终端”进入到终端，先输入你的用户的密码<br>2、安装KDE：sudo apt-get install kubuntu-desktop 使用方法同上<br>3、安装Gnome：sudo apt-get install ubuntu-desktop 使用方法同上<br>（二）在新立得中安装：<br>1、点上面的菜单“系统－系统管理－新立得软件包管理器”，输入你的用户密码，<br>2、在窗口右边点“搜索”，分别以xubuntu-desktop、kubuntu-desktop和ubuntu-desktop搜索，<br>3、在搜出的列表中，点右键选“标记安装”，<br>4、点工具栏的“应用”按钮，再点“确定”即可安装 安装好以後，在登录对话框中，选择相应的桌面环境  卸载桌面环境（应备份重要文件）<br>1、卸载gnome：sudo apt-get —purge remove liborbit2<br>2、卸载kde：sudo apt-get —purge remove kdelibs4c2a libarts1c2a<br>3、卸载xface：sudo apt-get —purge remove xfce4</p>
-<h2>Ubuntu 安装 KDE后不能进入 gnome 的问题  sudo apt-get install kUbuntu-desktop  这样安装的。安装后无法进入 gnome，面板一闪一闪的。感谢 Ubuntu.org.cn 的 cannot。找到这个方法  May it concerned with gtk2-engines-gtk-qt settings?  please change the Gtk style in kcontrol ,  and try again.  在 KDE 终端  kcontrol  进入 KDE 设置面板，在里面找到 gtk style，默认好像是 qt，我改回 human。重新登录 x win 果然可以进入 gnome 了。</h2>
+        <p>&lt;转&gt;
+（一）在终端中运行安装：
+1、安装XFACE： sudo apt-get install xubuntu-desktop 点上面的菜单“应用程序－附件－终端”进入到终端，先输入你的用户的密码
+2、安装KDE：sudo apt-get install kubuntu-desktop 使用方法同上
+3、安装Gnome：sudo apt-get install ubuntu-desktop 使用方法同上
+（二）在新立得中安装：
+1、点上面的菜单“系统－系统管理－新立得软件包管理器”，输入你的用户密码，
+2、在窗口右边点“搜索”，分别以xubuntu-desktop、kubuntu-desktop和ubuntu-desktop搜索，
+3、在搜出的列表中，点右键选“标记安装”，
+4、点工具栏的“应用”按钮，再点“确定”即可安装 安装好以後，在登录对话框中，选择相应的桌面环境  卸载桌面环境（应备份重要文件）
+1、卸载gnome：sudo apt-get --purge remove liborbit2
+2、卸载kde：sudo apt-get --purge remove kdelibs4c2a libarts1c2a
+3、卸载xface：sudo apt-get --purge remove xfce4</p>
+<h2 id="ubuntu-kde-gnome-sudo-apt-get-install-kubuntu-desktop-gnome-ubuntu-org-cn-cannot-may-it-concerned-with-gtk2-engines-gtk-qt-settings-please-change-the-gtk-style-in-kcontrol-and-try-again-kde-kcontrol-kde-gtk-style-qt-human-x-win-gnome-">Ubuntu 安装 KDE后不能进入 gnome 的问题  sudo apt-get install kUbuntu-desktop  这样安装的。安装后无法进入 gnome，面板一闪一闪的。感谢 Ubuntu.org.cn 的 cannot。找到这个方法  May it concerned with gtk2-engines-gtk-qt settings?  please change the Gtk style in kcontrol ,  and try again.  在 KDE 终端  kcontrol  进入 KDE 设置面板，在里面找到 gtk style，默认好像是 qt，我改回 human。重新登录 x win 果然可以进入 gnome 了。</h2>
 <p>看到网上说KDE如何如何好用，一时兴奋装了KDE桌面。KDE真的好看，就是太华丽了点，效果有了效率就打折了，还是怀念以前的GNOME。然而却进不了GNOME了，在网上找到了方法如下：    在 KDE 终端输入： kcontrol 进入 KDE 设置面板，在里面找到 gtk style，默认是 Qt，改回 human。重新登录 x win 就可以进入 gnome 了。但是后来发现这个方法好像没有一点用！还是原来一样的。    后来又在网上找了一些资料，只要在“服务”里去掉“KDM”选项重启后用root帐户登陆在终端输入： gdm 我们就进入由gdm引导的登陆窗口，好了这样就可以了！如果想进入KDE那就在终端输入：kdm</p>
 
       
@@ -282,6 +319,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -290,13 +339,24 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m07/ubuntuxiaanzhuangxdmcpfuwushiyongxmanagerjieru.html">Ubuntu下安装xdmcp服务，使用xmanager接入</a></h1>
+    <h1 class="title"><a href="/y2009/m07/ubuntuxiaanzhuangxdmcpfuwushiyongxmanagerjieru.html">Ubuntu下安装Xdmcp服务，使用Xmanager接入</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>ubuntu下安装xdmcp服务（即远程主机通过xdmcp协议连接到ubuntu的图形终端，以图形终端方式登录）：<br>1. 登录本机图形终端（本机按Ubuntu/Gnome为例设置）<br>2. 选择system-&gt;Administration-&gt;logon windows切到remote项，修改其中style为same as local,如为中文菜单请相应选择。<br>3. 选择system-&gt;Administration-&gt;logon windows切到General项，修改其中Disable Multiple login for a single user前面的X去悼,如为中文菜单请相应选择，否则会出现能显示画面但无法登录（输入用户和密码后又回到登录画面）。<br>4. 修改sudo vi /etc/gdm/gdm.conf（建议先将gdm.conf备份，以免无法启动时，可以快速恢复）<br>其中[Daemon]中#RemoteGreeter=/usr/lib/gdm/gdmlogin中前面的#号去悼；<br>[Security]中#DisallowTCP=true中前面的＃号去悼，并将true改为false;<br>[xdmcp]中#Enable=false中前面的＃号去悼，并将false改为true;<br>5. 修改sudo vi /etc/inittab增加一行id:5:initdefault:表示系统将自己运行在多用户级别５的模式下；<br>6. 重启sudo reboot，不建议sudo gdm restart这样gdm并未生效<br>7. 检查服务器和客户端的网络防火墙配置，保证177端口和6000-6100端口可用；<br>8. 使用Xwin的服务器程序连接ubuntu图形界面即可；</p>
+        <p>ubuntu下安装xdmcp服务（即远程主机通过xdmcp协议连接到ubuntu的图形终端，以图形终端方式登录）：
+1. 登录本机图形终端（本机按Ubuntu/Gnome为例设置）
+2. 选择system-&gt;Administration-&gt;logon windows切到remote项，修改其中style为same as local,如为中文菜单请相应选择。
+3. 选择system-&gt;Administration-&gt;logon windows切到General项，修改其中Disable Multiple login for a single user前面的X去悼,如为中文菜单请相应选择，否则会出现能显示画面但无法登录（输入用户和密码后又回到登录画面）。
+4. 修改sudo vi /etc/gdm/gdm.conf（建议先将gdm.conf备份，以免无法启动时，可以快速恢复）
+其中[Daemon]中#RemoteGreeter=/usr/lib/gdm/gdmlogin中前面的#号去悼；
+[Security]中#DisallowTCP=true中前面的＃号去悼，并将true改为false;
+[xdmcp]中#Enable=false中前面的＃号去悼，并将false改为true;
+5. 修改sudo vi /etc/inittab增加一行id:5:initdefault:表示系统将自己运行在多用户级别５的模式下；
+6. 重启sudo reboot，不建议sudo gdm restart这样gdm并未生效
+7. 检查服务器和客户端的网络防火墙配置，保证177端口和6000-6100端口可用；
+8. 使用Xwin的服务器程序连接ubuntu图形界面即可；</p>
 
       
     </div>
@@ -316,6 +376,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -324,15 +396,15 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/ubuntuzhongxiugainm-appletmorenwangluolianjie.html">Ubuntu中修改nm-applet默认网络连接</a></h1>
+    <h1 class="title"><a href="/y2009/m05/ubuntuzhongxiugainm-appletmorenwangluolianjie.html">Ubuntu中修改Nm Applet默认网络连接</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>不知道大家注意到没有，Ubuntu Feisty自带的nm-applet有一个小毛病：一旦你通过它连上某个无线网络之后，不管你是不是点错了，或者说是不是真的需要保留这个连接的信息，它都会记录下这个网络ID，今后如果检测到这个网络，根据它自己排的优先级（最后一次成功连接，但有时候不准，或者说有可能在来回切换时不小心被弄乱），如果它排在前面，就会自动连上去，就算你手动选择另一个，它还是不依不饶的切回它认定的那一个。</p>
-<p>　　遇到这个情况，我想许多朋友大概和我一样，在它提供的上下文菜单找，不过GNOME的界面哲学使得界面菜单直接提供的信息和高级功能很有限，或者到类似 /etc/<em>、~/.</em>/之类的地方找相关配置文件，但是实际上它也不是那么“传统”，因为nm-applet使用GConf来记录配置信息：</p>
-<p>　　在命令行输入gconfig-editor，打开GConf编辑器，定位到system -&gt; networking -&gt; wireless -&gt; networks，这个目录下记录了所有nm-applet使用的无线网络ID和相关配置信息，如果有不希望保留的配置，直接进到相关目录，右键逐个点击右面的key-value条目，Unset Key，完成以后就可以让nm-applet“忘掉”这个无线网络连接。当然，通过这个小工具，你也可以手工对某组具体的key-value做修改。</p>
+        <p>　　不知道大家注意到没有，Ubuntu Feisty自带的nm-applet有一个小毛病：一旦你通过它连上某个无线网络之后，不管你是不是点错了，或者说是不是真的需要保留这个连接的信息，它都会记录下这个网络ID，今后如果检测到这个网络，根据它自己排的优先级（最后一次成功连接，但有时候不准，或者说有可能在来回切换时不小心被弄乱），如果它排在前面，就会自动连上去，就算你手动选择另一个，它还是不依不饶的切回它认定的那一个。</p>
+<p>　　遇到这个情况，我想许多朋友大概和我一样，在它提供的上下文菜单找，不过GNOME的界面哲学使得界面菜单直接提供的信息和高级功能很有限，或者到类似 /etc/<em>、~/.</em>/之类的地方找相关配置文件，但是实际上它也不是那么&quot;传统&quot;，因为nm-applet使用GConf来记录配置信息：</p>
+<p>　　在命令行输入gconfig-editor，打开GConf编辑器，定位到system -&gt; networking -&gt; wireless -&gt; networks，这个目录下记录了所有nm-applet使用的无线网络ID和相关配置信息，如果有不希望保留的配置，直接进到相关目录，右键逐个点击右面的key-value条目，Unset Key，完成以后就可以让nm-applet&quot;忘掉&quot;这个无线网络连接。当然，通过这个小工具，你也可以手工对某组具体的key-value做修改。</p>
 <p>　　这件事也让我联想起Linus Torvalds不止一次（也包括不少KDE的死忠）对GNOME的微词：尽可能让用户自己掌控，还是尽可能帮用户拿主意？这是个问题。</p>
 
       
@@ -353,6 +425,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -361,7 +445,7 @@
       
       
   
-    <h1 class="title"><a href="/y2008/m09/ubuntu-linux系统下apt-get命令参数详解.html">Ubuntu Linux系统下apt-get命令参数详解</a></h1>
+    <h1 class="title"><a href="/y2008/m09/ubuntu-linux系统下apt-get命令参数详解.html">Ubuntu Linux系统下Apt Get命令参数详解</a></h1>
   
 
     </header>
@@ -373,7 +457,7 @@
 <p>apt-cache show package 获取包的相关信息，如说明、大小、版本等</p>
 <p>sudo apt-get install package 安装包</p>
 <p>sudo apt-get install package - - reinstall 重新安装包</p>
-<p>sudo apt-get -f install 修复安装“-f = ——fix-missing”</p>
+<p>sudo apt-get -f install 修复安装&quot;-f = ——fix-missing&quot;</p>
 <p>sudo apt-get remove package 删除包</p>
 <p>sudo apt-get remove package - - purge 删除包，包括删除配置文件等</p>
 <p>sudo apt-get update 更新源</p>
@@ -403,120 +487,60 @@
 
 
   
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2008-09-03T01:39:31.000Z"><a href="/y2008/m09/ubuntu快捷键.html">2008-09-03</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2008/m09/ubuntu快捷键.html">Ubuntu快捷键</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li>打开主菜单 = Alt + F1</li>
-<li>运行 = Alt + F2</li>
-<li>显示桌面 = Ctrl + Alt + d</li>
-<li>最小化当前窗口 = Alt + F9</li>
-<li>最大化当前窗口 = Alt + F10</li>
-<li>关闭当前窗口 = Alt + F4</li>
-<li>截取全屏 = Print Screen</li>
-<li>截取窗口 = Alt + Print Screen<br>默认特殊快捷键</li>
-<li>展示所有窗口程序 = F10</li>
-<li>展示当前窗口最上层程序 = F11</li>
-<li>展示当前窗口所有程序 = F12</li>
-<li>切换窗口 = Alt + Tab</li>
-<li>旋转3D桌面 = Ctrl + Alt + 左/右箭头（也可以把鼠标放在标题栏或桌面使用滚轮切换）</li>
-<li>旋转3D桌面（活动窗口跟随） = Ctrl + Shift + Alt + 左/右箭头</li>
-<li>手动旋转3D桌面 = Ctrl + Alt + 左键单击并拖拽桌面空白处</li>
-<li>窗口透明/不透明 = possible with the “transset” utility or Alt + 滚轮</li>
-<li>放大一次 = 超级键 + 右击</li>
-<li>手动放大 = 超级键 + 滚轮向上</li>
-<li>手动缩小 = 超级键 + 滚轮向下</li>
-<li>移动窗口 = Alt + 左键单击</li>
-<li>移动窗口时贴住边框 = 左键开始拖动后再 Ctrl + Alt</li>
-<li>调整窗口大小 = Alt + 中击</li>
-<li>Bring up the window below the top window = Alt + middle-click</li>
-<li>动态效果减速 = Shift + F10</li>
-<li>水纹 = 按住 Ctrl+超级键</li>
-<li>雨点 = Shift-F9</li>
-<li>桌面展开＝ Ctrl + Alt + 下箭头，然后按住 Ctrl + Alt 和左/右箭头选择桌面</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2008-09-02T16:29:39.000Z"><a href="/y2008/m09/ubuntu输入法安装.html">2008-09-03</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2008/m09/ubuntu输入法安装.html">Ubuntu输入法安装</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>这里的方法同样适用于Debian下的Scim输入法的安装。<br>根据SCIM的文档说明，装SCIM最好用UTF-8的locale。（你也可以使用GB2312以及GBK的locale，使用scim都一样的）<br>对于一个新装好的没有安装SCIM的Ubuntu系统（新的Ubuntu安装器选择中文安装后，一边都已经装好了scim），只要</p>
-<p>apt-get install scim
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/y2008/m09/ubuntu输入法安装.html#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
 
   <nav id="pagination">
   
   
+    <a href="/tags/ubuntu/page/2/" class="alignright next">下一页</a>
+  
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -524,23 +548,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -556,12 +580,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -570,7 +600,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

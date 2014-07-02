@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/page/5/' />
 </head>
 
 
@@ -210,167 +211,17 @@
   
     <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2012-08-01T03:08:18.000Z"><a href="/y2012/m08/ubuntu-to-build-a-time-machine-backup.html">2012-08-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2012/m08/ubuntu-to-build-a-time-machine-backup.html">Ubuntu搭建time Machine备份的问题</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>1.系统问题，ubuntu apt-get 安装的netatalk 不能读取配置文件，查看/etc/init.d/netatalk 可以看出，配置 /etc/netatalk/afpd.conf根本没用，这是最严重的问题，看来不能太相信一些不该出问题的东西</p>
-<p>2.登录问题。必须设置成能游客登录，才行，用系统帐号登录，总是登录不成功（目前还没解决），而且提示的是“请检查服务器名称或 IP 地址，然后再试一次。如果问题持续发生，请联系系统管理员。”，让人很疑惑，一直以为是网络配置问题，此时输入错误密码，会窗口晃动，表示登录失败。 -U uams_guest.so  是启动游客登录功能。</p>
-<p>其他配置就很简单了，跟网上搜到的教程基本一致：</p>
-<p><strong>/etc/netatalk/AppleVolumes.default </strong><br>/home/back “TimeM” options:tm</p>
-<p><strong>/etc/avahi/services/afpd.service
-</strong></p>
-<p>&lt;?xml version=“1.0” standalone=‘no’?&gt;<br>&lt;!—<em>-nxml-</em>—&gt;<br>&lt;!DOCTYPE service-group SYSTEM “avahi-service.dtd”&gt;<br>&lt;service-group&gt;<br>&lt;name replace-wildcards=“yes”&gt;%h&lt;/name&gt;</p>
-<p>&lt;service&gt;<br>&lt;type&gt;_afpovertcp._tcp&lt;/type&gt;<br>&lt;port&gt;548&lt;/port&gt;<br>&lt;/service&gt;</p>
-<p>&lt;service&gt;<br>&lt;type&gt;_device-info._tcp&lt;/type&gt;<br>&lt;port&gt;0&lt;/port&gt;<br>&lt;txt-record&gt;model=Xserve&lt;/txt-record&gt;<br>&lt;/service&gt;</p>
-<p>&lt;/service-group&gt;</p>
-<p>版本：ubuntu 12.04 server   afpd 2.2.1   avahi-daemon 0.6.30</p>
-<p>网上说的IPV6、cbd，貌似都不是问题；</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
   </div>
-</article>
-
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2012-07-19T09:39:30.000Z"><a href="/y2012/m07/she-is-the-police.html">2012-07-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2012/m07/she-is-the-police.html">她是警察</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>好长时间没理解这句话的意思。</p>
-<p>现在稍有感觉，貌似跟无为一个概念，人人无为，人人做好自己，则国顺民安。</p>
-<p>只是不明白，如此简单的道理，为啥这么难明白？</p>
-<p>贪？嗔？痴？</p>
-<p>还是此时的人文环境惹的祸？</p>
-<p>如果不大力提倡经济建设，应该会好很多吧，不过：貌似奢侈的生活比宁静的生活更有人缘。</p>
-<p>攀比，在佛法中归到那戒呢？</p>
-<p>&nbsp;</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
   </div>
-</article>
-
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2012-07-10T10:03:33.000Z"><a href="/y2012/m07/project-management-into-the-marsh-area.html">2012-07-10</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2012/m07/project-management-into-the-marsh-area.html">项目管理进入沼泽地区</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>如果说原来部门制度的建立，还算进展顺利的话，接下来的进程，将漫长而艰巨，因：这是一个意识形态的改变<br>苹果带给我们的，并不是几个好产品，而是开辟了一个尊重用户体验，微创新的新局面，现在的IT业，哪个有点意识的，不把精力放在用户体验上，能不能做好是一回事，想没想是另一回事，就如：小米如此成功，还是被老罗批无用户体验一样，这个东西并不是你想有就有的<br>并未打算此时此刻就要做的多么多么的好，只是想让我们的产品，至少是团队智慧的结晶，而不是一坨坨生硬的代码<br>这个事情是很困难的，每一个人都会有各种各样的想法，还会有各种各样的问题。<br>1.有各种各样的设计思路，怎样取舍？大多数通过投票解决，主要把关人员强烈坚持的，可以独裁[1.角度不同，开发人员可能会选择容易实现的 2.阅历和知识不同，感悟不同]<br>2.项目周期的把控，尽量争取宽松的开发环境<br>一些附带的问题：<br>1.不要过于直接的否定别人、批评别人<br>2.要多否决的原因做出必要的解释<br>3.要将此事与个人的发展之间的关联，明确说明</p>
-<p>所有事情，要解决的最大的一个问题：为什么我要努力作？<br>1.我要通过项目体现自己的价值，获得成就感、自豪感、荣誉感<br>2.我要通过项目提高自己的能力、知识、品味<br>3.这是一个待遇优厚的工作，我不能丢掉这个工作（这个目前难以实现，且持有这个理念的人一般不会是什么高人[特定情况例外]）<br>4.挑战困难的心理，超越自我是一件有快感的事<br>是不是还有其他的方面能够调动员工的积极性？</p>
-<p>最终做出的一些部门决定：<br>1.所有人员都应该有制作优秀产品的想法<br>2.所有人员应站在客户的角度来理解产品的操作<br>3.美工对界面美感作全局把控，对于有异议的设计思路，可以发起讨论如何实现<br>4.每个人员都可以对任何事情发表个人看法，并反馈给相关人员，如有冲突，可发起讨论<br>5.尽量拉长设计周期<br>6.每个人都可以为自己的思路争取资源，但也要适当妥协</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2012-06-13T04:18:50.000Z"><a href="/y2012/m06/can-not-make-some-of-their-own-influence.html">2012-06-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2012/m06/can-not-make-some-of-their-own-influence.html">不能作自己的一些影响</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>现实中，有些因素，往往会让我们不能按照自己的意志来处理自己的事情，总结了一些简单明了的影响。</p>
-<ol>
-<li>扭曲个人心智，影响个人品格完善 ［总是不如愿］</li>
-<li>影响个人行为对这个社会的试探性，推迟对个人行为的把握度，不利于自己优势的拓展</li>
-<li>影响圈子人员对自己的认知度，从而影响自己的发展</li>
-<li>不能很好的处理大家庭的关系，从而影响自己自己最大的根据地（作为心灵归宿的意义更重要一点）<br>这样说来，一个疑问有点隐隐显现。老爸为什么这么弱势————老妈太强势了。<br>有些事情我们无法改变，那就顺其自然，但是尝试还是可以有的。</li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-    <article class="post">
+</div>
   
   <div class="post-content">
     <header>
@@ -380,7 +231,7 @@
       
       
   
-    <h1 class="title"><a href="/y2012/m05/extension-of-the-individual-leader-company.html">领导者个体的延伸-公司</a></h1>
+    <h1 class="title"><a href="/y2012/m05/extension-of-the-individual-leader-company.html">领导者个体的延伸 公司</a></h1>
   
 
     </header>
@@ -409,6 +260,313 @@
 
 
   
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-05-09T07:39:25.000Z"><a href="/y2012/m05/project-management-experience.html">2012-05-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2012/m05/project-management-experience.html">项目管理总结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="2012-05-09">2012-05-09</h2>
+<p>养老机构研发管理失败的总结</p>
+<h3 id="-">需求只是收集，没有分析</h3>
+<p>这个项目相对很简单，所以需要分析的内容不是很多，但是在前期依然没有将整个项目系统地进行分析，导致后期对于补贴处理的不明确，虽然不影响进展，但不能保障完成一个精巧的系统
+一个重大的失误：没有全面查看用户提供的全部资料</p>
+<h3 id="demo-">Demo设计不够具体，没有进行反复论证</h3>
+<p>同上，不是很差，但也称不上为好</p>
+<h3 id="-">技术积累</h3>
+<p>数据列表、基础信息维护、简单数据统计、页面框架 尚未模块化、标准化</p>
+<h3 id="-">时间问题[无法控制,有点烦]</h3>
+<p>由于时间的压缩，导致所有工作的提前介入，各方面不能够精益求精</p>
+<h3 id="-">人员沟通管理</h3>
+<p>各部位人员，并没有在思路上对项目的进展达成一致的共识，没有反复确认的过程，依然还是原来埋头苦干的工作模式</p>
+<p>综上所述，目前虽有改善，但依然是原来的老路子，将工作处理为体力劳动，而没有真正转换为脑力劳动。
+成功的标志：大量的时间应该花费在，思考、设计上，而非敲键盘上。</p>
+<hr>
+<h2 id="2012-07-10">2012-07-10</h2>
+<p>苹果带给我们的，并不是几个好产品，而是全心投入做出好产品的价值观。</p>
+<p>并未打算此时此刻就要做的多么多么的好，只是想让我们的产品，至少是团队智慧的结晶，而不是一坨坨生硬的代码</p>
+<p>这个事情是很困难的，每一个人都会有各种各样的想法，还会有各种各样的问题。</p>
+<ol>
+<li>有各种各样的设计思路，怎样取舍？大多数通过投票解决，主要把关人员强烈坚持的，可以独裁[1.角度不同，开发人员可能会选择容易实现的 2.阅历和知识不同，感悟不同]</li>
+<li>项目周期的把控，尽量争取宽松的开发环境</li>
+</ol>
+<p>一些附带的问题：</p>
+<ol>
+<li>不要过于直接的否定别人、批评别人</li>
+<li>要多否决的原因做出必要的解释</li>
+<li>要将此事与个人的发展之间的关联，明确说明</li>
+</ol>
+<p>所有事情，要解决的最大的一个问题：为什么我要努力作？</p>
+<ol>
+<li>我要通过项目体现自己的价值，获得成就感、自豪感、荣誉感</li>
+<li>我要通过项目提高自己的能力、知识、品味</li>
+<li>这是一个待遇优厚的工作，我不能丢掉这个工作（这个目前难以实现，且持有这个理念的人一般不会是什么高人[特定情况例外]）</li>
+<li>挑战困难的心理，超越自我是一件有快感的事</li>
+</ol>
+<p>是不是还有其他的方面能够调动员工的积极性？</p>
+<p>最终做出的一些部门决定：</p>
+<ol>
+<li>所有人员都应该有制作优秀产品的想法</li>
+<li>所有人员应站在客户的角度来理解产品的操作</li>
+<li>美工对界面美感作全局把控，对于有异议的设计思路，可以发起讨论如何实现</li>
+<li>每个人员都可以对任何事情发表个人看法，并反馈给相关人员，如有冲突，可发起讨论</li>
+<li>尽量拉长设计周期</li>
+<li>每个人都可以为自己的思路争取资源，但也要适当妥协</li>
+</ol>
+<hr>
+<h2 id="2012-10-19-">2012-10-19 初级思路</h2>
+<p>年初开始接手部门管理工作，回顾一下，已经经历3个阶段。</p>
+<h3 id="-">第一阶段：熟悉了解缓冲</h3>
+<ol>
+<li>熟悉团队成员的做事风格，个性</li>
+<li>让团队成员熟悉自己的风格</li>
+<li>缓冲,领导更替的变化</li>
+</ol>
+<p>总结：现在看来，熟悉这个阶段做的相当不到位，其实和结婚一样，不在一个屋檐下，很难去了解其中滋味，还是需要一起做项目，一起写代码才会真正的了解</p>
+<h3 id="-">第二阶段：松散式管理</h3>
+<p>个人性格的体现，总是期望：个人能力佳，有一定的责任心，有向上动力的团队，偏重于对积极性的调动，有点脱离现实。</p>
+<ol>
+<li>2\8分的理论已经证明，除非精挑细选，只能有一小部分成为精英</li>
+<li>现实的状况是没有多少层面来极大激活积极性</li>
+</ol>
+<p>同时：</p>
+<ol>
+<li>对于旧员工的管理过于放松</li>
+</ol>
+<p>好在：</p>
+<ol>
+<li>总算是积累了一部分技术资源</li>
+<li>客户意识极大增强</li>
+<li>团队向心力较好</li>
+</ol>
+<h3 id="-">第三阶段：模式化开发</h3>
+<p>既然无法发挥每个人的个性，那就按照传统套路来吧。</p>
+<ol>
+<li>基于前一阶段的技术积累，深度定制基础模块，为项目开发提供大量支撑，减少工作量</li>
+<li>基于现实情况，推动项目管理继续完善。</li>
+</ol>
+<p>目标：</p>
+<p>将项目开发，固化为一个标准流程，不用大量思考，按部就班地高效整合资源，快速迭代完成项目开发。</p>
+<h3 id="-">最终总结：</h3>
+<ol>
+<li>破釜沉舟：看起来很牛，但只能作为奇招，治国安天下，还要传统着来</li>
+<li>拔苗助长：看起来很傻，现实中，大家却都很着急</li>
+<li>捡了西瓜丢了芝麻：社会极大的丰富，让人延缓缭乱，合适自己的鞋子才是好鞋子</li>
+<li>水滴石穿：水或许都没想到能把石头滴穿，就这样日复一日的平淡中，也会创造奇迹</li>
+</ol>
+<p>无论如何：按照自己舒服的方式来生活，没错，在你能选择的范围内。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-05-02T08:22:30.000Z"><a href="/y2012/m05/sea-fishing-you-can-not-learn-note-1.html">2012-05-02</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2012/m05/sea-fishing-you-can-not-learn-note-1.html">海底捞你学不会  笔记1</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>海底捞成功的奥秘在哪里？我认为黄铁鹰的总结重点在一段话：养而不爱如养猪，爱而不敬如养狗。而人呢，只给吃和爱是不够的，还需要尊敬。什么是对人的尊敬？见老板鞠躬给领导鼓掌？那是对地位和权力的尊敬。<strong>对人的尊敬是信任。信任你的操守，就不会把你当贼防；信任你的能力，就会把重要的事情委托给你。人被信任了，才会有责任感。</strong>而信任的唯一标志就是授权—海底捞给予火锅店的普通员工物质回报，还给他们“信任”与“授权”，让他们一同收获幸福感和成就感。</p>
+<p>信任不是说出来的，而是做出来的。张勇在海底捞公司的签字权是100万以上；100万以下是由副总、财务总监和大区经理负责；大宗采购部长、工程部长和小区经理有30万元的签字权；店长有3万元的签字权。书中说，这种放心大胆的授权在民营企业实属少见，但我认为这都不是最重要的授权，<strong>海底捞最重要的授权给予了基层的服务员</strong>：不论什么原因，只要员工认为有必要，都可以给客人免一个菜或加一个菜，甚至免一餐。</p>
+<p>这个小细节体现了海底捞管理的奥秘。从服务员一手干起的老板----张勇明白：一个餐馆不论其名气或者装潢，客人从进店到离店，始终只跟服务员打交道，所以餐馆客人的满意度基本掌握在跑堂员工手里。怎样才能服务好客人？那就要善用这些在现场的普通员工，多发挥他们的才智。做法很简单，授权，给他们作决定的权力。黄铁鹰总结说：如果客人对你餐馆的服务不满意还要通过经理来解决，这个解决问题的本身又会增加顾客的不满意度。</p>
+<p>一般餐馆里，顾客结账时不会同服务员谈打折优惠。为什么？谈了半天，那个忙得跳脚的服务员连是否能给个98折优惠都闪烁其词，因为她要看大堂经理的脸色。这种折扣，给与不给，顾客与餐馆都双输—顾客找经理要到折扣，也不会念餐馆的好。</p>
+<p>这等于海底捞的服务员都是经理，因为这种权力在所有餐馆都是经理才有的。<a href="http://baike.baidu.com/view/10637.htm" target="_blank">德鲁克</a>认为，<strong><span style="text-decoration: underline;">企业的员工是否是管理者并不取决于他是否管理别人，所有必须坚持自己的目标和标准，进行决策，并对组织作出贡献的员工，实际上都在行使管理者的职责</span></strong>。显然，在海底捞的管理体系中，每一个基层服务员都是一个“管理者”，对服务品质起到关键的影响，对公司至关重要。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-03-19T07:39:32.000Z"><a href="/y2012/m03/film-the-hours.html">2012-03-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2012/m03/film-the-hours.html">电影《时时刻刻》</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>“为什么一定有人要死？”雷纳德问维吉妮娅
+“为了对比”维吉妮娅说“为了让活着的人更加懂得珍惜生活。”
+“那么谁会死？”雷纳德又问。
+“诗人”维吉妮娅说“那些心怀梦想的人。”</p>
+<p>“只有我，我，才最清楚我想要什么，这是我的选择，作为一个人的选择。”</p>
+<p>“如果我说我后悔，那么我会轻松一些，好一些。”劳拉对克拉莉莎说“但是后悔有什么意义呢？当你已别无选择。”</p>
+<p>“亲爱的雷纳德，要直面人生，永远只面人生，了解它的真谛，永远的了解，爱它的本质，然后，放弃它。”</p>
+<p>20世纪50年代美国正处在经济复苏期，布朗夫人就像达洛卫夫人一样生活富足，但却精神萎靡，内心总有一种像是被悬浮在空中的惶恐不安的感觉，生命的无意义意识时时涌上心头。这种感觉正是吴尔芙心中常常难以摆脱的感受。而纽约的女编辑在街上耀眼的阳光中似乎感到总有一丝不祥的阴影在笼罩着她，直至最后她受到死亡冲击，这一切也都是吴尔芙生命历程中的主题。</p>
+<p>精神领域内的自我放逐者，她们游离于时代，同时又以自己方式固执地抗拒现实</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-02-20T14:40:08.000Z"><a href="/y2012/m02/facts-speak-louder-than-words.html">2012-02-20</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2012/m02/facts-speak-louder-than-words.html">事实胜于雄辩</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>这个说法略显单薄。比如：这边文章</p>
+<h2 id="_-clear-http-apple4-us-2012-02-why-i-recommend-clear-the-to-do-app-html-_"><em><a href="http://apple4.us/2012/02/why-i-recommend-clear-the-to-do-app.html" target="_blank">为什么要推荐 Clear</a></em></h2>
+<div></div>
+<div><em>从 <a href="http://www.google.com.hk/reader/view/feed/http%3A%2F%2Fapple4.us%2Ffeed" target="_blank">Apple4.us</a> 作者：Lawrence Li</em></div>
+<div></div>
+<div></div>
+<div>
+
+<em><a href="http://www.realmacsoftware.com/clear/" target="_blank">Clear</a> 这款 iPhone 上的 to-do 软件在 UI 设计上的大胆为近年罕见。它打破了苹果在《iOS 人机介面规约》中设定的大量原则，采用了类似游戏式的浸入式全屏介面，全面放弃按钮和各种「栏」，所有操作用扫、拉、捏、括等手势完成。这种破局式的设计让人耳目一新，但也增加了学习成本。</em>
+
+<em>我并不认为 Clear 的设计完全成功。这不是因为它缺少通知提醒功能或任何其它功能：缺少的功能要么在未来会加上，要么不会，但无论怎样，功能的多少或有无不是评价软件的唯一标准。</em>
+
+<em>事实上，我认为 Clear 的手势略显复杂，且不够直观。例如「捏 / 括」（pinching）手势既有「退回一个信息层级」的功能，亦有「添加一个 to-do 事项」的功能，这令我在使用中产生过不少困惑。</em>
+
+<em>但我们需要 UI 设计界不断出现新的标杆，需要那些不去担心「会不会因为违反了人机介面规约而被苹果拒之于 App Store 门外」的设计师。和把软件设计得直觉、易用、符合使用习惯相比，这是更高的目标，也是更危险的策略。但正是这些冒险家推动着 UI 设计艺术的前进。</em>
+
+<em>听说 Clear 在美国 iTunes 店只用了九小时就爬上了收费软件排行榜榜首。我希望它在中国 iTunes 店也能有更好的成绩（目前是第八名）。如果最前沿的设计未能引起我们自己的用户和 iOS 开发社群充分的关注、研究和讨论，我们就很难看到像 Clear 这种充满 <a href="http://en.wikipedia.org/wiki/Chutzpah" target="_blank">chutzpah</a> 的作品出现。</em>
+
+<em>Clear 的购买地址在<a href="http://itunes.apple.com/cn/app/clear/id493136154?l=en&amp;mt=8" target="_blank">这里</a>，目前限时优惠价人民币六元。</em>
+
+不一定这个产品一定成功，但是却不能磨灭他的功绩，可是事实缺并不那么简单，很多时候，我们无法做到纯粹，有各种各样的妥协、无奈，什么才是衡量所谓成功的标准，事实？恐怕未必，看来一切都皆在我心，管他妈的什么世道，一个世道的所谓成功，就是一个人的成功，管他是否民主，就如邓公，到现在很多人来否定他，但是又如何，不管事实如何，煞笔永远存在。无愧我心足以，那么!赵括呢？马谡呢？
+
+靠。这是什么一个轮回，难道都是扯淡？
+
+</div>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
 
   <nav id="pagination">
   
@@ -419,14 +577,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -434,23 +630,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -466,12 +662,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -480,7 +682,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

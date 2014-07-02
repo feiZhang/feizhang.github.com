@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/放弃鼠标/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,16 +231,21 @@
       
       
   
-    <h1 class="title"><a href="/y2010/m06/yitiandechengguoawesomezhongyugaodingliao.html">一天的成果，awesome终于搞定了</a></h1>
+    <h1 class="title"><a href="/y2010/m06/yitiandechengguoawesomezhongyugaodingliao.html">一天的成果，Awesome终于搞定了</a></h1>
   
 
     </header>
     <div class="entry">
       
         <p>以前也使用过awesome，但是由于ubuntu提供的只是2.x，而3.x很难编译，却这却那的，所以一直没有用成，最近看了，放弃鼠标工作的文章，同时由于我的gnome被我搞坏了，所以今天就决定真正的用下awesome，经过一天的奋斗终于搞定，用起来还不错。记录下其中的一些困难。</p>
-<p>1.网上的一些文章跟你真实用的可能版本不同，导致配置不能用。<br>2.网上的配置，都不完整，导致不能正确执行，可以通过查看～目录下的Xsession..Error看到，哪错了。<br>3.官方wiki提供的配置也有不对的地方，同时很严重的是，他提供的配置是基于系统默认配置的，而你仅仅copy给出的部分配置，则也是不能用的，最终的做法，我先copy了默认的rc.lua(/etc/xdg/awesome/rc.lua)，作为基础，然后在里面按照官方wiki,修改或者添加，终于搞定，不过要记着自己修改的地方呀，毕竟默认配置代码太对，版本升级，你要再修改，就有些麻烦了。</p>
+<p>1.网上的一些文章跟你真实用的可能版本不同，导致配置不能用。
+2.网上的配置，都不完整，导致不能正确执行，可以通过查看～目录下的Xsession..Error看到，哪错了。
+3.官方wiki提供的配置也有不对的地方，同时很严重的是，他提供的配置是基于系统默认配置的，而你仅仅copy给出的部分配置，则也是不能用的，最终的做法，我先copy了默认的rc.lua(/etc/xdg/awesome/rc.lua)，作为基础，然后在里面按照官方wiki,修改或者添加，终于搞定，不过要记着自己修改的地方呀，毕竟默认配置代码太对，版本升级，你要再修改，就有些麻烦了。</p>
 <p>现在还有一些问题，没弄明白：</p>
-<p>1.能否自己创建新布局，或者修改布局。<br>2.正常的布局，如果打开新程序，总是出现在最前面，感觉不好，能否指定新打开的窗口出现的位置？(貌似这个算是正常的，新打开的窗口就是要占据焦点的，你不用了，一关，就恢复了，这个暂且不管吧)<br>3.能否限制打开的程序窗口的数量，或者大于多少个，则剩余的全为浮动，这样原有的布局就不会被搞乱了。<br>4.官方wiki提供的autostar不能用，反正我是怎么弄，他都不启动。</p>
+<p>1.能否自己创建新布局，或者修改布局。
+2.正常的布局，如果打开新程序，总是出现在最前面，感觉不好，能否指定新打开的窗口出现的位置？(貌似这个算是正常的，新打开的窗口就是要占据焦点的，你不用了，一关，就恢复了，这个暂且不管吧)
+3.能否限制打开的程序窗口的数量，或者大于多少个，则剩余的全为浮动，这样原有的布局就不会被搞乱了。
+4.官方wiki提供的autostar不能用，反正我是怎么弄，他都不启动。</p>
 
       
     </div>
@@ -251,14 +269,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -266,23 +322,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -298,12 +354,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -312,7 +374,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/引擎/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -228,17 +241,20 @@
 <p>最近在做采集平台的工作，以前也做过此方面的工作，但是有些久远了，具体的思路变化遗忘了，当时使用的方法是：主体程序+采集插件的模式，每增加一个采集类型，则写一个新的类，对其进行解析存储等，具体这样做的原因应该是：</p>
 <ol>
 <li>制作引擎太复杂，自己的能力也有限</li>
-<li><p>每个采集模块结构太复杂，很难提供一个统一的处理流程<br>这次做采集平台，公司资源深厚，技术总监技术也挺牛叉，但是建设到目前的情况下，不得不说，做的好不错，但是仅仅是看起来很美，实际用起来问题真是大，问题如下：</p>
+<li><p>每个采集模块结构太复杂，很难提供一个统一的处理流程
+这次做采集平台，公司资源深厚，技术总监技术也挺牛叉，但是建设到目前的情况下，不得不说，做的好不错，但是仅仅是看起来很美，实际用起来问题真是大，问题如下：</p>
 </li>
 <li><p>每个采集类型差异太大</p>
 </li>
 <li>采集到的原始数据需要进行大量复杂的后期处理（可以通过调整引擎适应）</li>
-<li><p>各个采集类型之间又有复杂的关联关系<br>诸如此类的复杂问题，导致目前的引擎，没遇到一个问题，都需要进行完善，导致代码庞大而烦乱，对于一直着手此项目的人，倒是好说，但是对于新入人员，就会导致其迷惑、遗漏，也许经过重构，我们可能会获得一个强大的引擎，但是感觉还是有些难度，而且即使实现了也应该不算优美，随思考如下：</p>
+<li><p>各个采集类型之间又有复杂的关联关系
+诸如此类的复杂问题，导致目前的引擎，没遇到一个问题，都需要进行完善，导致代码庞大而烦乱，对于一直着手此项目的人，倒是好说，但是对于新入人员，就会导致其迷惑、遗漏，也许经过重构，我们可能会获得一个强大的引擎，但是感觉还是有些难度，而且即使实现了也应该不算优美，随思考如下：</p>
 </li>
-<li><p>市面上听到大都的引擎，应该是游戏引擎（我也是听说而已，自己没有真实经历，也是自己的想法，有错的地方请斧正或跳过），仔细想想，应该是一套API，是一套对directx和openGL进行重封装的api，以及对一些功能项进行封装，具体的调用还是很复杂的���所以还是需要编码人员编码的，而非配置出一款游戏。</p>
+<li><p>市面上听到大都的引擎，应该是游戏引擎（我也是听说而已，自己没有真实经历，也是自己的想法，有错的地方请斧正或跳过），仔细想想，应该是一套API，是一套对directx和openGL进行重封装的api，以及对一些功能项进行封装，具体的调用还是很复杂的，所以还是需要编码人员编码的，而非配置出一款游戏。</p>
 </li>
 <li>即便是成熟的游戏系统，对于其脚本，也都是一门编程语言，具有复杂的逻辑处理能力，而非简单的配置</li>
-<li>最近研究的drupal，也是一个很复杂的平台，但是想要对他进行自定义也是需要进行逻辑编码的<br>综合而言，我认为，没有所谓的，能配置即可适应新需求的平台或者引擎，至少应该有一个逻辑编码的接口，或者做成插件形式的也不错。</li>
+<li>最近研究的drupal，也是一个很复杂的平台，但是想要对他进行自定义也是需要进行逻辑编码的
+综合而言，我认为，没有所谓的，能配置即可适应新需求的平台或者引擎，至少应该有一个逻辑编码的接口，或者做成插件形式的也不错。</li>
 </ol>
 
       
@@ -263,14 +279,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -278,23 +332,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -310,12 +364,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -324,7 +384,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

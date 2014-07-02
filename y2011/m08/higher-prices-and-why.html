@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2011/m08/higher-prices-and-why.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -219,19 +232,18 @@
     </header>
     <div class="entry">
       
-        <p>1.大多数人认为是货币超发，通货膨胀<br>那么我想问，这些货币发给谁了，理理。<br>4万亿投资 -&gt; 工程商、民工、原产料生产企业获利 -&gt; 这些人的购买力提升 -&gt; 推动物价上涨，那么这个结论应该是说，国家超印了很多钱，将这部分钱用在了公共建设方面，而与此相关的人员通过劳动获取了这部分货币，提高了自己的购买力，从而推动物价上涨，而与此投资无关的人员，则被动接受通胀，导致购买力下降，但是获得了使用更好的公共基础设施的权利，，个人感觉没啥问题呀，涨就涨白，过个3、5年，货币还是会流动到他该去的地方，不影响什么实质内容，国家激动什么呢？全民教育下不就得了。最终只不过是纸币的贬值，而不影响实际生活，感觉还好呀，至少出国旅游更便宜了。<br>2. 人为炒作<br>这个我感觉是主因，毕竟国人还是热衷于储蓄的，如果突然提高了购买力，应该不会突然长期改变消费习惯，原来一月吃一斤肉，突然改为吃五斤，感觉不太符合常理，我更相信，“某些人炒作了某些商品，而国家所谓的抑CPI的举措，更加深了人民涨价的恐惧，从而从众涨价 ”，这个就更好解决了，由市场来处理嘛，如果养猪是暴利行业，就会有更多人进入，从而供过于求，降价，多正常的流程，何必担忧？</p>
+        <p>1.大多数人认为是货币超发，通货膨胀
+那么我想问，这些货币发给谁了，理理。
+4万亿投资 -&gt; 工程商、民工、原产料生产企业获利 -&gt; 这些人的购买力提升 -&gt; 推动物价上涨，那么这个结论应该是说，国家超印了很多钱，将这部分钱用在了公共建设方面，而与此相关的人员通过劳动获取了这部分货币，提高了自己的购买力，从而推动物价上涨，而与此投资无关的人员，则被动接受通胀，导致购买力下降，但是获得了使用更好的公共基础设施的权利，，个人感觉没啥问题呀，涨就涨白，过个3、5年，货币还是会流动到他该去的地方，不影响什么实质内容，国家激动什么呢？全民教育下不就得了。最终只不过是纸币的贬值，而不影响实际生活，感觉还好呀，至少出国旅游更便宜了。
+2. 人为炒作
+这个我感觉是主因，毕竟国人还是热衷于储蓄的，如果突然提高了购买力，应该不会突然长期改变消费习惯，原来一月吃一斤肉，突然改为吃五斤，感觉不太符合常理，我更相信，“某些人炒作了某些商品，而国家所谓的抑CPI的举措，更加深了人民涨价的恐惧，从而从众涨价 ”，这个就更好解决了，由市场来处理嘛，如果养猪是暴利行业，就会有更多人进入，从而供过于求，降价，多正常的流程，何必担忧？</p>
 <p>搞不懂呀搞不懂，我还是相信高层的智商比我高很多地，自己随便瞎诌一下，望高人指点。</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/投资/">投资</a>, <a href="/categories/投资/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
   
   <div class="tags">
@@ -283,11 +295,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -295,23 +344,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -327,12 +376,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -341,7 +396,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

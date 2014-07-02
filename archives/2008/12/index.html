@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2008/12/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,13 +231,13 @@
       
       
   
-    <h1 class="title"><a href="/y2008/m12/判断jquery对象是否存在.html">判断jquery对象是否存在</a></h1>
+    <h1 class="title"><a href="/y2008/m12/判断jquery对象是否存在.html">判断Jquery对象是否存在</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>今天一段代码需要判断一个jquery对象是否存在，google了一下，发现跟想的差不多 if (!$(“#oo”)) 或者 if ($(“#oo”)!=null)，更有 if (typeof($(“#oo”))==“undefault”)，看起来貌似都可用，但是实际测试一下就发先完全是错误的，即便不存在的对象jquery也会给虚拟出来一个真实的object，最后我只能用 .length&gt;0 来进行判断了，哎，不知道是不是我们用的jquery版本不同，还是这些人相当然，不去测试就给出答案，如果是这样就太不负责任了。</p>
+        <p>今天一段代码需要判断一个jquery对象是否存在，google了一下，发现跟想的差不多 if (!$(&quot;#oo&quot;)) 或者 if ($(&quot;#oo&quot;)!=null)，更有 if (typeof($(&quot;#oo&quot;))==&quot;undefault&quot;)，看起来貌似都可用，但是实际测试一下就发先完全是错误的，即便不存在的对象jquery也会给虚拟出来一个真实的object，最后我只能用 .length&gt;0 来进行判断了，哎，不知道是不是我们用的jquery版本不同，还是这些人相当然，不去测试就给出答案，如果是这样就太不负责任了。</p>
 
       
     </div>
@@ -244,6 +257,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -252,13 +277,24 @@
       
       
   
-    <h1 class="title"><a href="/y2008/m12/081226-郁闷的一天，又被浏览器兼容性折腾了一天.html">081226--郁闷的一天，又被浏览器兼容性折腾了一天</a></h1>
+    <h1 class="title"><a href="/y2008/m12/081226-郁闷的一天，又被浏览器兼容性折腾了一天.html">081226  郁闷的一天，又被浏览器兼容性折腾了一天</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>上午解决了，在ie下，是jquery的dialog根据 填充的内容，自动调整宽度的问题，在firefox下很容易解决的，但是在ie下就不行了。<br>1.firefox下，只要在open事件增加 $(this).css({width:“auto”,height:“auto”});即可。<br>2.ie下，则需要增加如下代码<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($.browser.msie)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($(“.ui-dialog”).offset().left&lt;50) $(“.ui-dialog”).css(“left”,“300”);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(“.ui-dialog”).css(“width”,“100”);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(“.ui-dialog”).css({width:$(this).width()+32,height:$(this).height()+60});<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>真是麻烦。<br>现在的firefox的firebug真是牛叉的不得了，要不，都感觉没法搞了，还不如以前的web1.0好定位。<br>其实想想还不如继续用table，能省不少的开发时间呢。</p>
+        <p>上午解决了，在ie下，是jquery的dialog根据 填充的内容，自动调整宽度的问题，在firefox下很容易解决的，但是在ie下就不行了。
+1.firefox下，只要在open事件增加 $(this).css({width:&quot;auto&quot;,height:&quot;auto&quot;});即可。
+2.ie下，则需要增加如下代码
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($.browser.msie)
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($(&quot;.ui-dialog&quot;).offset().left&lt;50) $(&quot;.ui-dialog&quot;).css(&quot;left&quot;,&quot;300&quot;);
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(&quot;.ui-dialog&quot;).css(&quot;width&quot;,&quot;100&quot;);
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(&quot;.ui-dialog&quot;).css({width:$(this).width()+32,height:$(this).height()+60});
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}
+真是麻烦。
+现在的firefox的firebug真是牛叉的不得了，要不，都感觉没法搞了，还不如以前的web1.0好定位。
+其实想想还不如继续用table，能省不少的开发时间呢。</p>
 <p>下午主要改造了ajax的数据返回，使用了json，php有两个函数处理json_decode和json_encode，js通过eval处理后，可以按照对象方式进行处理。</p>
 <p>晚上，针对json数据，增加页面的options数据。</p>
 
@@ -279,6 +315,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -321,6 +369,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -329,14 +389,15 @@
       
       
   
-    <h1 class="title"><a href="/y2008/m12/symfonytongguosession_idchuandisessinshujuflashshangchuanwenjian.html">Symfony通过session_id传递sessin数据,flash上传文件</a></h1>
+    <h1 class="title"><a href="/y2008/m12/symfonytongguosession_idchuandisessinshujuflashshangchuanwenjian.html">Symfony通过Session Id传递Sessin数据,Flash上传文件</a></h1>
   
 
     </header>
     <div class="entry">
       
         <p>最近在symfony框架下使用swfuploader上传文件，由于firefox的bug，flash不能正确的传递cookie，这样处理文件上传的action就不能正确的使用user数据，而在代码中通过session_id()和session_start()处理的session，由于user对象已经在这之前创建，所以通过user还是不能获取session信息，而且user还会将处理好的session清除，从而造成session的完全丢失，经过google，耗费偶近5个小时终于搞定：</p>
-<p>通过继承 sfSessionStorage 生成新的 MySessionStorage<br><code>class MySessionStorage extends sfSessionStorage
+<p>通过继承 sfSessionStorage 生成新的 MySessionStorage
+<code>class MySessionStorage extends sfSessionStorage
 {
 public function initialize($options)
 {
@@ -351,7 +412,12 @@ session_id( $_GET[&quot;symfony&quot;] );
 }
 parent::initialize($options);
 }
-}</code>并修改app的 factories.yml<br>storage:<br>class: MySessionStorage<br>param:<br>session_name: symfony<br>则可以通过  ?symfony=session_id 来找到session。</p>
+}</code>并修改app的 factories.yml
+storage:
+class: MySessionStorage
+param:
+session_name: symfony
+则可以通过  ?symfony=session_id 来找到session。</p>
 <p>耗费如此多的时间，主要是因为偶的e文不好，而且开始想通过flash传递cookie实现，或者 提供php自动识别的 PHPSESSID 等来实现，均没有找到实现的方法，只好使用上面的方法了，主要不愿意重构symfony是因为偶对symfony还不够熟悉，如果那位朋友也在学习symfony可以一起学习。</p>
 
       
@@ -372,6 +438,18 @@ parent::initialize($options);
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -380,14 +458,19 @@ parent::initialize($options);
       
       
   
-    <h1 class="title"><a href="/y2008/m12/cookie_jinyong_shiyong_session.html">Cookie禁用下使用session</a></h1>
+    <h1 class="title"><a href="/y2008/m12/cookie_jinyong_shiyong_session.html">Cookie禁用下使用Session</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>抛开cookie使用session<br>PHP中SESSION不能跨页传递问题的解决办法</p>
-<p>在PHP中使用过SESSION的朋友可能会碰到这么一个问题，SESSION变量不能跨页传递。这令我苦恼了好些日子，最终通过查资料思考并解决了这个问题。我认为，出现这个问题的原因有以下几点：<br>1、客户端禁用了cookie<br>2、浏览器出现问题，暂时无法存取cookie<br>3、php.ini中的session.use_trans_sid = 0或者编译时没有打开—enable-trans-sid选项<br>
+        <p>抛开cookie使用session
+PHP中SESSION不能跨页传递问题的解决办法</p>
+<p>在PHP中使用过SESSION的朋友可能会碰到这么一个问题，SESSION变量不能跨页传递。这令我苦恼了好些日子，最终通过查资料思考并解决了这个问题。我认为，出现这个问题的原因有以下几点：
+1、客户端禁用了cookie
+2、浏览器出现问题，暂时无法存取cookie
+3、php.ini中的session.use_trans_sid = 0或者编译时没有打开--enable-trans-sid选项
+
       
     </div>
     <footer>
@@ -416,14 +499,52 @@ parent::initialize($options);
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -431,23 +552,23 @@ parent::initialize($options);
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -463,12 +584,18 @@ parent::initialize($options);
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -477,7 +604,7 @@ parent::initialize($options);
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

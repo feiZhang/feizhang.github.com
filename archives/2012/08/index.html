@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2012/08/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -225,21 +238,36 @@
     <div class="entry">
       
         <p>原来是伪造投票，现在要防止伪造投票，总结下：</p>
-<p>1.IP限制，看来只要使用 REMOTE_ADDR 基本能防止IP伪造［原理上还是可以伪造，伪造IP包发送出去，返回数据就不能返回到本机了］，针对这个可以作2次请求，第一次http请求并不记录投票结果，返回一个加密唯一数据包，让js再次提交，之后再次验证IP，应该说，万无一失了<br>2.验证码限制，这个只要作高端的验证码生成器，绝无问题，国外网站的一些验证码，人都看不懂，崩溃<br>3.设置一些cookie、header头之类的，感觉没必要，太好伪装了</p>
-<p>最终能够防止的，也就是IP限制票数，其他的可以使用程序加人工（识别验证码验证问题等）实现快速投票 。<br>谁还有什么高招？哈哈，黑他服务器，黑他数据库，自己赶紧人工投几票，然后拒绝服务攻击，貌似法还不少类。</p>
-<p><strong>一些HTTP协议中的相关知识</strong><br>获取用户IP地址的三个属性的区别(HTTP_X_FORWARDED_FOR,HTTP_VIA,REMOTE_ADDR) 分五种情况：<br>一、没有使用代理服务器的情况：</p>
-<p>REMOTE_ADDR = 您的 IP<br>HTTP_VIA = 没数值或不显示<br>HTTP_X_FORWARDED_FOR = 没数值或不显示</p>
+<p>1.IP限制，看来只要使用 REMOTE_ADDR 基本能防止IP伪造［原理上还是可以伪造，伪造IP包发送出去，返回数据就不能返回到本机了］，针对这个可以作2次请求，第一次http请求并不记录投票结果，返回一个加密唯一数据包，让js再次提交，之后再次验证IP，应该说，万无一失了
+2.验证码限制，这个只要作高端的验证码生成器，绝无问题，国外网站的一些验证码，人都看不懂，崩溃
+3.设置一些cookie、header头之类的，感觉没必要，太好伪装了</p>
+<p>最终能够防止的，也就是IP限制票数，其他的可以使用程序加人工（识别验证码验证问题等）实现快速投票 。
+谁还有什么高招？哈哈，黑他服务器，黑他数据库，自己赶紧人工投几票，然后拒绝服务攻击，貌似法还不少类。</p>
+<p><strong>一些HTTP协议中的相关知识</strong>
+获取用户IP地址的三个属性的区别(HTTP_X_FORWARDED_FOR,HTTP_VIA,REMOTE_ADDR) 分五种情况：
+一、没有使用代理服务器的情况：</p>
+<p>REMOTE_ADDR = 您的 IP
+HTTP_VIA = 没数值或不显示
+HTTP_X_FORWARDED_FOR = 没数值或不显示</p>
 <p>二、使用透明代理服务器的情况：Transparent Proxies</p>
-<p>REMOTE_ADDR = 最后一个代理服务器 IP<br>HTTP_VIA = 代理服务器 IP<br>HTTP_X_FORWARDED_FOR = 您的真实 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 最后一个代理服务器 IP
+HTTP_VIA = 代理服务器 IP
+HTTP_X_FORWARDED_FOR = 您的真实 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>这类代理服务器还是将您的信息转发给您的访问对象，无法达到隐藏真实身份的目的。</p>
 <p>三、使用普通匿名代理服务器的情况：Anonymous Proxies</p>
-<p>REMOTE_ADDR = 最后一个代理服务器 IP<br>HTTP_VIA = 代理服务器 IP<br>HTTP_X_FORWARDED_FOR = 代理服务器 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 最后一个代理服务器 IP
+HTTP_VIA = 代理服务器 IP
+HTTP_X_FORWARDED_FOR = 代理服务器 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>隐藏了您的真实IP，但是向访问对象透露了您是使用代理服务器访问他们的。</p>
 <p>四、使用欺骗性代理服务器的情况：Distorting Proxies</p>
-<p>REMOTE_ADDR = 代理服务器 IP<br>HTTP_VIA = 代理服务器 IP<br>HTTP_X_FORWARDED_FOR = 随机的 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 代理服务器 IP
+HTTP_VIA = 代理服务器 IP
+HTTP_X_FORWARDED_FOR = 随机的 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>告诉了访问对象您使用了代理服务器，但编造了一个虚假的随机IP代替您的真实IP欺骗它。</p>
 <p>五、使用高匿名代理服务器的情况：High Anonymity Proxies (Elite proxies)</p>
-<p>REMOTE_ADDR = 代理服务器 IP<br>HTTP_VIA = 没数值或不显示<br>HTTP_X_FORWARDED_FOR = 没数值或不显示 ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 代理服务器 IP
+HTTP_VIA = 没数值或不显示
+HTTP_X_FORWARDED_FOR = 没数值或不显示 ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>完全用代理服务器的信息替代了您的所有信息，就象您就是完全使用那台代理服务器直接访问对象。</p>
 
       
@@ -259,6 +287,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -298,6 +338,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -306,7 +358,7 @@
       
       
   
-    <h1 class="title"><a href="/y2012/m08/ubuntu-to-build-a-time-machine-backup.html">Ubuntu搭建time Machine备份的问题</a></h1>
+    <h1 class="title"><a href="/y2012/m08/ubuntu-to-build-a-time-machine-backup.html">Ubuntu搭建Time Machine备份的问题</a></h1>
   
 
     </header>
@@ -315,12 +367,24 @@
         <p>1.系统问题，ubuntu apt-get 安装的netatalk 不能读取配置文件，查看/etc/init.d/netatalk 可以看出，配置 /etc/netatalk/afpd.conf根本没用，这是最严重的问题，看来不能太相信一些不该出问题的东西</p>
 <p>2.登录问题。必须设置成能游客登录，才行，用系统帐号登录，总是登录不成功（目前还没解决），而且提示的是“请检查服务器名称或 IP 地址，然后再试一次。如果问题持续发生，请联系系统管理员。”，让人很疑惑，一直以为是网络配置问题，此时输入错误密码，会窗口晃动，表示登录失败。 -U uams_guest.so  是启动游客登录功能。</p>
 <p>其他配置就很简单了，跟网上搜到的教程基本一致：</p>
-<p><strong>/etc/netatalk/AppleVolumes.default </strong><br>/home/back “TimeM” options:tm</p>
+<p><strong>/etc/netatalk/AppleVolumes.default </strong>
+/home/back &quot;TimeM&quot; options:tm</p>
 <p><strong>/etc/avahi/services/afpd.service
 </strong></p>
-<p>&lt;?xml version=“1.0” standalone=‘no’?&gt;<br>&lt;!—<em>-nxml-</em>—&gt;<br>&lt;!DOCTYPE service-group SYSTEM “avahi-service.dtd”&gt;<br>&lt;service-group&gt;<br>&lt;name replace-wildcards=“yes”&gt;%h&lt;/name&gt;</p>
-<p>&lt;service&gt;<br>&lt;type&gt;_afpovertcp._tcp&lt;/type&gt;<br>&lt;port&gt;548&lt;/port&gt;<br>&lt;/service&gt;</p>
-<p>&lt;service&gt;<br>&lt;type&gt;_device-info._tcp&lt;/type&gt;<br>&lt;port&gt;0&lt;/port&gt;<br>&lt;txt-record&gt;model=Xserve&lt;/txt-record&gt;<br>&lt;/service&gt;</p>
+<p>&lt;?xml version=&quot;1.0&quot; standalone=&#39;no&#39;?&gt;
+&lt;!--<em>-nxml-</em>--&gt;
+&lt;!DOCTYPE service-group SYSTEM &quot;avahi-service.dtd&quot;&gt;
+&lt;service-group&gt;
+&lt;name replace-wildcards=&quot;yes&quot;&gt;%h&lt;/name&gt;</p>
+<p>&lt;service&gt;
+&lt;type&gt;_afpovertcp._tcp&lt;/type&gt;
+&lt;port&gt;548&lt;/port&gt;
+&lt;/service&gt;</p>
+<p>&lt;service&gt;
+&lt;type&gt;_device-info._tcp&lt;/type&gt;
+&lt;port&gt;0&lt;/port&gt;
+&lt;txt-record&gt;model=Xserve&lt;/txt-record&gt;
+&lt;/service&gt;</p>
 <p>&lt;/service-group&gt;</p>
 <p>版本：ubuntu 12.04 server   afpd 2.2.1   avahi-daemon 0.6.30</p>
 <p>网上说的IPV6、cbd，貌似都不是问题；</p>
@@ -347,14 +411,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -362,23 +464,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -394,12 +496,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -408,7 +516,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

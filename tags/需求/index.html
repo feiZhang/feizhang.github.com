@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/需求/' />
 </head>
 
 
@@ -210,11 +211,121 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-09-05T08:56:15.000Z"><a href="/y2013/m09/write-a-meaningful-requirements-document.html">2013-09-05</a></time>
+        <time datetime="2013-11-20T02:26:38.000Z"><a href="/y2013/m11/project-design-and-code-organization-case-study.html">2013-11-20</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2013/m11/project-design-and-code-organization-case-study.html">需求分析与功能设计 案例分析</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>注：本实例绝非虚构，针对初级开发者，改变<code>程序员＝打字</code>的困境</p>
+<h2 id="-">需求分析</h2>
+<p>背景：证书打印功能，能够打印3份证书：正本（机构名称、住所）、副本第一页（编号、发证机关）、副本第二页（机构名称、法人）</p>
+<ol>
+<li>第一次需求描述：需要个能够打印证书的功能</li>
+<li>第二次需求变更：经营范围固定为某段文字，不能修改，自动生成证书编号</li>
+<li>第三次需求变更：需要在证书打印功能中增加打印记录功能，要求1天完成</li>
+<li>第四次需求变更：打印第一页时填写的内容，能够在第二页复用，要求尽快完成</li>
+<li>第五次需求变更：增删改查打印内容，之后根据填写的打印内容打印证书，并能导出打印内容列表（作为绩效）</li>
+</ol>
+<p>问题总结：</p>
+<ol>
+<li>每次都是听客户两句话就要求开发完成功能，未深入挖掘需求</li>
+<li>第五次需求完成时间比第三次需求要求时间晚2周，而每次要求都是紧急，导致无法全面规划功能设计</li>
+<li>第五次需求完全覆盖第四次需求，浪费开发资源</li>
+</ol>
+<p>解决方法：</p>
+<ol>
+<li>充分与客户沟通，深入分析客户需要，完善需求。参阅 <a href="http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document_2181.html"><strong>写出一份有意义的需求文档</strong></a></li>
+<li>尽量争取合适的开发时间</li>
+</ol>
+<h2 id="-">功能设计</h2>
+<p>在需求挖掘不够充分，描述不清时，开发人员有责任通过自己的主观分析来引导需求完善</p>
+<p>此次分析，依据：<code>第三次需求变更</code></p>
+<h4 id="-">明确目地</h4>
+<p>第三次需求变更，可以设想出两种不同的目的：</p>
+<ol>
+<li>客户是希望知道谁在什么时候打印了什么，打印了多少次</li>
+<li>证书需要每年更换，第二次打印希望能够复用上一次的打印数据</li>
+</ol>
+<p>不同的目地有不同的设计思路</p>
+<p>目的一：关注于什么人什么时间打印了什么；此时要注意：打印错误如何标记；
+目的二：关注于如何减少用户的工作量；此时要注意：是否可以结合 机构档案、机构年审功能 来处理 证书打印功能；</p>
+<p>本案例，目的一与目的二不冲突。完全可以同时实现，但功能实现的时间要求有限，同时也没必要完成客户不需要的功能，所以选择哪个方向，应继续与客户沟通。</p>
+<p><code>错误的方向，走的越远，错的越远。</code></p>
+<h4 id="-">设计分析</h4>
+<p>背景：选定实现第一个目的</p>
+<h6 id="-">第一次设计</h6>
+<p>打印记录表结构：机构名称、住所、编号、发证机关、机构名称、法人、打印时间、打印人</p>
+<p>功能：没点击一次打印，增加一条打印记录</p>
+<p>缺点：3个不同的打印，能够填充的字段不同，记录看起来总是不完整的。</p>
+<h6 id="-">第二次设计</h6>
+<p>表机构修改为：打印人、打印内容、打印时间</p>
+<p>功能修正：将所有的打印数据整合为一个字段－打印内容</p>
+<h6 id="-">第三次设计</h6>
+<p>表结构修改为：机构名称、打印人、打印内容、打印时间</p>
+<p>功能修正：将机构名称独立出来，作为数据整合的基准，比如：要查看某个机构的所有打印记录</p>
+<p>缺点：实际上3份打印内容，才算一次完整的打印记录，现在的设计无法体现这个概念</p>
+<h6 id="-">总结</h6>
+<p>iphone发布前，进行过无数次的设计修正，那可是世界顶级的设计师，而我们每次写代码前都是不加思索，错误百出，为何不在开工前先想好呢？无论你是什么等级的工程师，<code>请在编码前，将自己的设计思路推翻两次以上</code></p>
+<h2 id="-">代码组织</h2>
+<p>此次分析并不涉及代码组织的分析，为了突出代码组织的重要性，在这里再次说明<code>请在编码前，将自己的代码组织思路推翻两次以上</code>。</p>
+<p>案例：材料管理是我们公司最有技术能力的人独立完成的项目，此人熟知各种技术、能够解决各种疑难杂症，但是这个项目却久经维护，依然破烂不堪，让人头痛。代码是需要组织的，不是拼凑起来就管用。<code>能够驾驭万行代码才是真技术</code></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-20T02:26:38.000Z"><a href="/y2013/m09/write-a-meaningful-requirements-document.html">2013-09-20</a></time>
       
       
   
@@ -224,12 +335,18 @@
     </header>
     <div class="entry">
       
-        <h3>视角</h3>
-<h5>以客户需要为视角</h5>
+        <h3 id="-">重要性</h3>
+<ol>
+<li>需求作为软件开发的排头兵，决定了项目发展的方向，方向错误，全局失败</li>
+<li>需求的频繁变动，不仅影响项目的进度，更影响编码人员的工作热情、工作态度（人心散了，队伍就不好带了）</li>
+</ol>
+<p>参考：<a href="http://liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html" target="_blank"><strong>项目设计与代码组织-案例分析</strong></a></p>
+<h3 id="-">视角</h3>
+<h5 id="-">以客户需要为视角</h5>
 <p>应该以客户的视角来书写文档，以客户实际的需要作为中心。比如：工单管理，应写明客户为什么需要求救工单，客户现实中是如何处理求救工单的，而不是直接将需求具体为：录入工单、回访工单</p>
-<h5>以软件设计为视角</h5>
+<h5 id="-">以软件设计为视角</h5>
 <p>必须以定量分析来描述文档，而不是概念描述，比如：一般情况下、通常、大概、有时候，这些概念性的内容，计算机乃至程序员是无法理解的，应该将各种不同的情况加以分析，转换为可以判定条件，比如：美女筛选这个业务，1.身高大于170cm 2.体重小于45kg 这些定量的数据，可行，而 3.皮肤白 4.气质佳，这样无法定量的条件，就需要深入思考、妥协，转换为定量的数据，比如：3.白 &gt; #333333 4.智商大于120并且情商大于&gt;130，或者调整业务，增加人工投票的功能。</p>
-<h3>系统目标</h3>
+<h3 id="-">系统目标</h3>
 <p>不能是笼统的，走形式的，是真正的目标，有意义的目标，不多，但是必须有，如果根本都想不出来，那就需要先考虑系统存在的必要性</p>
 <ol>
 <li>解决了什么问题</li>
@@ -241,22 +358,27 @@
 <ol>
 <li>面子工程：就不需要搞复杂的业务逻辑，而是展现更多的功能，但不需要每个功能很强大，有就行，而界面要符合某些人的口味。</li>
 <li>便利性：则着重突出UI交互，让用户一看就懂，不学就会用</li>
-<li>优化业务：那就需要把业务流程搞清楚</li>
+<li>优化业务：那就需要把业务流程搞清楚</li>
 <li>解决问题：需要找出本质的问题，而不是表面的问题</li>
 </ol>
 <p>没有哪个系统能够满足全世界的需要，强大如iPhone也没有征服全世界，必须有所取舍，找出自己的亮点。</p>
-<h3>业务分析</h3>
-<h4>以场景演练为出发点</h4>
+<h3 id="-">业务分析</h3>
+<h4 id="-">以场景演练为出发点</h4>
 <p>最好能够以实际用户的身份，对现实的业务流程进行操作，熟悉每个业务步骤的原始执行方式，体会操作的实际效果及意义，在没有实际操作条件的情况下，也要尽量在脑海中，将每个业务过程演练多边（要有带入感，就像过电影片段一样），了解现实的操作方法之后，才能抽象出符合客户需要的产品设计方案。</p>
-<h4>穷尽特殊情况</h4>
+<h4 id="-">穷尽特殊情况</h4>
 <p>对于某些复杂的业务运算，应穷尽各种情况，让用户进行解答，从而找出正确的计算方法：</p>
 <p>？？</p>
-<h3>文档的组织方式</h3>
+<h4 id="-">明确优先级</h4>
+<ol>
+<li>项目功能较多时，应分析出功能点的优先级，指导开发安排进度</li>
+<li>尽量指定各个功能点希望完成的时间点（技术部根据期望的时间点和功能的难易程度，规划进度表）</li>
+</ol>
+<h3 id="-">文档的组织方式</h3>
 <p>很多需求文档都是对功能的罗列，1、2、3、4、5，仅仅是一个一个的罗列，读起来索然无味，根本无法调动阅读者的积极性，让人读得很勉强，引不起思考。甚至，不谈功能与功能的联系，苍白的义务式的罗列。</p>
-<h4>功能组织</h4>
+<h4 id="-">功能组织</h4>
 <p>将能够完成一项特定任务的功能，按照业务逻辑走向，进行分组表述，是一个较好的方法，恰当的功能表述顺序，与内容组织，更容易让人理解作者的本意</p>
 <p>而对于那些诸如：参数设置、业务字典、部门管理等等一些无脑功能，基本是固定不变的内容，简单罗列即可</p>
-<h4>罗列基本、突出重点、详尽难点</h4>
+<h4 id="-">罗列基本、突出重点、详尽难点</h4>
 <p>长篇累牍，重点不清的文档虽然也能说明问题，但是会增加阅读的难度，容易被程序员抵制，甚至抛弃，即便是强制去读，也不利于理解。</p>
 <p>比如：客户管理这个大功能</p>
 <p>如果分解为：新增客户、删除客户、修改客户、客户资料查看、客户信息统计，并详尽说明；有多大意义？</p>
@@ -269,40 +391,40 @@
 <li>与客户相关的业务，指明必要的链接</li>
 </ol>
 <p>对于一些较复杂的业务逻辑，比如：运营补贴的计算方式（因素很多），要穷尽各种因素的组合，进行详细描述。</p>
-<h4>用业务实例辅助说明</h4>
+<h4 id="-">用业务实例辅助说明</h4>
 <p>以实例来描述业务场景，通常更容易理解，比如：老人档案审批</p>
 <hr>
 <ol>
 <li><em>社区</em>填写<strong>老人档案</strong>，提交给<em>街道</em>，进行<strong>第一次审批</strong></li>
-<li><p><em>街道</em><strong>第一次审批</strong></p>
-<ol>
-<li><p>通过后，提交给<em>区县</em>，进行<strong>第二次审批</strong></p>
-<pre><code><span class="number">1</span>.  <span class="number">_</span>区县<span class="number">_</span>审批通过，则将<span class="variable">**</span>老人档案<span class="variable">**</span>设置为 <span class="variable">**</span>已审批档案<span class="variable">**</span></code></pre>
-<ol>
-<li><p><em>区县</em>未审批通过，则将档案退回到街道重新审批</p>
-</li>
-<li><p>审批未通过，则退回给<em>社区</em></p>
-<ol>
-<li>xxxxx</li>
+<li><em>街道</em><strong>第一次审批</strong><ol>
+<li>通过后，提交给<em>区县</em>，进行<strong>第二次审批</strong><ol>
+<li><em>区县</em>审批通过，则将<strong>老人档案</strong>设置为 <strong>已审批档案</strong></li>
+<li><em>区县</em>未审批通过，则将档案退回到街道重新审批</li>
 </ol>
 </li>
+<li>审批未通过，则退回给<em>社区</em><ol>
+<li>xxxxx</li>
 <li>xxxxx</li>
 </ol>
 </li>
 </ol>
 </li>
 </ol>
-<p>备注：<br>1. 每次审批，有：通过、未通过两个选项，对于未通过的审批，必须填写审批意见。<br>2. 其中街道在审批过程中，可以修改：审批意见、截止日期</p>
+<p>备注：</p>
+<ol>
+<li>每次审批，有：通过、未通过两个选项，对于未通过的审批，必须填写审批意见。</li>
+<li>其中街道在审批过程中，可以修改：审批意见、截止日期</li>
+</ol>
 <hr>
 <ol>
 <li>场景中可以使用实际的客户名称，比如：金水区民政局、丰庆路街道办等，增加可阅读性</li>
 <li>对于描述的内容，可增加 斜体、粗体、下划线 等因素，将角色、业务点、业务数据 等内容，着重标出，提高内容质量</li>
 </ol>
-<h3>文档优化</h3>
+<h3 id="-">文档优化</h3>
 <ol>
 <li>使用更形象、合适的语言描述，比如：移动用户的增加，是“新用户入网”，而不是“新增用户”，“新增团队”也没有“创建新团队”更贴切</li>
 </ol>
-<h3>笔者注</h3>
+<h3 id="-">笔者注</h3>
 <ol>
 <li>系统及文档迭代化：系统的第一版不要追求过大过复杂，而应紧抓核心目的，仅完成核心目的必须的内容，随后的功能逐步添加；类似于抛砖引玉</li>
 <li>系统可持续交付：每个功能的完成，系统都是完整的、客户可用的</li>
@@ -326,6 +448,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -347,7 +481,7 @@
 <p><strong>真正的需求是什么? 我们都知道绝对不是客户写的123, 那是什么? 是感觉. 是一种设身处地换位思考的感觉, 是态度, 是一种以事谋事的态度. 接一个项目, 我们最希望拿到是需求明确的功能列表, 写明哪里该怎么做, 哪里该怎么展示等等. 然而即使当前工具再厉害, 再完美, 也仍然无法做到把一个人的思想一点不丢失的表达出来. 更何况你应该知道, 大部分客户的想法本身就不成熟. 那我们怎么办?</strong></p>
 <p><strong>把项目当成自己的项目. 如果是你自己的项目, 你会怎么做? 这种感觉就好像是借鸡生蛋. 我们借用客户的idea, 然后自己考虑怎么去实现它, 能不能挣钱? 现实不现实? 市场怎么样? 虽然我们跟客户的行业背景不一样, 但是以一个常人的思考, 差距不会太大. 以这样的心态去考虑客户的项目, 与客户交流需求, 并且无所保留表达你的观点. 哪怕有些时候, 告诉客户 :”坦白来说, 我觉得按着你这个做法, 没戏. 但是如果你坚持, 我会做下去.”</strong></p>
 <p><strong>这样做一方面是因为这是做好一个项目,让客户满意的最佳心态. 另一个方面,  我们也要历练自己的想法, 要强制自己去思考, 去学习如何从idea to money.  用别人的风险来提高自己的经验, 这是世界上最便宜我们的事.</strong></p>
-<p><strong>世界之大, 能让我们学习的东西太多太多, 不要错过走过你身边的每一个���目, 除了得到钱, 还应该得到更重要的经验.</strong></p>
+<p><strong>世界之大, 能让我们学习的东西太多太多, 不要错过走过你身边的每一个项目, 除了得到钱, 还应该得到更重要的经验.</strong></p>
 
       
     </div>
@@ -371,14 +505,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -386,23 +558,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -418,12 +590,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -432,7 +610,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2009/page/11/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,15 +231,15 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/ubuntuzhongxiugainm-appletmorenwangluolianjie.html">Ubuntu中修改nm-applet默认网络连接</a></h1>
+    <h1 class="title"><a href="/y2009/m05/ubuntuzhongxiugainm-appletmorenwangluolianjie.html">Ubuntu中修改Nm Applet默认网络连接</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>不知道大家注意到没有，Ubuntu Feisty自带的nm-applet有一个小毛病：一旦你通过它连上某个无线网络之后，不管你是不是点错了，或者说是不是真的需要保留这个连接的信息，它都会记录下这个网络ID，今后如果检测到这个网络，根据它自己排的优先级（最后一次成功连接，但有时候不准，或者说有可能在来回切换时不小心被弄乱），如果它排在前面，就会自动连上去，就算你手动选择另一个，它还是不依不饶的切回它认定的那一个。</p>
-<p>　　遇到这个情况，我想许多朋友大概和我一样，在它提供的上下文菜单找，不过GNOME的界面哲学使得界面菜单直接提供的信息和高级功能很有限，或者到类似 /etc/<em>、~/.</em>/之类的地方找相关配置文件，但是实际上它也不是那么“传统”，因为nm-applet使用GConf来记录配置信息：</p>
-<p>　　在命令行输入gconfig-editor，打开GConf编辑器，定位到system -&gt; networking -&gt; wireless -&gt; networks，这个目录下记录了所有nm-applet使用的无线网络ID和相关配置信息，如果有不希望保留的配置，直接进到相关目录，右键逐个点击右面的key-value条目，Unset Key，完成以后就可以让nm-applet“忘掉”这个无线网络连接。当然，通过这个小工具，你也可以手工对某组具体的key-value做修改。</p>
+        <p>　　不知道大家注意到没有，Ubuntu Feisty自带的nm-applet有一个小毛病：一旦你通过它连上某个无线网络之后，不管你是不是点错了，或者说是不是真的需要保留这个连接的信息，它都会记录下这个网络ID，今后如果检测到这个网络，根据它自己排的优先级（最后一次成功连接，但有时候不准，或者说有可能在来回切换时不小心被弄乱），如果它排在前面，就会自动连上去，就算你手动选择另一个，它还是不依不饶的切回它认定的那一个。</p>
+<p>　　遇到这个情况，我想许多朋友大概和我一样，在它提供的上下文菜单找，不过GNOME的界面哲学使得界面菜单直接提供的信息和高级功能很有限，或者到类似 /etc/<em>、~/.</em>/之类的地方找相关配置文件，但是实际上它也不是那么&quot;传统&quot;，因为nm-applet使用GConf来记录配置信息：</p>
+<p>　　在命令行输入gconfig-editor，打开GConf编辑器，定位到system -&gt; networking -&gt; wireless -&gt; networks，这个目录下记录了所有nm-applet使用的无线网络ID和相关配置信息，如果有不希望保留的配置，直接进到相关目录，右键逐个点击右面的key-value条目，Unset Key，完成以后就可以让nm-applet&quot;忘掉&quot;这个无线网络连接。当然，通过这个小工具，你也可以手工对某组具体的key-value做修改。</p>
 <p>　　这件事也让我联想起Linus Torvalds不止一次（也包括不少KDE的死忠）对GNOME的微词：尽可能让用户自己掌控，还是尽可能帮用户拿主意？这是个问题。</p>
 
       
@@ -247,6 +260,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -255,7 +280,7 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/zizhiduoxianchengapt-get.html">自制多线程apt-get</a></h1>
+    <h1 class="title"><a href="/y2009/m05/zizhiduoxianchengapt-get.html">自制多线程Apt Get</a></h1>
   
 
     </header>
@@ -274,18 +299,18 @@
 <p>其实问题的答案非常简单，apt-get的一个参数帮了大忙。</p>
 <p>apt-get有一个参数print-uris就是我们需要的参数，他会告诉我们下载包的地址。</p>
 <p>譬如寻找java5，可以使用：</p>
-<p>apt-get —print-uris -y install sun-java5-jdk | grep http | awk ‘{print $1}’ | sed “s/&#39;//g”</p>
+<p>apt-get --print-uris -y install sun-java5-jdk | grep http | awk &#39;{print $1}&#39; | sed &quot;s/&#39;//g&quot;</p>
 <p>这一行会自动打印出安装sun-java5-jdk需要的Package（包）。</p>
 <p>那么问题就非常简单了。</p>
 <p>问题解决：</p>
 <p>1、用Linux下面的多线程下载工具axel来下载，命令行：</p>
-<p>apt-get —print-uris -y install sun-java5-jdk | grep http | awk ‘{print $1}’ | sed “s/&#39;//g” | xargs -l1 axel -n5 -a </p>
+<p>apt-get --print-uris -y install sun-java5-jdk | grep http | awk &#39;{print $1}&#39; | sed &quot;s/&#39;//g&quot; | xargs -l1 axel -n5 -a </p>
 <p>这样就可以多线程下载需要的软件包。</p>
 <p>下载完成以后，把下载的软件包，拷贝到/var/cache/apt/archives目录，然后：</p>
 <p>sudo cp *.deb /var/cache/apt/archives</p>
 <p>sudo aptitude instal sun-java5-jdk.</p>
 <p>2、生成一个包的列表文件：</p>
-<p>apt-get —print-uris -y install sun-java5-jdk | grep http | awk ‘{print $1}’ | sed “s/&#39;//g” &gt; jdk5.lst</p>
+<p>apt-get --print-uris -y install sun-java5-jdk | grep http | awk &#39;{print $1}&#39; | sed &quot;s/&#39;//g&quot; &gt; jdk5.lst</p>
 <p>然后到Windows下面用迅雷下载完成以后，在拷贝到cache目录也是一样的。</p>
 <p>补充：这个方法的缺点:没有了包的MD5校验.</p>
 <p>这种方法，甚至可以帮助没有网络连接的Ubuntu电脑安装软件。只要把从有网络连接的电脑上面下载完成的文件拷贝到U盘上，再拷贝到没有网络的电脑的cache目录下面就可以了，或者直接dpkg -i就可以了!</p>
@@ -308,6 +333,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -316,63 +353,91 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/guanyulinuxshang4gneicunwufazhengchangshibiedechuli.html">关于linux上4g内存无法正常识别的处理</a></h1>
+    <h1 class="title"><a href="/y2009/m05/guanyulinuxshang4gneicunwufazhengchangshibiedechuli.html">关于Linux上4g内存无法正常识别的处理</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近上了新服务器 xeon 5110<br>主板是MSI 5000v<br>内存是 1G FBD*1</p>
+        <p>最近上了新服务器 xeon 5110
+主板是MSI 5000v
+内存是 1G FBD*1</p>
 <p>顺利安装centos 5.0</p>
-<p>但是发现 top下 内存显示为3.3g不到点<br>没有完全识别出4g</p>
+<p>但是发现 top下 内存显示为3.3g不到点
+没有完全识别出4g</p>
 <p>查了大量资料后发现</p>
-<p>主要需要2个方面设置<br>1.bios:在bios里开启对大内存的设置<br>2.安装支持大内存的kernel</p>
-<p>centos 5.0 默认安装 for i386的内核不支持 4g+的内存<br>需要安装上kernel-hugemem</p>
+<p>主要需要2个方面设置
+1.bios:在bios里开启对大内存的设置
+2.安装支持大内存的kernel</p>
+<p>centos 5.0 默认安装 for i386的内核不支持 4g+的内存
+需要安装上kernel-hugemem</p>
 <div class="blockcode">
 
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>yum install kernel-hugemem</td><br></tr><br></tbody></table><br></span>`</div><br>结果发现 centos 下面 没有 kernel-hugemem这个rpm包了</p>
-<p>已经改名为kernel-PAE<br>尝试用yum安装</p>
+<p><td>yum install kernel-hugemem</td>
+</tr>
+</tbody></table>
+</span>`</div>
+结果发现 centos 下面 没有 kernel-hugemem这个rpm包了</p>
+<p>已经改名为kernel-PAE
+尝试用yum安装</p>
 <div class="blockcode">
 
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>yum install kernel-PAE</td><br></tr><br></tbody></table><br></span>`</div><br>安装好后 还需要手工修改 引导</p>
+<p><td>yum install kernel-PAE</td>
+</tr>
+</tbody></table>
+</span>`</div>
+安装好后 还需要手工修改 引导</p>
 <p><div class="blockcode"><span class="headactions">Copy to clipboard</span></p>
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>vi /boot/grub/grub.conf</td><br></tr><br></tbody></table><br></span>`</div><br>如果看到如下代码 代表PAE内核已经安装好了</p>
+<p><td>vi /boot/grub/grub.conf</td>
+</tr>
+</tbody></table>
+</span>`</div>
+如果看到如下代码 代表PAE内核已经安装好了</p>
 <div class="quote">
 
-<h5>QUOTE:</h5>
+<h5 id="quote-">QUOTE:</h5>
 <blockquote>
 <p>title CentOS (2.6.18-8.1.4.el5PAE)</p>
 <p>root (hd0,0)</p>
 <p>kernel /vmlinuz-2.6.18-8.1.4.el5PAE ro root=LABEL=/</p>
-<p>initrd /initrd-2.6.18-8.1.4.el5PAE.img<br></div><br>修改设置为默认启动</p>
+<p>initrd /initrd-2.6.18-8.1.4.el5PAE.img
+</div>
+修改设置为默认启动</p>
 <div class="blockcode">
 
 </blockquote>
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>default=0</td><br></tr><br></tbody></table><br></span>`</div></p>
+<p><td>default=0</td>
+</tr>
+</tbody></table>
+</span>`</div></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>init 6</td><br></tr><br></tbody></table><br>重启服务器<br>再执行top 内存已经是4.1g了</p>
+<p><td>init 6</td>
+</tr>
+</tbody></table>
+重启服务器
+再执行top 内存已经是4.1g了</p>
 <p>以上全部在centos 5.0系统下执行</p>
 
       
@@ -393,6 +458,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -407,7 +484,13 @@
     </header>
     <div class="entry">
       
-        <p>做个小建议（个人意见而已，见笑）：<br>是否能够尝试下新的管理手段，对其放开管理，由他们自主去决定怎样去作，公司只是提出公司的目标要求，但是公司可以监控进度，80%正确的情况下不要干涉，公司方面可以对项目组提出建议，但是一定要明确决定权在项目组，公司唯一的要求就是公司对这个项目的目标。不管他们是怎样完成的，总之是要完成，可以尝试下。<br>新想到的一个观点：<br>1.是否可以创建一个鲇鱼团队，就像iphone给予手机行业的一样，对公司其他团队进行影响。<br>2.可以找专家（心理学、社会学等）给公司做个建议。<br>3.设置各种奖励，比如：年度VIP（奖励可以不按时打卡一年）<br>4.提供员工反馈建议的途径</p>
+        <p>做个小建议（个人意见而已，见笑）：
+是否能够尝试下新的管理手段，对其放开管理，由他们自主去决定怎样去作，公司只是提出公司的目标要求，但是公司可以监控进度，80%正确的情况下不要干涉，公司方面可以对项目组提出建议，但是一定要明确决定权在项目组，公司唯一的要求就是公司对这个项目的目标。不管他们是怎样完成的，总之是要完成，可以尝试下。
+新想到的一个观点：
+1.是否可以创建一个鲇鱼团队，就像iphone给予手机行业的一样，对公司其他团队进行影响。
+2.可以找专家（心理学、社会学等）给公司做个建议。
+3.设置各种奖励，比如：年度VIP（奖励可以不按时打卡一年）
+4.提供员工反馈建议的途径</p>
 
       
     </div>
@@ -427,6 +510,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -441,7 +536,10 @@
     </header>
     <div class="entry">
       
-        <p>有很多事情真是难说清，相互交叉，蛮复杂的，但是还是一管的原则，复杂的事情简单化，现在我该怎么做？<br>本来是很尽心很努力地在做一件事，但是周围环境缺不尽人意，不过也正常，人生不如意十有八九，但是有些问题是不能由我处理的，而且我也处理不了，所以这件事也许就该拖沓的进行了。<br>每个人好像都有自己的理由，但是理由多了，问题也就多了，那么是不是每个人少一些理由，问题就会少了，事情也就顺利进行了。<br>青春慢慢逝去，偶也要慢慢成长。</p>
+        <p>有很多事情真是难说清，相互交叉，蛮复杂的，但是还是一管的原则，复杂的事情简单化，现在我该怎么做？
+本来是很尽心很努力地在做一件事，但是周围环境缺不尽人意，不过也正常，人生不如意十有八九，但是有些问题是不能由我处理的，而且我也处理不了，所以这件事也许就该拖沓的进行了。
+每个人好像都有自己的理由，但是理由多了，问题也就多了，那么是不是每个人少一些理由，问题就会少了，事情也就顺利进行了。
+青春慢慢逝去，偶也要慢慢成长。</p>
 <p>坚持一个理念：无论如何，认认真真做事，踏踏实实做人。</p>
 
       
@@ -470,14 +568,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -485,23 +621,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -517,12 +653,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -531,7 +673,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

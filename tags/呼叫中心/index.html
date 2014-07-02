@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/呼叫中心/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -225,14 +238,22 @@
     <div class="entry">
       
         <p>总结下：</p>
-<p>最大的问题：<br>1.客户端注册不稳定 ，第一次注册都成功，之后就逐渐掉线，直至全部掉线，我们有120个分机。<br>解决：是大唐高鸿的驻地网关的问题，软件版本2011-3-1的，有问题，降级解决，这个问题把我搞死了。</p>
-<p>2.*8分组代答的问题。<br>刚开始，为了分组看起来有意义，就使用了字母作为分组：比如：YeWuZu1，不能代答，然后改为6680，跟坐席组号相同，也不行，最终改为1，可以了，真是奇怪呀，这个组又没啥用，为啥要这样弄呢？<br>好奇怪的测试结果。。22可以、220 222  88 99都不可以，，33可以。y1不可以。</p>
-<p>3.外呼，原来外呼只能一个，不能多路，运行商确认是外呼的时候，主叫号码设置有问题<br>之后使用<br>exten =&gt; _NXXXXXXX,1,Macro(user-callerid,)<br>exten =&gt; _NXXXXXXX,n,Set(CALLERID(all)=“6931nnnn” &lt;6931nnnn&gt;)</p>
+<p>最大的问题：
+1.客户端注册不稳定 ，第一次注册都成功，之后就逐渐掉线，直至全部掉线，我们有120个分机。
+解决：是大唐高鸿的驻地网关的问题，软件版本2011-3-1的，有问题，降级解决，这个问题把我搞死了。</p>
+<p>2.*8分组代答的问题。
+刚开始，为了分组看起来有意义，就使用了字母作为分组：比如：YeWuZu1，不能代答，然后改为6680，跟坐席组号相同，也不行，最终改为1，可以了，真是奇怪呀，这个组又没啥用，为啥要这样弄呢？
+好奇怪的测试结果。。22可以、220 222  88 99都不可以，，33可以。y1不可以。</p>
+<p>3.外呼，原来外呼只能一个，不能多路，运行商确认是外呼的时候，主叫号码设置有问题
+之后使用
+exten =&gt; _NXXXXXXX,1,Macro(user-callerid,)
+exten =&gt; _NXXXXXXX,n,Set(CALLERID(all)=&quot;6931nnnn&quot; &lt;6931nnnn&gt;)</p>
 <p>强制设定，可以了，很奇怪得是按说前面的6931设置后，尖括号内没必要用真实号码了，不清楚为啥驻地网关非要使用后面的号码为显示号码，应该还是大唐的问题，毕竟sip协议写的，前面是显示号码的。</p>
-<p>4.拦截呼叫中心号码<br>这个简单，直接  exten =&gt; _6931nnnn,1,Goto(ext-queues,06800,1)  转到Queue中去就行了。</p>
+<p>4.拦截呼叫中心号码
+这个简单，直接  exten =&gt; _6931nnnn,1,Goto(ext-queues,06800,1)  转到Queue中去就行了。</p>
 <p>5.录音分目录存放，使用agi实现自动创建目录，返回路径即可</p>
 <p>6.主叫号码，从中继(使用SIP账号登录)过来的呼叫，这边显示的主叫是系统设置的显示主叫，在Queue中更是显示的两个号码相加的号码，可以使用SIP_HEADER(From)获取，SIP的显示号码，通过截取获得真实主叫。</p>
-<p>7.驻���网关中的拨号计划，不要短号码覆盖长号码，否则无法呼出长号码。</p>
+<p>7.驻地网关中的拨号计划，不要短号码覆盖长号码，否则无法呼出长号码。</p>
 <p>8.通过网关接入的电话，DTMF获取问题。在驻地网关，不一定都是要选择透传，这次选择rfc2833，估计是要和asterisk的配置一样。</p>
 <p>9.A8里面需要设置代理服务器才能呼出，很奇怪的选项，如果没有，则使用注册服务器相同的地址。</p>
 <p>10.ringgroup只能获取到1个呼入，跟下面所包含的分机数量无关，再来电话，则直接转到fail。</p>
@@ -264,6 +285,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -307,14 +340,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -322,23 +393,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -354,12 +425,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -368,7 +445,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

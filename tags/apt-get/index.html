@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/apt-get/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,7 +231,7 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/zizhiduoxianchengapt-get.html">自制多线程apt-get</a></h1>
+    <h1 class="title"><a href="/y2009/m05/zizhiduoxianchengapt-get.html">自制多线程Apt Get</a></h1>
   
 
     </header>
@@ -237,18 +250,18 @@
 <p>其实问题的答案非常简单，apt-get的一个参数帮了大忙。</p>
 <p>apt-get有一个参数print-uris就是我们需要的参数，他会告诉我们下载包的地址。</p>
 <p>譬如寻找java5，可以使用：</p>
-<p>apt-get —print-uris -y install sun-java5-jdk | grep http | awk ‘{print $1}’ | sed “s/&#39;//g”</p>
+<p>apt-get --print-uris -y install sun-java5-jdk | grep http | awk &#39;{print $1}&#39; | sed &quot;s/&#39;//g&quot;</p>
 <p>这一行会自动打印出安装sun-java5-jdk需要的Package（包）。</p>
 <p>那么问题就非常简单了。</p>
 <p>问题解决：</p>
 <p>1、用Linux下面的多线程下载工具axel来下载，命令行：</p>
-<p>apt-get —print-uris -y install sun-java5-jdk | grep http | awk ‘{print $1}’ | sed “s/&#39;//g” | xargs -l1 axel -n5 -a </p>
+<p>apt-get --print-uris -y install sun-java5-jdk | grep http | awk &#39;{print $1}&#39; | sed &quot;s/&#39;//g&quot; | xargs -l1 axel -n5 -a </p>
 <p>这样就可以多线程下载需要的软件包。</p>
 <p>下载完成以后，把下载的软件包，拷贝到/var/cache/apt/archives目录，然后：</p>
 <p>sudo cp *.deb /var/cache/apt/archives</p>
 <p>sudo aptitude instal sun-java5-jdk.</p>
 <p>2、生成一个包的列表文件：</p>
-<p>apt-get —print-uris -y install sun-java5-jdk | grep http | awk ‘{print $1}’ | sed “s/&#39;//g” &gt; jdk5.lst</p>
+<p>apt-get --print-uris -y install sun-java5-jdk | grep http | awk &#39;{print $1}&#39; | sed &quot;s/&#39;//g&quot; &gt; jdk5.lst</p>
 <p>然后到Windows下面用迅雷下载完成以后，在拷贝到cache目录也是一样的。</p>
 <p>补充：这个方法的缺点:没有了包的MD5校验.</p>
 <p>这种方法，甚至可以帮助没有网络连接的Ubuntu电脑安装软件。只要把从有网络连接的电脑上面下载完成的文件拷贝到U盘上，再拷贝到没有网络的电脑的cache目录下面就可以了，或者直接dpkg -i就可以了!</p>
@@ -275,14 +288,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -290,23 +341,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -322,12 +373,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -336,7 +393,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

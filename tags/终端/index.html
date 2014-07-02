@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/终端/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,13 +231,18 @@
       
       
   
-    <h1 class="title"><a href="/y2010/m08/wokanwebyisi.html">我看web已死</a></h1>
+    <h1 class="title"><a href="/y2010/m08/wokanwebyisi.html">我看Web已死</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近流行Web已死的讨论，粗略看了下，确实有些道理，其实也很正常，物极必反，现在的互联网到处充斥着垃圾数据，确实该被抛弃了，取而代之的是个人需要的数据，那么也就是各种应用。当然，不是果断的说，已死，而是会有新的事物来进行分割原有的领地，就如阅读器于PC 。<br>革命不是单一出现的，而是各种事物共同推进的，个人认为至少有这么几个原因：<br>1.web垃圾太多，有需求数据精确化。<br>2.手持终端丰富化，手机、阅读器等，为移动应用零碎时间提供可能。<br>3.网上应用商店的兴起，提供了数据获取的总入口。<br>4.精确数据的收集已经基本完成，现在能够提供丰富的应用。</p>
+        <p>最近流行Web已死的讨论，粗略看了下，确实有些道理，其实也很正常，物极必反，现在的互联网到处充斥着垃圾数据，确实该被抛弃了，取而代之的是个人需要的数据，那么也就是各种应用。当然，不是果断的说，已死，而是会有新的事物来进行分割原有的领地，就如阅读器于PC 。
+革命不是单一出现的，而是各种事物共同推进的，个人认为至少有这么几个原因：
+1.web垃圾太多，有需求数据精确化。
+2.手持终端丰富化，手机、阅读器等，为移动应用零碎时间提供可能。
+3.网上应用商店的兴起，提供了数据获取的总入口。
+4.精确数据的收集已经基本完成，现在能够提供丰富的应用。</p>
 <p>我个人是赞成这种模式的，目前来讲，我个人对于Web的应用仅限于：RSS阅读，个人博客填写，技术搜索，mail，即时通讯，偶尔还有新闻（不过已经很烦新闻站了），淘宝。这些大部分都可以转换为应用，不过最大的问题就是搜索，很必要的应用，但是绝对依赖开放，所以说未来应该是数据共享（还是需要Web展示）+人性化应用的未来。搜索+订阅，不过现在这种基本已经实现了，不过是未来有更丰富的应用入口而已。</p>
 
       
@@ -249,14 +267,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -264,23 +320,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -296,12 +352,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -310,7 +372,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

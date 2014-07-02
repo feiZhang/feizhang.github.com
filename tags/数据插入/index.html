@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/数据插入/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,7 +231,7 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/gaodingdaliangshujucharusqlservermuqiandadaomeimiao2000tiao.html">搞定大量数据插入sql Server,测试最快可达1万(日志设为简单)</a></h1>
+    <h1 class="title"><a href="/y2009/m05/gaodingdaliangshujucharusqlservermuqiandadaomeimiao2000tiao.html">搞定大量数据插入Sql Server,测试最快可达1万(日志设为简单)</a></h1>
   
 
     </header>
@@ -230,15 +243,21 @@
 <p>具体做法：</p>
 <p>1.如果不是必须，把数据库的恢复模式改为“简单”</p>
 <p>2.使用如下的方式插入数据：最好直接作为一条SQL语句直接执行，但是不要写太多条进去，貌似有人说大于1000了，应该有慢下来的，我每次插入20性能已经相当不错，所以就先这样把任务完成先，以后再研究最好的方法。</p>
-<p>BEGIN TRANSACTION<br>INSERT …<br>INSERT …<br>INSERT …<br>COMMIT  TRANSACTION</p>
+<p>BEGIN TRANSACTION
+INSERT ...
+INSERT ...
+INSERT ...
+COMMIT  TRANSACTION</p>
 <p>具体实现方法比较：</p>
 <ol>
 <li>将一次要提交的SQL语句，无论多少条Insert全部组合成为一条SQL语句，以BEGIN TRAN;开始，以COMMIT TRAN;结束。这样的操作速度最快可达1万/秒。</li>
-<li><p>跟上面方法一致，但是每条SQL语句执行一次ExecSQL，第一次ExecSQL(‘BEGIN TRAN’),最后ExecSQL(‘Commit TRAN’),这样操作数据一般，性能提高微弱，目前我测试效率为1500条/秒左右。<br>附加心得：</p>
+<li><p>跟上面方法一致，但是每条SQL语句执行一次ExecSQL，第一次ExecSQL(&#39;BEGIN TRAN&#39;),最后ExecSQL(&#39;Commit TRAN&#39;),这样操作数据一般，性能提高微弱，目前我测试效率为1500条/秒左右。
+附加心得：</p>
 </li>
 <li><p>对于Delphi程序员，有一个严重提醒，不要使用SQL.add();方法进行sql生成，如果第一种方法使用sql.add组合出来一个大的SQL语句，实际上比执行插入操作都慢，导致系统瓶颈，尤其是一条长的SQL语句，多次add，性能之差，不可想象。还是使用String来进行拼接，之后赋值给sql.text为好。</p>
 </li>
-<li>如果使用上面第二种方法，在没有“COMMIT TRAN”，插入一个存储过程的执行，不影响整体事物。（我的程序执行数据插入时候是批量调用对象的Insert方法，因为有很多对象类型不同，其Insert方法也不同，所以需要对此进行测试，发现这样做不影响数据插入）<br>就是这么简单。哈哈。</li>
+<li>如果使用上面第二种方法，在没有“COMMIT TRAN”，插入一个存储过程的执行，不影响整体事物。（我的程序执行数据插入时候是批量调用对象的Insert方法，因为有很多对象类型不同，其Insert方法也不同，所以需要对此进行测试，发现这样做不影响数据插入）
+就是这么简单。哈哈。</li>
 </ol>
 
       
@@ -263,14 +282,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -278,23 +335,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -310,12 +367,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -324,7 +387,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

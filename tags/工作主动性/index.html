@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/工作主动性/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -225,10 +238,20 @@
     <div class="entry">
       
         <p>以下观点仅为个人观点，如果你认为不对，可以不接受..</p>
-<p>不太明白出于什么原因，目前各位的工作我个人感觉缺乏自主性和主动性，导致工作进展慢，效率低。<br>也许是：<br>1.工作习惯的养成（不喜欢独立思考）<br>2.怕承担责任<br>3.工作环境（大家都这样）</p>
-<p>具体表现：<br>1.不是工作安排，不去考虑后续的工作和潜在的问题<br>2.遇到问题，就问该怎么做，自己不去考虑解决方法</p>
-<p>有些奇怪，每个人都有明确的工作分工，自己的工作内容自己最清楚，为什么不能稍微动下脑子，将潜在的问题提前预防，这样是否可以减少你后续的维护量（目前的大部分工作量都在补漏洞）<br>同样的道理，遇到问题，应该是你们自己提出解决方法，我这方面只做审核，不在提供解决方法，原因是你们对此方面的工作比我更熟悉，而且工作也需要你们自己来做，所以最大的话语权在你们手中，我仅仅作为统筹考虑对你们提出的建议方案进行审核并修正。</p>
-<p>就目前的无线项目组，我要求如下：<br>1.自己的工作自己安排进度，考虑相关的问题，潜在的风险，对于和其他人有关联的工作，提出自己的接口方法。自己的工作要有主动性。<br>将这些问题汇报上来，进行统筹考虑。<br>2.遇到问题自己提出解决方法，到我这里进行审核，通过后迅速处理。</p>
+<p>不太明白出于什么原因，目前各位的工作我个人感觉缺乏自主性和主动性，导致工作进展慢，效率低。
+也许是：
+1.工作习惯的养成（不喜欢独立思考）
+2.怕承担责任
+3.工作环境（大家都这样）</p>
+<p>具体表现：
+1.不是工作安排，不去考虑后续的工作和潜在的问题
+2.遇到问题，就问该怎么做，自己不去考虑解决方法</p>
+<p>有些奇怪，每个人都有明确的工作分工，自己的工作内容自己最清楚，为什么不能稍微动下脑子，将潜在的问题提前预防，这样是否可以减少你后续的维护量（目前的大部分工作量都在补漏洞）
+同样的道理，遇到问题，应该是你们自己提出解决方法，我这方面只做审核，不在提供解决方法，原因是你们对此方面的工作比我更熟悉，而且工作也需要你们自己来做，所以最大的话语权在你们手中，我仅仅作为统筹考虑对你们提出的建议方案进行审核并修正。</p>
+<p>就目前的无线项目组，我要求如下：
+1.自己的工作自己安排进度，考虑相关的问题，潜在的风险，对于和其他人有关联的工作，提出自己的接口方法。自己的工作要有主动性。
+将这些问题汇报上来，进行统筹考虑。
+2.遇到问题自己提出解决方法，到我这里进行审核，通过后迅速处理。</p>
 <p><strong>后来考虑下，还是没发送，放到这里，仅当自勉吧。</strong></p>
 
       
@@ -253,14 +276,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -268,23 +329,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -300,12 +361,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -314,7 +381,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

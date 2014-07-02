@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2008/m09/who_ismy_brother.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -219,18 +232,15 @@
     </header>
     <div class="entry">
       
-        <p>今天突然感觉自己活了这么多年，虽然交的朋友不多，不过也在一个号称铁杆的小团体里面稳居核心位置，偶这人比较实在，你敬我一尺，我敬你一丈，不管如何凡事还是比较替别人着想的，但是现在咋感觉这样的人那么少呢，大部分都是口口生生亲兄弟的，在关键时候怎么就没有设身处地为别人想想呢，偶不是一个喜欢强迫别人的人，不会为了一件事，跟在屁股后喋喋不休，偶很有自知自明，点到为止，如果对方都没有任何感觉，那就算了，我不知道是不是我自己的错，还是自己太过认真了，反正是能这样替你想想的人真实太少了。郁闷呀。可悲的是，自己还真是把他们都当作兄弟来对待了，也许是自己只能看到别人的缺点而看不到自己吧，不过近两年我感觉自己真是不少实实在在的帮助过别人，真是搞不清楚了，总结起来，这些东西应该还是看人的性格的，不过自己既然这样体会出来了，就不知道该怎样去对待那些自称亲兄弟的人了。<br>哎，烦。<br>自己回首想想自己看的余华的《兄弟》，真是还得好好去理解理解这个名词。好混乱。</p>
+        <p>今天突然感觉自己活了这么多年，虽然交的朋友不多，不过也在一个号称铁杆的小团体里面稳居核心位置，偶这人比较实在，你敬我一尺，我敬你一丈，不管如何凡事还是比较替别人着想的，但是现在咋感觉这样的人那么少呢，大部分都是口口生生亲兄弟的，在关键时候怎么就没有设身处地为别人想想呢，偶不是一个喜欢强迫别人的人，不会为了一件事，跟在屁股后喋喋不休，偶很有自知自明，点到为止，如果对方都没有任何感觉，那就算了，我不知道是不是我自己的错，还是自己太过认真了，反正是能这样替你想想的人真实太少了。郁闷呀。可悲的是，自己还真是把他们都当作兄弟来对待了，也许是自己只能看到别人的缺点而看不到自己吧，不过近两年我感觉自己真是不少实实在在的帮助过别人，真是搞不清楚了，总结起来，这些东西应该还是看人的性格的，不过自己既然这样体会出来了，就不知道该怎样去对待那些自称亲兄弟的人了。
+哎，烦。
+自己回首想想自己看的余华的《兄弟》，真是还得好好去理解理解这个名词。好混乱。</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
   
   <div class="tags">
@@ -282,11 +292,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -294,23 +341,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -326,12 +373,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -340,7 +393,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

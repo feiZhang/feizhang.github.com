@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2011/m04/1486.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -221,18 +234,14 @@
       
         <p>虽然不是很喜欢看电视剧，但是还是对“很多剧情是误解推动的”挺有感触，很多的揪心剧情都是由各式各样的误解组合起来，让人无限的遗憾，恨不得去敲主角的脑袋，“咋就那么笨呢”，现实没有那么多交错的误解，不过还是不免有一些的。</p>
 <p>但凡遇到这种情况，在已知的情况下，都会去解释的，可我不，不清楚为什么，人的信条？性格？懒惰？不在意？说不准。不过比较明确的是，信条：一般对人，我是采用总体评价的，如果对方可以获得我的信任，那么很ok，他该怎么做就怎么做去吧，一切我都能理解，直到不再信任，同时我认为人这种动物，要想在一生中有所重大的变化，相对来说是巨难的，所以对个人的态度，几乎是不用改变的。再则就是感觉，人生本来就是多样性，谁知道向左走的风景就一定比向右走的风景好多少呢？我就是我，让别人难过，不是我的个性，甚至我宁愿让自己稍微痛苦一点，不是高尚，只是本性，就如我现在不认为所谓的母爱父爱有多高尚一样，你不让他爱他难受，本质来自于本性和礼教，这样说看起来很悲剧，可是谁又能保证不是，谁又能说清楚呢？而过多的依赖自己的本性，而不去做相应的调整，比如溺爱等等，归根结底偶认为是懒，这样看来动物貌似是植物进化过来的，不是为了得到一些什么，都懒得动了。</p>
-<p>这次，我就勤奋一次，解释一下“当时，我在搽桌子，刚搽完（1分钟不到），有人已经暴怒了，做相应的处理了，作罢”，挺无聊的吧。<br>在我如行尸走肉的这段日子里，其实干什么对我来说都是无所谓地。</p>
+<p>这次，我就勤奋一次，解释一下“当时，我在搽桌子，刚搽完（1分钟不到），有人已经暴怒了，做相应的处理了，作罢”，挺无聊的吧。</p>
+<p>在我如行尸走肉的这段日子里，其实干什么对我来说都是无所谓地。</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
   
   <div class="tags">
@@ -284,11 +293,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -296,23 +342,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -328,12 +374,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -342,7 +394,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

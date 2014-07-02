@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/老板/' />
 </head>
 
 
@@ -210,40 +211,17 @@
   
     <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-02-04T08:54:56.000Z"><a href="/y2013/m02/dong-yu-bu-dong.html">2013-02-04</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2013/m02/dong-yu-bu-dong.html">懂与不懂</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>今天，老板重述了一遍公司职能部门转变的思路，信心大增（基数太低），如果能够按照设想进展，结果应该不错，但重要的，在于执行。大多谈的是市场部、项目部，对于我研发部门的内容，倒是没有涉及太多，老板本质是不懂技术的，所以这种情况很正常。<br>今天与部门员工的沟通也发现，非编码人员普遍认为有点闲，刚好匹配我懂编码，不懂测试和文档。<br>文档工作：大家都清楚要做的浅显易懂，条理清晰，有眼球效应，但是具体如何做，是个大学问，几页纸，要说明系统，还要突出自己的特点、优势，文字功底、创造性思维、组织能力都要求非常高。刚刚做了次尝试，效果不好，还需要深入研究，目前只有一个结果：要围绕场景来叙述（貌似1年前，我就这样给老板提过建议，今天又总结出来这个结果，⊙﹏⊙）<br>测试：更头晕，1.手工测试，显然过于低效，但是看起来最可行 2.自动测试，一直找不到好的方法 3.测试用例，编码人员的基本开发工作都完不成，哪有写这个的功夫，况且个人感觉，测试用例的编码技术要求更高点，业务代码都组织不清，更不要提单元测试的代码了。比较难弄。<br>目前来说，测试工作不着急推动，文档工作由项目部接手，所以，2013年工作计划，仅将此项内容设置为尝试项目，主要面临的问题还是需求、设计（产品、技术构架） 及 版本控制。<br>不懂就不做，所以，任何内容尝试之前，都要有一个具体的操作方案，细化到每个步骤。</p>
-<p>老板的这句话感觉很精辟：市场部研究人，项目部研究产品，研发部研究技术。<br>得令。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
   </div>
-</article>
-
-
-
-
-  
-    <article class="post">
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -285,14 +263,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -300,23 +316,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -332,12 +348,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -346,7 +368,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

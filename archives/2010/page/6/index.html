@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2010/page/6/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -226,8 +239,13 @@
       
         <p>记得以前找到过方法，而且可用，忘记了，重新google，发现网上提供的方法，有些问题：</p>
 <p>一个简单的实现如下：</p>
-<p>SELECT <em> FROM <code>table</code><br>WHERE id &gt;= (SELECT floor( RAND() </em> ((SELECT MAX(id) FROM <code>table</code>)-(SELECT MIN(id) FROM <code>table</code>)) + (SELECT MIN(id) FROM <code>table</code>)))<br>ORDER BY id LIMIT 1;<br>简化测试可以写为：select <em> from <code>table</code> where id&gt;=(select rand()</em>(select max(id) from <code>table</code>)) limit 10</p>
-<p>据我测试mysql5.1  如果table有20000条数据，基本没有可能获取到一条大于1000的数据，我也搞不清楚原因，难道是我的mysql版本问题？真是奇怪了。继续测试。<br>将limit 1 改为10后，结果发现，返回的数据依然不能超过1000，而且结果的id不连续，则说明mysql是逐条执行了where的rand，即执行了20000次，这是我的估计，毕竟我不是mysql专家，不知道如何研究。即便是这样，那么每条的几率依然应该是1/20000分之一的，为何结果却出乎意料？<br>换了一个mysql服务器，5.1.41，结果依然如此。</p>
+<p>SELECT <em> FROM <code>table</code>
+WHERE id &gt;= (SELECT floor( RAND() </em> ((SELECT MAX(id) FROM <code>table</code>)-(SELECT MIN(id) FROM <code>table</code>)) + (SELECT MIN(id) FROM <code>table</code>)))
+ORDER BY id LIMIT 1;
+简化测试可以写为：select <em> from <code>table</code> where id&gt;=(select rand()</em>(select max(id) from <code>table</code>)) limit 10</p>
+<p>据我测试mysql5.1  如果table有20000条数据，基本没有可能获取到一条大于1000的数据，我也搞不清楚原因，难道是我的mysql版本问题？真是奇怪了。继续测试。
+将limit 1 改为10后，结果发现，返回的数据依然不能超过1000，而且结果的id不连续，则说明mysql是逐条执行了where的rand，即执行了20000次，这是我的估计，毕竟我不是mysql专家，不知道如何研究。即便是这样，那么每条的几率依然应该是1/20000分之一的，为何结果却出乎意料？
+换了一个mysql服务器，5.1.41，结果依然如此。</p>
 <p>找到原来的写法了，很简单：<span style="color: #ff0000;">order by rand() limit 10</span>,,如果数据大可以用id in (select rand()<em>max(id) from t,..,..) ，呵呵，这是从别人那看到的。另外附加sql server的写法：select top 10 </em> from tablename order by newid()</p>
 
       
@@ -248,6 +266,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -263,9 +293,13 @@
     <div class="entry">
       
         <p>最近的一连串加薪、大力度的房产调控、即将实行的药价反暴利等等一系列现象。也在深切地影响着股市，被一些玩弄是非的人那么一鼓捣，让人真的找不到北了，最近和老妈闲聊村里一个以前的百万富翁破产的事情，让我有点茅塞顿开。原来世界在改变，而且国家也真真切的一直在告诉我们，“参业结构要调整”，只不过没有翻译成大白话，“游戏规则要改变，不改变就去死”，这样的话，一切问题就迎刃而解，外部环境在变化，也不由得共产党不去改变游戏规则，而这些改变在我看来是令人欣喜的。中国会变得更美好，更适合人居。</p>
-<p>1.最底层的广大人民生活质量会提高，将逐步推进西化，医疗教育负担会逐步变化，可以预见，医疗体系、教育体系会进行渐进的改革，目前这两大问题已然成为了，社会的大毒瘤。医生、教师的职业道德素养需要提高了。<br>2.工业化进程会提高，劳动密集型逐步会减少比例，当然是很缓慢的渐进。<br>3.民族思维会更活跃，其实这个方面是共产党在打压的，但前进的步伐不会停止，现在有些理解西藏和台湾了。<br>4.政府的行政能力会有所提高，这个方面我个人是相信人的本质还是有职业诉求的，腐败是不可避免的，但阳光性是这个社会的本性，而如今的腐败，不是个人的问题，而是整个社会的问题，目前的社会情况下，民众都很黑暗，但随着整个社会诉求的提高，政府的执政也会提高。</p>
+<p>1.最底层的广大人民生活质量会提高，将逐步推进西化，医疗教育负担会逐步变化，可以预见，医疗体系、教育体系会进行渐进的改革，目前这两大问题已然成为了，社会的大毒瘤。医生、教师的职业道德素养需要提高了。
+2.工业化进程会提高，劳动密集型逐步会减少比例，当然是很缓慢的渐进。
+3.民族思维会更活跃，其实这个方面是共产党在打压的，但前进的步伐不会停止，现在有些理解西藏和台湾了。
+4.政府的行政能力会有所提高，这个方面我个人是相信人的本质还是有职业诉求的，腐败是不可避免的，但阳光性是这个社会的本性，而如今的腐败，不是个人的问题，而是整个社会的问题，目前的社会情况下，民众都很黑暗，但随着整个社会诉求的提高，政府的执政也会提高。</p>
 <p>唯一阻挠社会进步的问题就是一党，一直我还是比较拥护一党的，只要领导人有些良知，可以减少一部分多党造成的社会资源浪费（有些时候在野党的行为纯粹就是扯淡），但如今，社会资源已经极大丰富了，也许需要改变档位了。当然只要一党执政能力依然强悍，这个需求并不急切。记得前几天看到的一个牛人说的一句话“整个80年代，亚洲很多国家完成了民主化进程，包括蒋经国、泰国等，而中国却错失了这个良机”，毕竟我还年轻，不清楚那时候的环境如何，不过在我看来，那时候的大陆也许在经济实力上都不支持民主化，不清楚泰国是怎么进行的，不过现在的民主泰国，看起来也很悲剧。</p>
-<p>无论如何，对于中国的长城，我是强烈不满意的，鉴于此，在我经济实力允许的时候，真想移民逃跑。中国人太多了，真该政府性的移民几亿人到俄罗斯、加拿大、澳大利亚去。<br>嘿嘿，看来我具有逃跑的潜质。</p>
+<p>无论如何，对于中国的长城，我是强烈不满意的，鉴于此，在我经济实力允许的时候，真想移民逃跑。中国人太多了，真该政府性的移民几亿人到俄罗斯、加拿大、澳大利亚去。
+嘿嘿，看来我具有逃跑的潜质。</p>
 
       
     </div>
@@ -285,6 +319,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -299,7 +345,9 @@
     </header>
     <div class="entry">
       
-        <p>地球变冷了，恐龙灭绝了，貌似环境变化了，我们就要变化，否则就要被抛弃，真是杯具呀，作为这么智慧的人类，居然在环境面前这么的渺小。<br>那么在这个蜗居中的海藻选择的应该算是很对的了，这个社会已经这样了。<br>唉，看起来很可悲呀，改变是杯具，不改变也是杯具，丫的人，真他妈的扯淡。</p>
+        <p>地球变冷了，恐龙灭绝了，貌似环境变化了，我们就要变化，否则就要被抛弃，真是杯具呀，作为这么智慧的人类，居然在环境面前这么的渺小。
+那么在这个蜗居中的海藻选择的应该算是很对的了，这个社会已经这样了。
+唉，看起来很可悲呀，改变是杯具，不改变也是杯具，丫的人，真他妈的扯淡。</p>
 <p>但凡，宗教都是讲究清规戒律的，不要这样不要那样？就没有一个讲究“放”的宗教？</p>
 <p>算了，净是扯淡。</p>
 
@@ -321,6 +369,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -329,16 +389,21 @@
       
       
   
-    <h1 class="title"><a href="/y2010/m06/yitiandechengguoawesomezhongyugaodingliao.html">一天的成果，awesome终于搞定了</a></h1>
+    <h1 class="title"><a href="/y2010/m06/yitiandechengguoawesomezhongyugaodingliao.html">一天的成果，Awesome终于搞定了</a></h1>
   
 
     </header>
     <div class="entry">
       
         <p>以前也使用过awesome，但是由于ubuntu提供的只是2.x，而3.x很难编译，却这却那的，所以一直没有用成，最近看了，放弃鼠标工作的文章，同时由于我的gnome被我搞坏了，所以今天就决定真正的用下awesome，经过一天的奋斗终于搞定，用起来还不错。记录下其中的一些困难。</p>
-<p>1.网上的一些文章跟你真实用的可能版本不同，导致配置不能用。<br>2.网上的配置，都不完整，导致不能正确执行，可以通过查看～目录下的Xsession..Error看到，哪错了。<br>3.官方wiki提供的配置也有不对的地方，同时很严重的是，他提供的配置是基于系统默认配置的，而你仅仅copy给出的部分配置，则也是不能用的，最终的做法，我先copy了默认的rc.lua(/etc/xdg/awesome/rc.lua)，作为基础，然后在里面按照官方wiki,修改或者添加，终于搞定，不过要记着自己修改的地方呀，毕竟默认配置代码太对，版本升级，你要再修改，就有些麻烦了。</p>
+<p>1.网上的一些文章跟你真实用的可能版本不同，导致配置不能用。
+2.网上的配置，都不完整，导致不能正确执行，可以通过查看～目录下的Xsession..Error看到，哪错了。
+3.官方wiki提供的配置也有不对的地方，同时很严重的是，他提供的配置是基于系统默认配置的，而你仅仅copy给出的部分配置，则也是不能用的，最终的做法，我先copy了默认的rc.lua(/etc/xdg/awesome/rc.lua)，作为基础，然后在里面按照官方wiki,修改或者添加，终于搞定，不过要记着自己修改的地方呀，毕竟默认配置代码太对，版本升级，你要再修改，就有些麻烦了。</p>
 <p>现在还有一些问题，没弄明白：</p>
-<p>1.能否自己创建新布局，或者修改布局。<br>2.正常的布局，如果打开新程序，总是出现在最前面，感觉不好，能否指定新打开的窗口出现的位置？(貌似这个算是正常的，新打开的窗口就是要占据焦点的，你不用了，一关，就恢复了，这个暂且不管吧)<br>3.能否限制打开的程序窗口的数量，或者大于多少个，则剩余的全为浮动，这样原有的布局就不会被搞乱了。<br>4.官方wiki提供的autostar不能用，反正我是怎么弄，他都不启动。</p>
+<p>1.能否自己创建新布局，或者修改布局。
+2.正常的布局，如果打开新程序，总是出现在最前面，感觉不好，能否指定新打开的窗口出现的位置？(貌似这个算是正常的，新打开的窗口就是要占据焦点的，你不用了，一关，就恢复了，这个暂且不管吧)
+3.能否限制打开的程序窗口的数量，或者大于多少个，则剩余的全为浮动，这样原有的布局就不会被搞乱了。
+4.官方wiki提供的autostar不能用，反正我是怎么弄，他都不启动。</p>
 
       
     </div>
@@ -357,6 +422,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -411,14 +488,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -426,23 +541,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -458,12 +573,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -472,7 +593,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

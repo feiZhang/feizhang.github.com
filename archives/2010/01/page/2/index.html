@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2010/01/page/2/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -229,11 +242,20 @@
 <ol>
 <li>drupal中的url路径必须通过api进行定义，有几种方法：1.直接通过api定义 2.在 *.module文件中的 {modulename}_menu函数中定义</li>
 <li>其实drupal的所有url参数除了业务参数外，其他的路径全部在系统设置时已经完全定义完成，比如：?q=admin/build/themes 就是定义了一个 admin/build/themes 这样的名字的路径，同时有一个对应的回调函数，每次遇到这个路径则调用此函数处理。当然这样的路径也支持通配符。</li>
-<li><p>目前来讲我只知道在module中能定义 *_menu钩子，在主题中发现不行<br>主题系统</p>
+<li><p>目前来讲我只知道在module中能定义 *_menu钩子，在主题中发现不行
+主题系统</p>
 </li>
 <li><p>在系统选择主题时，会将主题系统的设置进行处理并缓存，1.按照模块去生成主题信息缓存，比如node.tpl.php第一个选择是node模块的，2.根据主题引擎对主题信息进行补充 3.根据自定义主题对主题信息进行缓存。</p>
 </li>
-<li>在主题系统中可以通过 phptemplate_preprocess_node 函数，增加新的模板文件选择。比如：<br><coolcode><br>function phptemplate_preprocess_node(&amp;$vars) {<br>if (drupal_is_front_page()) {<br>$vars[&#39;template_files&#39;][] = ‘node-front’;<br>}<br>}<br></coolcode><br>算是重新定义了一个node模板。</li>
+<li>在主题系统中可以通过 phptemplate_preprocess_node 函数，增加新的模板文件选择。比如：
+<coolcode>
+function phptemplate_preprocess_node(&amp;$vars) {
+if (drupal_is_front_page()) {
+$vars[&#39;template_files&#39;][] = &#39;node-front&#39;;
+}
+}
+</coolcode>
+算是重新定义了一个node模板。</li>
 <li>子主题继承基主题的内容，但是必须自定一个css文件，<strong>如2一样要增加模板选择则必须在此主题下有父模板（node.tpl.php）的存在</strong>（因为这个问题，让我调试了1整天程序），如果没有node.tpl.php，则系统直接向基主题寻找node的模板，而忽略了子主题定义的新模板（这里我认为是系统的一个问题，也许遇到问题时我们应该先去查看系统bug列表，也许里面有呢，只不过我的英文太烂，所以只能自己去测试，我不能保证是不是如此，但根据我的调试，认为确实如此）</li>
 </ol>
 
@@ -261,14 +283,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -276,23 +336,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -308,12 +368,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -322,7 +388,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

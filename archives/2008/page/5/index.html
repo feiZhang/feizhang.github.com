@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2008/page/5/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -224,7 +237,8 @@
     </header>
     <div class="entry">
       
-        <p>自己近来一直使用FireFox，所以很少使用IE，由于将我QQ空间转向到Liangpeng.net，所以有了一部分IE的“忠实”用户，偶尔回来的偶的blog，普遍反应，“打不开”，为啥呢，我自己试了，没问题呀，自己用IE试了也没问题，用家里的娱乐电脑一试，还真是有这个问题，于是乎，找了半天的原因，html内容已经下载完成，就是不显示，开始以为是自己页面的编码问题，找了半天原因，也没搞定，突然想起IE的编码设置，一看，居然是GB2312，晕，偶明明添加 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 了，为啥还是GB2312，郁闷，点成自动，居然就没问题了，但是后来发现普遍用户都没有点选自动识别，所以还得找原因，原来IE还真有点弱智，是根据HTML解析时的第一个字符来进行编码判断的，所以一般会根据&lt;title&gt;里面的中文内容进行识别，而很容易识别成GB2312，所以需要将 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 放在&lt;title&gt;前面，首先告诉IE，我他妈的是UTF-8，随之问题解决。<br>真是浪费时间呀。</p>
+        <p>自己近来一直使用FireFox，所以很少使用IE，由于将我QQ空间转向到Liangpeng.net，所以有了一部分IE的&quot;忠实&quot;用户，偶尔回来的偶的blog，普遍反应，“打不开”，为啥呢，我自己试了，没问题呀，自己用IE试了也没问题，用家里的娱乐电脑一试，还真是有这个问题，于是乎，找了半天的原因，html内容已经下载完成，就是不显示，开始以为是自己页面的编码问题，找了半天原因，也没搞定，突然想起IE的编码设置，一看，居然是GB2312，晕，偶明明添加 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 了，为啥还是GB2312，郁闷，点成自动，居然就没问题了，但是后来发现普遍用户都没有点选自动识别，所以还得找原因，原来IE还真有点弱智，是根据HTML解析时的第一个字符来进行编码判断的，所以一般会根据&lt;title&gt;里面的中文内容进行识别，而很容易识别成GB2312，所以需要将 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 放在&lt;title&gt;前面，首先告诉IE，我他妈的是UTF-8，随之问题解决。
+真是浪费时间呀。</p>
 
       
     </div>
@@ -243,6 +257,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -252,13 +278,14 @@
       
       
   
-    <h1 class="title"><a href="/y2008/m09/word_2_6_1_bug.html">Wordpress2.6.1的漏洞,我的blog被黑了</a></h1>
+    <h1 class="title"><a href="/y2008/m09/word_2_6_1_bug.html">Wordpress2.6.1的漏洞,我的Blog被黑了</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>昨天发现wp出2.6.2了，感觉仅仅是小版本升级，也就没有注意，今天登陆发现老是提示我密码错误，感觉坏了，随即到数据库一看，多出来了两个[admin    ]账号，就是admin加空格，我靠，这么弱智的漏洞居然让wp给搞出来了。惊恐万分，不过这个黑客还是有点良心的，没有将我的数据给全部删除，谢天谢地，赶快看了2.6.2的bug列表，居然就是处理这个问题的，看来次问题在2.6.2没有公布前，知道的人还不多，公布后，算是全天下人都知道，某些人出于好奇就随便搞搞你blog。呵呵，如果没什么恶意，偶还是不怪他的，就怕他给俺的主题代码里面，或者数据库里面搞进去一些back door，那就麻烦了，以后要受制于人了，希望这样的事情没有发生。<br>反正是郁闷呀。wp这个bug出的也太窝囊了。</p>
+        <p>昨天发现wp出2.6.2了，感觉仅仅是小版本升级，也就没有注意，今天登陆发现老是提示我密码错误，感觉坏了，随即到数据库一看，多出来了两个[admin    ]账号，就是admin加空格，我靠，这么弱智的漏洞居然让wp给搞出来了。惊恐万分，不过这个黑客还是有点良心的，没有将我的数据给全部删除，谢天谢地，赶快看了2.6.2的bug列表，居然就是处理这个问题的，看来次问题在2.6.2没有公布前，知道的人还不多，公布后，算是全天下人都知道，某些人出于好奇就随便搞搞你blog。呵呵，如果没什么恶意，偶还是不怪他的，就怕他给俺的主题代码里面，或者数据库里面搞进去一些back door，那就麻烦了，以后要受制于人了，希望这样的事情没有发生。
+反正是郁闷呀。wp这个bug出的也太窝囊了。</p>
 
       
     </div>
@@ -277,6 +304,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -292,7 +331,15 @@
     </header>
     <div class="entry">
       
-        <p>有一天，我挑着担子从桥上走过，听到他们在说翘鼻子许阿三死掉了，我就把担子<br>放下，拿起挂在脖子上的毛巾擦脸上的汗水，我听着他们说翘鼻子许阿三是怎么死掉的，<br>他们说是吃年糕噎死的。吃年糕噎死，我还是第一次听说，以前听说过有一个人吃花生<br>噎死了。这时候他们向我叫起来：<br>“许阿三……翘鼻子阿三……”<br>我低着头“嗯”的答应了一声，他们哈哈笑了起来，问我：<br>“你手里拿着什么？”<br>我看了看手里的毛巾，说：<br>“一毛巾。”
+        <p>有一天，我挑着担子从桥上走过，听到他们在说翘鼻子许阿三死掉了，我就把担子
+放下，拿起挂在脖子上的毛巾擦脸上的汗水，我听着他们说翘鼻子许阿三是怎么死掉的，
+他们说是吃年糕噎死的。吃年糕噎死，我还是第一次听说，以前听说过有一个人吃花生
+噎死了。这时候他们向我叫起来：
+“许阿三……翘鼻子阿三……”
+我低着头“嗯”的答应了一声，他们哈哈笑了起来，问我：
+“你手里拿着什么？”
+我看了看手里的毛巾，说：
+“一毛巾。”
       
     </div>
     <footer>
@@ -315,6 +362,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -329,7 +388,9 @@
     </header>
     <div class="entry">
       
-        <p>今天突然感觉自己活了这么多年，虽然交的朋友不多，不过也在一个号称铁杆的小团体里面稳居核心位置，偶这人比较实在，你敬我一尺，我敬你一丈，不管如何凡事还是比较替别人着想的，但是现在咋感觉这样的人那么少呢，大部分都是口口生生亲兄弟的，在关键时候怎么就没有设身处地为别人想想呢，偶不是一个喜欢强迫别人的人，不会为了一件事，跟在屁股后喋喋不休，偶很有自知自明，点到为止，如果对方都没有任何感觉，那就算了，我不知道是不是我自己的错，还是自己太过认真了，反正是能这样替你想想的人真实太少了。郁闷呀。可悲的是，自己还真是把他们都当作兄弟来对待了，也许是自己只能看到别人的缺点而看不到自己吧，不过近两年我感觉自己真是不少实实在在的帮助过别人，真是搞不清楚了，总结起来，这些东西应该还是看人的性格的，不过自己既然这样体会出来了，就不知道该怎样去对待那些自称亲兄弟的人了。<br>哎，烦。<br>自己回首想想自己看的余华的《兄弟》，真是还得好好去理解理解这个名词。好混乱。</p>
+        <p>今天突然感觉自己活了这么多年，虽然交的朋友不多，不过也在一个号称铁杆的小团体里面稳居核心位置，偶这人比较实在，你敬我一尺，我敬你一丈，不管如何凡事还是比较替别人着想的，但是现在咋感觉这样的人那么少呢，大部分都是口口生生亲兄弟的，在关键时候怎么就没有设身处地为别人想想呢，偶不是一个喜欢强迫别人的人，不会为了一件事，跟在屁股后喋喋不休，偶很有自知自明，点到为止，如果对方都没有任何感觉，那就算了，我不知道是不是我自己的错，还是自己太过认真了，反正是能这样替你想想的人真实太少了。郁闷呀。可悲的是，自己还真是把他们都当作兄弟来对待了，也许是自己只能看到别人的缺点而看不到自己吧，不过近两年我感觉自己真是不少实实在在的帮助过别人，真是搞不清楚了，总结起来，这些东西应该还是看人的性格的，不过自己既然这样体会出来了，就不知道该怎样去对待那些自称亲兄弟的人了。
+哎，烦。
+自己回首想想自己看的余华的《兄弟》，真是还得好好去理解理解这个名词。好混乱。</p>
 
       
     </div>
@@ -348,6 +409,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -393,14 +466,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -408,23 +519,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -440,12 +551,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -454,7 +571,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

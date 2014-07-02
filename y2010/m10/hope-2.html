@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2010/m10/hope-2.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -223,19 +236,16 @@
 <p>我生来，就是一个有那么点装比的人，总是膜拜那些所谓的经典，但是说实话，我确实很多东西，看不出什么道道来，比如今天我要说的《肖恩克的救赎》，当然，就是再傻比，我还是在第一次看他时，都认为是好片的，不过绝对不能理解为什么会是电影界的NO1..怀着对传奇的顶礼膜拜，再加上现在拙劣的生活状态，为了寻找，所谓的做人的感觉，昨天，我又看了一遍，说实话，我还是理解不了，为什么能够坐在屋顶上喝啤酒，就很有做人的感觉。也许是，我他妈的没有进过劳子的原因。好在，还是让我有了那么些许理解，“只要努力就能创造奇迹”，“知识的力量是无穷的”，等等他妈的所谓的真理，这些鸟道理，是个人他都懂，可是他妈的，又有几个人能够做到他妈的那么一点点？纯粹就是扯淡，还不如安迪被鸡奸看起来，更让人有认同感。</p>
 <p>唯一的唯一，也许这也算是一个hope吧，也许我能更努力那么一点点。</p>
 <p>这周看完的(还差那么几页)还有麦田里的守望者，同上，算是一本好书，但是依然没有找到圣经的感觉，在豆瓣看完某个人的评论后，终于理解了，根本他妈的就没有什么高深的，作者也就没打算表达什么所谓的狗屁守望，顶多就是控诉了这个社会太多虚伪的人而已，这也就是一个有思想的疯子消磨无聊时光的工具而已，没有什么伟大不伟大的，自己活的开心就好，这也是作者告诉我的。</p>
-<p>就当我没脑子吧，至少我没象作者那样，对于那些自己不感冒的，鄙夷的很。<br>也许，即将要看完的在路上，也是同样的感觉，唉，凑合着看吧。</p>
-<p>找到做人的感觉。<br>上路，我也不知道为什么要���路，只是不喜欢现在吧。</p>
+<p>就当我没脑子吧，至少我没象作者那样，对于那些自己不感冒的，鄙夷的很。
+也许，即将要看完的在路上，也是同样的感觉，唉，凑合着看吧。</p>
+<p>找到做人的感觉。
+上路，我也不知道为什么要上路，只是不喜欢现在吧。</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>, <a href="/categories/生活/读书/">读书</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
 
 <!-- JiaThis Button BEGIN -->
@@ -282,11 +292,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -294,23 +341,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -326,12 +373,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -340,7 +393,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

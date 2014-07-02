@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2011/m06/thinkdifferent.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -219,19 +232,47 @@
     </header>
     <div class="entry">
       
-        <p>向那些疯狂的家伙们致敬。<br>那些我行我素的家伙。<br>那些桀骜不驯的家伙。<br>那些惹事生非的家伙。<br>那些方孔中的圆桩。<br>他们总是异想天开，<br>既不喜欢循规蹈矩，<br>也不尊重既成事实。<br>你尽可以赞美他们，否定他们，引用他们，<br>质疑他们，颂扬抑或是诋毁他们。<br>不过惟独不能漠视他们。<br>因为他们进行着变革。<br>他们推动着人类的进程。<br>他们是别人眼里的疯子，<br>却是我们眼中的天才。<br>因为，只有疯狂到认为<br>自己能够改变世界的人，<br>才能真正做到这一点。</p>
-<p>Here’s to the crazy ones.<br>The misfits.<br>The rebels.<br>The troublemakers.<br>The round pegs in the square holes.<br>The ones who see things differently.<br>They’re not fond of rules.<br>And they have no respect for the status quo.<br>You can quote them, disagree with them, glorify or vilify them.<br>About the only thing you can’t do is ignore them.<br>Because they change things.<br>They push the human race forward.<br>And while some see them as the crazy ones,<br>We see genius.<br>Because the people who are crazy enough to think<br>they can change the world,<br>Are the ones who do.</p>
+        <p>向那些疯狂的家伙们致敬。
+那些我行我素的家伙。
+那些桀骜不驯的家伙。
+那些惹事生非的家伙。
+那些方孔中的圆桩。
+他们总是异想天开，
+既不喜欢循规蹈矩，
+也不尊重既成事实。
+你尽可以赞美他们，否定他们，引用他们，
+质疑他们，颂扬抑或是诋毁他们。
+不过惟独不能漠视他们。
+因为他们进行着变革。
+他们推动着人类的进程。
+他们是别人眼里的疯子，
+却是我们眼中的天才。
+因为，只有疯狂到认为
+自己能够改变世界的人，
+才能真正做到这一点。</p>
+<p>Here’s to the crazy ones.
+The misfits.
+The rebels.
+The troublemakers.
+The round pegs in the square holes.
+The ones who see things differently.
+They’re not fond of rules.
+And they have no respect for the status quo.
+You can quote them, disagree with them, glorify or vilify them.
+About the only thing you can’t do is ignore them.
+Because they change things.
+They push the human race forward.
+And while some see them as the crazy ones,
+We see genius.
+Because the people who are crazy enough to think
+they can change the world,
+Are the ones who do.</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
 
 <!-- JiaThis Button BEGIN -->
@@ -278,11 +319,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -290,23 +368,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -322,12 +400,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -336,7 +420,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

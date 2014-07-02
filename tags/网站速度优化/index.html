@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/网站速度优化/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -224,35 +237,56 @@
     </header>
     <div class="entry">
       
-        <p>js加载不当出现的一些错误<br>1.js文件的加载可能滞后与页面中的js代码，所以代码都应该在document.ready中执行，可能出现错误。<br>2.使用ajax代码加载js文件，则可能滞后于document.ready执行，可能出现错误。<br>没有404页面出现的问题<br>1.通过firebug发现，页面加载里面有两个 网站根链接 liangpeng.net 貌似网站加载的两遍一样，而且每次加载时间都不短，严格排查原来是某个插件引用的一个css文件不存在，而且网站没有进行404处理，导致重定向到了主页。</p>
+        <p>js加载不当出现的一些错误
+1.js文件的加载可能滞后与页面中的js代码，所以代码都应该在document.ready中执行，可能出现错误。
+2.使用ajax代码加载js文件，则可能滞后于document.ready执行，可能出现错误。
+没有404页面出现的问题
+1.通过firebug发现，页面加载里面有两个 网站根链接 liangpeng.net 貌似网站加载的两遍一样，而且每次加载时间都不短，严格排查原来是某个插件引用的一个css文件不存在，而且网站没有进行404处理，导致重定向到了主页。</p>
 <p>关于网站加载速度的优化，请参见 <a href="http://hellobmw.com/archives/tips-for-wordpress-speed-tweak.html">WordPress 提速一二三
-</a> 写得比较使用，相比其他诸如减少数据查询类文章要好很多，可以一观。<br>下面是我认为对我有用的非废话内容：</p>
+</a> 写得比较使用，相比其他诸如减少数据查询类文章要好很多，可以一观。
+下面是我认为对我有用的非废话内容：</p>
 <p>转自：北极冰仔  <a href="http://hellobmw.com/archives/tips-for-wordpress-speed-tweak.html" target="_blank">http://hellobmw.com/archives/tips-for-wordpress-speed-tweak.html</a></p>
-<h3>压缩 CSS 和 JavaScript</h3>
-<p>1. 清理 CSS<br>CSS 可以在线使用 <a href="http://www.google.com/search?hl=en&amp;q=css+tidy" target="_blank">CSSTidy</a> 清理一下，可以减少很多不必要的冗余（如：空格、换行等等），尤其在选择“最差可读性”之后，整个 CSS 文档内容压缩为一行。但<strong>清理前请务必备份</strong>原始 CSS 文件，一是为了方便以后修改，二是有些选项使用不当会<strong>完全</strong>破坏 CSS。<strong>强烈建议使用最保守的清理方式。</strong></p>
-<p>2. 打包 JavaScript<br>JavaScript 脚本可以使用 <a href="http://dean.edwards.name/packer/" target="_blank">packer</a> 压缩，去除空格、换行后变为一行；勾选 Base62 编码将会压缩为更小的格式，但如果接下来你还想继续使用 gzip 进一步压缩 JavaScript，不推荐 Base62，实践证明普通 packer + gzip 才是最佳拍档。</p>
-<p>3. 使用 gzip 进一步压缩<br>Gzip 是一种非常优秀的压缩方式，详细信息可以自行阅读 <a href="http://www.gzip.org/" target="_blank">gzip home</a>。使用 gzip 压缩 CSS 和 JavaScript 需要服务器支持 gzip，压缩 CSS 的方法与<a href="http://hellobmw.com/archives/compressing-javascript-with-phpgzip.html" target="_blank">压缩 JavaScript 的方法</a>基本是一样的，注意把 <code>Content-Type</code> 设置为 <code>text/css</code>。这里还运用了另外一个提速的技巧：<strong>强制性的浏览器缓存</strong>。</p>
-<h3>尽量减少 HTTP 请求数</h3>
+<h3 id="-css-javascript">压缩 CSS 和 JavaScript</h3>
+<p>1. 清理 CSS
+CSS 可以在线使用 <a href="http://www.google.com/search?hl=en&amp;q=css+tidy" target="_blank">CSSTidy</a> 清理一下，可以减少很多不必要的冗余（如：空格、换行等等），尤其在选择“最差可读性”之后，整个 CSS 文档内容压缩为一行。但<strong>清理前请务必备份</strong>原始 CSS 文件，一是为了方便以后修改，二是有些选项使用不当会<strong>完全</strong>破坏 CSS。<strong>强烈建议使用最保守的清理方式。</strong></p>
+<p>2. 打包 JavaScript
+JavaScript 脚本可以使用 <a href="http://dean.edwards.name/packer/" target="_blank">packer</a> 压缩，去除空格、换行后变为一行；勾选 Base62 编码将会压缩为更小的格式，但如果接下来你还想继续使用 gzip 进一步压缩 JavaScript，不推荐 Base62，实践证明普通 packer + gzip 才是最佳拍档。</p>
+<p>3. 使用 gzip 进一步压缩
+Gzip 是一种非常优秀的压缩方式，详细信息可以自行阅读 <a href="http://www.gzip.org/" target="_blank">gzip home</a>。使用 gzip 压缩 CSS 和 JavaScript 需要服务器支持 gzip，压缩 CSS 的方法与<a href="http://hellobmw.com/archives/compressing-javascript-with-phpgzip.html" target="_blank">压缩 JavaScript 的方法</a>基本是一样的，注意把 <code>Content-Type</code> 设置为 <code>text/css</code>。这里还运用了另外一个提速的技巧：<strong>强制性的浏览器缓存</strong>。</p>
+<h3 id="-http-">尽量减少 HTTP 请求数</h3>
 <p>HTTP 请求是很费时间的，主要花费（浪费）在建立连接的过程中。真正传输 1K 和 10K 数据的时间相差无几，但哪怕你请求的是一个仅有几字节的东东，一样需要花费可观的连接时间。</p>
 <p><a href="http://hellobmw.com/archives/speed-up-by-css-sprites.html" target="_blank">CSS Sprites</a> 和 <a href="http://www.websiteoptimization.com/speed/tweak/inline-images/" target="_blank">Inline Images with Data URLs</a> 就可以帮上大忙了。</p>
 <p><strong>CSS Sprites</strong> 的思想是把很多张小图片（如：图标）整合为一张大图，再利用 CSS 的 <a href="http://hellobmw.com/archives/css-position-property.html" target="_blank">background-position 属性</a>在正确的地方显示正确的图标。这样的好处就是把原来的 n 个 HTTP 请求减少至 1。</p>
 <p><strong>Inline Images with Data URLs</strong> 的思想是干脆直接把装饰性的小图片写在 CSS 或 HTML 中，不需要 HTTP 请求。当然不能直接在文本中写二进制的 0101，但经过 base64 编码后就可以了。基本的用法是：</p>
 <p><div class="syntax_hilite"></p>
 <p><div id="code-2"></p>
-<p><div class="code">data:<span style="color: #006600; font-weight: bold;">[</span>&lt;mediatype&gt;<span style="color: #006600; font-weight: bold;">]</span><span style="color: #006600; font-weight: bold;">[</span>;base64<span style="color: #006600; font-weight: bold;">]</span>,&lt;data&gt;</div><br></div><br></div><br>例：</p>
+<p><div class="code">data:<span style="color: #006600; font-weight: bold;">[</span>&lt;mediatype&gt;<span style="color: #006600; font-weight: bold;">]</span><span style="color: #006600; font-weight: bold;">[</span>;base64<span style="color: #006600; font-weight: bold;">]</span>,&lt;data&gt;</div>
+</div>
+</div>
+例：</p>
 <p><div class="syntax_hilite"></p>
 <p><div id="html-3"></p>
-<p><div class="html"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;img</span> <span style="color: #000066;">src</span>=<span style="color: #ff0000;">“data:image/gif;base64,R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1hLnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g77ZKPJjPZqIyd7sJAgVGoEGv2xsBxqNgYPj/gAwXEQA7”</span> <span style="color: #000066;">width</span>=<span style="color: #ff0000;">“16”</span> <span style="color: #000066;">height</span>=<span style="color: #ff0000;">“14”</span> <span style="color: #000066;">alt</span>=<span style="color: #ff0000;">“embedded folder icon”</span> /<span style="color: #000000; font-weight: bold;">&gt;</span></span></div><br></div><br></div><br>可以借助 PHP 来生成 base64 的图片内容：</p>
+<p><div class="html"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;img</span> <span style="color: #000066;">src</span>=<span style="color: #ff0000;">&quot;data:image/gif;base64,R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1hLnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g77ZKPJjPZqIyd7sJAgVGoEGv2xsBxqNgYPj/gAwXEQA7&quot;</span> <span style="color: #000066;">width</span>=<span style="color: #ff0000;">&quot;16&quot;</span> <span style="color: #000066;">height</span>=<span style="color: #ff0000;">&quot;14&quot;</span> <span style="color: #000066;">alt</span>=<span style="color: #ff0000;">&quot;embedded folder icon&quot;</span> /<span style="color: #000000; font-weight: bold;">&gt;</span></span></div>
+</div>
+</div>
+可以借助 PHP 来生成 base64 的图片内容：</p>
 <p><div class="syntax_hilite"></p>
 <p><div id="php-4"></p>
-<p><div class="php"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #000066;">echo</span> <span style="color: #000066;">base64_encode</span><span style="color: #006600; font-weight: bold;">(</span><span style="color: #000066;">file_get_contents</span><span style="color: #006600; font-weight: bold;">(</span><span style="color: #ff0000;">“../images/folder16.gif”</span><span style="color: #006600; font-weight: bold;">)</span><span style="color: #006600; font-weight: bold;">)</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></div><br></div><br></div><br>那么 CSS 就可以写成下面的样子：</p>
+<p><div class="php"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #000066;">echo</span> <span style="color: #000066;">base64_encode</span><span style="color: #006600; font-weight: bold;">(</span><span style="color: #000066;">file_get_contents</span><span style="color: #006600; font-weight: bold;">(</span><span style="color: #ff0000;">&quot;../images/folder16.gif&quot;</span><span style="color: #006600; font-weight: bold;">)</span><span style="color: #006600; font-weight: bold;">)</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></div>
+</div>
+</div>
+那么 CSS 就可以写成下面的样子：</p>
 <p><div class="syntax_hilite"></p>
 <p><div id="css-5"></p>
-<p><div class="css"><span style="color: #000000; font-weight: bold;">background</span>: <span style="color: #993333;">url</span><span style="color: #66cc66;">(</span>data:image/gif;base64,&lt;?php echo base64_encode<span style="color: #66cc66;">(</span>file_get_contents<span style="color: #66cc66;">(</span><span style="color: #ff0000;">“../images/folder16.gif”</span><span style="color: #66cc66;">)</span><span style="color: #66cc66;">)</span> ?&gt;<span style="color: #66cc66;">)</span> <span style="color: #000000; font-weight: bold;">top</span> <span style="color: #000000; font-weight: bold;">left</span> <span style="color: #993333;">no-repeat</span>;</div><br></div><br></div><br>Inline Images with Data URLs 的局限：</p>
+<p><div class="css"><span style="color: #000000; font-weight: bold;">background</span>: <span style="color: #993333;">url</span><span style="color: #66cc66;">(</span>data:image/gif;base64,&lt;?php echo base64_encode<span style="color: #66cc66;">(</span>file_get_contents<span style="color: #66cc66;">(</span><span style="color: #ff0000;">&quot;../images/folder16.gif&quot;</span><span style="color: #66cc66;">)</span><span style="color: #66cc66;">)</span> ?&gt;<span style="color: #66cc66;">)</span> <span style="color: #000000; font-weight: bold;">top</span> <span style="color: #000000; font-weight: bold;">left</span> <span style="color: #993333;">no-repeat</span>;</div>
+</div>
+</div>
+Inline Images with Data URLs 的局限：</p>
 <ul>
 <li>IE 5-7 不支持，IE 8 据说会支持。为了兼容 IE，把这些部分单独写入 IE 专用的 CSS 文件中。具体可以查看<a href="http://hellobmw.com/" target="_blank">本站</a>使用的两个样式表。</li>
 <li>文本形式的图片占用比二进制更多的字节。Base64 格式比二进制大 39%~45%，在 gzip 压缩后，这个比例减小至 8%~9%。最好在 base64 编码之前优化图片本身。</li>
-<li>浏览器对 inline 图片有大小限制。Opera 最大支持 4,100 字节，Firefox 最大支持 100K。所以最好只应用在小图片上。目前<a href="http://hellobmw.com/" target="_blank">本站</a>在 6 个小图片上使用了该技巧。<br>补充一点：<em>CSS Sprites</em> 和 <em>Inline Images with Data URLs</em> 是可以同时使用的。</li>
+<li>浏览器对 inline 图片有大小限制。Opera 最大支持 4,100 字节，Firefox 最大支持 100K。所以最好只应用在小图片上。目前<a href="http://hellobmw.com/" target="_blank">本站</a>在 6 个小图片上使用了该技巧。
+补充一点：<em>CSS Sprites</em> 和 <em>Inline Images with Data URLs</em> 是可以同时使用的。</li>
 </ul>
 
       
@@ -277,14 +311,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -292,23 +364,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -324,12 +396,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -338,7 +416,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

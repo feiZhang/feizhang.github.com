@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/ie/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,13 +231,24 @@
       
       
   
-    <h1 class="title"><a href="/y2008/m12/081226-郁闷的一天，又被浏览器兼容性折腾了一天.html">081226--郁闷的一天，又被浏览器兼容性折腾了一天</a></h1>
+    <h1 class="title"><a href="/y2008/m12/081226-郁闷的一天，又被浏览器兼容性折腾了一天.html">081226  郁闷的一天，又被浏览器兼容性折腾了一天</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>上午解决了，在ie下，是jquery的dialog根据 填充的内容，自动调整宽度的问题，在firefox下很容易解决的，但是在ie下就不行了。<br>1.firefox下，只要在open事件增加 $(this).css({width:“auto”,height:“auto”});即可。<br>2.ie下，则需要增加如下代码<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($.browser.msie)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($(“.ui-dialog”).offset().left&lt;50) $(“.ui-dialog”).css(“left”,“300”);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(“.ui-dialog”).css(“width”,“100”);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(“.ui-dialog”).css({width:$(this).width()+32,height:$(this).height()+60});<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>真是麻烦。<br>现在的firefox的firebug真是牛叉的不得了，要不，都感觉没法搞了，还不如以前的web1.0好定位。<br>其实想想还不如继续用table，能省不少的开发时间呢。</p>
+        <p>上午解决了，在ie下，是jquery的dialog根据 填充的内容，自动调整宽度的问题，在firefox下很容易解决的，但是在ie下就不行了。
+1.firefox下，只要在open事件增加 $(this).css({width:&quot;auto&quot;,height:&quot;auto&quot;});即可。
+2.ie下，则需要增加如下代码
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($.browser.msie)
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($(&quot;.ui-dialog&quot;).offset().left&lt;50) $(&quot;.ui-dialog&quot;).css(&quot;left&quot;,&quot;300&quot;);
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(&quot;.ui-dialog&quot;).css(&quot;width&quot;,&quot;100&quot;);
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(&quot;.ui-dialog&quot;).css({width:$(this).width()+32,height:$(this).height()+60});
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}
+真是麻烦。
+现在的firefox的firebug真是牛叉的不得了，要不，都感觉没法搞了，还不如以前的web1.0好定位。
+其实想想还不如继续用table，能省不少的开发时间呢。</p>
 <p>下午主要改造了ajax的数据返回，使用了json，php有两个函数处理json_decode和json_encode，js通过eval处理后，可以按照对象方式进行处理。</p>
 <p>晚上，针对json数据，增加页面的options数据。</p>
 
@@ -246,6 +270,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -260,7 +296,8 @@
     </header>
     <div class="entry">
       
-        <p>自己近来一直使用FireFox，所以很少使用IE，由于将我QQ空间转向到Liangpeng.net，所以有了一部分IE的“忠实”用户，偶尔回来的偶的blog，普遍反应，“打不开”，为啥呢，我自己试了，没问题呀，自己用IE试了也没问题，用家里的娱乐电脑一试，还真是有这个问题，于是乎，找了半天的原因，html内容已经下载完成，就是不显示，开始以为是自己页面的编码问题，找了半天原因，也没搞定，突然想起IE的编码设置，一看，居然是GB2312，晕，偶明明添加 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 了，为啥还是GB2312，郁闷，点成自动，居然就没问题了，但是后来发现普遍用户都没有点选自动识别，所以还得找原因，原来IE还真有点弱智，是根据HTML解析时的第一个字符来进行编码判断的，所以一般会根据&lt;title&gt;里面的中文内容进行识别，而很容易识别成GB2312，所以需要将 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 放在&lt;title&gt;前面，首先告诉IE，我他妈的是UTF-8，随之问题解决。<br>真是浪费时间呀。</p>
+        <p>自己近来一直使用FireFox，所以很少使用IE，由于将我QQ空间转向到Liangpeng.net，所以有了一部分IE的&quot;忠实&quot;用户，偶尔回来的偶的blog，普遍反应，“打不开”，为啥呢，我自己试了，没问题呀，自己用IE试了也没问题，用家里的娱乐电脑一试，还真是有这个问题，于是乎，找了半天的原因，html内容已经下载完成，就是不显示，开始以为是自己页面的编码问题，找了半天原因，也没搞定，突然想起IE的编码设置，一看，居然是GB2312，晕，偶明明添加 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 了，为啥还是GB2312，郁闷，点成自动，居然就没问题了，但是后来发现普遍用户都没有点选自动识别，所以还得找原因，原来IE还真有点弱智，是根据HTML解析时的第一个字符来进行编码判断的，所以一般会根据&lt;title&gt;里面的中文内容进行识别，而很容易识别成GB2312，所以需要将 &lt;meta <span>http-equiv</span>=&quot;<span>Content-Type</span>&quot; <span>content</span>=&quot;<span>text/html; charset=UTF-8</span>&quot; /&gt; 放在&lt;title&gt;前面，首先告诉IE，我他妈的是UTF-8，随之问题解决。
+真是浪费时间呀。</p>
 
       
     </div>
@@ -280,6 +317,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -288,7 +337,7 @@
       
       
   
-    <h1 class="title"><a href="/y2008/m09/firefox和ie浏览器对于divcss的区别转载.html">Firefox和ie浏览器对于div+css的区别[转载]</a></h1>
+    <h1 class="title"><a href="/y2008/m09/firefox和ie浏览器对于divcss的区别转载.html">Fire Fox和Ie浏览器对于Div+Css的区别[转载]</a></h1>
   
 
     </header>
@@ -323,14 +372,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -338,23 +425,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -370,12 +457,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -384,7 +477,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

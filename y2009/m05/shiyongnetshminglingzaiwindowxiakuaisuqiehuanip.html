@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用netsh命令在window下快速切换ip | 张非飞</title>
+  <title>使用Netsh命令在Window下快速切换Ip | 张非飞</title>
   <meta name="author" content="张飞">
   
   <meta name="description" content="技术,独立思考,梁鹏,张飞">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="使用netsh命令在window下快速切换ip"/>
+  <meta property="og:title" content="使用Netsh命令在Window下快速切换Ip"/>
   <meta property="og:site_name" content="张非飞"/>
 
   
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2009/m05/shiyongnetshminglingzaiwindowxiakuaisuqiehuanip.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -213,23 +226,41 @@
       
       
   
-    <h1 class="title">使用netsh命令在window下快速切换ip</h1>
+    <h1 class="title">使用Netsh命令在Window下快速切换Ip</h1>
   
 
     </header>
     <div class="entry">
       
-        <div>使用netsh命令却换ip设置，具体可通过netsh ？获取帮助，帮助写的很详细，下面是网上找的winxp下的脚本，其中的local貌似是本地连接名字。</div><br><div>在Win7和vista下，应该是这样（看见那个本地连接没？就是你的网卡的名字，用他来指定网卡还真有点晕）：记着要以管理员权限执行..</div><br><div><br><div>@echo ip197</div><br><div>netsh interface ipv4 set address “本地连接” static 192.168.0.197 255.255.255.0 192.168.0.1</div><br><div>netsh interface ipv4 set dnsservers “本地连接” static 192.168.0.1 primary</div><br></div><br><div></div><br><div></div><br><div><strong>WinXP下</strong></div><br><div>@echo ip_beijing</div><br><div>netsh interface ip set address local source=static addr=10.56.100.112 mask=255.255.255.0</div><br><div>netsh interface ip set address name=local gateway=10.56.100.254 gwmetric=1</div><br><div>netsh interface ip set dns local static 10.68.100.211</div><br><div></div><br><div>如果需要为IE设代理服务器（我上网主用Firefox，IE代理是为了msn），则可以加一句 call ipbj.reg此reg文件，比如</div><br><div>Windows Registry Editor Version 5.00</div><br><div></div><br><div>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]</div><br><div>“ProxyServer”=“10.18.100.133:8080”</div><br><div>“ProxyOverride”=&quot;10.<em>.</em>.*;&lt;local&gt;&quot;</div><br><div>“ProxyEnable”=dword:00000001</div><br><div></div><br><div>最后面的1代表启动，0代表关闭</div>
+        <div>使用netsh命令却换ip设置，具体可通过netsh ？获取帮助，帮助写的很详细，下面是网上找的winxp下的脚本，其中的local貌似是本地连接名字。</div>
+<div>在Win7和vista下，应该是这样（看见那个本地连接没？就是你的网卡的名字，用他来指定网卡还真有点晕）：记着要以管理员权限执行..</div>
+<div>
+<div>@echo ip197</div>
+<div>netsh interface ipv4 set address &quot;本地连接&quot; static 192.168.0.197 255.255.255.0 192.168.0.1</div>
+<div>netsh interface ipv4 set dnsservers &quot;本地连接&quot; static 192.168.0.1 primary</div>
+</div>
+<div></div>
+<div></div>
+<div><strong>WinXP下</strong></div>
+<div>@echo ip_beijing</div>
+<div>netsh interface ip set address local source=static addr=10.56.100.112 mask=255.255.255.0</div>
+<div>netsh interface ip set address name=local gateway=10.56.100.254 gwmetric=1</div>
+<div>netsh interface ip set dns local static 10.68.100.211</div>
+<div></div>
+<div>如果需要为IE设代理服务器（我上网主用Firefox，IE代理是为了msn），则可以加一句 call ipbj.reg此reg文件，比如</div>
+<div>Windows Registry Editor Version 5.00</div>
+<div></div>
+<div>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]</div>
+<div>&quot;ProxyServer&quot;=&quot;10.18.100.133:8080&quot;</div>
+<div>&quot;ProxyOverride&quot;=&quot;10.<em>.</em>.*;&lt;local&gt;&quot;</div>
+<div>&quot;ProxyEnable&quot;=dword:00000001</div>
+<div></div>
+<div>最后面的1代表启动，0代表关闭</div>
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
   
   <div class="tags">
@@ -281,11 +312,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -293,23 +361,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -325,12 +393,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -339,7 +413,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

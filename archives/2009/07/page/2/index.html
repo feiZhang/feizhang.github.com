@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2009/07/page/2/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -246,6 +259,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -261,7 +286,7 @@
     <div class="entry">
       
         <p>一直都有锻炼身体的必要，但是都未真正执行，最近耗巨资购入一辆山地车，一方面上下班坐骑，另外就是可以依次来进行体育锻炼，这两天还不错，每天至少骑上个一小时，小冒汗，最高时速达32（不知道码表是否精确），晚上回家也不再继续pc了，没事做几个俯卧撑，转转腰呀头呀，感觉挺好，同时也发现自己真是不够健壮，没有个能见义勇为的好身体，估计自保都困难，10个俯卧撑都很难，而且腰部是在虚弱，保持下俯卧撑的姿势都坚持不下去，需要长时间的锻炼了。。</p>
-<p>此次锻炼导火索为公司的体检，体检结果还好，没有之前���测的什么心脑血管疾病，就是肝功能貌似有些不好了，2项超标：总胆红素 26.7（5.1-19），谷丙转氨酶47（0-40），其他还好，经过不断google，感觉最好的方法就是提高自身的免疫力，那么就需要不断的锻炼身体，目前最渴望的就是提高自己腰部肌肉，发现腰部真是很弱。</p>
+<p>此次锻炼导火索为公司的体检，体检结果还好，没有之前预测的什么心脑血管疾病，就是肝功能貌似有些不好了，2项超标：总胆红素 26.7（5.1-19），谷丙转氨酶47（0-40），其他还好，经过不断google，感觉最好的方法就是提高自身的免疫力，那么就需要不断的锻炼身体，目前最渴望的就是提高自己腰部肌肉，发现腰部真是很弱。</p>
 <p>兄弟，这次一定要坚持下去呀。</p>
 
       
@@ -282,6 +307,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -290,13 +327,24 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m07/ubuntuxiaanzhuangxdmcpfuwushiyongxmanagerjieru.html">Ubuntu下安装xdmcp服务，使用xmanager接入</a></h1>
+    <h1 class="title"><a href="/y2009/m07/ubuntuxiaanzhuangxdmcpfuwushiyongxmanagerjieru.html">Ubuntu下安装Xdmcp服务，使用Xmanager接入</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>ubuntu下安装xdmcp服务（即远程主机通过xdmcp协议连接到ubuntu的图形终端，以图形终端方式登录）：<br>1. 登录本机图形终端（本机按Ubuntu/Gnome为例设置）<br>2. 选择system-&gt;Administration-&gt;logon windows切到remote项，修改其中style为same as local,如为中文菜单请相应选择。<br>3. 选择system-&gt;Administration-&gt;logon windows切到General项，修改其中Disable Multiple login for a single user前面的X去悼,如为中文菜单请相应选择，否则会出现能显示画面但无法登录（输入用户和密码后又回到登录画面）。<br>4. 修改sudo vi /etc/gdm/gdm.conf（建议先将gdm.conf备份，以免无法启动时，可以快速恢复）<br>其中[Daemon]中#RemoteGreeter=/usr/lib/gdm/gdmlogin中前面的#号去悼；<br>[Security]中#DisallowTCP=true中前面的＃号去悼，并将true改为false;<br>[xdmcp]中#Enable=false中前面的＃号去悼，并将false改为true;<br>5. 修改sudo vi /etc/inittab增加一行id:5:initdefault:表示系统将自己运行在多用户级别５的模式下；<br>6. 重启sudo reboot，不建议sudo gdm restart这样gdm并未生效<br>7. 检查服务器和客户端的网络防火墙配置，保证177端口和6000-6100端口可用；<br>8. 使用Xwin的服务器程序连接ubuntu图形界面即可；</p>
+        <p>ubuntu下安装xdmcp服务（即远程主机通过xdmcp协议连接到ubuntu的图形终端，以图形终端方式登录）：
+1. 登录本机图形终端（本机按Ubuntu/Gnome为例设置）
+2. 选择system-&gt;Administration-&gt;logon windows切到remote项，修改其中style为same as local,如为中文菜单请相应选择。
+3. 选择system-&gt;Administration-&gt;logon windows切到General项，修改其中Disable Multiple login for a single user前面的X去悼,如为中文菜单请相应选择，否则会出现能显示画面但无法登录（输入用户和密码后又回到登录画面）。
+4. 修改sudo vi /etc/gdm/gdm.conf（建议先将gdm.conf备份，以免无法启动时，可以快速恢复）
+其中[Daemon]中#RemoteGreeter=/usr/lib/gdm/gdmlogin中前面的#号去悼；
+[Security]中#DisallowTCP=true中前面的＃号去悼，并将true改为false;
+[xdmcp]中#Enable=false中前面的＃号去悼，并将false改为true;
+5. 修改sudo vi /etc/inittab增加一行id:5:initdefault:表示系统将自己运行在多用户级别５的模式下；
+6. 重启sudo reboot，不建议sudo gdm restart这样gdm并未生效
+7. 检查服务器和客户端的网络防火墙配置，保证177端口和6000-6100端口可用；
+8. 使用Xwin的服务器程序连接ubuntu图形界面即可；</p>
 
       
     </div>
@@ -315,6 +363,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -352,6 +412,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -366,9 +438,11 @@
     </header>
     <div class="entry">
       
-        <p>昨天和一挚友谈起我们这群人的前途问题，颇有收获，其对从政人员的建议如下：<br>要么就在现有岗位老老实实的呆着，小打小闹的玩着，至少在这个阶段不要去过多考虑升迁的事，做些基础性工作即可。<br>要么就破釜沉舟拼命往上爬，当然破釜沉舟也是有条件的。</p>
+        <p>昨天和一挚友谈起我们这群人的前途问题，颇有收获，其对从政人员的建议如下：
+要么就在现有岗位老老实实的呆着，小打小闹的玩着，至少在这个阶段不要去过多考虑升迁的事，做些基础性工作即可。
+要么就破釜沉舟拼命往上爬，当然破釜沉舟也是有条件的。</p>
 <p>对于个人的政治前途、生活，每个人也有自己的选择，比如：</p>
-<p>你现在手里有10万，你可以做两件事的其一：买房或等待机会上进，一般情况只能是二选一，要么你在现在就“退休”过上凑合体面的生活，要么你给自己一个争取一个机会，找到新“工作”未来体面生活，这就是你的选择。</p>
+<p>你现在手里有10万，你可以做两件事的其一：买房或等待机会上进，一般情况只能是二选一，要么你在现在就&quot;退休&quot;过上凑合体面的生活，要么你给自己一个争取一个机会，找到新&quot;工作&quot;未来体面生活，这就是你的选择。</p>
 <p>大部分的人很难跳出买房的欲望，而从此基本失去机会，这其实没什么，但是，请尊重你的选择，而不要过多的蹉跎。</p>
 <p>自己也即将30，按照正常逻辑，最近几年没有成果也就将“退休”，过一个平静的生活，既然如此，请不要再悲愤了。</p>
 
@@ -396,14 +470,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -411,23 +523,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -443,12 +555,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -457,7 +575,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

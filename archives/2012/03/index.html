@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2012/03/' />
 </head>
 
 
@@ -210,52 +211,17 @@
   
     <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2012-03-23T02:38:23.000Z"><a href="/y2012/m03/progress-of-the-work.html">2012-03-23</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2012/m03/progress-of-the-work.html">工作的进展</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>做了什么：</p>
-<ol>
-<li>改善沟通环境，人人说话，构建和谐工作环境</li>
-<li>完善各种硬性制度[工具、方法]</li>
-<li>个人价值取向建设<a href="为公即是为私">心态</a></li>
-<li>完善辅助工作技巧[沟通]</li>
-<li><p>技术积累的推进<br>还需要做什么：</p>
-</li>
-<li><p>构建立体化的人才体系，将合适的人放到合适的位置   则  需要了解每个人的个性、特点</p>
-</li>
-<li>完善工作相关的规范化指导方案 则 需要实验、渐进</li>
-<li>完善技术交流的平台[培训、论坛]</li>
-<li>可量化的工作内容<br>还有什么不足？有大仙指点下没？</li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
   </div>
-</article>
-
-
-
-
-  
-    <article class="post">
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -271,10 +237,13 @@
     </header>
     <div class="entry">
       
-        <p>“为什么一定有人要死？”雷纳德问维吉妮娅<br>“为了对比”维吉妮娅说“为了让活着的人更加懂得珍惜生活。”<br>“那么谁会死？”雷纳德又问。<br>“诗人”维吉妮娅说“那些心怀梦想的人。”</p>
+        <p>“为什么一定有人要死？”雷纳德问维吉妮娅
+“为了对比”维吉妮娅说“为了让活着的人更加懂得珍惜生活。”
+“那么谁会死？”雷纳德又问。
+“诗人”维吉妮娅说“那些心怀梦想的人。”</p>
 <p>“只有我，我，才最清楚我想要什么，这是我的选择，作为一个人的选择。”</p>
 <p>“如果我说我后悔，那么我会轻松一些，好一些。”劳拉对克拉莉莎说“但是后悔有什么意义呢？当你已别无选择。”</p>
-<p>“亲���的雷纳德，要直面人生，永远只面人生，了解它的真谛，永远的了解，爱它的本质，然后，放弃它。”</p>
+<p>“亲爱的雷纳德，要直面人生，永远只面人生，了解它的真谛，永远的了解，爱它的本质，然后，放弃它。”</p>
 <p>20世纪50年代美国正处在经济复苏期，布朗夫人就像达洛卫夫人一样生活富足，但却精神萎靡，内心总有一种像是被悬浮在空中的惶恐不安的感觉，生命的无意义意识时时涌上心头。这种感觉正是吴尔芙心中常常难以摆脱的感受。而纽约的女编辑在街上耀眼的阳光中似乎感到总有一丝不祥的阴影在笼罩着她，直至最后她受到死亡冲击，这一切也都是吴尔芙生命历程中的主题。</p>
 <p>精神领域内的自我放逐者，她们游离于时代，同时又以自己方式固执地抗拒现实</p>
 
@@ -300,14 +269,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -315,23 +322,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -347,12 +354,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -361,7 +374,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

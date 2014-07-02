@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2010/m05/chengchangdenadianshi.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -219,13 +232,16 @@
     </header>
     <div class="entry">
       
-        <p>昨日，一密友突发疑问，现在咱们这群人是不是有些改变了，顺嘴回答：“没变，仅仅是环境变了而已”。<br>人是最势力的动物，适应能力太强，环境稍变，就会让他看起来更像狗崽子了。</p>
+        <p>昨日，一密友突发疑问，现在咱们这群人是不是有些改变了，顺嘴回答：“没变，仅仅是环境变了而已”。
+人是最势力的动物，适应能力太强，环境稍变，就会让他看起来更像狗崽子了。</p>
 <p>转眼之间，都到而立之年了，想想，真是没有多少变化，只是活了这么多的年头（甚至都不能算阅历的活了这么多年），总要明白一些问题，从而被迫不去作一些事情。</p>
 <ol>
 <li>知天高地厚（不要狂妄）</li>
 <li>成功有很多客观因素，背景资源很重要（不要瞎类比）</li>
 <li>天上确实不会掉馅饼（不要幻想）</li>
-<li>不要试图去改变一个人的思想，能改变自己的只有他自己，还不如改变下他处的环境<br>【昨天总结了不少条呢？要记下来就给忘了，回头再补充把】<br>这些东西，看起来让一个人改变了，而实质仅仅是他了解了更多的游戏规则，本质上这个人的阅历、能力、知识都没有增加多少，所以我认为根本没变，<strong>稍微给他点阳光，他就会又灿烂起来</strong>。</li>
+<li>不要试图去改变一个人的思想，能改变自己的只有他自己，还不如改变下他处的环境
+【昨天总结了不少条呢？要记下来就给忘了，回头再补充把】
+这些东西，看起来让一个人改变了，而实质仅仅是他了解了更多的游戏规则，本质上这个人的阅历、能力、知识都没有增加多少，所以我认为根本没变，<strong>稍微给他点阳光，他就会又灿烂起来</strong>。</li>
 </ol>
 <p>那么怎样才能算是变了呢？就我而言，要么是得道了，要么是技术能力提高了，而最简单的判断准则就看他是不是确实比周围的人高出一筹，哎，很可悲，我们都太平凡了。如果你看不到你要提高的空间，那么只能说明你的无知，仅仅从技能上来讲提高的空间就是巨大的，而且还有那么多的行业可供你选择，更别说思想上的。</p>
 <p>即便是发现自己确实没有长进，其实也不用烦恼，人生最多也就百十年，怎么活都是要活过去的。<strong>而我最欣赏的就是那些不为环境所动，我行我素者，天上地下我最大，爱咋咋地。</strong></p>
@@ -235,12 +251,7 @@
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
 
 <!-- JiaThis Button BEGIN -->
@@ -287,11 +298,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -299,23 +347,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -331,12 +379,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -345,7 +399,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

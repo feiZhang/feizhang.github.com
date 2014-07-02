@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2009/page/12/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -224,8 +237,17 @@
     </header>
     <div class="entry">
       
-        <p>目前面临的团队的问题：<br>1.员工主动性不强，不愿主动承担工作，主动思考问题，主动推动工作进展。<br>因而而已，提供不同的处理方法，至少处理好自己的小队队长。<br>2.老板放权力度过小<br>a.耗费资源较大（奖罚权），不好承担。小队领导没有权利的情况下，很难实施管理（激励）<br>b.担心下属工作能力<br>3.一个旧的团队的改革面临人情的问题<br>一个新的团队面临人员缺乏的问题。</p>
-<p>改善的方法：<br>1.可以咨询专家（心理学、社会学）<br>2.鲇鱼效应，就像iphone激活了整个手机业，是不是一个鲜活的团队，能够激活其他团队的激情。</p>
+        <p>目前面临的团队的问题：
+1.员工主动性不强，不愿主动承担工作，主动思考问题，主动推动工作进展。
+因而而已，提供不同的处理方法，至少处理好自己的小队队长。
+2.老板放权力度过小
+a.耗费资源较大（奖罚权），不好承担。小队领导没有权利的情况下，很难实施管理（激励）
+b.担心下属工作能力
+3.一个旧的团队的改革面临人情的问题
+一个新的团队面临人员缺乏的问题。</p>
+<p>改善的方法：
+1.可以咨询专家（心理学、社会学）
+2.鲇鱼效应，就像iphone激活了整个手机业，是不是一个鲜活的团队，能够激活其他团队的激情。</p>
 
       
     </div>
@@ -245,6 +267,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -260,7 +294,7 @@
     <div class="entry">
       
         <p>原文来自老九的《<a href="http://www.cn-cti.com/%E5%91%BC%E5%8F%AB%E4%B8%AD%E5%BF%83%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/%E6%81%90%E6%83%A7%E6%95%88%E5%BA%94.html" target="_blank">恐惧效应</a>》</p>
-<p>当年，1910年左右，美国经济危机，银行现金吃紧，便限制取钱的数量，民众恐慌。美国人都去���行排队取钱，眼看 银行就要受不着倒闭。</p>
+<p>当年，1910年左右，美国经济危机，银行现金吃紧，便限制取钱的数量，民众恐慌。美国人都去银行排队取钱，眼看 银行就要受不着倒闭。</p>
 <p>这个时候，洛克菲勒拿出数量庞大的现金给银行， 让取钱的人随便取，不加限制。结果，民众看到什么时候取钱以及取多少不受限制，便不再排队。</p>
 <p>飞话也是这样，系统反应迟钝，以为系统坏了，便不停拨打试验，当大多数人不停重试的时候，系统的负担就越重。如此恶性循环，使系统陷入崩溃。</p>
 <p>解决的办法，就是优化处理程序，使所有的请求得以快速解决，加大处理请求力度。只要消除恐惧效应，系统便会回归到一个正常状态。</p>
@@ -283,6 +317,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -297,7 +343,27 @@
     </header>
     <div class="entry">
       
-        <div class="date"><img src="http://www.liangpeng.net/wp-content/uploads/2009/04/d4257a3e7f37443370cf6c1a.jpg" alt="d4257a3e7f37443370cf6c1a" title="d4257a3e7f37443370cf6c1a"></div><br><div id="blog_text" class="cnt"><br><div><br><br>现在有一个数据库表,如上图<br><br>根据这个行边列统计每个人的各课成绩<br><br>SQL:<br><br>select name as 姓名,sum(CASE when subjoct=‘语文’ and score then score end) as 语文,<br>sum(CASE when subjoct=‘数学’ then score end) as 数学,<br>sum(CASE when subjoct=‘英语’ then score end) as 英语,<br>sum(CASE when subjoct=‘计算机’ then score end) as 计算机<br>from test group by name<br><br>MYSQL测试通过<br><br>得到结果如下<br><img src="http://www.liangpeng.net/wp-content/uploads/2009/04/9083ce13b215842ddd5401e6.jpg" alt="9083ce13b215842ddd5401e6" title="9083ce13b215842ddd5401e6"></div><br></div>
+        <div class="date"><img src="http://www.liangpeng.net/wp-content/uploads/2009/04/d4257a3e7f37443370cf6c1a.jpg" alt="d4257a3e7f37443370cf6c1a" title="d4257a3e7f37443370cf6c1a"></div>
+<div id="blog_text" class="cnt">
+<div>
+
+现在有一个数据库表,如上图
+
+根据这个行边列统计每个人的各课成绩
+
+SQL:
+
+select name as 姓名,sum(CASE when subjoct=&#39;语文&#39; and score then score end) as 语文,
+sum(CASE when subjoct=&#39;数学&#39; then score end) as 数学,
+sum(CASE when subjoct=&#39;英语&#39; then score end) as 英语,
+sum(CASE when subjoct=&#39;计算机&#39; then score end) as 计算机
+from test group by name
+
+MYSQL测试通过
+
+得到结果如下
+<img src="http://www.liangpeng.net/wp-content/uploads/2009/04/9083ce13b215842ddd5401e6.jpg" alt="9083ce13b215842ddd5401e6" title="9083ce13b215842ddd5401e6"></div>
+</div>
       
     </div>
     <footer>
@@ -315,6 +381,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -355,6 +433,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -370,10 +460,20 @@
     <div class="entry">
       
         <p>以下观点仅为个人观点，如果你认为不对，可以不接受..</p>
-<p>不太明白出于什么原因，目前各位的工作我个人感觉缺乏自主性和主动性，导致工作进展慢，效率低。<br>也许是：<br>1.工作习惯的养成（不喜欢独立思考）<br>2.怕承担责任<br>3.工作环境（大家都这样）</p>
-<p>具体表现：<br>1.不是工作安排，不去考虑后续的工作和潜在的问题<br>2.遇到问题，就问该怎么做，自己不去考虑解决方法</p>
-<p>有些奇怪，每个人都有明确的工作分工，自己的工作内容自己最清楚，为什么不能稍微动下脑子，将潜在的问题提前预防，这样是否可以减少你后续的维护量（目前的大部分工作量都在补漏洞）<br>同样的道理，遇到问题，应该是你们自己提出解决方法，我这方面只做审核，不在提供解决方法，原因是你们对此方面的工作比我更熟悉，而且工作也需要你们自己来做，所以最大的话语权在你们手中，我仅仅作为统筹考虑对你们提出的建议方案进行审核并修正。</p>
-<p>就目前的无线项目组，我要求如下：<br>1.自己的工作自己安排进度，考虑相关的问题，潜在的风险，对于和其他人有关联的工作，提出自己的接口方法。自己的工作要有主动性。<br>将这些问题汇报上来，进行统筹考虑。<br>2.遇到问题自己提出解决方法，到我这里进行审核，通过后迅速处理。</p>
+<p>不太明白出于什么原因，目前各位的工作我个人感觉缺乏自主性和主动性，导致工作进展慢，效率低。
+也许是：
+1.工作习惯的养成（不喜欢独立思考）
+2.怕承担责任
+3.工作环境（大家都这样）</p>
+<p>具体表现：
+1.不是工作安排，不去考虑后续的工作和潜在的问题
+2.遇到问题，就问该怎么做，自己不去考虑解决方法</p>
+<p>有些奇怪，每个人都有明确的工作分工，自己的工作内容自己最清楚，为什么不能稍微动下脑子，将潜在的问题提前预防，这样是否可以减少你后续的维护量（目前的大部分工作量都在补漏洞）
+同样的道理，遇到问题，应该是你们自己提出解决方法，我这方面只做审核，不在提供解决方法，原因是你们对此方面的工作比我更熟悉，而且工作也需要你们自己来做，所以最大的话语权在你们手中，我仅仅作为统筹考虑对你们提出的建议方案进行审核并修正。</p>
+<p>就目前的无线项目组，我要求如下：
+1.自己的工作自己安排进度，考虑相关的问题，潜在的风险，对于和其他人有关联的工作，提出自己的接口方法。自己的工作要有主动性。
+将这些问题汇报上来，进行统筹考虑。
+2.遇到问题自己提出解决方法，到我这里进行审核，通过后迅速处理。</p>
 <p><strong>后来考虑下，还是没发送，放到这里，仅当自勉吧。</strong></p>
 
       
@@ -402,14 +502,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -417,23 +555,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -449,12 +587,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -463,7 +607,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

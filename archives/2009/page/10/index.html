@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2009/page/10/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,13 +231,36 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/shiyongnetshminglingzaiwindowxiakuaisuqiehuanip.html">使用netsh命令在window下快速切换ip</a></h1>
+    <h1 class="title"><a href="/y2009/m05/shiyongnetshminglingzaiwindowxiakuaisuqiehuanip.html">使用Netsh命令在Window下快速切换Ip</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <div>使用netsh命令却换ip设置，具体可通过netsh ？获取帮助，帮助写的很详细，下面是网上找的winxp下的脚本，其中的local貌似是本地连接名字。</div><br><div>在Win7和vista下，应该是这样（看见那个本地连接没？就是你的网卡的名字，用他来指定网卡还真有点晕）：记着要以管理员权限执行..</div><br><div><br><div>@echo ip197</div><br><div>netsh interface ipv4 set address “本地连接” static 192.168.0.197 255.255.255.0 192.168.0.1</div><br><div>netsh interface ipv4 set dnsservers “本地连接” static 192.168.0.1 primary</div><br></div><br><div></div><br><div></div><br><div><strong>WinXP下</strong></div><br><div>@echo ip_beijing</div><br><div>netsh interface ip set address local source=static addr=10.56.100.112 mask=255.255.255.0</div><br><div>netsh interface ip set address name=local gateway=10.56.100.254 gwmetric=1</div><br><div>netsh interface ip set dns local static 10.68.100.211</div><br><div></div><br><div>如果需要为IE设代理服务器（我上网主用Firefox，IE代理是为了msn），则可以加一句 call ipbj.reg此reg文件，比如</div><br><div>Windows Registry Editor Version 5.00</div><br><div></div><br><div>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]</div><br><div>“ProxyServer”=“10.18.100.133:8080”</div><br><div>“ProxyOverride”=&quot;10.<em>.</em>.*;&lt;local&gt;&quot;</div><br><div>“ProxyEnable”=dword:00000001</div><br><div></div><br><div>最后面的1代表启动，0代表关闭</div>
+        <div>使用netsh命令却换ip设置，具体可通过netsh ？获取帮助，帮助写的很详细，下面是网上找的winxp下的脚本，其中的local貌似是本地连接名字。</div>
+<div>在Win7和vista下，应该是这样（看见那个本地连接没？就是你的网卡的名字，用他来指定网卡还真有点晕）：记着要以管理员权限执行..</div>
+<div>
+<div>@echo ip197</div>
+<div>netsh interface ipv4 set address &quot;本地连接&quot; static 192.168.0.197 255.255.255.0 192.168.0.1</div>
+<div>netsh interface ipv4 set dnsservers &quot;本地连接&quot; static 192.168.0.1 primary</div>
+</div>
+<div></div>
+<div></div>
+<div><strong>WinXP下</strong></div>
+<div>@echo ip_beijing</div>
+<div>netsh interface ip set address local source=static addr=10.56.100.112 mask=255.255.255.0</div>
+<div>netsh interface ip set address name=local gateway=10.56.100.254 gwmetric=1</div>
+<div>netsh interface ip set dns local static 10.68.100.211</div>
+<div></div>
+<div>如果需要为IE设代理服务器（我上网主用Firefox，IE代理是为了msn），则可以加一句 call ipbj.reg此reg文件，比如</div>
+<div>Windows Registry Editor Version 5.00</div>
+<div></div>
+<div>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]</div>
+<div>&quot;ProxyServer&quot;=&quot;10.18.100.133:8080&quot;</div>
+<div>&quot;ProxyOverride&quot;=&quot;10.<em>.</em>.*;&lt;local&gt;&quot;</div>
+<div>&quot;ProxyEnable&quot;=dword:00000001</div>
+<div></div>
+<div>最后面的1代表启动，0代表关闭</div>
       
     </div>
     <footer>
@@ -242,6 +278,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -251,17 +299,18 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/wordpressyoubeiheiliaolianggewenjianbeixiugaiusersphpthumbsphp.html">Wordpress又被黑了，两个文件被修改users.php、thumbs.php</a></h1>
+    <h1 class="title"><a href="/y2009/m05/wordpressyoubeiheiliaolianggewenjianbeixiugaiusersphpthumbsphp.html">Wordpress又被黑了，两个文件被修改Users.Php、Thumbs.Php</a></h1>
   
 
     </header>
     <div class="entry">
       
         <p>wordpress又被黑了，两个文件被修改：</p>
-<p>./wp-admin/users.php:&lt;?php if(md5($_COOKIE[‘wpuser’])==“0e28cc9ebf11517e67013a7818708080”){</p>
-<p>./wp-admin/images/Thumbs.php:&lt;?php if(md5($_COOKIE[‘wpuser’])==“0e28cc9ebf11517e67013a7818708080”){</p>
+<p>./wp-admin/users.php:&lt;?php if(md5($_COOKIE[&#39;wpuser&#39;])==&quot;0e28cc9ebf11517e67013a7818708080&quot;){</p>
+<p>./wp-admin/images/Thumbs.php:&lt;?php if(md5($_COOKIE[&#39;wpuser&#39;])==&quot;0e28cc9ebf11517e67013a7818708080&quot;){</p>
 <p>发现这两个文件被修改了，第一行就上上面的代码。郁闷。我靠。好脆弱呀！！</p>
-<p>通过文件修改时间可知：文件是在09年4月5日被修改的，其他文件修改日期是09年3月11日，说明不是上次那个管理员密码丢失漏洞所造成的，那就是说之后又被黑了，不知道是wordpress被黑了，还是服务器被黑了。<br>还好这位大哥没有动我东西。以后要加强Linux安全学习了。</p>
+<p>通过文件修改时间可知：文件是在09年4月5日被修改的，其他文件修改日期是09年3月11日，说明不是上次那个管理员密码丢失漏洞所造成的，那就是说之后又被黑了，不知道是wordpress被黑了，还是服务器被黑了。
+还好这位大哥没有动我东西。以后要加强Linux安全学习了。</p>
 
       
     </div>
@@ -281,6 +330,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -289,7 +350,7 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/gaodingdaliangshujucharusqlservermuqiandadaomeimiao2000tiao.html">搞定大量数据插入sql Server,测试最快可达1万(日志设为简单)</a></h1>
+    <h1 class="title"><a href="/y2009/m05/gaodingdaliangshujucharusqlservermuqiandadaomeimiao2000tiao.html">搞定大量数据插入Sql Server,测试最快可达1万(日志设为简单)</a></h1>
   
 
     </header>
@@ -301,15 +362,21 @@
 <p>具体做法：</p>
 <p>1.如果不是必须，把数据库的恢复模式改为“简单”</p>
 <p>2.使用如下的方式插入数据：最好直接作为一条SQL语句直接执行，但是不要写太多条进去，貌似有人说大于1000了，应该有慢下来的，我每次插入20性能已经相当不错，所以就先这样把任务完成先，以后再研究最好的方法。</p>
-<p>BEGIN TRANSACTION<br>INSERT …<br>INSERT …<br>INSERT …<br>COMMIT  TRANSACTION</p>
+<p>BEGIN TRANSACTION
+INSERT ...
+INSERT ...
+INSERT ...
+COMMIT  TRANSACTION</p>
 <p>具体实现方法比较：</p>
 <ol>
 <li>将一次要提交的SQL语句，无论多少条Insert全部组合成为一条SQL语句，以BEGIN TRAN;开始，以COMMIT TRAN;结束。这样的操作速度最快可达1万/秒。</li>
-<li><p>跟上面方法一致，但是每条SQL语句执行一次ExecSQL，第一次ExecSQL(‘BEGIN TRAN’),最后ExecSQL(‘Commit TRAN’),这样操作数据一般，性能提高微弱，目前我测试效率为1500条/秒左右。<br>附加心得：</p>
+<li><p>跟上面方法一致，但是每条SQL语句执行一次ExecSQL，第一次ExecSQL(&#39;BEGIN TRAN&#39;),最后ExecSQL(&#39;Commit TRAN&#39;),这样操作数据一般，性能提高微弱，目前我测试效率为1500条/秒左右。
+附加心得：</p>
 </li>
 <li><p>对于Delphi程序员，有一个严重提醒，不要使用SQL.add();方法进行sql生成，如果第一种方法使用sql.add组合出来一个大的SQL语句，实际上比执行插入操作都慢，导致系统瓶颈，尤其是一条长的SQL语句，多次add，性能之差，不可想象。还是使用String来进行拼接，之后赋值给sql.text为好。</p>
 </li>
-<li>如果使用上面第二种方法，在没有“COMMIT TRAN”，插入一个存储过程的执行，不影响整体事物。（我的程序执行数据插入时候是批量调用对象的Insert方法，因为有很多对象类型不同，其Insert方法也不同，所以需要对此进行测试，发现这样做不影响数据插入）<br>就是这么简单。哈哈。</li>
+<li>如果使用上面第二种方法，在没有“COMMIT TRAN”，插入一个存储过程的执行，不影响整体事物。（我的程序执行数据插入时候是批量调用对象的Insert方法，因为有很多对象类型不同，其Insert方法也不同，所以需要对此进行测试，发现这样做不影响数据插入）
+就是这么简单。哈哈。</li>
 </ol>
 
       
@@ -330,6 +397,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -344,7 +423,10 @@
     </header>
     <div class="entry">
       
-        <p>简单的优化方法：<br>1.将数据库恢复模式改为简单，基本能提高一倍速度。<br>自己测试获得的结果：<br>1.使用SET IMPLICIT_TRANSACTIONS ON可以强制进行事务提交，不执行Commit不能提交数据</p>
+        <p>简单的优化方法：
+1.将数据库恢复模式改为简单，基本能提高一倍速度。
+自己测试获得的结果：
+1.使用SET IMPLICIT_TRANSACTIONS ON可以强制进行事务提交，不执行Commit不能提交数据</p>
 <p>2.如果使用存储过程插入数据，上面的命令无效，每秒大概1350条（20万大概2.5分钟）</p>
 <p>3.使用delphi+ado+存储过程插入数据大概速度是每秒1350条左右，使用第一种能够提高到3000左右（20万1分14），是偶自己的测试。</p>
 <p>4.使用查询管理器执行存储过程，大概3200条左右，比上秒稍快。</p>
@@ -353,7 +435,35 @@
 <p>7.按照6方法执行过后，会影响之后4的速度，使4的速度提高到6低点的水平，不知道为什么。</p>
 <p>测试不太精确，大概意思可以得到，如果强制使用事务提交，可以增加插入速度2倍多，但是事务处理过程中，会锁表，影响其他线程数据插入，对于多线程有些问题。</p>
 <p>偶也不是DBA，所以只能做些粗略的测试，看起来偶的程序，主要瓶颈不是在与数据存储（尚未测试多线程插入是不是会更慢）。</p>
-<coolcode>select getdate()<br>DECLARE    @i    int,@return_value int,@ReturnValue int<br>set @i=0<br>BEGIN TRAN<br>while(@i&lt;200000)<br>begin<br>    INSERT INTO <a href="[FNetWorkName],[FZhongJiQunMing],[FZhongJiQunHao],[FStatus],[FBenDuanXinLingDian],[FDuiDuanXinLingDian],[FJuXiangMing],[FJuXiangHao],[FQiShiCic],[FJieShuCic],[FZhongJiQunFangXiang],[FDianLuTuoPuLeiXing],[FDaiKuan],[FLeiXing],[FVMGW]">ZhongJiQun</a>VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)<br>    set @i=@i+1<br>end<br>commit TRAN<br>select getdate()<br>select count(*) from zhongjiqun<br>EXEC    @return_value = [dbo].[proc_cj_Insert_ZhongJiQun]<br>                @FNetWorkName = ‘eee’,<br>                @FZhongJiQunMing = ‘eee’,<br>                @FZhongJiQunHao = ‘eee’,<br>                @FStatus = ‘eee’,<br>                @FBenDuanXinLingDian = ‘eee’,<br>                @FDuiDuanXinLingDian = ‘eee’,<br>                @FJuXiangMing = ‘eee’,<br>                @FJuXiangHao = ‘eee’,<br>                @FQiShiCic = ‘eee’,<br>                @FJieShuCic = ‘eee’,<br>                @FZhongJiQunFangXiang = ‘eee’,<br>                @FDianLuTuoPuLeiXing = ‘eee’,<br>                @FDaiKuan = ‘eee’,<br>                @FLeiXing = ‘eee’,<br>                @FVMGW = ‘eee’,<br>                @ReturnValue = @ReturnValue OUTPUT</coolcode>
+<coolcode>select getdate() 
+DECLARE    @i    int,@return_value int,@ReturnValue int
+set @i=0
+BEGIN TRAN
+while(@i&lt;200000)
+begin
+    INSERT INTO <a href="[FNetWorkName],[FZhongJiQunMing],[FZhongJiQunHao],[FStatus],[FBenDuanXinLingDian],[FDuiDuanXinLingDian],[FJuXiangMing],[FJuXiangHao],[FQiShiCic],[FJieShuCic],[FZhongJiQunFangXiang],[FDianLuTuoPuLeiXing],[FDaiKuan],[FLeiXing],[FVMGW]">ZhongJiQun</a>VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    set @i=@i+1
+end
+commit TRAN
+select getdate()
+select count(*) from zhongjiqun
+EXEC    @return_value = [dbo].[proc_cj_Insert_ZhongJiQun]
+                @FNetWorkName = &#39;eee&#39;,
+                @FZhongJiQunMing = &#39;eee&#39;,
+                @FZhongJiQunHao = &#39;eee&#39;,
+                @FStatus = &#39;eee&#39;,
+                @FBenDuanXinLingDian = &#39;eee&#39;,
+                @FDuiDuanXinLingDian = &#39;eee&#39;,
+                @FJuXiangMing = &#39;eee&#39;,
+                @FJuXiangHao = &#39;eee&#39;,
+                @FQiShiCic = &#39;eee&#39;,
+                @FJieShuCic = &#39;eee&#39;,
+                @FZhongJiQunFangXiang = &#39;eee&#39;,
+                @FDianLuTuoPuLeiXing = &#39;eee&#39;,
+                @FDaiKuan = &#39;eee&#39;,
+                @FLeiXing = &#39;eee&#39;,
+                @FVMGW = &#39;eee&#39;,
+                @ReturnValue = @ReturnValue OUTPUT</coolcode>
       
     </div>
     <footer>
@@ -372,6 +482,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -386,9 +508,31 @@
     </header>
     <div class="entry">
       
-        <p>检查系统内核是否支持sysfs：grep SYSFS /boot/config-<code>uname -r</code>，如果是CONFIG_SYSFS=y为支持<br>加载 speedstep 和 cpufreq 系列的模块吧<br>检测方法lsmod 可以看到<br>speedstep-centrino<br>cpufreq_userspace，为已加载，我的系统已经挂载了<br>安装uswsusp</p>
-<p>安装powernowd这是比cpufreq更强大的cpu频率调节工具<br>运行sudo powernowd<br>可以直接作为一个daemon运行.<br>pidof powernowd可以看到进程后台运行了<br>可以把这个加到系统启动会话中.<br>显卡频率：<br>我只用过ati（本本多半是ati的吧）<br>aticonfig —lsp<br>列出现在运行的频率和可调节的step<br>然后用aticonfig —set-powerstate=n<br>n为上面的不同的step<br>自己选择一个<br>一般是1为最低</p>
-<p>下面贴一张我的本本调节后的效果,比之前开机的温度还要低上2C,比之前的平均温度大约低10C<br>此外:uswsusp在很多笔记本上可以修复不能suspend的bug.起码我的笔记本就是<br>如果需要休眠的话,还可以安装一个叫hibernate的包,这些策略在我的笔记本上经过测试有效<br>上述方法的来源debian官方的irc<br>一些方法是采纳在Debian的maillist中的建议<br>Debian的邮件列表是<a href="http://www.mail-archive.com/。" target="_blank">http://www.mail-archive.com/。</a></p>
+        <p>检查系统内核是否支持sysfs：grep SYSFS /boot/config-<code>uname -r</code>，如果是CONFIG_SYSFS=y为支持
+加载 speedstep 和 cpufreq 系列的模块吧
+检测方法lsmod 可以看到
+speedstep-centrino
+cpufreq_userspace，为已加载，我的系统已经挂载了
+安装uswsusp</p>
+<p>安装powernowd这是比cpufreq更强大的cpu频率调节工具
+运行sudo powernowd
+可以直接作为一个daemon运行.
+pidof powernowd可以看到进程后台运行了
+可以把这个加到系统启动会话中.
+显卡频率：
+我只用过ati（本本多半是ati的吧）
+aticonfig --lsp
+列出现在运行的频率和可调节的step
+然后用aticonfig --set-powerstate=n
+n为上面的不同的step
+自己选择一个
+一般是1为最低</p>
+<p>下面贴一张我的本本调节后的效果,比之前开机的温度还要低上2C,比之前的平均温度大约低10C
+此外:uswsusp在很多笔记本上可以修复不能suspend的bug.起码我的笔记本就是
+如果需要休眠的话,还可以安装一个叫hibernate的包,这些策略在我的笔记本上经过测试有效
+上述方法的来源debian官方的irc
+一些方法是采纳在Debian的maillist中的建议
+Debian的邮件列表是<a href="http://www.mail-archive.com/。" target="_blank">http://www.mail-archive.com/。</a></p>
 
       
     </div>
@@ -416,14 +560,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -431,23 +613,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -463,12 +645,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -477,7 +665,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

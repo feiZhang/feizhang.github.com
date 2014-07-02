@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/page/36/' />
 </head>
 
 
@@ -206,27 +207,104 @@
     <div id="main-col" class="alignleft"><div id="wrapper">
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2009-06-30T03:26:38.000Z"><a href="/y2009/m06/wordpressatomxieyideshiyong.html">2009-06-30</a></time>
+        <time datetime="2009-05-30T14:31:07.000Z"><a href="/y2009/m05/wordpressyoubeiheiliaolianggewenjianbeixiugaiusersphpthumbsphp.html">2009-05-30</a></time>
       
       
   
-    <h1 class="title"><a href="/y2009/m06/wordpressatomxieyideshiyong.html">Wordpress Atom协议的使用</a></h1>
+    <h1 class="title"><a href="/y2009/m05/wordpressyoubeiheiliaolianggewenjianbeixiugaiusersphpthumbsphp.html">Wordpress又被黑了，两个文件被修改Users.Php、Thumbs.Php</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近想用wordpress最为一个数据展示系统，需要将数据导入到wordpress系统中，网上找半天，未发现有人对此做过应用及介绍，只好自己来研究了。<br>通过wordpress.org 了解是wp-app.php 文件提供了atom功能，打开源码，就可以找到其支持的各种方法，POST、GET、DELETE等，如下：</p>
-<p><coolcode><br>        $this-&gt;selectors = array(<br>            ‘@/service$@’ =&gt;<br>                array(‘GET’ =&gt; &#39;get_service&#39;),<br>            ‘@/categories$@’ =&gt;<br>                array(‘GET’ =&gt; &#39;get_categories_xml&#39;),<br>            &#39;@/post/(\d+)$@&#39; =&gt;<br>                array(‘GET’ =&gt; &#39;get_post&#39;,<br>                        ‘PUT’ =&gt; &#39;put_post&#39;,<br>                        ‘DELETE’ =&gt; &#39;delete_post&#39;),<br>            &#39;@/posts/?(\d+)?$@&#39; =&gt;<br>                array(‘GET’ =&gt; &#39;get_posts&#39;,<br>                        ‘POST’ =&gt; &#39;create_post&#39;),<br>            &#39;@/attachments/?(\d+)?$@&#39; =&gt;<br>                array(‘GET’ =&gt; &#39;get_attachment&#39;,<br>                        ‘POST’ =&gt; &#39;create_attachment&#39;),<br>            &#39;@/attachment/file/(\d+)$@&#39; =&gt;<br>                array(‘GET’ =&gt; &#39;get_file&#39;,<br>                        ‘PUT’ =&gt; &#39;put_file&#39;,<br>                        ‘DELETE’ =&gt; &#39;delete_file&#39;),<br>            &#39;@/attachment/(\d+)$@&#39; =&gt;<br>                array(‘GET’ =&gt; &#39;get_attachment&#39;,<br>                        ‘PUT’ =&gt; &#39;put_attachment&#39;,<br>                        ‘DELETE’ =&gt; &#39;delete_attachment&#39;),<br>        );<br></coolcode><br>然后就是用curl 进行一个一个测试，目前我不知道windows是否���相似的工具，我是在<a href="http://www.liangpeng.net/ytag/ubuntu">ubuntu</a>下进行的测试，经过千辛万苦，终于将基本的操作方法搞明白了。<br>重要的两个方法<br>1.DELETE 删除一篇文章<br>curl -v -X DELETE -u admin:333 <a href="http://liangpeng.net/wp-app.php/post/3" target="_blank">http://liangpeng.net/wp-app.php/post/3</a><br>其中的-u指定用户名密码<br>2.POST 创建一篇新文章<br>curl -v -X POST —data @t.xml -H “Content-Type:application/atom+xml” -u admin:333 <a href="http://liangpeng.net/wp-app.php/posts/" target="_blank">http://liangpeng.net/wp-app.php/posts/</a><br>其中-H是设置http请求的头信息，在服务器端会进行Content-type类型验证，所以必须增加此信息<br>其中@t.xml是一个文章内容的xml文件，可以通过 <a href="http://liangpeng.net/wp-app.php/post/2" target="_blank">http://liangpeng.net/wp-app.php/post/2</a>  获取到一个真实数据，修改下就能用了，我是直接把多余的信息全部删除，只剩下标题和内容字段，测试有效。</p>
-<p>目前两个操作基本满足我的需求，关于Get，直接使用 <a href="http://liangpeng.net/wp-app.php/post/?" target="_blank">http://liangpeng.net/wp-app.php/post/?</a> 既可以获得，很是简单，当让也需要用户名密码。</p>
-<p><strong>注意：</strong></p>
+        <p>wordpress又被黑了，两个文件被修改：</p>
+<p>./wp-admin/users.php:&lt;?php if(md5($_COOKIE[&#39;wpuser&#39;])==&quot;0e28cc9ebf11517e67013a7818708080&quot;){</p>
+<p>./wp-admin/images/Thumbs.php:&lt;?php if(md5($_COOKIE[&#39;wpuser&#39;])==&quot;0e28cc9ebf11517e67013a7818708080&quot;){</p>
+<p>发现这两个文件被修改了，第一行就上上面的代码。郁闷。我靠。好脆弱呀！！</p>
+<p>通过文件修改时间可知：文件是在09年4月5日被修改的，其他文件修改日期是09年3月11日，说明不是上次那个管理员密码丢失漏洞所造成的，那就是说之后又被黑了，不知道是wordpress被黑了，还是服务器被黑了。
+还好这位大哥没有动我东西。以后要加强Linux安全学习了。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2009-05-26T09:24:45.000Z"><a href="/y2009/m05/gaodingdaliangshujucharusqlservermuqiandadaomeimiao2000tiao.html">2009-05-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2009/m05/gaodingdaliangshujucharusqlservermuqiandadaomeimiao2000tiao.html">搞定大量数据插入Sql Server,测试最快可达1万(日志设为简单)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>终于搞定了中继的数据采集，本以为一天搞定的事情，足足让我搞了3天有余，部分时间是被其他事情耽搁了，主要原因是以前使用的插入数据库数据的方式有问题。</p>
+<p>之前，按照一个大哥的说法，使用存储过程操作数据表，可能会防止数据表死锁的问题，所以，所有的数据操作全部封装为存储过程来进行处理，包括：数据对象的insert操作，小数量数据的时候，也没有多大感觉，但是现在插入的中继信息居然达到了300万的数量，按照原来的方法，每秒大概只能插入200数据，总用时15000秒，我靠，半天时间玩完了，多线程插入也没用，速度差不对。</p>
+<p>无解，只能想办法提高采集速度，先把程序处理逻辑进行调整，还是没有多大提高，毕竟数据插入太慢了，只得想办法提高数据插入的操作，经过了解发现原因是，每次存储过程会自动完成一个事务操作，而每个事物要进行日志的写入，估计还有效验等工作，简单的做法就是将多个插入SQL语句组合在一个数据中，减少对日志的操作，发现效率提高的不错，基本能达到1800条每秒。</p>
+<p>具体做法：</p>
+<p>1.如果不是必须，把数据库的恢复模式改为“简单”</p>
+<p>2.使用如下的方式插入数据：最好直接作为一条SQL语句直接执行，但是不要写太多条进去，貌似有人说大于1000了，应该有慢下来的，我每次插入20性能已经相当不错，所以就先这样把任务完成先，以后再研究最好的方法。</p>
+<p>BEGIN TRANSACTION
+INSERT ...
+INSERT ...
+INSERT ...
+COMMIT  TRANSACTION</p>
+<p>具体实现方法比较：</p>
 <ol>
-<li>wp-app.php 只接受/post/(/d)+格式的url重写，如果你的服务器不支持，请设置，目前apache下貌似使用wordpress自己生成的.htaccess即可，nginx我还没搞定</li>
-<li>之前一遍英文文章(<a href="http://torrez.us/archives/2006/08/21/486/)介绍的使用cookie登录，貌似现在已经不行了，wp-app.php使用的是$_SERVER获取的User变量，curl" target="_blank">http://torrez.us/archives/2006/08/21/486/)介绍的使用cookie登录，貌似现在已经不行了，wp-app.php使用的是$_SERVER获取的User变量，curl</a> 可以通过参数 -u 直接传递。</li>
+<li>将一次要提交的SQL语句，无论多少条Insert全部组合成为一条SQL语句，以BEGIN TRAN;开始，以COMMIT TRAN;结束。这样的操作速度最快可达1万/秒。</li>
+<li><p>跟上面方法一致，但是每条SQL语句执行一次ExecSQL，第一次ExecSQL(&#39;BEGIN TRAN&#39;),最后ExecSQL(&#39;Commit TRAN&#39;),这样操作数据一般，性能提高微弱，目前我测试效率为1500条/秒左右。
+附加心得：</p>
+</li>
+<li><p>对于Delphi程序员，有一个严重提醒，不要使用SQL.add();方法进行sql生成，如果第一种方法使用sql.add组合出来一个大的SQL语句，实际上比执行插入操作都慢，导致系统瓶颈，尤其是一条长的SQL语句，多次add，性能之差，不可想象。还是使用String来进行拼接，之后赋值给sql.text为好。</p>
+</li>
+<li>如果使用上面第二种方法，在没有“COMMIT TRAN”，插入一个存储过程的执行，不影响整体事物。（我的程序执行数据插入时候是批量调用对象的Insert方法，因为有很多对象类型不同，其Insert方法也不同，所以需要对此进行测试，发现这样做不影响数据插入）
+就是这么简单。哈哈。</li>
 </ol>
 
       
@@ -247,24 +325,142 @@
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2009-06-12T12:44:34.000Z"><a href="/y2009/m06/yizhinongbuqingchudeyigejingjixuewenti.html">2009-06-12</a></time>
+        <time datetime="2009-05-25T12:57:43.000Z"><a href="/y2009/m05/sqlserverdaliangshujucharudezongjie.html">2009-05-25</a></time>
       
       
   
-    <h1 class="title"><a href="/y2009/m06/yizhinongbuqingchudeyigejingjixuewenti.html">一直弄不清出的一个经济学问题</a></h1>
+    <h1 class="title"><a href="/y2009/m05/sqlserverdaliangshujucharudezongjie.html">Sql Server大量数据插入的总结</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>今天看电视说日本人均收入4.8万美元，有点诧异，国内经济已经如此繁荣了，难道我们的中产阶级还比别人的平均差数倍？</p>
-<p>一直以来也同意部分人说的所谓人民币的购买力问题，比如：同样购买一个苹果，在欧洲用欧元买可能是1欧元，而在国内用人民币买可能是1人民币，这样来说对于国际汇率，人民币的购买力是高的，而对于一些高科技涉及进口的东西，大家的价格就差不多了，所以在完全以美元计算世界人民收入的时候，国人是有些吃亏的（当然我不是说中国已经足够发达，而是说在表面上国人应该不致于那么落后的)。那为什么会造成这样的状况呢？是一部分商品不适合国际流通？那么原材料呢？有些搞不懂！</p>
-<p>如果这些都是事实，那么人民币的汇率将如何发展？继续对美元升值？最后1:1美元，同样一个苹果=1美元=1人民币？<br>还是继续通货膨胀？一个苹果=7人民币=1美元？</p>
-<p>有点迷惑，哪位给个简单的解释，谢谢了。</p>
+        <p>简单的优化方法：
+1.将数据库恢复模式改为简单，基本能提高一倍速度。
+自己测试获得的结果：
+1.使用SET IMPLICIT_TRANSACTIONS ON可以强制进行事务提交，不执行Commit不能提交数据</p>
+<p>2.如果使用存储过程插入数据，上面的命令无效，每秒大概1350条（20万大概2.5分钟）</p>
+<p>3.使用delphi+ado+存储过程插入数据大概速度是每秒1350条左右，使用第一种能够提高到3000左右（20万1分14），是偶自己的测试。</p>
+<p>4.使用查询管理器执行存储过程，大概3200条左右，比上秒稍快。</p>
+<p>5.使用第一种方法，数据插入过程中，会造成锁表导致其他数据操作不能进行。</p>
+<p>6.使用第一种方法，直接在Sql server查询管理器，可以达到20000条的速度</p>
+<p>7.按照6方法执行过后，会影响之后4的速度，使4的速度提高到6低点的水平，不知道为什么。</p>
+<p>测试不太精确，大概意思可以得到，如果强制使用事务提交，可以增加插入速度2倍多，但是事务处理过程中，会锁表，影响其他线程数据插入，对于多线程有些问题。</p>
+<p>偶也不是DBA，所以只能做些粗略的测试，看起来偶的程序，主要瓶颈不是在与数据存储（尚未测试多线程插入是不是会更慢）。</p>
+<coolcode>select getdate() 
+DECLARE    @i    int,@return_value int,@ReturnValue int
+set @i=0
+BEGIN TRAN
+while(@i&lt;200000)
+begin
+    INSERT INTO <a href="[FNetWorkName],[FZhongJiQunMing],[FZhongJiQunHao],[FStatus],[FBenDuanXinLingDian],[FDuiDuanXinLingDian],[FJuXiangMing],[FJuXiangHao],[FQiShiCic],[FJieShuCic],[FZhongJiQunFangXiang],[FDianLuTuoPuLeiXing],[FDaiKuan],[FLeiXing],[FVMGW]">ZhongJiQun</a>VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    set @i=@i+1
+end
+commit TRAN
+select getdate()
+select count(*) from zhongjiqun
+EXEC    @return_value = [dbo].[proc_cj_Insert_ZhongJiQun]
+                @FNetWorkName = &#39;eee&#39;,
+                @FZhongJiQunMing = &#39;eee&#39;,
+                @FZhongJiQunHao = &#39;eee&#39;,
+                @FStatus = &#39;eee&#39;,
+                @FBenDuanXinLingDian = &#39;eee&#39;,
+                @FDuiDuanXinLingDian = &#39;eee&#39;,
+                @FJuXiangMing = &#39;eee&#39;,
+                @FJuXiangHao = &#39;eee&#39;,
+                @FQiShiCic = &#39;eee&#39;,
+                @FJieShuCic = &#39;eee&#39;,
+                @FZhongJiQunFangXiang = &#39;eee&#39;,
+                @FDianLuTuoPuLeiXing = &#39;eee&#39;,
+                @FDaiKuan = &#39;eee&#39;,
+                @FLeiXing = &#39;eee&#39;,
+                @FVMGW = &#39;eee&#39;,
+                @ReturnValue = @ReturnValue OUTPUT</coolcode>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2009-05-24T08:05:58.000Z"><a href="/y2009/m05/ubuntuxiageibijibenjiangwen.html">2009-05-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2009/m05/ubuntuxiageibijibenjiangwen.html">Ubuntu下给笔记本降温</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>检查系统内核是否支持sysfs：grep SYSFS /boot/config-<code>uname -r</code>，如果是CONFIG_SYSFS=y为支持
+加载 speedstep 和 cpufreq 系列的模块吧
+检测方法lsmod 可以看到
+speedstep-centrino
+cpufreq_userspace，为已加载，我的系统已经挂载了
+安装uswsusp</p>
+<p>安装powernowd这是比cpufreq更强大的cpu频率调节工具
+运行sudo powernowd
+可以直接作为一个daemon运行.
+pidof powernowd可以看到进程后台运行了
+可以把这个加到系统启动会话中.
+显卡频率：
+我只用过ati（本本多半是ati的吧）
+aticonfig --lsp
+列出现在运行的频率和可调节的step
+然后用aticonfig --set-powerstate=n
+n为上面的不同的step
+自己选择一个
+一般是1为最低</p>
+<p>下面贴一张我的本本调节后的效果,比之前开机的温度还要低上2C,比之前的平均温度大约低10C
+此外:uswsusp在很多笔记本上可以修复不能suspend的bug.起码我的笔记本就是
+如果需要休眠的话,还可以安装一个叫hibernate的包,这些策略在我的笔记本上经过测试有效
+上述方法的来源debian官方的irc
+一些方法是采纳在Debian的maillist中的建议
+Debian的邮件列表是<a href="http://www.mail-archive.com/。" target="_blank">http://www.mail-archive.com/。</a></p>
 
       
     </div>
@@ -284,94 +480,36 @@
 
   <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2009-06-05T06:34:27.000Z"><a href="/y2009/m06/congbierenwenzhangxuexidaodeyiduanpingjiaceshiyonglideganwu.html">2009-06-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2009/m06/congbierenwenzhangxuexidaodeyiduanpingjiaceshiyonglideganwu.html">从别人文章学习到得一端评价测试用例的感悟</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>如果这个 bug 是人为失误，比如在 C 语言中把 == 写成 = 。那么重新出现在原来位置的可能性很小。（比之更复杂的情况也是。) 通常，一个好的编译器（对于静态语言）或一个好的代码静态分析器（对于动态语言) 比自动化测试更有效。</p>
-<p>如果 bug 存在于软件复杂的上下文，由于整体设计失误，或是繁杂的模块依赖关系造成。对于单个模块的测试也就无效，而问题被彻底弄清然后 fix ，在软件的生命期内也就几乎不会再出现了。</p>
-<p>归根到底，<strong>我们需要的是减低模块耦合度、提高内聚性。比如写更小的程序，用进程而不是线程解决问题，制定简洁稳定的 IPC 通讯协议，而不是定一堆的 interface ，等等来提高软件的可维护性</strong>。</p>
-<p>在许多时候：企图写出覆盖所有分支的测试案例是在浪费人的时间，而<br>频繁、自动化运行测试套件，则是在浪费机器的时间，为地球多制造一些温室气体罢了。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
   </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2009-06-03T12:56:41.000Z"><a href="/y2009/m06/nandaozhongguoyouqiangshengdaoliaokeyibiguansuoguodejingdi.html">2009-06-03</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2009/m06/nandaozhongguoyouqiangshengdaoliaokeyibiguansuoguodejingdi.html">难道中国又强盛到了可以闭关锁国的境地？</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>我操，6.2日，gfw相当于屏蔽了几乎所有世界上最好的服务，live.com,twitter.com,flickr.com等一批网站一夜全屏蔽，这次真是牛逼的不行了，靠，一直以来对于中国的执政政府还是比较好感了，虽然很是落后，但至少是在进步着，不过，关于信息行业，却截然不同，现在终于理解部分精英人士为何要削尖跨出国门了，为甚外人说咱们非民主了。我就日了，人家好好的网站咋就碍着他们什么事了，国内漫天充斥的垃圾站他们不管，偏偏非要把最好的东西全部都给挡道门外，国人现在已经足够缺乏创意了，现在连拿来主义都不让用了。真是服到底，日他妈，中国这批搞所谓文化审查的人们！！！</p>
-<p>奶奶的，老子有钱有权了，非都给他们城管了不可。。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
   </div>
-</article>
-
-
-
-
-
-  <article class="post">
+</div>
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2009-05-31T11:24:24.000Z"><a href="/y2009/m05/zenyangshuxiegerenblogwenzhang.html">2009-05-31</a></time>
+        <time datetime="2009-05-21T13:30:21.000Z"><a href="/y2009/m05/ubuntuzhongxiugainm-appletmorenwangluolianjie.html">2009-05-21</a></time>
       
       
   
-    <h1 class="title"><a href="/y2009/m05/zenyangshuxiegerenblogwenzhang.html">怎样书写个人blog文章</a></h1>
+    <h1 class="title"><a href="/y2009/m05/ubuntuzhongxiugainm-appletmorenwangluolianjie.html">Ubuntu中修改Nm Applet默认网络连接</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近发现一个叫 张宴 的牛人的blog，此人岁数不大，技术却不错，看起来人品也可以（哈哈，现实中不认识），其blog更新不算快，但是貌似每篇都是其一字一字写出来的，当人有些东西也是综合其他人的一些技术，在现在的环境下谁遇到问题不google一下先人的方法，但是也都经过自己的重编辑达到���容的完整性，给人的感觉是对每一篇文章都细心的对待，使其完整的描述一个事件，当然我不反对把blog当成自己的资料夹，但是在copy的过程中如果是好文章，则排版好之后发布（当然不能少了转载字样），而有些自己感觉不拓的地方就要细心修正，使其达到能用的境地，比如：你用的是VISTA，而参考文章是xp，则其中处理的方法肯定有差异，则详细描述之。。</p>
-<p>总结：认认真真写好每篇文章。</p>
+        <p>　　不知道大家注意到没有，Ubuntu Feisty自带的nm-applet有一个小毛病：一旦你通过它连上某个无线网络之后，不管你是不是点错了，或者说是不是真的需要保留这个连接的信息，它都会记录下这个网络ID，今后如果检测到这个网络，根据它自己排的优先级（最后一次成功连接，但有时候不准，或者说有可能在来回切换时不小心被弄乱），如果它排在前面，就会自动连上去，就算你手动选择另一个，它还是不依不饶的切回它认定的那一个。</p>
+<p>　　遇到这个情况，我想许多朋友大概和我一样，在它提供的上下文菜单找，不过GNOME的界面哲学使得界面菜单直接提供的信息和高级功能很有限，或者到类似 /etc/<em>、~/.</em>/之类的地方找相关配置文件，但是实际上它也不是那么&quot;传统&quot;，因为nm-applet使用GConf来记录配置信息：</p>
+<p>　　在命令行输入gconfig-editor，打开GConf编辑器，定位到system -&gt; networking -&gt; wireless -&gt; networks，这个目录下记录了所有nm-applet使用的无线网络ID和相关配置信息，如果有不希望保留的配置，直接进到相关目录，右键逐个点击右面的key-value条目，Unset Key，完成以后就可以让nm-applet&quot;忘掉&quot;这个无线网络连接。当然，通过这个小工具，你也可以手工对某组具体的key-value做修改。</p>
+<p>　　这件事也让我联想起Linus Torvalds不止一次（也包括不少KDE的死忠）对GNOME的微词：尽可能让用户自己掌控，还是尽可能帮用户拿主意？这是个问题。</p>
 
       
     </div>
@@ -398,14 +536,52 @@
     <a href="/page/37/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
-</nav></div></div>
+</nav>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -413,23 +589,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -445,12 +621,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -459,7 +641,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

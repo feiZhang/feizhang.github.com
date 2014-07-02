@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/' />
 </head>
 
 
@@ -206,53 +207,55 @@
     <div id="main-col" class="alignleft"><div id="wrapper">
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-11-20T04:28:14.000Z"><a href="/y2013/m11/project-design-and-code-organization-case-study.html">2013-11-20</a></time>
+        <time datetime="2014-07-02T03:23:38.000Z"><a href="/y2014/m07/project_summary_for_unified_authentication.html">2014-07-02</a></time>
       
       
   
-    <h1 class="title"><a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a></h1>
+    <h1 class="title"><a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>注：本实例绝非虚构，针对初级开发者，改变<code>程序员＝打字</code>的困境</p>
-<h2>案例描述</h2>
-<p>背景：证书打印功能，能够打印3份证书：正本（机构名称、住所）、副本第一页（编号、发证机关）、副本第二页（机构名称、法人）</p>
-<p>客户描述：需要在证书打印功能中增加打印记录功能，要求1天完成。</p>
-<h2>明确目地</h2>
-<p>简单的描述，可以设想出两种不同的目的：</p>
+        <p>最近作的项目主要有2个地方客户不甚满意。</p>
 <ol>
-<li>客户是希望知道谁在什么时候打印了什么，打印了多少次</li>
-<li>证书需要每年更换，第二次打印希望能够复用上一次的打印数据</li>
+<li>没有提交申请磁盘阵列技术支持。</li>
+<li>消息中心，业务系统未登录，页面转向没有处理好。</li>
 </ol>
-<p>不同的目地有不同的设计思路</p>
-<p>目的一：关注于什么人什么时间打印了什么；错误的打印如何处理；<br>目的二：关注于如何减少用户的工作量；如何组织机构档案、机构年审、证书打印的业务关系；</p>
-<p>本案例，目的一与目的二不冲突。完全可以同时实现，但功能实现的时间要求有限，所以只能选择其一，此时就要与客户沟通，明确真实的目的。</p>
-<p><code>向错误的方向走的越远，错的越远。</code></p>
-<h2>设计分析</h2>
-<p>背景：选定实现第一个目的</p>
-<h5>第一次设计</h5>
-<p>打印记录表结构：机构名称、住所、编号、发证机关、机构名称、法人、打印时间、打印人</p>
-<p>功能：没点击一次打印，增加一条打印记录</p>
-<p>缺点：3个不同的打印，能够填充的字段不同，记录看起来总是不完整的。</p>
-<h5>第二次设计</h5>
-<p>表机构修改为：打印人、打印内容、打印时间</p>
-<p>功能修正：将所有的打印数据整合为一个字段－打印内容</p>
-<h5>第三次设计</h5>
-<p>表结构修改为：机构名称、打印人、打印内容、打印时间</p>
-<p>功能修正：将机构名称独立出来，作为数据整合的基准，比如：要查看某个机构的所有打印记录</p>
-<p>缺点：3份打印内容，才是一次完整的打印记录，现在的设计还不能体现这个概念</p>
-<h5>总结</h5>
-<p>iphone发布前，进行过无数次的设计修正，那可是世界顶级的设计师，而我们每次写代码前都是不加思索，错误百出，为何不在开工前向想好呢？无论你是什么等级的工程师，<code>请在编码前，将自己的设计思路推翻两次以上</code></p>
-<p>关于项目分析方法，可参考 <a href="http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document_2181.html">写出一份有意义的需求文档</a></p>
-<h2>代码组织</h2>
-<p>此次分析并不涉及代码组织的分析，为了突出代码组织的重要性，在这里再次说明<code>请在编码前，将自己的代码组织思路推翻两次以上</code>。</p>
-<p>材料管理是我们公司最有技术能力的人独立完成的项目，此人熟知各种技术、能够解决各种疑难杂症，但是这个项目却久经维护，依然破烂不堪，让人头痛。代码是需要组织的，不是拼凑起来就管用。<code>能够驾驭千军万马才是真技术</code></p>
+<p>第一个问题，主要问题是：沟通不够准确。</p>
+<p>解决方案：</p>
+<ol>
+<li>成立项目组成员列表，电话、邮箱、联系人。</li>
+<li>制作<code>项目前期准备事项列表</code>，发送给客户及相关人员。</li>
+<li>鉴于客户可能不经常查看邮件，重要的内容应提供纸制文件。</li>
+<li>制作一份<code>项目进展情况列表</code>，每周、每阶段发送给项目组成员。</li>
+</ol>
+<p>第二个问题，主要问题是：一时疏忽，原本已经考虑到这个问题，并做出了应对方案，但没有完美部署。</p>
+<p>解决方案：</p>
+<ol>
+<li>对于用户体验的内容，尤其是关键点，增加重视度。</li>
+<li>增加测试的工作内容，尽量还原客户现场环境。</li>
+</ol>
+<p>总结：</p>
+<p>原本想把这个项目做到所能做到的完美，还是出现了这些不必要的纰漏，遗憾并不爽，第二个问题，确实是个人的问题，应极力避免。目前的状况并未达到我个人的极限，依然出现纰漏，究其原因，还是在思想上，对于完美的追求不够深刻，以后应该继续努力。</p>
+<p>工作中，也能完全投入，一旦闲下来，就没有了再进入的欲望。对生活提不起兴致，才是根结。</p>
+<p>向瘦了一圈的老罗学习。</p>
 
       
     </div>
@@ -272,37 +275,34 @@
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-11-20T04:26:31.000Z"><a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">2013-11-20</a></time>
+        <time datetime="2014-02-13T01:46:07.000Z"><a href="/y2014/m02/closed_a_door_open_a_window.html">2014-02-13</a></time>
       
       
   
-    <h1 class="title"><a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a></h1>
+    <h1 class="title"><a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>我的老板及其严厉的人，有一次，我作为项目经理和老板去跟客户谈一个项目，不是很顺利，回来的路上，顺口问同事，“PSTN是个啥呀”，身边的老板立马发作了，“你丫的，PSTN都不知道是什么，跟人家客户谈个毛项目呀，都不知道他妈的先学习基础概念？”，靠，哥们我一听也他妈的气愤了，“妈的，我是一个程序员呀，又不是搞通信的，这我怎么该知道？”，当然，这些话，只能在心里骂。</p>
-<p>人有情绪是应该的，但是总是被情绪控制，就比较傻逼了，到底是“公司先给我涨工资，我才更好的去工作”，还是“我更好的工作，公司给我涨工资”，显然，谁主动，谁就小亏。那么是不是我们就要天天撞钟，等老板给多点钱，才去干点扫地的这个事。时间和5毛钱，那个更重要呢？</p>
-<p>道理看起来很明显，现实却很骨感，初出茅庐的我们，总是嫌得到的少，而不愿意去付出。即便付出了，也没有使出10分的力气，敷衍了事，事事凑合。领导严厉一点，还一堆的理由，岂不知，你所经历的才是你的财富，别人给予的，只是利息而已。没有大量的财富，谈何丰厚的利息。而且，这个利息还是驴打滚呀。</p>
-<p>那么我能做什么呢？</p>
-<ol>
-<li>凡事多动脑：不要以为，凑合能用就行了，你可知，商品品质20%的差异，价格可以差10倍，想想悲催的诺基亚吧，曾经以为完美的存在，瞬间就被秒杀了</li>
-<li>寻求帮助是一个好方法：但是一定要先自己尝试解决要，万事不决问google，之后再问人，不要浪费别人时间呀，首先看看这个<a href="http://www.zhihu.com/question/19555761" target="_blank">主题</a></li>
-<li>多动手操作：任何知识，要向据为己有，知识听听看看是不行地，“自己动手丰衣足食”是恒古不变的法则</li>
-<li>不要拒绝批评：面对批评，心里不爽是可以地，一直不爽就是傻逼地，人生中有人愿意冒风险给你批评，是你的福分呀，当然，也不能一概接收，还是要有独立思考能力地</li>
-<li>审视自我：很多时候，我们在自己画的圈圈中打转，无法前进，这时候就要自省了，什么时候能开悟，就看造化了，所谓：佛渡有缘人</li>
-<li>多花时间：我们都是凡人，要想在某个方面超越别人，多花时间是不二法门（你是乔布斯，就当我没说）</li>
-<li>锻炼沟通的能力：提问是门艺术，提问的质量决定答案的质量</li>
-</ol>
-<p>利益最大化现实途径，其实就是多干活，更快的提高自己的能力，提高自己本身的价值，形成长期的利益最大化。是不是多干活一定能提高能力？这里面牵涉到一个能力转化率的问题，某些人做一个项目能够明白5个技术点，而有些人只能明白3个，长期积累，个人能力的差距会越来越大，一个项目涉及方方面面的内容，管理、需求、设计、编码、测试，可能每个人的兴趣点不同，人也不可能面面俱到，只要在你自己选择的方向提高即可。那么如何来提高转化率，复杂而又简单的问题，</p>
-<p>尝试、归纳、思考、总结、改变。</p>
-<p>个人感觉，就是这么个套路，具体的执行情况，就看每个人自己的执行力和欲望的大小了。</p>
-<p>坚持迭代！！！</p>
+        <p>炉石传说，打到9级，再也打不上去了，究其原因，卡不全是个因素。游戏的乐趣随即减少，游戏时间也顺应减少，有了更多阅读的时间。各有各的乐趣。
+即便不放弃炉石，基础卡牌也是可以玩的，经目的从竞技移向纯娱乐即可，可以按照现有的牌，组些娱乐套，也是不错的生活享受。</p>
 
       
     </div>
@@ -322,103 +322,33 @@
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-09-05T08:56:15.000Z"><a href="/y2013/m09/write-a-meaningful-requirements-document.html">2013-09-05</a></time>
+        <time datetime="2014-02-13T01:40:57.000Z"><a href="/y2014/m02/no_goal.html">2014-02-13</a></time>
       
       
   
-    <h1 class="title"><a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a></h1>
+    <h1 class="title"><a href="/y2014/m02/no_goal.html">Goal</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h3>视角</h3>
-<h5>以客户需要为视角</h5>
-<p>应该以客户的视角来书写文档，以客户实际的需要作为中心。比如：工单管理，应写明客户为什么需要求救工单，客户现实中是如何处理求救工单的，而不是直接将需求具体为：录入工单、回访工单</p>
-<h5>以软件设计为视角</h5>
-<p>必须以定量分析来描述文档，而不是概念描述，比如：一般情况下、通常、大概、有时候，这些概念性的内容，计算机乃至程序员是无法理解的，应该将各种不同的情况加以分析，转换为可以判定条件，比如：美女筛选这个业务，1.身高大于170cm 2.体重小于45kg 这些定量的数据，可行，而 3.皮肤白 4.气质佳，这样无法定量的条件，就需要深入思考、妥协，转换为定量的数据，比如：3.白 &gt; #333333 4.智商大于120并且情商大于&gt;130，或者调整业务，增加人工投票的功能。</p>
-<h3>系统目标</h3>
-<p>不能是笼统的，走形式的，是真正的目标，有意义的目标，不多，但是必须有，如果根本都想不出来，那就需要先考虑系统存在的必要性</p>
-<ol>
-<li>解决了什么问题</li>
-<li>优化了什么业务</li>
-<li>增加了什么便利</li>
-<li>或者达到了某种目的（圈钱、面子工程等）</li>
-</ol>
-<p>根据目的，来确定系统要实现的功能，实现功能的方法。比如：</p>
-<ol>
-<li>面子工程：就不需要搞复杂的业务逻辑，而是展现更多的功能，但不需要每个功能很强大，有就行，而界面要符合某些人的口味。</li>
-<li>便利性：则着重突出UI交互，让用户一看就懂，不学就会用</li>
-<li>优化业务：那就需要把业务流程搞清楚</li>
-<li>解决问题：需要找出本质的问题，而不是表面的问题</li>
-</ol>
-<p>没有哪个系统能够满足���世界的需要，强大如iPhone也没有征服全世界，必须有所取舍，找出自己的亮点。</p>
-<h3>业务分析</h3>
-<h4>以场景演练为出发点</h4>
-<p>最好能够以实际用户的身份，对现实的业务流程进行操作，熟悉每个业务步骤的原始执行方式，体会操作的实际效果及意义，在没有实际操作条件的情况下，也要尽量在脑海中，将每个业务过程演练多边（要有带入感，就像过电影片段一样），了解现实的操作方法之后，才能抽象出符合客户需要的产品设计方案。</p>
-<h4>穷尽特殊情况</h4>
-<p>对于某些复杂的业务运算，应穷尽各种情况，让用户进行解答，从而找出正确的计算方法：</p>
-<p>？？</p>
-<h3>文档的组织方式</h3>
-<p>很多需求文档都是对功能的罗列，1、2、3、4、5，仅仅是一个一个的罗列，读起来索然无味，根本无法调动阅读者的积极性，让人读得很勉强，引不起思考。甚至，不谈功能与功能的联系，苍白的义务式的罗列。</p>
-<h4>功能组织</h4>
-<p>将能够完成一项特定任务的功能，按照业务逻辑走向，进行分组表述，是一个较好的方法，恰当的功能表述顺序，与内容组织，更容易让人理解作者的本意</p>
-<p>而对于那些诸如：参数设置、业务字典、部门管理等等一些无脑功能，基本是固定不变的内容，简单罗列即可</p>
-<h4>罗列基本、突出重点、详尽难点</h4>
-<p>长篇累牍，重点不清的文档虽然也能说明问题，但是会增加阅读的难度，容易被程序员抵制，甚至抛弃，即便是强制去读，也不利于理解。</p>
-<p>比如：客户管理这个大功能</p>
-<p>如果分解为：新增客户、删除客户、修改客户、客户资料查看、客户信息统计，并详尽说明；有多大意义？</p>
-<p>较好的分法：</p>
-<ol>
-<li>客户档案管理：新增、修改、删除、查看（一行文字就ok了）；然后列出客户档案的字段，针对较复杂的字段，进行特别说明</li>
-<li>针对客户的类别分别描述不同的客户有那种不同的业务处理方式</li>
-<li>针对不同的统计内容，画出对应的统计结果草图，并略微说明统计的意义</li>
-<li>对一些特殊的界面需求，比如：查询条件，做出具体要求，并说明其中的用意</li>
-<li>与客户相关的业务，指明必要的链接</li>
-</ol>
-<p>对于一些较复杂的业务逻辑，比如：运营补贴的计算方式（因素很多），要穷尽各种因素的组合，进行详细描述。</p>
-<h4>用业务实例辅助说明</h4>
-<p>以实例来描述业务场景，通常更容易理解，比如：老人档案审批</p>
-<hr>
-<ol>
-<li><em>社区</em>填写<strong>老人档案</strong>，提交给<em>街道</em>，进行<strong>第一次审批</strong></li>
-<li><p><em>街道</em><strong>第一次审批</strong></p>
-<ol>
-<li><p>通过后，提交给<em>区县</em>，进行<strong>第二次审批</strong></p>
-<pre><code><span class="number">1</span>.  <span class="number">_</span>区县<span class="number">_</span>审批通过，则将<span class="variable">**</span>老人档案<span class="variable">**</span>设置为 <span class="variable">**</span>已审批档案<span class="variable">**</span></code></pre>
-<ol>
-<li><p><em>区县</em>未审批通过，则将档案退回到街道重新审批</p>
-</li>
-<li><p>审批未通过，则退回给<em>社区</em></p>
-<ol>
-<li>xxxxx</li>
-</ol>
-</li>
-<li>xxxxx</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p>备注：<br>1. 每次审批，有：通过、未通过两个选项，对于未通过的审批，必须填写审批意见。<br>2. 其中街道在审批过程中，可以修改：审批意见、截止日期</p>
-<hr>
-<ol>
-<li>场景中可以使用实际的客户名称，比如：金水区民政局、丰庆路街道办等，增加可阅读性</li>
-<li>对于描述的内容，可增加 斜体、粗体、下划线 等因素，将角色、业务点、业务数据 等内容，着重标出，提高内容质量</li>
-</ol>
-<h3>文档优化</h3>
-<ol>
-<li>使用更形象、合适的语言描述，比如：移动用户的增加，是“新用户入网”，而不是“新增用户”，“新增团队”也没有“创建新团队”更贴切</li>
-</ol>
-<h3>笔者注</h3>
-<ol>
-<li>系统及文档迭代化：系统的第一版不要追求过大过复杂，而应紧抓核心目的，仅完成核心目的必须的内容，随后的功能逐步添加；类似于抛砖引玉</li>
-<li>系统可持续交付：每个功能的完成，系统都是完整的、客户可用的</li>
-</ol>
+        <p>无目标前行，欣赏路途中的风景，相信每条路都能到罗马。</p>
 
       
     </div>
@@ -438,100 +368,45 @@
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-08-29T07:12:37.000Z"><a href="/y2013/m08/javascript-run-in-ajax.html">2013-08-29</a></time>
+        <time datetime="2014-01-17T08:06:47.000Z"><a href="/y2014/m01/build_trend.html">2014-01-17</a></time>
       
       
   
-    <h1 class="title"><a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a></h1>
+    <h1 class="title"><a href="/y2014/m01/build_trend.html">构筑趋势</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>代码(index.php)：</p>
-<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="code"><pre>&lt;html&gt;&lt;head&gt;
-&lt;script src=<span class="string">"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span>&gt;&lt;/script&gt;
-&lt;script&gt;console.log(<span class="string">"header"</span>,<span class="keyword">new</span> Date());&lt;/script&gt;
-&lt;/head&gt;&lt;body ryt12134=<span class="string">"1"</span>&gt;
-&lt;script&gt;console.log(<span class="string">"body_header"</span>,<span class="keyword">new</span> Date());&lt;/script&gt;
-&lt;script&gt;
-(function($) {
-    $(function() {
-        console.log(<span class="string">"$$$$"</span> + <span class="keyword">new</span> Date());
-    });
-})(jQuery);
-$(document).ready(function(){ console.log(<span class="string">"ready"</span>,<span class="keyword">new</span> Date());});
-&lt;/script&gt;
-&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://42.121.117.187:8899/test.js?&lt;?php echo time();?&gt;"</span>&gt;&lt;/script&gt;
-&lt;script&gt;console.log(<span class="string">"body_footer"</span>,<span class="keyword">new</span> Date());&lt;/script&gt;
-&lt;/body&gt;&lt;/html&gt;
-</pre></td></tr></table></figure>
-
-<p>代码(index.html)：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">html</span>&gt;</span><span class="tag">&lt;<span class="title">head</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ryt12134</span>=<span class="value">"1"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-$.get(<span class="string">"index.php"</span>,<span class="keyword">function</span>(html){
-    $(<span class="string">"body"</span>).append(html);
-});
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>测试结果：macos:firefox、chrome、safari — win8:ie10 基本相同</p>
+        <p>回顾居家业务项目的进展，感觉有点慢，究其原因，有一点是：对DxInfo基础框架的升级改造，占用了较大的资源。对于这个问题的反思，又让我想起了趋势论。</p>
+<p>对于趋势概念的理解，始于《明朝那些事》中，徐阶斗严嵩的情节。之前，对于事物的认知，类似于小李飞刀，一击必胜，只看到事物成败的一点，比如：认为盖茨开发了DOS就此一帆风顺，成就微软，乔帮主沃兹研发了苹果I，就一发不可收，忽略了，盖茨、沃兹他们之前长期的技术积累，在他们成功之前，已经是大神级的牛人，当然也有天资、运气、环境等各方面的原因。回到明朝，当时徐阶也曾直接开干，差点把自己给灭了，在失败后，徐阶采用更慢频率，来逐步构筑自己的好趋势，超长期的积累，终于抓住机会，一战而胜。高手过招，不一定每一步都是好棋，但是一定不能有一步臭棋，往往需要长时间的拉锯战，通过积累点滴的优势，完成最终的胜利。</p>
+<p>这些故事，只是对我稍有启发，不再随意妄下非论。后来，《赵氏孤儿案》中，屠岸贾战败赵氏的案例，才让我更清晰的感受了趋势的构筑，屠岸贾的每一次行动，都不是为了胜利，只是为了瓦解皇帝对于赵氏的信任，通过一次又一次的小规模斗争，最终，皇帝主动将赵氏灭门。</p>
+<p>说了半天，好像很废话，道理很明显嘛，一口吃不成个胖子。实际上，道理是明摆着的，问题在于：视角、心态。首先要认清形势，居高临下，还婆婆妈妈的，就是2货，动不动就破釜沉舟，要决战的，也好不到那去。敌强我弱的情况下，认清差距，不急于一时，<code>放低心态</code>，才是关键。</p>
+<p>回到现实，在合适的周期内，不将精力完全放到某个单独的项目上，在项目稳步进展的同时，花费一定的精力，构建适合自己的项目框架，为以后的项目做好铺垫，应该是更好的选择。通过4个项目周期的发展，DxInfo框架基本完工，有理由相信，下一个项目，我们具备了快速完成的能力。</p>
+<p>实际上，构筑配置型框架，是不符合我本人审美观的，个人更倾向于，小模块组合的形式。不过，环境决定行动。</p>
 <ol>
-<li>将js文件放在header中，document.ready()会等待js加载完成后再执行（header中的js是优先于body加载的）</li>
-<li>将js文件放在body中，则 不考虑js是否加载就会执行（将jquery放在最后面，会导致js出错）</li>
-<li><p>直接请求index.php的执行结果</p>
-<pre>
-header Date {Thu Aug 29 2013 14:32:51 GMT+0800 (CST)}
-body_header Date {Thu Aug 29 2013 14:32:51 GMT+0800 (CST)}
-qian_test.js Date {Thu Aug 29 2013 14:32:54 GMT+0800 (CST)}
-hou_test.js Date {Thu Aug 29 2013 14:32:54 GMT+0800 (CST)}
-body_footer Date {Thu Aug 29 2013 14:32:54 GMT+0800 (CST)}
-$$$$Thu Aug 29 2013 14:32:54 GMT+0800 (CST)
-ready Date {Thu Aug 29 2013 14:32:54 GMT+0800 (CST)}
-</pre>
-</li>
-<li><p>请求index.html的执行结果（显然document.ready优先于js中的代码执行）</p>
-<pre>
-header Date {Thu Aug 29 2013 14:44:01 GMT+0800 (CST)}
-body_header Date {Thu Aug 29 2013 14:44:01 GMT+0800 (CST)}
-$$$$Thu Aug 29 2013 14:44:01 GMT+0800 (CST)
-ready Date {Thu Aug 29 2013 14:44:01 GMT+0800 (CST)}
-body_footer Date {Thu Aug 29 2013 14:44:01 GMT+0800 (CST)}
-qian_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
-hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
-</pre></li>
+<li>团队不具备构建通用小模块的技术能力</li>
+<li>团队成员，技术水准不高，无法驾驭新技术、复杂业务</li>
+<li>大多数项目的业务逻辑简单，重复度高</li>
+<li>项目需求变动频繁，推翻重做的几率大</li>
 </ol>
+<p>水无定势，炉石中的冰火法、鱼人术、滚石战、土豪德等，都是很牛逼的战术。找准核心点，根据自己特点，构筑自己的手牌，才是王道，个人认为当前的巨人大王术是最牛逼的，但是，木有大王木有巨人的我，还是先试试其他的吧。</p>
 
       
     </div>
@@ -551,34 +426,45 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-08-13T05:36:43.000Z"><a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">2013-08-13</a></time>
+        <time datetime="2014-01-03T02:40:51.000Z"><a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">2014-01-03</a></time>
       
       
   
-    <h1 class="title"><a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a></h1>
+    <h1 class="title"><a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p><code>关于我的移动健康检测设备</code>很早写的</p>
-<p>iphone的成功，是一个平台的成功，App Store，iTunes，iPhone，xCode有机的结合，造就了一个传奇，如果在iPhone发布时，App Store还在襁褓中，我想，Apple必然会推迟发布iPhone，因为那不是一个好产品，我们的产品也是这样。 虽然后端我们做的也不怎么样，但它是可控的，只要我们能够想到好点子，我们就有机会实现他，而前端的产品，是不可控的，甚至我们都没有多大能力去影响他的改变，我理想中的设备至少应该是这样的（物联网还未成熟，暂且不要求）：</p>
-<ol>
-<li>设备是无线的（蓝牙、Wifi、3G等标准无线协议），可以与现有流行的设备连接，比如：iPhone、Android等2.  设备应具有离线数据保存功能，在有互联网条件的情况下，再主动发送数据3.  设备的通讯协议是标准的，支持更多的设备加入平台4.  手持终端软件应该是强大的，支持基本的数据操作、交互，同时支持语音、视频交互</li>
-</ol>
-<p>那么我们应该做什么呢？</p>
-<ol>
-<li>策划一个有用的平台功能列表2.  友好、简介的UI交互3.  简单、高效、稳定、安全的交互协议 从而支持各个层面的厂商接入平台，完善生态链</li>
-</ol>
-<p>我们需要什么？</p>
-<ol>
-<li>一个有激情、有智慧、有技术的团队2.  一个有能力的舵手</li>
-<li>适当的资金 世界在改变，凭借color这个概念就融资4000多万美元的世界，有好的策划案，资金是不缺地，看你怎么运作了。</li>
-</ol>
+        <p>少帮主视频中的口头禅，“教你作人”，还真是学到了东西。</p>
+<p>刚开始玩的时候，冲天梯，卡到13级（好丢脸呀），被各种神卡、神抽搞死，好无奈呀，作为非人民币玩家，感觉这游戏很无助，资源不足，运气成分，这不是我想要的。作为即时战略的死忠，还是喜欢战术性、平衡性的游戏。直接从沉迷afk了一周。</p>
+<p>还是不死心，看了几片技术分析帖，毛色顿开，这他妈的和人生有点类似呀。</p>
+<h3 id="-">资源的不平衡</h3>
+<p>现实中的那些高富帅，我们是不能和其比资源的，好在如游戏一般，优质资源和精良资源的效用差距不算太大，而通过普通资源的分解、合成，能够产生精良资源，经过持续的积累，也能拿到一手不错的牌。</p>
+<p>专注于一手牌，研究策略，针对大资源的慢速，快攻是不错的选择，船小好调头嘛，终于冲到了8级（技战术还有较大的提高余地，努力冲传说）</p>
+<p>大资源＋好策略永远是最好的，不过，至少我们通过思路的挖掘，有了入场的门票，总比一味的放弃要好。</p>
+<h3 id="-">运气眷顾迎娶他的人</h3>
+<p>运气是成功必不可少的条件，是硬实力，但不是随机的。得当的资源储备（牌组）+ 恰当的策略（技战术），更容易得到运气的眷顾。没有梧桐树，凤凰想来，也没地落呀。</p>
+<h3 id="-">简单的道理</h3>
+<p>道理貌似都是简单的，如小时候学习的拔苗助长、守株待兔、掩耳盗铃，长大了，却一次又一次的犯着低级错误而不知，只有每次切身的体会，才能加强免疫力，融入自己的思维体系。</p>
+<p>感谢暴雪，感谢《炉石传说》。</p>
+<p>有好此口的，加我好友呀。<code>张非飞</code></p>
 
       
     </div>
@@ -603,14 +489,52 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
     <a href="/page/2/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
-</nav></div></div>
+</nav>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -618,23 +542,23 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -650,12 +574,18 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -664,7 +594,7 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

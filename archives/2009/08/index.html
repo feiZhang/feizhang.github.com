@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2009/08/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,15 +231,27 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m08/ubuntuzhonggnomekdexfacezhuomianhuanjinganzhuanghexiezai.html">Ubuntu中gnome、kde、xface桌面环境安装和卸载</a></h1>
+    <h1 class="title"><a href="/y2009/m08/ubuntuzhonggnomekdexfacezhuomianhuanjinganzhuanghexiezai.html">Ubuntu中Gnome、Kde、Xface桌面环境安装和卸载</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>&lt;转&gt;<br>（一）在终端中运行安装：<br>1、安装XFACE： sudo apt-get install xubuntu-desktop 点上面的菜单“应用程序－附件－终端”进入到终端，先输入你的用户的密码<br>2、安装KDE：sudo apt-get install kubuntu-desktop 使用方法同上<br>3、安装Gnome：sudo apt-get install ubuntu-desktop 使用方法同上<br>（二）在新立得中安装：<br>1、点上面的菜单“系统－系统管理－新立得软件包管理器”，输入你的用户密码，<br>2、在窗口右边点“搜索”，分别以xubuntu-desktop、kubuntu-desktop和ubuntu-desktop搜索，<br>3、在搜出的列表中，点右键选“标记安装”，<br>4、点工具栏的“应用”按钮，再点“确定”即可安装 安装好以後，在登录对话框中，选择相应的桌面环境  卸载桌面环境（应备份重要文件）<br>1、卸载gnome：sudo apt-get —purge remove liborbit2<br>2、卸载kde：sudo apt-get —purge remove kdelibs4c2a libarts1c2a<br>3、卸载xface：sudo apt-get —purge remove xfce4</p>
-<h2>Ubuntu 安装 KDE后不能进入 gnome 的问题  sudo apt-get install kUbuntu-desktop  这样安装的。安装后无法进入 gnome，面板一闪一闪的。感谢 Ubuntu.org.cn 的 cannot。找到这个方法  May it concerned with gtk2-engines-gtk-qt settings?  please change the Gtk style in kcontrol ,  and try again.  在 KDE 终端  kcontrol  进入 KDE 设置面板，在里面找到 gtk style，默认好像是 qt，我改回 human。重新登录 x win 果然可以进入 gnome 了。</h2>
-<p>看到网上说KDE如何如何好用，一时兴奋装了KDE桌面。KDE真的好看，就是太华丽了点，效果有了效率就打折了，���是怀念以前的GNOME。然而却进不了GNOME了，在网上找到了方法如下：    在 KDE 终端输入： kcontrol 进入 KDE 设置面板，在里面找到 gtk style，默认是 Qt，改回 human。重新登录 x win 就可以进入 gnome 了。但是后来发现这个方法好像没有一点用！还是原来一样的。    后来又在网上找了一些资料，只要在“服务”里去掉“KDM”选项重启后用root帐户登陆在终端输入： gdm 我们就进入由gdm引导的登陆窗口，好了这样就可以了！如果想进入KDE那就在终端输入：kdm</p>
+        <p>&lt;转&gt;
+（一）在终端中运行安装：
+1、安装XFACE： sudo apt-get install xubuntu-desktop 点上面的菜单“应用程序－附件－终端”进入到终端，先输入你的用户的密码
+2、安装KDE：sudo apt-get install kubuntu-desktop 使用方法同上
+3、安装Gnome：sudo apt-get install ubuntu-desktop 使用方法同上
+（二）在新立得中安装：
+1、点上面的菜单“系统－系统管理－新立得软件包管理器”，输入你的用户密码，
+2、在窗口右边点“搜索”，分别以xubuntu-desktop、kubuntu-desktop和ubuntu-desktop搜索，
+3、在搜出的列表中，点右键选“标记安装”，
+4、点工具栏的“应用”按钮，再点“确定”即可安装 安装好以後，在登录对话框中，选择相应的桌面环境  卸载桌面环境（应备份重要文件）
+1、卸载gnome：sudo apt-get --purge remove liborbit2
+2、卸载kde：sudo apt-get --purge remove kdelibs4c2a libarts1c2a
+3、卸载xface：sudo apt-get --purge remove xfce4</p>
+<h2 id="ubuntu-kde-gnome-sudo-apt-get-install-kubuntu-desktop-gnome-ubuntu-org-cn-cannot-may-it-concerned-with-gtk2-engines-gtk-qt-settings-please-change-the-gtk-style-in-kcontrol-and-try-again-kde-kcontrol-kde-gtk-style-qt-human-x-win-gnome-">Ubuntu 安装 KDE后不能进入 gnome 的问题  sudo apt-get install kUbuntu-desktop  这样安装的。安装后无法进入 gnome，面板一闪一闪的。感谢 Ubuntu.org.cn 的 cannot。找到这个方法  May it concerned with gtk2-engines-gtk-qt settings?  please change the Gtk style in kcontrol ,  and try again.  在 KDE 终端  kcontrol  进入 KDE 设置面板，在里面找到 gtk style，默认好像是 qt，我改回 human。重新登录 x win 果然可以进入 gnome 了。</h2>
+<p>看到网上说KDE如何如何好用，一时兴奋装了KDE桌面。KDE真的好看，就是太华丽了点，效果有了效率就打折了，还是怀念以前的GNOME。然而却进不了GNOME了，在网上找到了方法如下：    在 KDE 终端输入： kcontrol 进入 KDE 设置面板，在里面找到 gtk style，默认是 Qt，改回 human。重新登录 x win 就可以进入 gnome 了。但是后来发现这个方法好像没有一点用！还是原来一样的。    后来又在网上找了一些资料，只要在“服务”里去掉“KDM”选项重启后用root帐户登陆在终端输入： gdm 我们就进入由gdm引导的登陆窗口，好了这样就可以了！如果想进入KDE那就在终端输入：kdm</p>
 
       
     </div>
@@ -245,6 +270,18 @@
 
   
     <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -254,13 +291,15 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m08/yidaiiphoneyijingjiangdao2200zuoyouliao.html">一代iphone已经降到2200左右了</a></h1>
+    <h1 class="title"><a href="/y2009/m08/yidaiiphoneyijingjiangdao2200zuoyouliao.html">一代Iphone已经降到2200左右了</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>老婆手机坏了，这几天就在网上转悠，随便看看，发现2G版本的一代iphone已经降到2200了，当然，现在没有全新的了，基本是95新，已经很不错了，毕竟是一代神机，而且配置也不错，貌似和2代差不多，作为不想换联通一直用移动的人来说，不失为一个好的选择。<br>目前唯一不可知的是联通引进的iphone到底是否有wifi，而且价格是否过高。<br>看到这个价格，真打算自己买个玩玩，不过最近经济紧张。2000多应该还是可以承受的，但是就怕自己的消费欲望，毕竟这年头神奇的东西太对了，已经确定今年不再有奢侈品开支了，所以还是算了吧，要把劲自己的口袋，要不后半生怎么过呢。哈哈。</p>
+        <p>老婆手机坏了，这几天就在网上转悠，随便看看，发现2G版本的一代iphone已经降到2200了，当然，现在没有全新的了，基本是95新，已经很不错了，毕竟是一代神机，而且配置也不错，貌似和2代差不多，作为不想换联通一直用移动的人来说，不失为一个好的选择。
+目前唯一不可知的是联通引进的iphone到底是否有wifi，而且价格是否过高。
+看到这个价格，真打算自己买个玩玩，不过最近经济紧张。2000多应该还是可以承受的，但是就怕自己的消费欲望，毕竟这年头神奇的东西太对了，已经确定今年不再有奢侈品开支了，所以还是算了吧，要把劲自己的口袋，要不后半生怎么过呢。哈哈。</p>
 
       
     </div>
@@ -280,6 +319,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -288,13 +339,14 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m08/guanyuyanglaobaoxian-chumujingxin.html">关于养老保险--触目惊心</a></h1>
+    <h1 class="title"><a href="/y2009/m08/guanyuyanglaobaoxian-chumujingxin.html">关于养老保险  触目惊心</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近老婆考入事业单位，也算入国家的门了，由于已经毕业2年了，不知道为啥，给算了2年工龄（研究生的特权？），但是要补14000多的养老保险，郁闷呀，不是小数字，一月工资全额才1600，没法，商讨，但社保中心说不交不中，那就交白，但是为啥交这么多呢？google了一遍又一遍，也没个头绪，不过却让我发现了下面的文章：<br>我搜到得原文《<a href="http://www.my1510.cn/article.php?id=4071f08ab07fd56e》，作者" target="_blank">http://www.my1510.cn/article.php?id=4071f08ab07fd56e》，作者</a> <strong>小人物</strong> 如下(看来个人的养老保险还是需要研究下才能决定的，幸好我没交，哈哈，我是农民)：</p>
+        <p>最近老婆考入事业单位，也算入国家的门了，由于已经毕业2年了，不知道为啥，给算了2年工龄（研究生的特权？），但是要补14000多的养老保险，郁闷呀，不是小数字，一月工资全额才1600，没法，商讨，但社保中心说不交不中，那就交白，但是为啥交这么多呢？google了一遍又一遍，也没个头绪，不过却让我发现了下面的文章：
+我搜到得原文《<a href="http://www.my1510.cn/article.php?id=4071f08ab07fd56e》，作者" target="_blank">http://www.my1510.cn/article.php?id=4071f08ab07fd56e》，作者</a> <strong>小人物</strong> 如下(看来个人的养老保险还是需要研究下才能决定的，幸好我没交，哈哈，我是农民)：</p>
 <p>今天听一个网友说交养老保险要113年才回本，所以让大家要努力多活几年。我听后对这个数字很有兴趣，就上网查了一下。数据最早来自一个名叫“养老金靠谱吗？看小白领退休后能拿多少”的帖子，网址是：<a href="http://www.tianya.cn/publicforum/content/develop/1/193103.shtml" target="_blank"><a href="http://www.tianya.cn/publicforum/content/develop/1/193103.shtml">http://www.tianya.cn/publicforum/content/develop/1/193103.shtml</a></a>。同时在此文基础上，派生出一个跟进贴“计算后大吃一惊，除非活过113岁，你交的养老金才能回本”，有兴趣的可以搜一下。因为养老保险的计算很复杂，涉及因素非常多，加上中国处于发展之中，非常不好计算，因此我也无法对其算法挑毛病，毕竟谁也不能保证自己算得更好。</p>
 <p>但我对这个结果－－即113岁才能回本不大认同，所以就自己算了一下。我也是按自己的想法算的，而且肯定有不科学的地方，还请大家原谅。</p>
 <p>假设：某人，小白是白领才叫小白，我这个人就叫小工吧，因为我假设他工资比较低。</p>
@@ -306,9 +358,9 @@
 <p>1990年2月，小工交300元，30年后300元就会变成300*1.04＾29.9＝933.18元（29.9是个估计值，实际上应该是29年零11个月）。</p>
 <p>1990年3月，小工交300元，30年后300元就会变成300*1.04＾29.8＝930.38元</p>
 <p>依此类推</p>
-<p>…………………………………………………..</p>
-<p>…………………………………………………..</p>
-<p>…………………………………………………..</p>
+<p>...........................................................</p>
+<p>...........................................................</p>
+<p>...........................................................</p>
 <p>直到</p>
 <p>2019年12月，小工交300元，仍是300元。下个月，小工就满60岁，退休了。</p>
 <p>以 上全部数字加起来，共计19万8424元。也就是说小工交了30年，如果是自己做稳定投资的话，就会有这么多钱。当然，如果碰到巴菲特，年率是21%，最 后会有479万零897元。但如果你不能确定有如此好运气的话，还是按4%吧，任何声称年平均收益超过7%的人最大的可能是骗子。</p>
@@ -318,16 +370,16 @@
 <p>2020年1月，小工领取了1000元，他的本金就剩下197424元，而本月又新增利息收入658.08元，结果最终他的本金是198082元。</p>
 <p>2020年2月，小工领取了1000元，他的本金就剩下197082元，而本月又新增利息收入656.94元，结果最终他的本金是197739元。</p>
 <p>依此类推</p>
-<p>…………………………………………………..</p>
-<p>…………………………………………………..</p>
-<p>…………………………………………………..</p>
+<p>...........................................................</p>
+<p>...........................................................</p>
+<p>...........................................................</p>
 <p>结果在2046年11月，也就是在小工86岁的时候，他的本金会剩下490元。</p>
 <p>也就是说，如果小工活到了86岁，他会用光了他自己上交的全部养老金中的金额。当然，政府是友好的，只要小工继续活下去，政府会一直发线给他。但如果相 反，小工在此前不幸故去，他的钱就肯定不会转账到地府，而会被用于其它方面，例如用于其他的长寿者，或私下贷给私人企业等等。</p>
 <p>中国目前男性平均寿命为70岁，女性为74岁，因此如果86岁才回本，表示绝大部分人都会亏的。</p>
 <p>上面的计算涉及两个比较重要的变量：</p>
 <p>1.交费年限　交的越早，回本时间越长，亏的越多。</p>
 <p>2.退休年龄　未来也许可能会调整法定退休年龄，退休时间越晚，亏的越多。</p>
-<p>如果想少亏钱，唯一的办法是不交养老金或少交，因为在理论上未来国家不会看着你饿死，但国家也有相应的规定，即一定要交满15年才可以，否则饿死也不管。（！）但如果只交15年，国家就亏了，不过现在国家正在尽量普及这���制度，漏网之鱼会越来越少。</p>
+<p>如果想少亏钱，唯一的办法是不交养老金或少交，因为在理论上未来国家不会看着你饿死，但国家也有相应的规定，即一定要交满15年才可以，否则饿死也不管。（！）但如果只交15年，国家就亏了，不过现在国家正在尽量普及这个制度，漏网之鱼会越来越少。</p>
 <p>第二条，修改退休年龄。退休年龄修改是一件大事，虽然可以少付退休金，但可能会造成失业率增加，因此这个办法在中国不见得会轻易使用。</p>
 <p>除上述外，还有若干我未考虑的重要变量：</p>
 <p>1.经济发展速度</p>
@@ -362,14 +414,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -377,23 +467,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -409,12 +499,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -423,7 +519,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

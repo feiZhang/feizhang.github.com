@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/2013/09/' />
 </head>
 
 
@@ -210,11 +211,23 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-09-05T08:56:15.000Z"><a href="/y2013/m09/write-a-meaningful-requirements-document.html">2013-09-05</a></time>
+        <time datetime="2013-09-20T02:26:38.000Z"><a href="/y2013/m09/write-a-meaningful-requirements-document.html">2013-09-20</a></time>
       
       
   
@@ -224,12 +237,18 @@
     </header>
     <div class="entry">
       
-        <h3>视角</h3>
-<h5>以客户需要为视角</h5>
+        <h3 id="-">重要性</h3>
+<ol>
+<li>需求作为软件开发的排头兵，决定了项目发展的方向，方向错误，全局失败</li>
+<li>需求的频繁变动，不仅影响项目的进度，更影响编码人员的工作热情、工作态度（人心散了，队伍就不好带了）</li>
+</ol>
+<p>参考：<a href="http://liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html" target="_blank"><strong>项目设计与代码组织-案例分析</strong></a></p>
+<h3 id="-">视角</h3>
+<h5 id="-">以客户需要为视角</h5>
 <p>应该以客户的视角来书写文档，以客户实际的需要作为中心。比如：工单管理，应写明客户为什么需要求救工单，客户现实中是如何处理求救工单的，而不是直接将需求具体为：录入工单、回访工单</p>
-<h5>以软件设计为视角</h5>
+<h5 id="-">以软件设计为视角</h5>
 <p>必须以定量分析来描述文档，而不是概念描述，比如：一般情况下、通常、大概、有时候，这些概念性的内容，计算机乃至程序员是无法理解的，应该将各种不同的情况加以分析，转换为可以判定条件，比如：美女筛选这个业务，1.身高大于170cm 2.体重小于45kg 这些定量的数据，可行，而 3.皮肤白 4.气质佳，这样无法定量的条件，就需要深入思考、妥协，转换为定量的数据，比如：3.白 &gt; #333333 4.智商大于120并且情商大于&gt;130，或者调整业务，增加人工投票的功能。</p>
-<h3>系统目标</h3>
+<h3 id="-">系统目标</h3>
 <p>不能是笼统的，走形式的，是真正的目标，有意义的目标，不多，但是必须有，如果根本都想不出来，那就需要先考虑系统存在的必要性</p>
 <ol>
 <li>解决了什么问题</li>
@@ -241,22 +260,27 @@
 <ol>
 <li>面子工程：就不需要搞复杂的业务逻辑，而是展现更多的功能，但不需要每个功能很强大，有就行，而界面要符合某些人的口味。</li>
 <li>便利性：则着重突出UI交互，让用户一看就懂，不学就会用</li>
-<li>优化业务：那就需要把业���流程搞清楚</li>
+<li>优化业务：那就需要把业务流程搞清楚</li>
 <li>解决问题：需要找出本质的问题，而不是表面的问题</li>
 </ol>
 <p>没有哪个系统能够满足全世界的需要，强大如iPhone也没有征服全世界，必须有所取舍，找出自己的亮点。</p>
-<h3>业务分析</h3>
-<h4>以场景演练为出发点</h4>
+<h3 id="-">业务分析</h3>
+<h4 id="-">以场景演练为出发点</h4>
 <p>最好能够以实际用户的身份，对现实的业务流程进行操作，熟悉每个业务步骤的原始执行方式，体会操作的实际效果及意义，在没有实际操作条件的情况下，也要尽量在脑海中，将每个业务过程演练多边（要有带入感，就像过电影片段一样），了解现实的操作方法之后，才能抽象出符合客户需要的产品设计方案。</p>
-<h4>穷尽特殊情况</h4>
+<h4 id="-">穷尽特殊情况</h4>
 <p>对于某些复杂的业务运算，应穷尽各种情况，让用户进行解答，从而找出正确的计算方法：</p>
 <p>？？</p>
-<h3>文档的组织方式</h3>
+<h4 id="-">明确优先级</h4>
+<ol>
+<li>项目功能较多时，应分析出功能点的优先级，指导开发安排进度</li>
+<li>尽量指定各个功能点希望完成的时间点（技术部根据期望的时间点和功能的难易程度，规划进度表）</li>
+</ol>
+<h3 id="-">文档的组织方式</h3>
 <p>很多需求文档都是对功能的罗列，1、2、3、4、5，仅仅是一个一个的罗列，读起来索然无味，根本无法调动阅读者的积极性，让人读得很勉强，引不起思考。甚至，不谈功能与功能的联系，苍白的义务式的罗列。</p>
-<h4>功能组织</h4>
+<h4 id="-">功能组织</h4>
 <p>将能够完成一项特定任务的功能，按照业务逻辑走向，进行分组表述，是一个较好的方法，恰当的功能表述顺序，与内容组织，更容易让人理解作者的本意</p>
 <p>而对于那些诸如：参数设置、业务字典、部门管理等等一些无脑功能，基本是固定不变的内容，简单罗列即可</p>
-<h4>罗列基本、突出重点、详尽难点</h4>
+<h4 id="-">罗列基本、突出重点、详尽难点</h4>
 <p>长篇累牍，重点不清的文档虽然也能说明问题，但是会增加阅读的难度，容易被程序员抵制，甚至抛弃，即便是强制去读，也不利于理解。</p>
 <p>比如：客户管理这个大功能</p>
 <p>如果分解为：新增客户、删除客户、修改客户、客户资料查看、客户信息统计，并详尽说明；有多大意义？</p>
@@ -269,40 +293,40 @@
 <li>与客户相关的业务，指明必要的链接</li>
 </ol>
 <p>对于一些较复杂的业务逻辑，比如：运营补贴的计算方式（因素很多），要穷尽各种因素的组合，进行详细描述。</p>
-<h4>用业务实例辅助说明</h4>
+<h4 id="-">用业务实例辅助说明</h4>
 <p>以实例来描述业务场景，通常更容易理解，比如：老人档案审批</p>
 <hr>
 <ol>
 <li><em>社区</em>填写<strong>老人档案</strong>，提交给<em>街道</em>，进行<strong>第一次审批</strong></li>
-<li><p><em>街道</em><strong>第一次审批</strong></p>
-<ol>
-<li><p>通过后，提交给<em>区县</em>，进行<strong>第二次审批</strong></p>
-<pre><code><span class="number">1</span>.  <span class="number">_</span>区县<span class="number">_</span>审批通过，则将<span class="variable">**</span>老人档案<span class="variable">**</span>设置为 <span class="variable">**</span>已审批档案<span class="variable">**</span></code></pre>
-<ol>
-<li><p><em>区县</em>未审批通过，则将档案退回到街道重新审批</p>
-</li>
-<li><p>审批未通过，则退回给<em>社区</em></p>
-<ol>
-<li>xxxxx</li>
+<li><em>街道</em><strong>第一次审批</strong><ol>
+<li>通过后，提交给<em>区县</em>，进行<strong>第二次审批</strong><ol>
+<li><em>区县</em>审批通过，则将<strong>老人档案</strong>设置为 <strong>已审批档案</strong></li>
+<li><em>区县</em>未审批通过，则将档案退回到街道重新审批</li>
 </ol>
 </li>
+<li>审批未通过，则退回给<em>社区</em><ol>
+<li>xxxxx</li>
 <li>xxxxx</li>
 </ol>
 </li>
 </ol>
 </li>
 </ol>
-<p>备注：<br>1. 每次审批，有：通过、未通过两个选项，对于未通过的审批，必须填写审批意见。<br>2. 其中街道在审批过程中，可以修改：审批意见、截止日期</p>
+<p>备注：</p>
+<ol>
+<li>每次审批，有：通过、未通过两个选项，对于未通过的审批，必须填写审批意见。</li>
+<li>其中街道在审批过程中，可以修改：审批意见、截止日期</li>
+</ol>
 <hr>
 <ol>
 <li>场景中可以使用实际的客户名称，比如：金水区民政局、丰庆路街道办等，增加可阅读性</li>
 <li>对于描述的内容，可增加 斜体、粗体、下划线 等因素，将角色、业务点、业务数据 等内容，着重标出，提高内容质量</li>
 </ol>
-<h3>文档优化</h3>
+<h3 id="-">文档优化</h3>
 <ol>
 <li>使用更形象、合适的语言描述，比如：移动用户的增加，是“新用户入网”，而不是“新增用户”，“新增团队”也没有“创建新团队”更贴切</li>
 </ol>
-<h3>笔者注</h3>
+<h3 id="-">笔者注</h3>
 <ol>
 <li>系统及文档迭代化：系统的第一版不要追求过大过复杂，而应紧抓核心目的，仅完成核心目的必须的内容，随后的功能逐步添加；类似于抛砖引玉</li>
 <li>系统可持续交付：每个功能的完成，系统都是完整的、客户可用的</li>
@@ -330,14 +354,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -345,23 +407,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -377,12 +439,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -391,7 +459,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

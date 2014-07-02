@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/内核/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -218,63 +231,91 @@
       
       
   
-    <h1 class="title"><a href="/y2009/m05/guanyulinuxshang4gneicunwufazhengchangshibiedechuli.html">关于linux上4g内存无法正常识别的处理</a></h1>
+    <h1 class="title"><a href="/y2009/m05/guanyulinuxshang4gneicunwufazhengchangshibiedechuli.html">关于Linux上4g内存无法正常识别的处理</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近上了新服务器 xeon 5110<br>主板是MSI 5000v<br>内存是 1G FBD*1</p>
+        <p>最近上了新服务器 xeon 5110
+主板是MSI 5000v
+内存是 1G FBD*1</p>
 <p>顺利安装centos 5.0</p>
-<p>但是发现 top下 内存显示为3.3g不到点<br>没有完全识别出4g</p>
+<p>但是发现 top下 内存显示为3.3g不到点
+没有完全识别出4g</p>
 <p>查了大量资料后发现</p>
-<p>主要需要2个方面设置<br>1.bios:在bios里开启对大内存的设置<br>2.安装支持大内存的kernel</p>
-<p>centos 5.0 默认安装 for i386的内核不支持 4g+的内存<br>需要安装上kernel-hugemem</p>
+<p>主要需要2个方面设置
+1.bios:在bios里开启对大内存的设置
+2.安装支持大内存的kernel</p>
+<p>centos 5.0 默认安装 for i386的内核不支持 4g+的内存
+需要安装上kernel-hugemem</p>
 <div class="blockcode">
 
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>yum install kernel-hugemem</td><br></tr><br></tbody></table><br></span>`</div><br>结果发现 centos 下面 没有 kernel-hugemem这个rpm包了</p>
-<p>已经改名为kernel-PAE<br>尝试用yum安装</p>
+<p><td>yum install kernel-hugemem</td>
+</tr>
+</tbody></table>
+</span>`</div>
+结果发现 centos 下面 没有 kernel-hugemem这个rpm包了</p>
+<p>已经改名为kernel-PAE
+尝试用yum安装</p>
 <div class="blockcode">
 
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>yum install kernel-PAE</td><br></tr><br></tbody></table><br></span>`</div><br>安装好后 还需要手工修改 引导</p>
+<p><td>yum install kernel-PAE</td>
+</tr>
+</tbody></table>
+</span>`</div>
+安装好后 还需要手工修改 引导</p>
 <p><div class="blockcode"><span class="headactions">Copy to clipboard</span></p>
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>vi /boot/grub/grub.conf</td><br></tr><br></tbody></table><br></span>`</div><br>如果看到如下代码 代表PAE内核已经安装好了</p>
+<p><td>vi /boot/grub/grub.conf</td>
+</tr>
+</tbody></table>
+</span>`</div>
+如果看到如下代码 代表PAE内核已经安装好了</p>
 <div class="quote">
 
-<h5>QUOTE:</h5>
+<h5 id="quote-">QUOTE:</h5>
 <blockquote>
 <p>title CentOS (2.6.18-8.1.4.el5PAE)</p>
 <p>root (hd0,0)</p>
 <p>kernel /vmlinuz-2.6.18-8.1.4.el5PAE ro root=LABEL=/</p>
-<p>initrd /initrd-2.6.18-8.1.4.el5PAE.img<br></div><br>修改设置为默认启动</p>
+<p>initrd /initrd-2.6.18-8.1.4.el5PAE.img
+</div>
+修改设置为默认启动</p>
 <div class="blockcode">
 
 </blockquote>
-<h5>CODE:</h5>
+<h5 id="code-">CODE:</h5>
 <p>`<span style="font-family: BatangChe;"></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>default=0</td><br></tr><br></tbody></table><br></span>`</div></p>
+<p><td>default=0</td>
+</tr>
+</tbody></table>
+</span>`</div></p>
 <p><table style="border: 1px solid #999999; font-size: 12px; width: 80%;" border="0" align="center"></p>
 <p><tbody></p>
 <p><tr></p>
-<p><td>init 6</td><br></tr><br></tbody></table><br>重启服务器<br>再执行top 内存已经是4.1g了</p>
+<p><td>init 6</td>
+</tr>
+</tbody></table>
+重启服务器
+再执行top 内存已经是4.1g了</p>
 <p>以上全部在centos 5.0系统下执行</p>
 
       
@@ -299,14 +340,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -314,23 +393,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -346,12 +425,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -360,7 +445,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

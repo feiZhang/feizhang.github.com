@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2011/m11/all-our-products.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -220,7 +233,12 @@
     <div class="entry">
       
         <p>今天和一个合作伙伴聊到我们公司的产品，晚上回家回味起来，还真做出来不少牛东西。</p>
-<p>1。视频点播<br>应该是公司第一个成功的产品 ，产品部署到大江南北，应该有上百台IBM服务器之多吧，通过这个系统看电影的人也是相当多地，那时候还是2001年吧，优酷网成立时间是：2006年6月，做不了优酷，集合服务器资源，做个风行还是很有希望的。<br>2。电话回拨<br>应该说我们公司是在国内做的最成功的第一家吧，因为最早的那家产品销量貌似不好， 这个产品更是深入到了千家万户，不仅仅给公司赚到了钱，也让很多购买系统的客户赚到了不少钱，据说买几套设备，最快的3个月赚了100万，这个系统还给我们带来了大量的客户资源，如果说改造不成skype的话（国内不允许），借助那么大的用户量，应该会衍生出来一些其他应用吧。显然我这个层次不能说出来会衍生出来什么，但是牛人一定知道。那时候应该是2005年吧。<br>3。飞话<br>虽然不是一个很赚钱的产品，但确实是一个很有噱头的产品， 移动互联网、社交网络、语音通信，还有桌面类QQ客户端，差点就没倒腾出来一个[微信]，那时候应该是2007年吧，开心网创办时间是：2008年3月，微信也就是2011-03才出的第一版。</p>
+<p>1。视频点播
+应该是公司第一个成功的产品 ，产品部署到大江南北，应该有上百台IBM服务器之多吧，通过这个系统看电影的人也是相当多地，那时候还是2001年吧，优酷网成立时间是：2006年6月，做不了优酷，集合服务器资源，做个风行还是很有希望的。
+2。电话回拨
+应该说我们公司是在国内做的最成功的第一家吧，因为最早的那家产品销量貌似不好， 这个产品更是深入到了千家万户，不仅仅给公司赚到了钱，也让很多购买系统的客户赚到了不少钱，据说买几套设备，最快的3个月赚了100万，这个系统还给我们带来了大量的客户资源，如果说改造不成skype的话（国内不允许），借助那么大的用户量，应该会衍生出来一些其他应用吧。显然我这个层次不能说出来会衍生出来什么，但是牛人一定知道。那时候应该是2005年吧。
+3。飞话
+虽然不是一个很赚钱的产品，但确实是一个很有噱头的产品， 移动互联网、社交网络、语音通信，还有桌面类QQ客户端，差点就没倒腾出来一个[微信]，那时候应该是2007年吧，开心网创办时间是：2008年3月，微信也就是2011-03才出的第一版。</p>
 <p>具体的年份我记得不一定清楚，大体是差不了太多吧，差一点我们就成了一个牛公司，事情往往就是差那么一点。不知道未来还会错过什么牛东西。</p>
 <p>战斗吧，兄弟们，为了那么一点点。</p>
 
@@ -228,12 +246,7 @@
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/投资/">投资</a>, <a href="/categories/投资/生活/">生���</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
 
 <!-- JiaThis Button BEGIN -->
@@ -280,11 +293,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -292,23 +342,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -324,12 +374,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -338,7 +394,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

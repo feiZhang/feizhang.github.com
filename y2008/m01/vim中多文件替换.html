@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2008/m01/vim中多文件替换.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -219,26 +232,45 @@
     </header>
     <div class="entry">
       
-        <p>==============================================================================<br><em>26.3</em>    改动多个文件</p>
-<p>假定你有个变量名为 &quot;x_cnt“ 而你要把他改为 ”x_counter&quot;。这个变量在多个 C 文件都<br>被用到了。你需要在所有文件中作此改动。你得这么做。<br>把所有相关文件放进参数列表: &gt;</p>
-<p>:args *.c<br>&lt;<br>这个命令会找到所有的 C 文件并编辑其中的第一个。现在你可以对所有这些文件执行<br>置换命令: &gt;<br><a id="more"></a><br>:argdo %s/\&lt;x_cnt\&gt;/x_counter/ge | update</p>
-<p>命令 “:argdo” 把另一个命令当作其参数。而后者将对参数列表内所有的文件执行。<br>作为参数的替换命令 “%s” 作用于所有文本行。它用 &quot;\&lt;x_cnt\&gt;&quot; 来查找<br>&quot;x_cnt“。 ”\&lt;“ 和 ”\&gt;“ 用来指定仅匹配那些完整的词，而不是 ”px_cnt&quot; 或<br>&quot;x_cnt2&quot;。<br>替换命令的标记中包含 “g”，用以置换同一行文本内出现的所有的匹配词 &quot;x_cnt&quot;。<br>标记 “e” 用于避免因文件中找不到 &quot;x_cnt“ 而出现错误信息。否则 ”:argdo&quot; 命令<br>就会在遇到第一个找不到 &quot;x_cnt&quot; 的文件时中断。<br>字符 “|” 分隔两条命令。后面的 “update” 命令将那些有改动的文件存盘。如果<br>没有 &quot;x_cnt“ 被改成 ”x_counter&quot;，这个命令什么也不做。</p>
-<p>还有一个 “:windo” 命令，用于在所有视窗内执行其参数所规定的命令。以及 “:bufdo”<br>命令，对所有缓冲执行其参数所规定的命令。使用中要小心，因为你在缓冲列表中的文<br>件数量可能超过你能想像的。请用 “:buffers” 命令 (或 “:ls”) 来检查缓冲列表���</p>
+        <p>==============================================================================
+<em>26.3</em>    改动多个文件</p>
+<p>假定你有个变量名为 &quot;x_cnt&quot; 而你要把他改为 &quot;x_counter&quot;。这个变量在多个 C 文件都
+被用到了。你需要在所有文件中作此改动。你得这么做。
+把所有相关文件放进参数列表: &gt;</p>
+<p>:args *.c
+&lt;
+这个命令会找到所有的 C 文件并编辑其中的第一个。现在你可以对所有这些文件执行
+置换命令: &gt;
+<a id="more"></a>
+:argdo %s/\&lt;x_cnt\&gt;/x_counter/ge | update</p>
+<p>命令 &quot;:argdo&quot; 把另一个命令当作其参数。而后者将对参数列表内所有的文件执行。
+作为参数的替换命令 &quot;%s&quot; 作用于所有文本行。它用 &quot;\&lt;x_cnt\&gt;&quot; 来查找
+&quot;x_cnt&quot;。 &quot;\&lt;&quot; 和 &quot;\&gt;&quot; 用来指定仅匹配那些完整的词，而不是 &quot;px_cnt&quot; 或
+&quot;x_cnt2&quot;。
+替换命令的标记中包含 &quot;g&quot;，用以置换同一行文本内出现的所有的匹配词 &quot;x_cnt&quot;。
+标记 &quot;e&quot; 用于避免因文件中找不到 &quot;x_cnt&quot; 而出现错误信息。否则 &quot;:argdo&quot; 命令
+就会在遇到第一个找不到 &quot;x_cnt&quot; 的文件时中断。
+字符 &quot;|&quot; 分隔两条命令。后面的 &quot;update&quot; 命令将那些有改动的文件存盘。如果
+没有 &quot;x_cnt&quot; 被改成 &quot;x_counter&quot;，这个命令什么也不做。</p>
+<p>还有一个 &quot;:windo&quot; 命令，用于在所有视窗内执行其参数所规定的命令。以及 &quot;:bufdo&quot;
+命令，对所有缓冲执行其参数所规定的命令。使用中要小心，因为你在缓冲列表中的文
+件数量可能超过你能想像的。请用 &quot;:buffers&quot; 命令 (或 &quot;:ls&quot;) 来检查缓冲列表。</p>
 <p>==============================================================================</p>
-<p>或在直接些<br>进入目录<br>查找<br>:args *.cpp<br>:argdu /word</p>
-<p>替换<br>:args *.cpp<br>:argdu %s/word/NEW/eg | update</p>
+<p>或在直接些
+进入目录
+查找
+:args *.cpp
+:argdu /word</p>
+<p>替换
+:args *.cpp
+:argdu %s/word/NEW/eg | update</p>
 <p>这些也可以在 vim 里用  :help 查看</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
 
 <!-- JiaThis Button BEGIN -->
@@ -285,11 +317,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -297,23 +366,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -329,12 +398,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -343,7 +418,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

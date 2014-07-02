@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/archives/page/22/' />
 </head>
 
 
@@ -210,24 +211,35 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2010-06-07T10:11:59.000Z"><a href="/y2010/m06/yitiandechengguoawesomezhongyugaodingliao.html">2010-06-07</a></time>
+        <time datetime="2010-04-30T10:06:30.000Z"><a href="/y2010/m04/yigejsdeqiguaicuowuzaiunixxizhixing.html">2010-04-30</a></time>
       
       
   
-    <h1 class="title"><a href="/y2010/m06/yitiandechengguoawesomezhongyugaodingliao.html">一天的成果，awesome终于搞定了</a></h1>
+    <h1 class="title"><a href="/y2010/m04/yigejsdeqiguaicuowuzaiunixxizhixing.html">一个Js的奇怪错误，在Unix系执行</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>以前也使用过awesome，但是由于ubuntu提供的只是2.x，而3.x很难编译，却这却那的，所以一直没有用成，最近看了，放弃鼠标工作的文章，同时由于我的gnome被我搞坏了，所以今天就决定真正的用下awesome，经过一天的奋斗终于搞定，用起来还不错。记录下其中的一些困难。</p>
-<p>1.网上的一些文章跟你真实用的可能版本不同，导致配置不能用。<br>2.网上的配置，都不完整，导致不能正确执行，可以通过查看～目录下的Xsession..Error看到，哪错了。<br>3.官方wiki提供的配置也有不对的地方，同时很严重的是，他提供的配置是基于系统默认配置的，而你仅仅copy给出的部分配置，则也是不能用的，最终的做法，我先copy了默认的rc.lua(/etc/xdg/awesome/rc.lua)，作为基础，然后在里面按照官方wiki,修改或者添加，终于搞定，不过要记着自己修改的地方呀，毕竟默认配置代码太对，版本升级，你要再修改，就有些麻烦了。</p>
-<p>现在还有一些问题，没弄明白：</p>
-<p>1.能否自己创建新布局，或者修改布局。<br>2.正常的布局，如果打开新程序，总是出现在最前面，感觉不好，能否指定新打开的窗口出现的位置？(貌似这个算是正常的，新打开的窗口就是要占据焦点的，你不用了，一关，就恢复了，这个暂且不管吧)<br>3.能否限制打开的程序窗口的数量，或者大于多少个，则剩余的全为浮动，这样原有的布局就不会被搞乱了。<br>4.官方wiki提供的autostar不能用，反正我是怎么弄，他都不启动。</p>
+        <p>最近项目总是出现一个js的奇怪错误，在公司的服务器部署，就没有问题，而放到公网，就会出现莫名其妙的错误，比如:break不行等等，按照ie提示的位置去看，代码是没有问题的，firefox下没有问题。</p>
+<p>偶然间发现，可能是文件编码的问题，在我机器上eclipse打开，中文乱码，但是这些中文都是被注释掉的，随改变编码，复制，将文件修改为项目相同的编码gbk，粘贴，再部署，居然问题就没了。。</p>
+<p>看来在unix+was下，js如果被认为编码不符，也会让ie执行不正常，即便是注释，这个问题很诧异。</p>
 
       
     </div>
@@ -247,32 +259,34 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2010-06-03T08:02:58.000Z"><a href="/y2010/m06/yixiexiangmuguanlijingyan.html">2010-06-03</a></time>
+        <time datetime="2010-04-26T07:27:18.000Z"><a href="/y2010/m04/xiaodingdingbingliao.html">2010-04-26</a></time>
       
       
   
-    <h1 class="title"><a href="/y2010/m06/yixiexiangmuguanlijingyan.html">一些项目管理经验</a></h1>
+    <h1 class="title"><a href="/y2010/m04/xiaodingdingbingliao.html">小丁丁病了</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <ol>
-<li>必须有清晰的框架，否则代码会很混乱</li>
-<li>版本控制很重要，标签、分支</li>
-<li>最好对业务进行封装，减少末端开发人员的学习压力，同时增加可维护性、可修改性</li>
-<li>创建faq列表并良好的分类及标签，而非口头提出问题</li>
-<li>会议要限定讨论范围和讨论时间，超时一律停止</li>
-<li>对项目各个阶段必须提出目标、主题思路，是简单化还是复杂化、全面化还是重点化、美观化还是易用化等，防止翻来覆去</li>
-<li>命名规则</li>
-<li>代码组织结构、各组之间的关联关系</li>
-<li>faq、代码结构、文档等软实力，需要有专人管理跟踪</li>
-<li>最好对每个人的工作范围进行界定，并指定工作流程，员工自律性不高</li>
-</ol>
+        <p>小丁丁又发烧了，近来感觉小丁丁总是病，几乎每周见他的时候，都在吃药，心疼的很，尤其是输液时哭闹的样子，其实这些也不算什么，有病自然要医的，主要还是怕这样下去小丁丁的免疫系统会不会被药物给搅乱，形成不了自己的良好免疫系统，不过担心也没什么用，一方面是：只要他一发热，她妈妈就着急上火，直接就想退烧，立马治好，按照我的思想是，稍微烧烧是没问题的，而且按照一些说法是发热就是在完善抵抗力，另一方面是：现在的医生，就知道用抗生素，不知道是为钱？还是目前的医疗条件就是这样，应该两者都有。</p>
+<p>因为小丁丁的病，已经和老婆闹了2次大别扭了，如果不是为了丁丁，估计我是要放弃目前的生活了，就算是我自己的问题吧，那我总有选择退出的权利吧，不过既然无法退出，那么还得好好的过，现在的我是真没办法，也没有太多的心情来调整了，主要问题还是在于父母和妻子的问题，而我和妻子的问题，目前的我，只要不出意外，只要不牵扯其他人，我完全可以默认掉，而对于父母我真是不知道该怎么办了，我没能力没权利去劝解没读过多少书的父母去改变，也没能力去改变妻子的想法和做法，能做的只是袖手旁观，瞎感慨。谁知道以后会过成什么样，只能认之为“天命”了，问题最大的是，他们的争执，或多或少都会伤及到小丁丁，很是令人郁闷，无奈无奈，每此时总是想起当年聪明一休里的一个小故事，找出亲生父母的办法，就是让他们用小孩去拔河，而放手者才是最爱她的亲生父母。</p>
 
       
     </div>
@@ -292,69 +306,47 @@
   
     <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2010-05-24T03:09:41.000Z"><a href="/y2010/m05/shoukushounandetaiguorenmin.html">2010-05-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/y2010/m05/shoukushounandetaiguorenmin.html">受苦受难的泰国人民</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>貌似，泰国已经发展到武装冲突的境地了，丫的真牛比，98年一次金融危机给丫整的倒退10年，刚又奋斗十年，结果又弄成这样，别国的经济都还在泥潭挣扎，丫的居然还有兴致闹革命。</p>
-<p>比较下国内，为啥就没个红杉军呢？尤其是IT界，让他妈的给墙成这样了，也还没见动静，不过回头问问，如有动静，势必我也不会跟着参合的，因：爷自己的小家都还不够美满呢，哪有闲工夫折腾这些，另外就是爷还有吃有喝，何必呢！估计遍地中国人大多也都是这么想的，也就是发发牢骚而已，真个的却是不敢动地（日，评书听多了）。</p>
-<p>按说，泰国人民生活即便不如咱，应该也是有吃有喝呀，为何就那么有人格的敢于反抗呢？有些不明。难道人家是多党执政？难道人家真是更民主？难道丫的真有信仰？难道有美国佬撑腰？搞不懂，毕竟咱这媒体也没啥真本事给你看个有实质意义的片子，自己也没实力去泰国探个究竟。反正丫的就是牛逼哄哄的闹起来了。</p>
-<p>其实爷也不太支持这种行为，这个大社会已经发展到这样了，鸟毛，我们这些屁民被人玩弄已成天理，不想被玩弄，只有自己变强变无耻，爷随没不曾出国，纵观各大片，也稍许了解，即便国民如此向往的大美帝国，也有《国家敌人》这种事情，而最牛大片《阿凡达》更是跨宇宙的欺凌，所以来说，每个人要想过的好更多的在于自己，当然不可否认，如果一个国家社会更安定更进步，势必幸福的几率大点，所以该嚷嚷的时候，我们还是要嚷嚷的，但是拿着明明白白的今天去争取前途未卜的明天，其实意义也没有多大，天知道你扶上去的真主是不是比现在更傻比呢？所以在我的一方土地，还是一个“中”字，凑合着过吧。</p>
-<p>丫，俺仅仅就是在自己胡说自己的八道，某些傻逼们请勿动真。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
   </div>
-</article>
-
-
-
-
-  
-    <article class="post">
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2010-05-20T01:40:26.000Z"><a href="/y2010/m05/chengchangdenadianshi.html">2010-05-20</a></time>
+        <time datetime="2010-04-15T06:31:40.000Z"><a href="/y2010/m04/chanpindezhiliangheyonghudetiyan.html">2010-04-15</a></time>
       
       
   
-    <h1 class="title"><a href="/y2010/m05/chengchangdenadianshi.html">成长的那点事</a></h1>
+    <h1 class="title"><a href="/y2010/m04/chanpindezhiliangheyonghudetiyan.html">产品的质量和用户的体验</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>昨日，一密友突发疑问，现在咱们这群人是不是有些改变了，顺嘴回答：“没变，仅仅是环境变了而已”。<br>人是最势力的动物，适应能力太强，环境稍变，就会让他看起来更像狗崽子了。</p>
-<p>转眼之间，都到而立之年了，想想，真是没有多少变化，只是活了这么多的年头（甚至都不能算阅历的活了这么多年），总要明白一些问题，从而被迫不去作一些事情。</p>
+        <p><strong>植物大战僵尸</strong>已经火了好长一段时间了，只是因为自己工作太忙，而没有实现上手，最近见弟弟玩了，自己也试了一把，很不错，唯一对我来说不爽的就是太easy了，不过我还没通关，不知道后面怎么样，按照弟弟的说法是，一把通关，估计是比较简单点，导致使用一个战术可以基本应付大部分的关卡，从而仅仅是个休闲游戏，而非一个智力游戏，导致其生命周期不够长，如果考虑加入一些AI估计会更好些。。总之算是个很不错的游戏，总结下优点：</p>
 <ol>
-<li>知天高地厚（不要狂妄）</li>
-<li>成功有很多客观因素，背景资源很重要（不要瞎类比）</li>
-<li>天上确实不会掉馅饼（不要幻想）</li>
-<li>不要试图去改变一个人的思想，能改变自己的只有他自己，还不如改变下他处的环境<br>【昨天总结了不少条呢？要记下来就给忘了，回头再补充把】<br>这些东西，看起来让一个人改变了，而实质仅仅是他了解了更多的游戏规则，本质上这个人的阅历、能力、知识都没有增加多少，所以我认为根本没变，<strong>稍微给他点阳光，他就会又灿烂起来</strong>。</li>
+<li>界面清新、简单上手</li>
+<li>普通关卡中夹带特殊关卡，有利于改善游戏体验</li>
+<li>比较丰富的植物元素，可玩性更高</li>
+<li>幽默的人物和货币、商店加入，增加了可玩性</li>
+<li><p>休闲里面有智力元素，增加可玩性
+不足：</p>
+</li>
+<li><p>操作要求不高，本身就是休闲游戏，当然不必太高的操作要求，不过可以提供基本和高级版本，以满足高端玩家</p>
+</li>
+<li>AI太低，难度太低，智力因素过少，不利于进入研究阶段，从而影响声明周期
+最近公司又上了一个项目管理软件，redmine，公司将所有员工的邮箱设置为了139信箱，则测试每提出一个bug会给开发人员一个邮件，从而得到一条短信提示，结果，某人一天得短信50多，结果就导致其对这个工具第一印象相当不好，估计推广就有点阻力了，当然这个问题不是软件的问题。</li>
 </ol>
-<p>那么怎样才能算是变了呢？就我而言，要么是得道了，要么是技术能力提高了，而最简单的判断准则就看他是不是确实比周围的人高出一筹，哎，很可悲，我们都太平凡了。如果你看不到你要提高的空间，那么只能说明你的无知，仅仅从技能上来讲提高的空间就是巨大的，而且还有那么多的行业可供你选择，更别说思想上的。</p>
-<p>即便是发现自己确实没有长进，其实也不用烦恼，人生最多也就百十年，怎么活都是要活过去的。<strong>而我最欣赏的就是那些不为环境所动，我行我素者，天上地下我最大，爱咋咋地。</strong></p>
-<p><strong>看起来又装逼了</strong></p>
+<p>上面两个软件，给我的启示就是，如果想做个好的产品，用户体验必须做好，需要多思考，用户没有一个良好的体验，绝对造就不了一个优质的产品，思考再思考。</p>
 
       
     </div>
@@ -374,23 +366,90 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2010-05-05T02:03:44.000Z"><a href="/y2010/m05/yamaxunqueshibidangdanghaodian.html">2010-05-05</a></time>
+        <time datetime="2010-04-11T03:16:47.000Z"><a href="/y2010/m04/zuiguidejitiaoyubeiwoyangsiliao.html">2010-04-11</a></time>
       
       
   
-    <h1 class="title"><a href="/y2010/m05/yamaxunqueshibidangdanghaodian.html">亚马逊确实比当当好点</a></h1>
+    <h1 class="title"><a href="/y2010/m04/zuiguidejitiaoyubeiwoyangsiliao.html">最贵的几条鱼被我养死了</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>以前一直用当当购书，至少成交了4单，积攒了一些优惠券，刚好用优惠券的那次购物，选错了发货地址，因为公司搬家了，所以立即把订单取消了（因为我死活没有找到修改的地方，订单刚提交10秒内，按说他们还没确认发货的），结果优惠券没了，找他们理论，结果基本都是程式化回复，我就日了，这算是什么服务呀。</p>
-<p>这次要买些书就选择了亚马逊，就算是当当优惠一点，我也不会用了，结果真是发现亚马逊确实经验更丰富一点，订单完成后，居然还可以修改货物，选择发货时还可以选择最好的收货时间段，比如：上班时间等，还有备注可以填，虽然上面写的预计到货时间比较长，大概要5天左右，实际却很快到了，我都没准备，以至于前台让我收快递我都有些纳闷（我是5.2发的单，上面要求，假期后送货到公司的，结果上班���一天就到了）是什么，看来国外公司对于承诺还是很重视的，即便是在宣传上保守些，也不愿意失信于人。</p>
-<p>我就这样从当当投奔了亚马逊，生意应该是这样做的。</p>
+        <p>前天刚买了2条清道夫和富贵鱼，今天全死了，小金鱼也死了一条，省9条了，总结问题：</p>
+<ol>
+<li>由于小乌龟一直不吃东西，就在鱼缸多投放的食物，估计都被鱼吃了，而且还有剩余，污染了水</li>
+<li>为了小乌龟吃食，打开了加温器，将温度提高到30度，加速水质变坏</li>
+<li>过高的估计了清道夫的能力，结果鱼缸里的粪便没有即时过滤掉</li>
+<li>也许鱼太多了，10条小金鱼+2条富贵鱼（大金鱼）+1条清道夫+2只乌龟
+此前只养了10条金鱼时，半月不换水也没事，一周才喂一次（经常不在家），这次才一周，水质都变坏了，可怜了小鱼鱼门，下周还得再去弄2条清道夫来。</li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-04-10T01:21:59.000Z"><a href="/y2010/m04/qunimadejiaban.html">2010-04-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/y2010/m04/qunimadejiaban.html">去你妈的加班</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>加班仍在继续，今年真是要达到一年2/3时间都在加班了。</p>
+<p>有点新感悟，那些看起来挺敬业的员工也许就是我们加班的罪魁祸首。
+公司有两位中层，一位的敬业精神确实可嘉，看起来工作很努力的样子，劳心劳力的，不辞辛苦，孩子还没半岁呢，作为母亲就回公司继续奋斗了，公司也挺认同她，目前的位置还算不错。一位是我曾经比较敬佩的领导，别人加班到23点时，他会不知疲倦的一直持续到0点之后 ，看起来一个与世无争的人，因此而升为技术总监，技术能力也确实挺强，算是名副其实。</p>
+<p>本来敬业对公司是个好事，但是现实却恰恰相反，目前的项目是天天加班，怨声载道，而得到的结果还是各方面均不满意。
+想来有些纳闷，不过查看下项目的代码即知，原来我们每天加班的内容都是在修补那本已破烂不堪的代码，体系结构全无的代码，如此以来，估计有生之年都难以把这个项目给加班完成，而<strong>领导由于太敬业，对加班如便饭</strong>，看起来大有：加班就可以解决一切的思路，而更由于太敬业，都无暇去了解我们加班都干了些什么？不从根本上去解决问题，不去修正项目构架，而有的只是修复补丁和无尽的加班。</p>
 
       
     </div>
@@ -418,14 +477,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -433,23 +530,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -465,12 +562,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -479,7 +582,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

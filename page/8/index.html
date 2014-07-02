@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/page/8/' />
 </head>
 
 
@@ -206,59 +207,43 @@
     <div id="main-col" class="alignleft"><div id="wrapper">
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2011-12-13T04:45:56.000Z"><a href="/y2011/m12/the-murder-caused-a-plug-in.html">2011-12-13</a></time>
+        <time datetime="2011-11-15T04:08:00.000Z"><a href="/y2011/m11/the-strength-of-the-team-to-play.html">2011-11-15</a></time>
       
       
   
-    <h1 class="title"><a href="/y2011/m12/the-murder-caused-a-plug-in.html">一个插件引起的血案</a></h1>
+    <h1 class="title"><a href="/y2011/m11/the-strength-of-the-team-to-play.html">发挥团队的力量</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>chrome的插件 html Validator 会自动重新请求一边你访问的页面，从而导致 服务器的session由于这次请求而改变。导致代码执行错误。<br>找到问题的途径：<br><strong>观察现象：</strong></p>
-<ol>
-<li>在本机有问题，但是在其他开发人员的机器没有问题。 （确认代码没有问题）</li>
-<li>在本级有问题，上传到服务器，本机浏览器测试没有问题</li>
-<li>正常浏览有问题，但是右击显示代码，之后刷新，就不会出现问题。<br><strong>解决问题：</strong><br>第二个现象是导致解决不够迅速的根本：（这个还没搞明白为什么）<br>如果是浏览器问题，应该上传到服务器也有问题出现的，但是服务器没问题，所以判断为本机Web服务器配置问题。<br>多方查找本地配置，还找不到问题，而且个人感觉不是问题的原因<br>随想到可能是ajax多次请求的问题，将代码简化为无ajax，问题依旧</li>
-</ol>
-<p>最终找到问题的原因是现象3：<br>所以很疑惑，就右击页面-&gt;审核元素，发现chrome的插件，追加了不少html代码，遂一个一个的禁用插件，最终确认是html Validator引起的原因，然后就查看html Validator附加的js代码。发现确实会有一个xmlHTTPrequest请求，重新获取了一遍页面。。</p>
-<pre class="brush: js; ruler: true">
-var xhr = new XMLHttpRequest();
-
-// If the result is finished, send complete page HTML code to W3C validator
-xhr.onreadystatechange = function () {
-if (xhr.readyState === 4) {
-
-var htmlForm = document.createElement("form"),
-htmlInput = document.createElement("input");
-
-htmlForm.action = "http://validator.w3.org/check";
-htmlForm.method = "post";
-htmlForm.enctype = "multipart/form-data";
-
-htmlInput.type = "text";
-htmlInput.name = "fragment";
-htmlInput.value = xhr.responseText;
-
-htmlForm.appendChild(htmlInput);
-
-document.body.appendChild(htmlForm);
-htmlForm.submit();
-htmlForm.parentNode.removeChild(htmlForm);
-}
-};
-
-// Send XHR request to itself to get the entire HTML code
-xhr.open("GET", location.href, true);
-</pre>
-
-<p><strong>最终的疑惑：</strong>为什么同一个浏览器访问本地和服务器，服务器就没有问题（本地是host域名，服务器是真实域名）,怎么想都不应该的。</p>
-<p><strong>经验：</strong> 浏览器的插件有可能导致程序的异常。尤其是个页面追加js的插件。</p>
+        <p>管理组织者与执行者的关系：
+1。管理者的能力远远胜任他的职务，这时候可以是管理者指挥执行者工作，比如：军队
+2。管理者不完全胜任他的职务，则应该是相互制约的关系，相互促进的关系，领导依据自己的经验制定战术，执行者根据实际情况，反馈执行结果，并提出建议。这样：执行者获得经历、经验、学习的机会，管理者不断完善自己的设计思路。</p>
+<p>现实生活中，第二种情况居多，但是很少能有执行者提出建议的机会，一般员工会认为：
+1。自己也没有思路
+2。给领导提意见，领导是不是会接受
+3。过多的给领导提意见，是不是 有碍两者之间的关系
+这个听起来有点像古代，君臣的关系，患得患失，小心谨慎。其实这样挺没劲。 不仅不能促进公司的良性发展，同时也阻碍了员工自己的个人发展，因为只有你能够提出有价值的见解，才能够被领导所赏识，才能获得加薪、加爵的机会。
+实际上造成这种局面的主要责任应该是领导，因为作为一个享受更多公司资源的人，应该承担更多的责任，而员工不愿与你接触，一方面是你个人的人品问题，另一方面可能就是公司管理文化的问题，没有形成“进谏”的公司文化。
+1。入职即说明可以冒犯自己的领导。
+2。新员工进来看到老员工，可以对老板频繁冒犯，那么新员工也就敢于去冒犯自己的领导。</p>
 
       
     </div>
@@ -278,22 +263,44 @@ xhr.open("GET", location.href, true);
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2011-11-23T02:04:10.000Z"><a href="/y2011/m11/friends-of-his-sons-name-reviews.html">2011-11-23</a></time>
+        <time datetime="2011-11-11T05:57:08.000Z"><a href="/y2011/m11/growing-thing.html">2011-11-11</a></time>
       
       
   
-    <h1 class="title"><a href="/y2011/m11/friends-of-his-sons-name-reviews.html">朋友对儿子名字的点评</a></h1>
+    <h1 class="title"><a href="/y2011/m11/growing-thing.html">成长这回事</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p><strong>朋友的点评：<br>儿子大名是他干爹给起的:刘质中，小名是媳妇给起的:图图，她解释的含义是1宏伟蓝图2兔年生，谐音兔兔。我一看，这个起的好，我说的好不是这两层含义，还有个谐音t w o，意思不用解释了吧2。二不异傻，傻不异二，英文傻可用fool 来表示，二就是two,连起来就是fooltwo,谐音浮屠，这就是因缘！他干爹懂的 。</strong></p>
-<p>让我也有兴致对自己儿子的名字来个点评：<br>儿子大名“一丁”，本意：对儿子没有任何所谓的愿望（大多父母所谓的期望都是自己的，强加给下一代的）， 活着就行。如果有点禅意，应该是“空”（其实我没研究佛），所有的一切都由他自己来把握，通过自己的经历、心性走完自己的一生。<br>到这，智者会发现，这毛根本不空呀，空也是愿望，这不扯淡吗。<br>嘿嘿，其实就是扯淡。空即是扯淡。</p>
+        <p>最近连续看《男人帮》，比较符合我的口味，轻幽默，角色行为也不那么傻逼，还有那么一点深意。对于情感的表述也很丰富，说的也挺有道理。看着看着，就感觉有点纠结，想把作者的思路理一遍，总结一些所谓的道理，可是看着又挺过瘾，忍不住的一集一集的连着播，根本来不及思考，我又不想回头再看一边，重新思考。这让我有点纠结。</p>
+<p>挺纳闷自己到底是很有学习心呢？还是没有呢？</p>
+<p>有时候吧，就感觉肆意挥霍着生活才是真实的生活，有必要考虑那么多吗？不就是活一回而已。有时候吧，就挺有紧迫感，感觉总要做点什么才能对得起自己活一回。</p>
+<div><span style="color: #2f3699;">           从里德大学返回硅谷后，乔布斯经常到乙川弘文主持的位于洛斯阿尔托斯的禅宗中心修习。1976年创办苹果前，乔布斯一度陷入了迷茫。“我是该在硅谷创业，还是该去日本修禅？”乔布斯恭敬地请乙川弘文禅师指点迷津，“创业则奔波劳碌，心思无法宁静；修禅则青灯古佛，抱负无法施展。大师，我该如何决断？”</span><strong></div>
+<div><span style="color: #2f3699;">　　“去！”禅师拍击着乔布斯的肩头，用狮子吼式的呵斥点醒迷雾中的年轻人，“人生如电，亦如朝露，奔波劳碌是一回生死，青灯古佛亦是一回生死。原本无生无死，万事皆是梦幻，又何需决断？”</span></strong></div>
+<div><span style="color: #2f3699;">　　“可是，我无时无刻不想着改变世界。如果人生皆如梦幻，改变与不改变，又有什么分别？”</span>**</div>
+<div><span style="color: #2f3699;">　　“你看！”禅师手指墙上的经幡，“风吹幡动。千百年前，有僧人说：‘是风动。’又有僧人说：‘是幡动。’六祖惠能说：‘不是风动，也不是幡动，而是心动。’变与不变，其实，只在于你是不是真的心动呀。”</span></div>
+<div><span style="color: #2f3699;">　　“您是说，只要追随我心，就无需纠结？” “一切万法，不离自性。去吧，既然心向往之，还有什么可纠结的？全心即佛，心佛无异。当心性再无滞碍，行止皆随本心的时候，你就是大彻大悟的佛陀呀！”  <wbr></wbr>（此段引文</span><span style="color: #2f3699;">摘自《乔布斯传：神一样的传奇》）</span></div>
+
+
+<p>现在的感觉，跟这个不太相同呀，心想着是要多加总结，多多思考地，可是某种本性却驱使我一集一集不停地看，这个好像跟“我心想要把屋子打扫干净，可是却懒得动”也不太一样，心里明明有成长的欲望呀，难道说成长的欲望也是跟打扫房间一样后天培养的？而追逐快感才是先天的？看起来有点像是。那么，乔布斯先天就想改变世界？还是后天给的太浓厚了，超越了先天给的追寻宁静？</p>
+<p>人生到底是个什么东西？奇怪。</p>
 
       
     </div>
@@ -313,22 +320,41 @@ xhr.open("GET", location.href, true);
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2011-11-22T08:18:48.000Z"><a href="/y2011/m11/faithful-dog-hachikos-story.html">2011-11-22</a></time>
+        <time datetime="2011-11-04T13:35:27.000Z"><a href="/y2011/m11/all-our-products.html">2011-11-04</a></time>
       
       
   
-    <h1 class="title"><a href="/y2011/m11/faithful-dog-hachikos-story.html">忠犬八公的故事</a></h1>
+    <h1 class="title"><a href="/y2011/m11/all-our-products.html">悉数我们的产品</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>看《忠犬八公的故事》这部电影的时候，里面的日本人说：“秋田犬是不会捡球的，不会因此去取悦人，如果他那么作了，那是因为其他的原因”，后来小八为了拉近于帕克的距离，确实去捡球了，我认为他应该是在告诉帕克，“我很重视你，我会作你让我做的事情”。“狗腿子”这个词，也正是指出了：某些狗为了得食，取悦于人。</p>
-<p>这个故事，让我想到养儿子这件事（也许一辈子只能养一个儿子了，没事老爱想想这事），儿子小，不明白，但是在我们对儿子有求必应的时候，应该要非常明白的告诉他，对他好，是因为：“爱他，希望他好”，而不是在纵然他、迁就他，让他仗着对她好，就任性、忘形，让他知道，爱是相互的。。要分清楚，同样是捡球，意义缺是不同的。儿子小，不能自己明白，所以我们需要明确的告诉他，也许能加速他的理解。</p>
+        <p>今天和一个合作伙伴聊到我们公司的产品，晚上回家回味起来，还真做出来不少牛东西。</p>
+<p>1。视频点播
+应该是公司第一个成功的产品 ，产品部署到大江南北，应该有上百台IBM服务器之多吧，通过这个系统看电影的人也是相当多地，那时候还是2001年吧，优酷网成立时间是：2006年6月，做不了优酷，集合服务器资源，做个风行还是很有希望的。
+2。电话回拨
+应该说我们公司是在国内做的最成功的第一家吧，因为最早的那家产品销量貌似不好， 这个产品更是深入到了千家万户，不仅仅给公司赚到了钱，也让很多购买系统的客户赚到了不少钱，据说买几套设备，最快的3个月赚了100万，这个系统还给我们带来了大量的客户资源，如果说改造不成skype的话（国内不允许），借助那么大的用户量，应该会衍生出来一些其他应用吧。显然我这个层次不能说出来会衍生出来什么，但是牛人一定知道。那时候应该是2005年吧。
+3。飞话
+虽然不是一个很赚钱的产品，但确实是一个很有噱头的产品， 移动互联网、社交网络、语音通信，还有桌面类QQ客户端，差点就没倒腾出来一个[微信]，那时候应该是2007年吧，开心网创办时间是：2008年3月，微信也就是2011-03才出的第一版。</p>
+<p>具体的年份我记得不一定清楚，大体是差不了太多吧，差一点我们就成了一个牛公司，事情往往就是差那么一点。不知道未来还会错过什么牛东西。</p>
+<p>战斗吧，兄弟们，为了那么一点点。</p>
 
       
     </div>
@@ -348,32 +374,47 @@ xhr.open("GET", location.href, true);
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2011-11-21T10:10:05.000Z"><a href="/y2011/m11/sigma-grid-a-bug.html">2011-11-21</a></time>
+        <time datetime="2011-11-01T10:54:35.000Z"><a href="/y2011/m11/recommended-overheating-poly-2011-speech-the-entrepreneurial-story-of-an-idealist-ii.html">2011-11-01</a></time>
       
       
   
-    <h1 class="title"><a href="/y2011/m11/sigma-grid-a-bug.html">Sigma Grid的一个bug</a></h1>
+    <h1 class="title"><a href="/y2011/m11/recommended-overheating-poly-2011-speech-the-entrepreneurial-story-of-an-idealist-ii.html">强烈推荐:罗永浩2011年保利剧院演讲(一个理想主义者的创业故事Ii)</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <pre>测试的例子：test.html</pre>
-<pre>&lt;input type="text" name="id" id="jjid" style="width: 200px; "&gt;
-&lt;script type="text/javascript" charset="utf-8"&gt;
-alert(window.jjid);
-&lt;/script&gt;</pre>
-<pre>则在 firefox中显示为undefind,而在chrome和safari中能够获取到input的DOM对象。</pre>
-<pre>则在sigma的使用过程中，如果页面包含一个input的id="id"则，直接出错。
-例如：test.html
-<span class="Apple-style-span" style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: 13px; line-height: 19px; white-space: normal;">&lt;script src="gt_base.js" type="text/javascript"&gt;&lt;/script&gt;
-</span><span class="Apple-style-span" style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: 13px; line-height: 19px; white-space: normal;">&lt;input type="text" name="id" id="id" style="width: 200px; "&gt;</span></pre>
-<pre>则会在chrome的调试控制台中出错，无法找到"unload"方法。
-[![](http://www.liangpeng.net/wp-content/uploads/2011/11/屏幕快照-2011-11-21-下午6.15.53.png "sigma_error")](http://www.liangpeng.net/wp-content/uploads/2011/11/屏幕快照-2011-11-21-下午6.15.53.png)</pre>
+        <object width="480" height="400" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="src" value="http://player.youku.com/player.php/sid/XMzE3OTIyMzg0/v.swf" /><param name="allowfullscreen" value="true" /><param name="quality" value="high" /><param name="allowscriptaccess" value="always" /><embed width="480" height="400" type="application/x-shockwave-flash" src="http://player.youku.com/player.php/sid/XMzE3OTIyMzg0/v.swf" allowfullscreen="true" quality="high" allowscriptaccess="always" /></object>
+
+<p>1.怎么样让你和其他人不一样
+颠覆的产品、颠覆的用户体验、高分奖励、包过退款、星巴克、厕所门</p>
+<p>2.不要让一小撮人毁坏了大多数人的感受
+过年零食、垃圾桶、免费的Wifi</p>
+<p>3.为了把企业做大，是否一定要用流氓手段
+<strong>2.5%、13.5%（早期接受者）</strong>、34%、34%（主体消费者）、16%（落后消费者）</p>
+<p>4.怎么在资金、资源不足的情况下解决问题
+自己动手，丰衣足食</p>
+<p>5.在没有诚信的社会里，怎么</p>
+<p>6.怎样在没法坚持的时候坚持下去
+在理想集团和利益集团的抗争中，总是以理想集团获胜而告终
+“为了正确的核心价值观和使命感所驱使的人，所赚的钱比纯粹以赚钱为目的的人赚的<wbr>钱更多”-吉姆.柯林斯. </wbr></p>
+<object width="480" height="400" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="src" value="http://player.youku.com/player.php/sid/XMjI2MjU3MDMy/v.swf" /><param name="allowfullscreen" value="true" /><param name="quality" value="high" /><param name="allowscriptaccess" value="always" /><embed width="480" height="400" type="application/x-shockwave-flash" src="http://player.youku.com/player.php/sid/XMjI2MjU3MDMy/v.swf" allowfullscreen="true" quality="high" allowscriptaccess="always" /></object>
       
     </div>
     <footer>
@@ -392,32 +433,45 @@ alert(window.jjid);
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2011-11-16T07:59:53.000Z"><a href="/y2011/m11/custom-level-programmer.html">2011-11-16</a></time>
+        <time datetime="2011-10-17T07:27:27.000Z"><a href="/y2011/m10/jobs-main-fact-as-the-legend-of-god.html">2011-10-17</a></time>
       
       
   
-    <h1 class="title"><a href="/y2011/m11/custom-level-programmer.html">自定义程序员等级</a></h1>
+    <h1 class="title"><a href="/y2011/m10/jobs-main-fact-as-the-legend-of-god.html">帮主乔布斯  神一样的传奇</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <ol>
-<li>掌握基本的编码语言，了解基本的SQL语句</li>
-<li>了解系统、WEB等基础运转原理</li>
-<li>熟练使用某种编码工具，提高编码效率</li>
-<li>熟练使用源码管理工具</li>
-<li>基本的调试能力</li>
-<li>了解基本的设计模式，能够写出有条理的代码，并能够重构自己的代码</li>
-<li><span class="Apple-style-span" style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px; white-space: pre;">能够使用SDK文档，获取到需要的技术实现</span></li>
-<li><span class="Apple-style-span" style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px; white-space: pre;">编码牛人，能够实现你所想到的所有功能</span></li>
-<li><span class="Apple-style-span" style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px; white-space: pre;">能够针对一个产品，提出自己的大体实现思路，并能设计产品的各项功能（界面、操作、运行等）</span></li>
-<li><span class="Apple-style-span" style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px; white-space: pre;">把握科技前沿，能够提出有建设性的发展思路</span></li>
-</ol>
+        <p>做任何事，其实都是在展示我们内心的天性。这是我们存在的唯一目的。</p>
+<p>献给那些疯狂的人----不合时宜的人、叛逆的人、搞破坏的人，他们就像塞在方空里的圆楔子。那些人总是用与众不同的方式看世界，他们不喜欢规矩，他们不承认现状。你可以引述他们，可以反对他们，也可以吹捧或侮辱他们。但你惟一不能做的一件事就是忽视他们。因为他们正在改变一切，是他们推动着人类的进步。某些人把他们视为疯子，而我们视他们为天才。因为惟有那些疯狂到极点并自认为能改变世界的人，才真的改变了世界。</p>
+<p>生命的目标在于追求启蒙。</p>
+<p>我愿意用我所有的科技，换取和苏格拉底共处一下午的机会。</p>
+<p>不要被教条束缚，那意味着你活在其他人思考的结果中。不要被他人的喧嚣遮蔽了你自己内心的声音、思想和直觉，他们在某种程度上知道你真正想成为的样子，所有其他的事情都是次要的。</p>
+<p>CEO重要的职责就是去哄、去祈求、去威胁你的员工，让他们尽一切努力达到公司的目标。我要让他们看到公司的目标比他们想象的更宏伟、更有价值，这样他们才会付出一切。当他们尽了力，但是还没有做到最好时，我会告诉他们，我相信你可以做的更好，回去做好了再来见我。</p>
+<p>人生中最重要的决定不是你做什么，而是你不做什么。</p>
+<p>一切万法，不离自性。去吧，既然心向往之，还有什么可纠结的？全心即佛，心佛无异。当心性再无滞碍，行止皆随本心的时候，你就是大彻大悟的佛陀呀！</p>
+<p>你的工作重点是什么？对公司有什么价值？未来有什么计划？</p>
+<p>创造力只不过是连接某些东西的能力，他们能够把曾经见过的不同体验连接在一起，然后综合成某种新东西。</p>
+<p>任凭弱水三千，我只取一瓢饮。</p>
+<p>你不可能在眺望未来时把生活中的每个点连接起来，只有回顾时能才连点成线。所以你必须相信今日所做的会影响你的未来。</p>
+<p>人应该保持一颗空空如也的新鲜的心去做每一件事，即使做过一万次的事情也像第一次一样兴奋而好奇。涤净对于过去的留恋和对未来的幻想，深沉的活在具体的每一个时刻里，才能最逼近生命的真相。</p>
 
       
     </div>
@@ -444,14 +498,52 @@ alert(window.jjid);
     <a href="/page/9/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
-</nav></div></div>
+</nav>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -459,23 +551,23 @@ alert(window.jjid);
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -491,12 +583,18 @@ alert(window.jjid);
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -505,7 +603,7 @@ alert(window.jjid);
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

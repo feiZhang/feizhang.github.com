@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/tags/内心/' />
 </head>
 
 
@@ -210,6 +211,18 @@
   
     <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -224,11 +237,12 @@
     </header>
     <div class="entry">
       
-        <p>昨天看了部电影《世贸中心》，不算是部特别好片，还好的是，有那么点共鸣。<br>有感触的是那名海军陆战队员，“聆听内心的呼唤”，对比现在自己的状态，有那么点类同，个人感觉，每个人都有一个潜在的特质，左右着自己的行为，就如：毛哥热衷于政治，大灯热衷于装逼一样，老郑热衷于与友同乐一样，而我，我感觉更热衷于实现一些什么，具体是什么不是很固定，怎么来做，我不知道。现在热衷于研究各个新技术的一些特性，思考一些设计的东西，虽然都是泛泛、非系统性的，这让我发现这个世界真是不缺少人才，APPLE、GOOGLE、FACEBOOK都令人耳目一新，很good。</p>
+        <p>昨天看了部电影《世贸中心》，不算是部特别好片，还好的是，有那么点共鸣。
+有感触的是那名海军陆战队员，“聆听内心的呼唤”，对比现在自己的状态，有那么点类同，个人感觉，每个人都有一个潜在的特质，左右着自己的行为，就如：毛哥热衷于政治，大灯热衷于装逼一样，老郑热衷于与友同乐一样，而我，我感觉更热衷于实现一些什么，具体是什么不是很固定，怎么来做，我不知道。现在热衷于研究各个新技术的一些特性，思考一些设计的东西，虽然都是泛泛、非系统性的，这让我发现这个世界真是不缺少人才，APPLE、GOOGLE、FACEBOOK都令人耳目一新，很good。</p>
 <p>向来我主张“先天决定”的观点，同样的环境，由不同的人经历，会有不同的结果，而左右这个方向的，应该就是那个内心的声音，或张狂的或隐忍的或善良的或残暴的，而所谓的创造一个好的环境，只不过是尽量减少激活那些不好因素的几率，而并不能左右本质，而一次偶然的事件，就会将前面所有的努力化为灰烬。</p>
 <p>造就这个内心声音的是什么？完全由基因确定，还是包含儿童时代的环境影响，毕竟儿童时代是一个无知状态，更容易形成性格。具体很难意淫出来，也许需要一些科学研究，这不在我的能力范围之内。</p>
 <p>和一个朋友一起推崇：徐阶，并不是因为他多牛，而是他多能忍，残忍的泯灭人的贪婪、自大、自卑等等特性而不崩溃，只为了完成“灭掉严嵩”这一个事情，确实很黄很暴力，那段时间，我认为隐忍，真的很牛逼，而事实也确实如此。为一个目标前进。</p>
-<p>���听自己内心的声音，不要被所谓的“各种牛逼”扭曲了最能满足自己需求的那部分，发挥自己的特长，完成一些自己最漂亮的事情。我想，我需要这样。</p>
+<p>倾听自己内心的声音，不要被所谓的“各种牛逼”扭曲了最能满足自己需求的那部分，发挥自己的特长，完成一些自己最漂亮的事情。我想，我需要这样。</p>
 
       
     </div>
@@ -252,14 +266,52 @@
   
   <div class="clearfix"></div>
 </nav>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -267,23 +319,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -299,12 +351,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -313,7 +371,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[享受慢生活]]></subtitle>
   <link href="http://www.liangpeng.net/atom.xml" rel="self"/>
   <link href="http://www.liangpeng.net"/>
-  <updated>2013-11-22T04:32:20.240Z</updated>
+  <updated>2014-07-02T06:17:32.726Z</updated>
   <id>http://www.liangpeng.net/</id>
   <author>
     <name><![CDATA[张飞]]></name>
@@ -12,50 +12,146 @@
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
-    <title type="html"><![CDATA[项目设计与代码组织-案例分析]]></title>
-    <link href="http://www.liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html"/>
-    <id>http://www.liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html</id>
-    <published>2013-11-20T04:28:14.000Z</published>
-    <updated>2013-11-21T07:51:24.000Z</updated>
-    <content type="html"><![CDATA[<p>注：本实例绝非虚构，针对初级开发者，改变<code>程序员＝打字</code>的困境</p>
-<h2>案例描述</h2>
-<p>背景：证书打印功能，能够打印3份证书：正本（机构名称、住所）、副本第一页（编号、发证机关）、副本第二页（机构名称、法人）</p>
-<p>客户描述：需要在证书打印功能中增加打印记录功能，要求1天完成。</p>
-<h2>明确目地</h2>
-<p>简单的描述，可以设想出两种不同的目的：</p>
+    <title type="html"><![CDATA[项目总结（统一认证平台）]]></title>
+    <link href="http://www.liangpeng.net/y2014/m07/project_summary_for_unified_authentication.html"/>
+    <id>http://www.liangpeng.net/y2014/m07/project_summary_for_unified_authentication.html</id>
+    <published>2014-07-02T03:23:38.000Z</published>
+    <updated>2014-07-02T06:17:05.000Z</updated>
+    <content type="html"><![CDATA[<p>最近作的项目主要有2个地方客户不甚满意。</p>
 <ol>
-<li>客户是希望知道谁在什么时候打印了什么，打印了多少次</li>
-<li>证书需要每年更换，第二次打印希望能够复用上一次的打印数据</li>
+<li>没有提交申请磁盘阵列技术支持。</li>
+<li>消息中心，业务系统未登录，页面转向没有处理好。</li>
 </ol>
-<p>不同的目地有不同的设计思路</p>
-<p>目的一：关注于什么人什么时间打印了什么；错误的打印如何处理；<br>目的二：关注于如何减少用户的工作量；如何组织机构档案、机构年审、证书打印的业务关系；</p>
-<p>本案例，目的一与目的二不冲突。完全可以同时实现，但功能实现的时间要求有限，所以只能选择其一，此时就要与客户沟通，明确真实的目的。</p>
-<p><code>向错误的方向走的越远，错的越远。</code></p>
-<h2>设计分析</h2>
-<p>背景：选定实现第一个目的</p>
-<h5>第一次设计</h5>
-<p>打印记录表结构：机构名称、住所、编号、发证机关、机构名称、法人、打印时间、打印人</p>
-<p>功能：没点击一次打印，增加一条打印记录</p>
-<p>缺点：3个不同的打印，能够填充的字段不同，记录看起来总是不完整的。</p>
-<h5>第二次设计</h5>
-<p>表机构修改为：打印人、打印内容、打印时间</p>
-<p>功能修正：将所有的打印数据整合为一个字段－打印内容</p>
-<h5>第三次设计</h5>
-<p>表结构修改为：机构名称、打印人、打印内容、打印时间</p>
-<p>功能修正：将机构名称独立出来，作为数据整合的基准，比如：要查看某个机构的所有打印记录</p>
-<p>缺点：3份打印内容，才是一次完整的打印记录，现在的设计还不能体现这个概念</p>
-<h5>总结</h5>
-<p>iphone发布前，进行过无数次的设计修正，那可是世界顶级的设计师，而我们每次写代码前都是不加思索，错误百出，为何不在开工前向想好呢？无论你是什么等级的工程师，<code>请在编码前，将自己的设计思路推翻两次以上</code></p>
-<p>关于项目分析方法，可参考 <a href="http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document_2181.html">写出一份有意义的需求文档</a></p>
-<h2>代码组织</h2>
-<p>此次分析并不涉及代码组织的分析，为了突出代码组织的重要性，在这里再次说明<code>请在编码前，将自己的代码组织思路推翻两次以上</code>。</p>
-<p>材料管理是我们公司最有技术能力的人独立完成的项目，此人熟知各种技术、能够解决各种疑难杂症，但是这个项目却久经维护，依然破烂不堪，让人头痛。代码是需要组织的，不是拼凑起来就管用。<code>能够驾驭千军万马才是真技术</code></p>
+<p>第一个问题，主要问题是：沟通不够准确。</p>
+<p>解决方案：</p>
+<ol>
+<li>成立项目组成员列表，电话、邮箱、联系人。</li>
+<li>制作<code>项目前期准备事项列表</code>，发送给客户及相关人员。</li>
+<li>鉴于客户可能不经常查看邮件，重要的内容应提供纸制文件。</li>
+<li>制作一份<code>项目进展情况列表</code>，每周、每阶段发送给项目组成员。</li>
+</ol>
+<p>第二个问题，主要问题是：一时疏忽，原本已经考虑到这个问题，并做出了应对方案，但没有完美部署。</p>
+<p>解决方案：</p>
+<ol>
+<li>对于用户体验的内容，尤其是关键点，增加重视度。</li>
+<li>增加测试的工作内容，尽量还原客户现场环境。</li>
+</ol>
+<p>总结：</p>
+<p>原本想把这个项目做到所能做到的完美，还是出现了这些不必要的纰漏，遗憾并不爽，第二个问题，确实是个人的问题，应极力避免。目前的状况并未达到我个人的极限，依然出现纰漏，究其原因，还是在思想上，对于完美的追求不够深刻，以后应该继续努力。</p>
+<p>工作中，也能完全投入，一旦闲下来，就没有了再进入的欲望。对生活提不起兴致，才是根结。</p>
+<p>向瘦了一圈的老罗学习。</p>
 ]]></content>
-    <category scheme="http://www.liangpeng.net/tags/代码组织/" term="代码组织"/>
-    <category scheme="http://www.liangpeng.net/tags/案例分析/" term="案例分析"/>
-    <category scheme="http://www.liangpeng.net/tags/项目设计/" term="项目设计"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/" term="团队"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/技术/" term="技术"/>
+    <category scheme="http://www.liangpeng.net/tags/工作/" term="工作"/>
+    <category scheme="http://www.liangpeng.net/tags/总结/" term="总结"/>
+    <category scheme="http://www.liangpeng.net/categories/工作/" term="工作"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Closed a Door Open a Window]]></title>
+    <link href="http://www.liangpeng.net/y2014/m02/closed_a_door_open_a_window.html"/>
+    <id>http://www.liangpeng.net/y2014/m02/closed_a_door_open_a_window.html</id>
+    <published>2014-02-13T01:46:07.000Z</published>
+    <updated>2014-02-13T01:51:54.000Z</updated>
+    <content type="html"><![CDATA[<p>炉石传说，打到9级，再也打不上去了，究其原因，卡不全是个因素。游戏的乐趣随即减少，游戏时间也顺应减少，有了更多阅读的时间。各有各的乐趣。
+即便不放弃炉石，基础卡牌也是可以玩的，经目的从竞技移向纯娱乐即可，可以按照现有的牌，组些娱乐套，也是不错的生活享受。</p>
+]]></content>
+    <category scheme="http://www.liangpeng.net/tags/生活/" term="生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Goal]]></title>
+    <link href="http://www.liangpeng.net/y2014/m02/no_goal.html"/>
+    <id>http://www.liangpeng.net/y2014/m02/no_goal.html</id>
+    <published>2014-02-13T01:40:57.000Z</published>
+    <updated>2014-02-13T01:43:31.000Z</updated>
+    <content type="html"><![CDATA[<p>无目标前行，欣赏路途中的风景，相信每条路都能到罗马。</p>
+]]></content>
+    <category scheme="http://www.liangpeng.net/tags/生活/" term="生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[构筑趋势]]></title>
+    <link href="http://www.liangpeng.net/y2014/m01/build_trend.html"/>
+    <id>http://www.liangpeng.net/y2014/m01/build_trend.html</id>
+    <published>2014-01-17T08:06:47.000Z</published>
+    <updated>2014-01-17T08:08:38.000Z</updated>
+    <content type="html"><![CDATA[<p>回顾居家业务项目的进展，感觉有点慢，究其原因，有一点是：对DxInfo基础框架的升级改造，占用了较大的资源。对于这个问题的反思，又让我想起了趋势论。</p>
+<p>对于趋势概念的理解，始于《明朝那些事》中，徐阶斗严嵩的情节。之前，对于事物的认知，类似于小李飞刀，一击必胜，只看到事物成败的一点，比如：认为盖茨开发了DOS就此一帆风顺，成就微软，乔帮主沃兹研发了苹果I，就一发不可收，忽略了，盖茨、沃兹他们之前长期的技术积累，在他们成功之前，已经是大神级的牛人，当然也有天资、运气、环境等各方面的原因。回到明朝，当时徐阶也曾直接开干，差点把自己给灭了，在失败后，徐阶采用更慢频率，来逐步构筑自己的好趋势，超长期的积累，终于抓住机会，一战而胜。高手过招，不一定每一步都是好棋，但是一定不能有一步臭棋，往往需要长时间的拉锯战，通过积累点滴的优势，完成最终的胜利。</p>
+<p>这些故事，只是对我稍有启发，不再随意妄下非论。后来，《赵氏孤儿案》中，屠岸贾战败赵氏的案例，才让我更清晰的感受了趋势的构筑，屠岸贾的每一次行动，都不是为了胜利，只是为了瓦解皇帝对于赵氏的信任，通过一次又一次的小规模斗争，最终，皇帝主动将赵氏灭门。</p>
+<p>说了半天，好像很废话，道理很明显嘛，一口吃不成个胖子。实际上，道理是明摆着的，问题在于：视角、心态。首先要认清形势，居高临下，还婆婆妈妈的，就是2货，动不动就破釜沉舟，要决战的，也好不到那去。敌强我弱的情况下，认清差距，不急于一时，<code>放低心态</code>，才是关键。</p>
+<p>回到现实，在合适的周期内，不将精力完全放到某个单独的项目上，在项目稳步进展的同时，花费一定的精力，构建适合自己的项目框架，为以后的项目做好铺垫，应该是更好的选择。通过4个项目周期的发展，DxInfo框架基本完工，有理由相信，下一个项目，我们具备了快速完成的能力。</p>
+<p>实际上，构筑配置型框架，是不符合我本人审美观的，个人更倾向于，小模块组合的形式。不过，环境决定行动。</p>
+<ol>
+<li>团队不具备构建通用小模块的技术能力</li>
+<li>团队成员，技术水准不高，无法驾驭新技术、复杂业务</li>
+<li>大多数项目的业务逻辑简单，重复度高</li>
+<li>项目需求变动频繁，推翻重做的几率大</li>
+</ol>
+<p>水无定势，炉石中的冰火法、鱼人术、滚石战、土豪德等，都是很牛逼的战术。找准核心点，根据自己特点，构筑自己的手牌，才是王道，个人认为当前的巨人大王术是最牛逼的，但是，木有大王木有巨人的我，还是先试试其他的吧。</p>
+]]></content>
+    <category scheme="http://www.liangpeng.net/tags/趋势/" term="趋势"/>
+    <category scheme="http://www.liangpeng.net/tags/成长/" term="成长"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[炉石传说 教你作人]]></title>
+    <link href="http://www.liangpeng.net/y2014/m01/hearthstone-Teach_you_as_a_person.html"/>
+    <id>http://www.liangpeng.net/y2014/m01/hearthstone-Teach_you_as_a_person.html</id>
+    <published>2014-01-03T02:40:51.000Z</published>
+    <updated>2014-01-03T02:46:04.000Z</updated>
+    <content type="html"><![CDATA[<p>少帮主视频中的口头禅，“教你作人”，还真是学到了东西。</p>
+<p>刚开始玩的时候，冲天梯，卡到13级（好丢脸呀），被各种神卡、神抽搞死，好无奈呀，作为非人民币玩家，感觉这游戏很无助，资源不足，运气成分，这不是我想要的。作为即时战略的死忠，还是喜欢战术性、平衡性的游戏。直接从沉迷afk了一周。</p>
+<p>还是不死心，看了几片技术分析帖，毛色顿开，这他妈的和人生有点类似呀。</p>
+<h3 id="-">资源的不平衡</h3>
+<p>现实中的那些高富帅，我们是不能和其比资源的，好在如游戏一般，优质资源和精良资源的效用差距不算太大，而通过普通资源的分解、合成，能够产生精良资源，经过持续的积累，也能拿到一手不错的牌。</p>
+<p>专注于一手牌，研究策略，针对大资源的慢速，快攻是不错的选择，船小好调头嘛，终于冲到了8级（技战术还有较大的提高余地，努力冲传说）</p>
+<p>大资源＋好策略永远是最好的，不过，至少我们通过思路的挖掘，有了入场的门票，总比一味的放弃要好。</p>
+<h3 id="-">运气眷顾迎娶他的人</h3>
+<p>运气是成功必不可少的条件，是硬实力，但不是随机的。得当的资源储备（牌组）+ 恰当的策略（技战术），更容易得到运气的眷顾。没有梧桐树，凤凰想来，也没地落呀。</p>
+<h3 id="-">简单的道理</h3>
+<p>道理貌似都是简单的，如小时候学习的拔苗助长、守株待兔、掩耳盗铃，长大了，却一次又一次的犯着低级错误而不知，只有每次切身的体会，才能加强免疫力，融入自己的思维体系。</p>
+<p>感谢暴雪，感谢《炉石传说》。</p>
+<p>有好此口的，加我好友呀。<code>张非飞</code></p>
+]]></content>
+    <category scheme="http://www.liangpeng.net/tags/游戏/" term="游戏"/>
+    <category scheme="http://www.liangpeng.net/tags/道理/" term="道理"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[人才测评]]></title>
+    <link href="http://www.liangpeng.net/y2013/m11/talent-test.html"/>
+    <id>http://www.liangpeng.net/y2013/m11/talent-test.html</id>
+    <published>2013-11-27T16:00:00.000Z</published>
+    <updated>2013-12-13T03:34:53.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="-">技术</h3>
+<ol>
+<li>对开发者最有用的5个网站</li>
+<li>你经常使用的开发工具</li>
+<li>你经常浏览的5个网站</li>
+<li>你最好的技术是哪些？各有什么特点？</li>
+</ol>
+<h3 id="-">知识</h3>
+<ol>
+<li>你最喜欢的专业领域是什么?</li>
+<li>有没有对某个问题或事物进行过深入思考，结论是什么？</li>
+</ol>
+<h3 id="-">个人</h3>
+<ol>
+<li>你最欣赏的性格特征是什么？</li>
+<li>做过的最有趣的事情是什么？</li>
+<li>做过的最成功的事情是什么？</li>
+<li>做过的最后悔的事情是什么？</li>
+<li>是否有职业规划，是什么？</li>
+<li>你有什么优点？有何佐证？</li>
+</ol>
+<h3 id="-">公司</h3>
+<ol>
+<li>你最在意的公司环境有什么？</li>
+<li>什么样的公司是个好公司？</li>
+</ol>
+<h3 id="-">试用</h3>
+<ol>
+<li>在时间充足的条件下，是否能够检查自己完成的工作，优化自己的工作成果。即：精品意识</li>
+<li>是否有钻研学习的欲望</li>
+</ol>
+]]></content>
+    <category scheme="http://www.liangpeng.net/tags/团队/" term="团队"/>
+    <category scheme="http://www.liangpeng.net/tags/人才/" term="人才"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[为自己的利益而奋斗－新员工系列]]></title>
@@ -76,7 +172,7 @@
 <li>多花时间：我们都是凡人，要想在某个方面超越别人，多花时间是不二法门（你是乔布斯，就当我没说）</li>
 <li>锻炼沟通的能力：提问是门艺术，提问的质量决定答案的质量</li>
 </ol>
-<p>利益最大化现实途径，其实就是多干活，更快的提高自己的能力，提高自己本身的价值，形成长期的利益最大化。是不是多干活一定能提高能力？这里面牵涉到���个能力转化率的问题，某些人做一个项目能够明白5个技术点，而有些人只能明白3个，长期积累，个人能力的差距会越来越大，一个项目涉及方方面面的内容，管理、需求、设计、编码、测试，可能每个人的兴趣点不同，人也不可能面面俱到，只要在你自己选择的方向提高即可。那么如何来提高转化率，复杂而又简单的问题，</p>
+<p>利益最大化现实途径，其实就是多干活，更快的提高自己的能力，提高自己本身的价值，形成长期的利益最大化。是不是多干活一定能提高能力？这里面牵涉到一个能力转化率的问题，某些人做一个项目能够明白5个技术点，而有些人只能明白3个，长期积累，个人能力的差距会越来越大，一个项目涉及方方面面的内容，管理、需求、设计、编码、测试，可能每个人的兴趣点不同，人也不可能面面俱到，只要在你自己选择的方向提高即可。那么如何来提高转化率，复杂而又简单的问题，</p>
 <p>尝试、归纳、思考、总结、改变。</p>
 <p>个人感觉，就是这么个套路，具体的执行情况，就看每个人自己的执行力和欲望的大小了。</p>
 <p>坚持迭代！！！</p>
@@ -84,17 +180,86 @@
     <category scheme="http://www.liangpeng.net/categories/团队/" term="团队"/>
   </entry>
   <entry>
+    <title type="html"><![CDATA[需求分析与功能设计 案例分析]]></title>
+    <link href="http://www.liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html"/>
+    <id>http://www.liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html</id>
+    <published>2013-11-20T02:26:38.000Z</published>
+    <updated>2013-11-28T08:44:45.000Z</updated>
+    <content type="html"><![CDATA[<p>注：本实例绝非虚构，针对初级开发者，改变<code>程序员＝打字</code>的困境</p>
+<h2 id="-">需求分析</h2>
+<p>背景：证书打印功能，能够打印3份证书：正本（机构名称、住所）、副本第一页（编号、发证机关）、副本第二页（机构名称、法人）</p>
+<ol>
+<li>第一次需求描述：需要个能够打印证书的功能</li>
+<li>第二次需求变更：经营范围固定为某段文字，不能修改，自动生成证书编号</li>
+<li>第三次需求变更：需要在证书打印功能中增加打印记录功能，要求1天完成</li>
+<li>第四次需求变更：打印第一页时填写的内容，能够在第二页复用，要求尽快完成</li>
+<li>第五次需求变更：增删改查打印内容，之后根据填写的打印内容打印证书，并能导出打印内容列表（作为绩效）</li>
+</ol>
+<p>问题总结：</p>
+<ol>
+<li>每次都是听客户两句话就要求开发完成功能，未深入挖掘需求</li>
+<li>第五次需求完成时间比第三次需求要求时间晚2周，而每次要求都是紧急，导致无法全面规划功能设计</li>
+<li>第五次需求完全覆盖第四次需求，浪费开发资源</li>
+</ol>
+<p>解决方法：</p>
+<ol>
+<li>充分与客户沟通，深入分析客户需要，完善需求。参阅 <a href="http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document_2181.html"><strong>写出一份有意义的需求文档</strong></a></li>
+<li>尽量争取合适的开发时间</li>
+</ol>
+<h2 id="-">功能设计</h2>
+<p>在需求挖掘不够充分，描述不清时，开发人员有责任通过自己的主观分析来引导需求完善</p>
+<p>此次分析，依据：<code>第三次需求变更</code></p>
+<h4 id="-">明确目地</h4>
+<p>第三次需求变更，可以设想出两种不同的目的：</p>
+<ol>
+<li>客户是希望知道谁在什么时候打印了什么，打印了多少次</li>
+<li>证书需要每年更换，第二次打印希望能够复用上一次的打印数据</li>
+</ol>
+<p>不同的目地有不同的设计思路</p>
+<p>目的一：关注于什么人什么时间打印了什么；此时要注意：打印错误如何标记；
+目的二：关注于如何减少用户的工作量；此时要注意：是否可以结合 机构档案、机构年审功能 来处理 证书打印功能；</p>
+<p>本案例，目的一与目的二不冲突。完全可以同时实现，但功能实现的时间要求有限，同时也没必要完成客户不需要的功能，所以选择哪个方向，应继续与客户沟通。</p>
+<p><code>错误的方向，走的越远，错的越远。</code></p>
+<h4 id="-">设计分析</h4>
+<p>背景：选定实现第一个目的</p>
+<h6 id="-">第一次设计</h6>
+<p>打印记录表结构：机构名称、住所、编号、发证机关、机构名称、法人、打印时间、打印人</p>
+<p>功能：没点击一次打印，增加一条打印记录</p>
+<p>缺点：3个不同的打印，能够填充的字段不同，记录看起来总是不完整的。</p>
+<h6 id="-">第二次设计</h6>
+<p>表机构修改为：打印人、打印内容、打印时间</p>
+<p>功能修正：将所有的打印数据整合为一个字段－打印内容</p>
+<h6 id="-">第三次设计</h6>
+<p>表结构修改为：机构名称、打印人、打印内容、打印时间</p>
+<p>功能修正：将机构名称独立出来，作为数据整合的基准，比如：要查看某个机构的所有打印记录</p>
+<p>缺点：实际上3份打印内容，才算一次完整的打印记录，现在的设计无法体现这个概念</p>
+<h6 id="-">总结</h6>
+<p>iphone发布前，进行过无数次的设计修正，那可是世界顶级的设计师，而我们每次写代码前都是不加思索，错误百出，为何不在开工前先想好呢？无论你是什么等级的工程师，<code>请在编码前，将自己的设计思路推翻两次以上</code></p>
+<h2 id="-">代码组织</h2>
+<p>此次分析并不涉及代码组织的分析，为了突出代码组织的重要性，在这里再次说明<code>请在编码前，将自己的代码组织思路推翻两次以上</code>。</p>
+<p>案例：材料管理是我们公司最有技术能力的人独立完成的项目，此人熟知各种技术、能够解决各种疑难杂症，但是这个项目却久经维护，依然破烂不堪，让人头痛。代码是需要组织的，不是拼凑起来就管用。<code>能够驾驭万行代码才是真技术</code></p>
+]]></content>
+    <category scheme="http://www.liangpeng.net/tags/团队/" term="团队"/>
+    <category scheme="http://www.liangpeng.net/tags/需求/" term="需求"/>
+  </entry>
+  <entry>
     <title type="html"><![CDATA[写出一份有意义的需求文档]]></title>
     <link href="http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document.html"/>
     <id>http://www.liangpeng.net/y2013/m09/write-a-meaningful-requirements-document.html</id>
-    <published>2013-09-05T08:56:15.000Z</published>
-    <updated>2013-11-21T07:54:09.000Z</updated>
-    <content type="html"><![CDATA[<h3>视角</h3>
-<h5>以客户需要为视角</h5>
+    <published>2013-09-20T02:26:38.000Z</published>
+    <updated>2013-11-28T08:48:07.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="-">重要性</h3>
+<ol>
+<li>需求作为软件开发的排头兵，决定了项目发展的方向，方向错误，全局失败</li>
+<li>需求的频繁变动，不仅影响项目的进度，更影响编码人员的工作热情、工作态度（人心散了，队伍就不好带了）</li>
+</ol>
+<p>参考：<a href="http://liangpeng.net/y2013/m11/project-design-and-code-organization-case-study.html" target="_blank"><strong>项目设计与代码组织-案例分析</strong></a></p>
+<h3 id="-">视角</h3>
+<h5 id="-">以客户需要为视角</h5>
 <p>应该以客户的视角来书写文档，以客户实际的需要作为中心。比如：工单管理，应写明客户为什么需要求救工单，客户现实中是如何处理求救工单的，而不是直接将需求具体为：录入工单、回访工单</p>
-<h5>以软件设计为视角</h5>
+<h5 id="-">以软件设计为视角</h5>
 <p>必须以定量分析来描述文档，而不是概念描述，比如：一般情况下、通常、大概、有时候，这些概念性的内容，计算机乃至程序员是无法理解的，应该将各种不同的情况加以分析，转换为可以判定条件，比如：美女筛选这个业务，1.身高大于170cm 2.体重小于45kg 这些定量的数据，可行，而 3.皮肤白 4.气质佳，这样无法定量的条件，就需要深入思考、妥协，转换为定量的数据，比如：3.白 &gt; #333333 4.智商大于120并且情商大于&gt;130，或者调整业务，增加人工投票的功能。</p>
-<h3>系统目标</h3>
+<h3 id="-">系统目标</h3>
 <p>不能是笼统的，走形式的，是真正的目标，有意义的目标，不多，但是必须有，如果根本都想不出来，那就需要先考虑系统存在的必要性</p>
 <ol>
 <li>解决了什么问题</li>
@@ -106,22 +271,27 @@
 <ol>
 <li>面子工程：就不需要搞复杂的业务逻辑，而是展现更多的功能，但不需要每个功能很强大，有就行，而界面要符合某些人的口味。</li>
 <li>便利性：则着重突出UI交互，让用户一看就懂，不学就会用</li>
-<li>优化业务：那就需要把业务流程搞清楚</li>
+<li>优化业务：那就需要把业务流程搞清楚</li>
 <li>解决问题：需要找出本质的问题，而不是表面的问题</li>
 </ol>
 <p>没有哪个系统能够满足全世界的需要，强大如iPhone也没有征服全世界，必须有所取舍，找出自己的亮点。</p>
-<h3>业务分析</h3>
-<h4>以场景演练为出发点</h4>
+<h3 id="-">业务分析</h3>
+<h4 id="-">以场景演练为出发点</h4>
 <p>最好能够以实际用户的身份，对现实的业务流程进行操作，熟悉每个业务步骤的原始执行方式，体会操作的实际效果及意义，在没有实际操作条件的情况下，也要尽量在脑海中，将每个业务过程演练多边（要有带入感，就像过电影片段一样），了解现实的操作方法之后，才能抽象出符合客户需要的产品设计方案。</p>
-<h4>穷尽特殊情况</h4>
+<h4 id="-">穷尽特殊情况</h4>
 <p>对于某些复杂的业务运算，应穷尽各种情况，让用户进行解答，从而找出正确的计算方法：</p>
 <p>？？</p>
-<h3>文档的组织方式</h3>
+<h4 id="-">明确优先级</h4>
+<ol>
+<li>项目功能较多时，应分析出功能点的优先级，指导开发安排进度</li>
+<li>尽量指定各个功能点希望完成的时间点（技术部根据期望的时间点和功能的难易程度，规划进度表）</li>
+</ol>
+<h3 id="-">文档的组织方式</h3>
 <p>很多需求文档都是对功能的罗列，1、2、3、4、5，仅仅是一个一个的罗列，读起来索然无味，根本无法调动阅读者的积极性，让人读得很勉强，引不起思考。甚至，不谈功能与功能的联系，苍白的义务式的罗列。</p>
-<h4>功能组织</h4>
+<h4 id="-">功能组织</h4>
 <p>将能够完成一项特定任务的功能，按照业务逻辑走向，进行分组表述，是一个较好的方法，恰当的功能表述顺序，与内容组织，更容易让人理解作者的本意</p>
 <p>而对于那些诸如：参数设置、业务字典、部门管理等等一些无脑功能，基本是固定不变的内容，简单罗列即可</p>
-<h4>罗列基本、突出重点、详尽难点</h4>
+<h4 id="-">罗列基本、突出重点、详尽难点</h4>
 <p>长篇累牍，重点不清的文档虽然也能说明问题，但是会增加阅读的难度，容易被程序员抵制，甚至抛弃，即便是强制去读，也不利于理解。</p>
 <p>比如：客户管理这个大功能</p>
 <p>如果分解为：新增客户、删除客户、修改客户、客户资料查看、客户信息统计，并详尽说明；有多大意义？</p>
@@ -134,57 +304,56 @@
 <li>与客户相关的业务，指明必要的链接</li>
 </ol>
 <p>对于一些较复杂的业务逻辑，比如：运营补贴的计算方式（因素很多），要穷尽各种因素的组合，进行详细描述。</p>
-<h4>用业务实例辅助说明</h4>
+<h4 id="-">用业务实例辅助说明</h4>
 <p>以实例来描述业务场景，通常更容易理解，比如：老人档案审批</p>
 <hr>
 <ol>
 <li><em>社区</em>填写<strong>老人档案</strong>，提交给<em>街道</em>，进行<strong>第一次审批</strong></li>
-<li><p><em>街道</em><strong>第一次审批</strong></p>
-<ol>
-<li><p>通过后，提交给<em>区县</em>，进行<strong>第二次审批</strong></p>
-<pre><code><span class="number">1</span>.  <span class="number">_</span>区县<span class="number">_</span>审批通过，则将<span class="variable">**</span>老人档案<span class="variable">**</span>设置为 <span class="variable">**</span>已审批档案<span class="variable">**</span></code></pre>
-<ol>
-<li><p><em>区县</em>未审批通过，则将档案退回到街道重新审批</p>
-</li>
-<li><p>审批未通过，则退回给<em>社区</em></p>
-<ol>
-<li>xxxxx</li>
+<li><em>街道</em><strong>第一次审批</strong><ol>
+<li>通过后，提交给<em>区县</em>，进行<strong>第二次审批</strong><ol>
+<li><em>区县</em>审批通过，则将<strong>老人档案</strong>设置为 <strong>已审批档案</strong></li>
+<li><em>区县</em>未审批通过，则将档案退回到街道重新审批</li>
 </ol>
 </li>
+<li>审批未通过，则退回给<em>社区</em><ol>
+<li>xxxxx</li>
 <li>xxxxx</li>
 </ol>
 </li>
 </ol>
 </li>
 </ol>
-<p>备注：<br>1. 每次审批，有：通过、未通过两个选项，对于未通过的审批，必须填写审批意见。<br>2. 其中街道在审批过程中，可以修改：审批意见、截止日期</p>
+<p>备注：</p>
+<ol>
+<li>每次审批，有：通过、未通过两个选项，对于未通过的审批，必须填写审批意见。</li>
+<li>其中街道在审批过程中，可以修改：审批意见、截止日期</li>
+</ol>
 <hr>
 <ol>
 <li>场景中可以使用实际的客户名称，比如：金水区民政局、丰庆路街道办等，增加可阅读性</li>
 <li>对于描述的内容，可增加 斜体、粗体、下划线 等因素，将角色、业务点、业务数据 等内容，着重标出，提高内容质量</li>
 </ol>
-<h3>文档优化</h3>
+<h3 id="-">文档优化</h3>
 <ol>
 <li>使用更形象、合适的语言描述，比如：移动用户的增加，是“新用户入网”，而不是“新增用户”，“新增团队”也没有“创建新团队”更贴切</li>
 </ol>
-<h3>笔者注</h3>
+<h3 id="-">笔者注</h3>
 <ol>
 <li>系统及文档迭代化：系统的第一版不要追求过大过复杂，而应紧抓核心目的，仅完成核心目的必须的内容，随后的功能逐步添加；类似于抛砖引玉</li>
 <li>系统可持续交付：每个功能的完成，系统都是完整的、客户可用的</li>
 </ol>
 ]]></content>
+    <category scheme="http://www.liangpeng.net/tags/团队/" term="团队"/>
     <category scheme="http://www.liangpeng.net/tags/需求/" term="需求"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/" term="团队"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/技术/" term="技术"/>
   </entry>
   <entry>
-    <title type="html"><![CDATA[谨慎使用ajax动态引入js(附代码与结果)]]></title>
+    <title type="html"><![CDATA[谨慎使用Ajax动态引入Js(附代码与结果)]]></title>
     <link href="http://www.liangpeng.net/y2013/m08/javascript-run-in-ajax.html"/>
     <id>http://www.liangpeng.net/y2013/m08/javascript-run-in-ajax.html</id>
     <published>2013-08-29T07:12:37.000Z</published>
     <updated>2013-11-21T06:13:27.000Z</updated>
     <content type="html"><![CDATA[<p>代码(index.php)：</p>
-<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+<figure class="highlight php"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -206,12 +375,12 @@
 &lt;/head&gt;&lt;body ryt12134=<span class="string">"1"</span>&gt;
 &lt;script&gt;console.log(<span class="string">"body_header"</span>,<span class="keyword">new</span> Date());&lt;/script&gt;
 &lt;script&gt;
-(function($) {
-    $(function() {
+(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+    $(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
         console.log(<span class="string">"$$$$"</span> + <span class="keyword">new</span> Date());
     });
 })(jQuery);
-$(document).ready(function(){ console.log(<span class="string">"ready"</span>,<span class="keyword">new</span> Date());});
+$(document).ready(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span> console.log(<span class="string">"ready"</span>,<span class="keyword">new</span> Date());});
 &lt;/script&gt;
 &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://42.121.117.187:8899/test.js?&lt;?php echo time();?&gt;"</span>&gt;&lt;/script&gt;
 &lt;script&gt;console.log(<span class="string">"body_footer"</span>,<span class="keyword">new</span> Date());&lt;/script&gt;
@@ -219,7 +388,7 @@ $(document).ready(function(){ console.log(<span class="string">"ready"</span>,<s
 </pre></td></tr></table></figure>
 
 <p>代码(index.html)：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -230,14 +399,14 @@ $(document).ready(function(){ console.log(<span class="string">"ready"</span>,<s
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">html</span>&gt;</span><span class="tag">&lt;<span class="title">head</span>&gt;</span>
 <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ryt12134</span>=<span class="value">"1"</span>&gt;</span>
 <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-$.get(<span class="string">"index.php"</span>,<span class="keyword">function</span>(html){
+$.get(<span class="string">"index.php"</span>,<span class="function"><span class="keyword">function</span><span class="params">(html)</span>{</span>
     $(<span class="string">"body"</span>).append(html);
 });
 </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">body</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </pre></td></tr></table></figure>
 
-<p>测试结果：macos:firefox、chrome、safari — win8:ie10 基本相同</p>
+<p>测试结果：macos:firefox、chrome、safari -- win8:ie10 基本相同</p>
 <ol>
 <li>将js文件放在header中，document.ready()会等待js加载完成后再执行（header中的js是优先于body加载的）</li>
 <li>将js文件放在body中，则 不考虑js是否加载就会执行（将jquery放在最后面，会导致js出错）</li>
@@ -261,7 +430,8 @@ ready Date {Thu Aug 29 2013 14:44:01 GMT+0800 (CST)}
 body_footer Date {Thu Aug 29 2013 14:44:01 GMT+0800 (CST)}
 qian_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
-</pre></li>
+</pre>
+</li>
 </ol>
 ]]></content>
     <category scheme="http://www.liangpeng.net/tags/ajax/" term="ajax"/>
@@ -307,31 +477,31 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 <li>平庸的团队（everyone）</li>
 </ol>
 <p>只能改为：<code>快乐的团队</code></p>
-<h2>快乐的团队的要素</h2>
+<h2 id="-">快乐的团队的要素</h2>
 <ol>
 <li>合理的诉求</li>
 <li>把事情做好</li>
 <li>自己动手，丰衣足食，不要总是期待别人让您快乐</li>
-<li>���持自己，不附和</li>
+<li>坚持自己，不附和</li>
 <li>轻松工作，暇怡生活</li>
 </ol>
-<h5>用脑</h5>
+<h5 id="-">用脑</h5>
 <ol>
 <li>注意代码的逻辑</li>
 <li>注意代码的原理</li>
 </ol>
-<h5>用心</h5>
+<h5 id="-">用心</h5>
 <ol>
 <li>在有限的条件下，尽量做的好一点，不要<code>凑合、敷衍</code></li>
 <li>屁股上的屎总是要檫的</li>
 </ol>
-<h3>可以将精力用在</h3>
+<h3 id="-">可以将精力用在</h3>
 <ol>
 <li>优化代码结构，理解代码原理</li>
 <li>理解业务逻辑，思考项目本质</li>
 <li>优化用户交互</li>
 </ol>
-<h3>工作的态度影响生活态度，决定生活的走向</h3>
+<h3 id="-">工作的态度影响生活态度，决定生活的走向</h3>
 <ol>
 <li>超越自己，每天一点点</li>
 <li>理想需要奋斗，能超越世俗吗？</li>
@@ -343,19 +513,20 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
     <category scheme="http://www.liangpeng.net/categories/团队建设/" term="团队建设"/>
   </entry>
   <entry>
-    <title type="html"><![CDATA[工作饱和度]]></title>
-    <link href="http://www.liangpeng.net/y2013/m07/work-saturation.html"/>
-    <id>http://www.liangpeng.net/y2013/m07/work-saturation.html</id>
+    <title type="html"><![CDATA[工作安排]]></title>
+    <link href="http://www.liangpeng.net/y2013/m07/work-management.html"/>
+    <id>http://www.liangpeng.net/y2013/m07/work-management.html</id>
     <published>2013-07-16T07:51:07.000Z</published>
-    <updated>2013-11-21T04:14:38.000Z</updated>
-    <content type="html"><![CDATA[<h2>现状及分析</h2>
-<p>上次领导提到，员工工作饱和度的问题。一直对此问题很不屑，这次发现，并不那么简单。一直认为“积极性”才是决定工作效率的关键，所以倾向于打造舒适、有诱惑的工作环境来提高效率。公司做的还不够，不过，效果也有待商榷。</p>
+    <updated>2013-11-27T04:12:04.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="2013-07-16-">2013-07-16 工作饱和度</h2>
+<h3 id="-">现状及分析</h3>
+<p>上次领导提到，员工工作饱和度的问题。一直对此问题很不屑，这次发现，并不那么简单。一直认为“积极性”才是决定工作效率的关键，所以倾向于打造舒适、有诱惑的工作环境来提高效率。虽然公司做的还不够，但是足够说明一些问题了：<code>环境决定方法</code>，没有一招通吃的可能。</p>
 <p>《晓说》里面的一句话，让我深思，“没有绝对，没有黑白，只有无尽的妥协”，所以，工作饱和度也要区分人、区分环境，过大的压力导致质量问题，得不偿失。</p>
 <ol>
 <li>没有良好的技术基础作为支撑</li>
 <li>过度的工作量，引起消化不良，恶性循环</li>
 </ol>
-<h3>要素：</h3>
+<h3 id="-">要素：</h3>
 <ol>
 <li>非脑力劳动，工作流程简单，安排的越多，干的越快，效率越高。</li>
 <li>脑力劳动，例如：软件开发，此类问题，就不一定是工作压力越大，写的代码越多，越好，而是根据团队的定位，综合考量，追求质量与数量的临界点。</li>
@@ -363,13 +534,14 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 <li>积极型，能够在工作时间饱和工作，就现在的工作环境，也是可遇不可求。</li>
 <li>普通型，随波逐流，能做就做，有的只是空洞的想法，没有执行力或个人能力，通常都是这个类型。</li>
 </ol>
-<p>不同的人，不同的工作环境，安排不同的工作方式。<br>目前我们属于 <code>脑力普通型</code></p>
-<h2>未来计划要做的事情</h2>
-<h3>1.工作安排与指导</h3>
+<p>不同的人，不同的工作环境，安排不同的工作方式。
+目前我们属于 <code>脑力普通型</code></p>
+<h3 id="-">未来计划要做的事情</h3>
+<h4 id="1-">1.工作安排与指导</h4>
 <p>花费更多的时间，进行工作指导，和工作检查。</p>
-<h3>2.花费更多的时间，理顺项目脉路</h3>
+<h4 id="2-">2.花费更多的时间，理顺项目脉路</h4>
 <p>曾经尝试，总是因为过度的工作内容导致，无法进展。</p>
-<h3>3.重新认定员工等级</h3>
+<h4 id="3-">3.重新认定员工等级</h4>
 <p>质量对应技能水平，数量对应贡献大小。</p>
 <p>数量：</p>
 <ol>
@@ -383,18 +555,10 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 <li>Bug数量及级别[粗心级、其他]</li>
 <li>表述及文档能力（高级）</li>
 </ol>
-]]></content>
-    <category scheme="http://www.liangpeng.net/tags/工作/" term="工作"/>
-    <category scheme="http://www.liangpeng.net/categories/团队建设/" term="团队建设"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[上进心]]></title>
-    <link href="http://www.liangpeng.net/y2013/m07/motivated.html"/>
-    <id>http://www.liangpeng.net/y2013/m07/motivated.html</id>
-    <published>2013-07-11T14:00:36.000Z</published>
-    <updated>2013-11-21T08:02:03.000Z</updated>
-    <content type="html"><![CDATA[<p>“每个人都有上进心”，我认为这句话等同于“每个中国人都有一个武侠梦”。关键不在于你想怎么样，而在于你怎样做。</p>
-<h2>我眼中的上进</h2>
+<hr>
+<h2 id="2013-07-11-">2013-07-11 上进心</h2>
+<p>“每个人都有上进心”，我认为这句话等同于“每个中国人都有一个武侠梦”。关键不在于你想怎么样，而在于你怎样做。</p>
+<h3 id="-">我眼中的上进</h3>
 <ol>
 <li>大部分的时间用于做，持续不断</li>
 <li>在做的间歇要后头看看，向前想想，对旧事进行总结，对新事稍作计划</li>
@@ -404,152 +568,48 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 <li>粗略了解本行业的高端技术点，并做出选择</li>
 <li>淡定</li>
 </ol>
-<h2>目前的我</h2>
+<h3 id="-">目前的我</h3>
 <ol>
 <li>被琐事缠身，心绪不宁，疲于应酬。调整心绪，抽出时间，做认为正确的事情。培训、版本控制、技术升级；项目管理、交流；</li>
 <li>好环境促进步，坏环境，也不是就一无是处。历代太祖都是逆境中成长的</li>
 <li>保持一个好身体</li>
 <li>对自己再狠一点，少看电影、少浏览网页，节约时间</li>
 </ol>
-]]></content>
-    <category scheme="http://www.liangpeng.net/tags/上进心/" term="上进心"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/" term="团队"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/生活/" term="生活"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[沟通了解--最重要的事]]></title>
-    <link href="http://www.liangpeng.net/y2013/m04/gou-tong-liao-jie-zui-zhong-yao-di-shi.html"/>
-    <id>http://www.liangpeng.net/y2013/m04/gou-tong-liao-jie-zui-zhong-yao-di-shi.html</id>
-    <published>2013-04-23T14:35:19.000Z</published>
-    <updated>2013-11-21T08:05:56.000Z</updated>
-    <content type="html"><![CDATA[<p>马云成功的核心，也许就是人尽其才，要做到人尽其才，首先就要学会沟通，通过沟通，找到更好的操作手法。要辨别专业领域的建议，也许就需要素养和直觉了。</p>
-<h4>沟通的渠道</h4>
-<p>一个人不可能了解所有事情的细节、本质，最好的方法就是，由专业人才进行建议，要获得更多更好的建议就需要沟通的渠道</p>
-<ol>
-<li>广开言路：鼓励沟通，并提供有效的沟通渠道，邮件、面谈等</li>
-<li>对重点人士，保持谦虚的心态：不能把时间浪费到废话上</li>
-<li>主动：有些时候，别人不便说明，如果主动出击，也许能够获得机会</li>
-</ol>
-<h4>沟通的意义</h4>
-<ol>
-<li>发现事务的本质</li>
-<li>获得自己无法体悟的见解</li>
-<li>更合理的安排事务</li>
-<li>保持团队凝聚力</li>
-<li>辨别人才</li>
-</ol>
-]]></content>
-    <category scheme="http://www.liangpeng.net/tags/沟通/" term="沟通"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/" term="团队"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/生活/" term="生活"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[自改进的团队--不放过一个细节]]></title>
-    <link href="http://www.liangpeng.net/y2013/m03/zi-gai-jin-di-tuanu.html"/>
-    <id>http://www.liangpeng.net/y2013/m03/zi-gai-jin-di-tuanu.html</id>
-    <published>2013-03-18T01:59:46.000Z</published>
-    <updated>2013-11-21T07:58:03.000Z</updated>
-    <content type="html"><![CDATA[<h2>1.一个销售2年的产品，仍有n多低级错误？</h2>
-<p>是研发的问题？客户都没有骚扰市场？维护部就能忍受无尽的骚扰？老板就视而不见？综合部就没有一点感���？</p>
+<h2 id="2013-03-18-">2013-03-18 自改进的团队--不放过一个细节</h2>
+<h3 id="1-2-n-">1.一个销售2年的产品，仍有n多低级错误？</h3>
+<p>是研发的问题？客户都没有骚扰市场？维护部就能忍受无尽的骚扰？老板就视而不见？综合部就没有一点感觉？</p>
 <p>不懂技术？怕得罪人？不是本岗位工作？品质观念！客户意识！有没有？</p>
 <p>都说市场部有客户意识？给客户一个自己都没有高要求的产品，算不算有客户意识？</p>
 <p>应对：</p>
 <p>布道：高品质、团队观念、做事做人</p>
 <p>实施：领导带头、相互提醒，打造公司对事不对人的风格，奖优。</p>
-<h2>2.测试平台就应该有严重问题吗？</h2>
+<h3 id="2-">2.测试平台就应该有严重问题吗？</h3>
 <p>严格要求，逐步提高，有序进步。每次忍一点就是0.99，</p>
 <p>布道：工作内容不同，但地位相同。</p>
 <p>实施：建立对上对下都敢言的氛围，才能构造自我改进的机制。</p>
-<h2>3.账号问题</h2>
+<h3 id="3-">3.账号问题</h3>
 <p>你是一个优秀的人吗？</p>
 <p>布道：浪费别人时间，就是犯罪。</p>
 <p>实施：全体鄙视他。</p>
 ]]></content>
-    <category scheme="http://www.liangpeng.net/categories/团队/" term="团队"/>
-    <category scheme="http://www.liangpeng.net/categories/团队/生活/" term="生活"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[懂与不懂]]></title>
-    <link href="http://www.liangpeng.net/y2013/m02/dong-yu-bu-dong.html"/>
-    <id>http://www.liangpeng.net/y2013/m02/dong-yu-bu-dong.html</id>
-    <published>2013-02-04T08:54:56.000Z</published>
-    <updated>2013-11-21T04:14:38.000Z</updated>
-    <content type="html"><![CDATA[<p>今天，老板重述了一遍公司职能部门转变的思路，信心大增（基数太低），如果能够按照设想进展，结果应该不错，但重要的，在于执行。大多谈的是市场部、项目部，对于我研发部门的内容，倒是没有涉及太多，老板本质是不懂技术的，所以这种情况很正常。<br>今天与部门员工的沟通也发现，非编码人员普遍认为有点闲，刚好匹配我懂编码，不懂测试和文档。<br>文档工作：大家都清楚要做的浅显易懂，条理清晰，有眼球效应，但是具体如何做，是个大学问，几页纸，要说明系统，还要突出自己的特点、优势，文字功底、创造性思维、组织能力都要求非常高。刚刚做了次尝试，效果不好，还需要深入研究，目前只有一个结果：要围绕场景来叙述（貌似1年前，我就这样给老板提过建议，今天又总结出来这个结果，⊙﹏⊙）<br>测试：更头晕，1.手工测试，显然过于低效，但是看起来最可行 2.自动测试，一直找不到好的方法 3.测试用例，编码人员的基本开发工作都完不成，哪有写这个的功夫，况且个人感觉，测试用例的编码技术要求更高点，业务代码都组织不清，更不要提单元测试的代码了。比较难弄。<br>目前来说，测试工作不着急推动，文档工作由项目部接手，所以，2013年工作计划，仅将此项内容设置为尝试项目，主要面临的问题还是需求、设计（产品、技术构架） 及 版本控制。<br>不懂就不做，所以，任何内容尝试之前，都要有一个具体的操作方案，细化到每个步骤。</p>
-<p>老板的这句话感觉很精辟：市场部研究人，项目部研究产品，研发部研究技术。<br>得令。</p>
-]]></content>
-    <category scheme="http://www.liangpeng.net/tags/技术/" term="技术"/>
-    <category scheme="http://www.liangpeng.net/tags/文档/" term="文档"/>
-    <category scheme="http://www.liangpeng.net/tags/测试/" term="测试"/>
-    <category scheme="http://www.liangpeng.net/tags/研发/" term="研发"/>
-    <category scheme="http://www.liangpeng.net/tags/老板/" term="老板"/>
-    <category scheme="http://www.liangpeng.net/categories/团队建设/" term="团队建设"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[各取所长_成长]]></title>
-    <link href="http://www.liangpeng.net/y2013/m01/ge-qu-suo-chang-_-cheng-chang.html"/>
-    <id>http://www.liangpeng.net/y2013/m01/ge-qu-suo-chang-_-cheng-chang.html</id>
-    <published>2013-01-31T02:05:05.000Z</published>
-    <updated>2013-11-21T04:14:38.000Z</updated>
-    <content type="html"><![CDATA[<p>雾霾     平<br>如何写好一个文档，不是一件简单的事情，是一个综合素质的体现：文字、逻辑、心理、人文各个学科都有涉及，但好像大家对此并不十分看重，大抵认为就是一个文档而已，说明说明系统功能，就over了，对做这些没有多大兴致，这就很难办。我还是偏向，兴趣驱动的，工作中得不到乐趣，就很难将工作做得精彩。<br>1.天生对某件事有兴趣，比如我一直对计算机很有兴趣，现在对管理有兴趣，就很好办，给他做喜欢的事，适当指引就好了<br>2.没有兴趣点的，如何去做？目前只能循规蹈矩，让其按部就班，但我也不知道什么是部什么是班。<br>各取所长，适当的调整工作方法及内容。<br>很多时候，有人能够看到一些东西，有人看不到，不是能力的问题，仅仅是经历的不同，就如父辈总是教育我们好好学习，而我们不为所动一样，能改进的仅仅是还原历史的真相，讲述：经历了什么，得到了什么，至于是否能听懂，随人吧。<br>人力资源是个大学问，了解不多，只能现学现用了，别人的总结：性格、智力、知识，大抵就是这3个方面。<br>收集两个测试方法：<br>MBTI职业性格测试： <a href="http://www.apesk.com/mbti/dati.asp" target="_blank">http://www.apesk.com/mbti/dati.asp</a><br>智力测试：<a href="http://www.iqtest.dk/main.swf" target="_blank">http://www.iqtest.dk/main.swf</a></p>
-]]></content>
     <category scheme="http://www.liangpeng.net/tags/工作/" term="工作"/>
-    <category scheme="http://www.liangpeng.net/tags/性格/" term="性格"/>
-    <category scheme="http://www.liangpeng.net/tags/智力/" term="智力"/>
-    <category scheme="http://www.liangpeng.net/categories/团队建设/" term="团队建设"/>
+    <category scheme="http://www.liangpeng.net/tags/团队/" term="团队"/>
   </entry>
   <entry>
-    <title type="html"><![CDATA[亲疏-坚持-老中医]]></title>
+    <title type="html"><![CDATA[亲疏 坚持 老中医]]></title>
     <link href="http://www.liangpeng.net/y2013/m01/qin-shu-jian-chi-lao-zhong-yi.html"/>
     <id>http://www.liangpeng.net/y2013/m01/qin-shu-jian-chi-lao-zhong-yi.html</id>
     <published>2013-01-30T11:06:50.000Z</published>
     <updated>2013-11-21T04:14:38.000Z</updated>
-    <content type="html"><![CDATA[<p>大雾     平<br>老爸说儿子死活不肯和奶奶住在我姨家，之前和爷爷奶奶生活在一起时，是很黏我妈的，现在大多时间都在学校和他妈妈一块生活，和爷爷奶奶在一起的时间渐少，看起来就不那么黏糊了，而这次放假，刚好，我妈、媳妇都在上班，所以只和爷爷在一起，大概也就一晚上一白天独自和爷爷在一起，就不同对待了，当然也有之前他爷爷过度溺爱的原因，4岁的小孩，应该是没有什么价值观的，仅仅通过感受来决定行为，大多还是有迹可循，在一起的时间大抵决定了亲疏关系。<br>晚上又发烧了，38.5，老爸急的团团转，是药就行，给来了瓶清热解毒口服液，儿子拒绝的很精神，“不喝”，声音洪亮，感觉问题不大，理论上讲感冒的可能性也不大，倒是有点积食，有点胃气上逆的感觉，我有这个老毛病，看来脾胃不好也遗传。老爸说一晚上都没睡好，我倒没当回事，早上起床时儿子也还精神抖擞，按我的推测问题不大，但是老爸坚持去医院，坚持退烧，只好照办，打针、吃药、储备退烧药，流程照旧，很是为儿子的健康担忧，如此这般一点小问题都借助外界干预，如何修复自己的免疫力系统，不过也没办法，我也不是医生，所谓的专家，也是各说各话，有的说要立即退烧，有的说适度的发烧有利于杀菌，个人分析后者更正确，但是木办法，老婆、老爸、老妈坚决认为，任何异常都需要立即就医，我若坚持，立马就是一场战争，顺其自然吧。<br>这次看病的���一个老中医，儿科是远近闻名，我看起来却很是揪心，就诊单的日期，就想了半天，显然有点神志不清了，虽然身体很硬朗，他年轻时，确实是个高超的医生，但并不能保证现在还是，“这年头，医生教师也和其他职业没什么两样了，都是维持生计的手段，没有任何德行可言”，大多我们都这样说，实际上，历史上也都是这样，就单抓药，根据症状，循着医书，按照套路出牌，貌似是明朝时，将大大小小的偏方汇集成书，让医生们照单抓药，被认为是死板硬套，实际看来，科学也是这样，技能的高低完全取决于经验，无经验按部就班，有经验则些许的变化，效果大不同。只不过一个是对人，一个是对物，轻重不同而已。总结，近几年对于中西医的了解，一般病症还是西医靠谱，中医可尝试处理疑难杂症和身心调理。</p>
+    <content type="html"><![CDATA[<p>大雾     平
+老爸说儿子死活不肯和奶奶住在我姨家，之前和爷爷奶奶生活在一起时，是很黏我妈的，现在大多时间都在学校和他妈妈一块生活，和爷爷奶奶在一起的时间渐少，看起来就不那么黏糊了，而这次放假，刚好，我妈、媳妇都在上班，所以只和爷爷在一起，大概也就一晚上一白天独自和爷爷在一起，就不同对待了，当然也有之前他爷爷过度溺爱的原因，4岁的小孩，应该是没有什么价值观的，仅仅通过感受来决定行为，大多还是有迹可循，在一起的时间大抵决定了亲疏关系。
+晚上又发烧了，38.5，老爸急的团团转，是药就行，给来了瓶清热解毒口服液，儿子拒绝的很精神，“不喝”，声音洪亮，感觉问题不大，理论上讲感冒的可能性也不大，倒是有点积食，有点胃气上逆的感觉，我有这个老毛病，看来脾胃不好也遗传。老爸说一晚上都没睡好，我倒没当回事，早上起床时儿子也还精神抖擞，按我的推测问题不大，但是老爸坚持去医院，坚持退烧，只好照办，打针、吃药、储备退烧药，流程照旧，很是为儿子的健康担忧，如此这般一点小问题都借助外界干预，如何修复自己的免疫力系统，不过也没办法，我也不是医生，所谓的专家，也是各说各话，有的说要立即退烧，有的说适度的发烧有利于杀菌，个人分析后者更正确，但是木办法，老婆、老爸、老妈坚决认为，任何异常都需要立即就医，我若坚持，立马就是一场战争，顺其自然吧。
+这次看病的是一个老中医，儿科是远近闻名，我看起来却很是揪心，就诊单的日期，就想了半天，显然有点神志不清了，虽然身体很硬朗，他年轻时，确实是个高超的医生，但并不能保证现在还是，“这年头，医生教师也和其他职业没什么两样了，都是维持生计的手段，没有任何德行可言”，大多我们都这样说，实际上，历史上也都是这样，就单抓药，根据症状，循着医书，按照套路出牌，貌似是明朝时，将大大小小的偏方汇集成书，让医生们照单抓药，被认为是死板硬套，实际看来，科学也是这样，技能的高低完全取决于经验，无经验按部就班，有经验则些许的变化，效果大不同。只不过一个是对人，一个是对物，轻重不同而已。总结，近几年对于中西医的了解，一般病症还是西医靠谱，中医可尝试处理疑难杂症和身心调理。</p>
 ]]></content>
     <category scheme="http://www.liangpeng.net/tags/中医/" term="中医"/>
     <category scheme="http://www.liangpeng.net/tags/儿子/" term="儿子"/>
     <category scheme="http://www.liangpeng.net/tags/日记/" term="日记"/>
     <category scheme="http://www.liangpeng.net/categories/生活/" term="生活"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[劝谏--8宗罪]]></title>
-    <link href="http://www.liangpeng.net/y2013/m01/quan-jian-8-zong-zui.html"/>
-    <id>http://www.liangpeng.net/y2013/m01/quan-jian-8-zong-zui.html</id>
-    <published>2013-01-17T04:28:54.000Z</published>
-    <updated>2013-11-21T08:03:35.000Z</updated>
-    <content type="html"><![CDATA[<p>背景：话说，实际上我已经比较悲观了，但是作为一个人，无论何时何地，都应对得起自己，无论认可情况下，都应保持信仰，努力向前走，即便前途是无尽的黑暗，即便是徒劳，即便是错误的决定，依然要走下去，所以，按照我个人的理解，冒昧提出如下劝谏，有则改之，无则加勉。如果是有，个人建议，你修正内容后，公示全公司，一则监督，二则示范，三则造势。</p>
-<p><strong>关于总经理助力体现的总经理日常工作4宗罪：</strong><br>1。<strong>浪费</strong>：巴掌大小的公司有多个部门，多个部门经理，还要专用资源做助理<br>2。<strong>职责不清</strong>：总经理应该是制定公司的决策和方向，要助理干什么<br>3。<strong>不传授</strong>：标书、文档等日常工作，起初的一次两次可以自己做，同时也要教会其他人，而非自己亲力亲为，要注重培养<br>4。<strong>不给舞台</strong>：一些客户，如：铁路、铁通、市老龄委等可以逐步转接给专业市场人员，而非自己耗费大量的时间去操作，要给舞台，要信任<br>总结：所有工作，除非，离了自己无法执行的情况，都应下放到专业人员处理。专业人员做不好，要传授、讲解，而不是代为处理。</p>
-<p>同时，个人角度认为的<strong>企业管理4宗罪：</strong><br>1。<strong>目标不清</strong>。比如：公司目标：通过不断的发展，在现代服务业信息化细分市场成为领先者，进而成为领导者（业务标准的制定者）。公司定位：现代服务业信息化解决方案提供商。没有任何个性、特点、气势、激励性，貌似所有公司都是大致相同的说辞，应建立有实际价值的当前目标，诸如：营业额、占有率等目标，实际只能作为部门生产目标，并无任何实际意义，个人建议应抛弃公司概念，制定面向员工的目标，比如：在公司实现营收1000万的同时，实现员工工资的翻倍，至少有一定的激励作用，有正面价值<br>2。<strong>目标不量化，不具体，无监督，无验证，无总结（重点）</strong>。作为国家这么大的机构还要制定五年计划而且有数据指标，各项业务指标等，都有定量指标。。而我们的目标，却笼统到只有每年产值、回款率，应尽其所能将目标量化，争取每个月度、季度都能看到目标实现的状况，尽快调整策略。<br>3。<strong>不阶段性总结、思考</strong>。感觉只有年终紧张下，平常的经理会都是日常工作，而无公司战略层面的总结、思考，及调整。公司的发展，不能等同于一场战役、战斗，而应该定义为一场战争，需要不断的根据实际情况，调整部署，有变化才能应对变化。<br>4。<strong>企业文化不够激昂</strong>。有和睦，但无激情，整体精神面貌不佳，无法形成高效的战斗力。公司的企业文化虽然能够维持员工的和睦，但是无法点燃员工的激情，是被动等待，等待员工觉醒，这是一个错误的理念，这是组织的职责，是管理者的职责，而不是每个个体必备的品格。</p>
-]]></content>
-    <category scheme="http://www.liangpeng.net/categories/团队/" term="团队"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[项目管理小结]]></title>
-    <link href="http://www.liangpeng.net/y2012/m10/xiang-mu-guan-li-xiao-jie.html"/>
-    <id>http://www.liangpeng.net/y2012/m10/xiang-mu-guan-li-xiao-jie.html</id>
-    <published>2012-10-19T08:40:46.000Z</published>
-    <updated>2013-11-21T04:14:38.000Z</updated>
-    <content type="html"><![CDATA[<p>年初开始接手部门管理工作，回顾一下，已经经历3个阶段。</p>
-<p><strong>第一阶段：熟悉了解缓冲</strong></p>
-<p>1.熟悉团队成员的做事风格，个性<br>2.让团队成员熟悉自己的风格<br>3.缓冲,领导更替的变化</p>
-<p>总结：现在看来，熟悉这个阶段做的相当不到位，其实和结婚一样，不在一个屋檐下，很难去了解其中滋味，还是需要一起做项目，一起写代码才会真正的了解</p>
-<p><strong>第二阶段：松散式管理</strong></p>
-<p>个人性格的体现，总是期望：个人能力佳，有一定的责任心，有向上动力的团队，偏重于对积极性的调动，有点脱离现实。</p>
-<p>1.2\8分的理论已经证明，除非精挑细选，只能有一小部分成为精英<br>2.现实的状况是没有多少层面来极大激活积极性</p>
-<p>同时：</p>
-<p>1.对于旧员工的管理过于放松</p>
-<p>好在：</p>
-<p>1.总算是积累了一部分技术资源<br>2.客户意识极大增强<br>3.团队向心力较好</p>
-<p><strong>第三阶段：模式化开发</strong></p>
-<p>既然无法发挥每个人的个性，那就按照传统套路来吧。</p>
-<p>1.基于前一阶段的技术积累，深度定制基础模块，为项目开发提供大量支撑，减少工作量<br>2.基于现实情况，推动项目管理继续完善。</p>
-<p>目标：</p>
-<p>将项目开发，固化为一个标准流程，不用大量思考，按部就班地高效整合资源，快速迭代完成项目开发。</p>
-<p>&nbsp;</p>
-<p><strong>最终总结：</strong></p>
-<p>1.破釜沉舟：看起来很牛，但只能作为奇招，治国安天下，还要传统着来<br>2.拔苗助长：看起来很傻，现实中，大家却都很着急<br>3.捡了西瓜丢了芝麻：社会极大的丰富，让人延缓缭乱，合适自己的鞋子才是好鞋子<br>4.水滴石穿：水或许都没想到能把石头滴穿，就这样日复一日的平淡中，也会创造奇迹<br>无论如何：按照自己舒服的方式来生活，没错，在你能选择的范围内。</p>
-]]></content>
-    <category scheme="http://www.liangpeng.net/tags/总结/" term="总结"/>
-    <category scheme="http://www.liangpeng.net/categories/团队建设/" term="团队建设"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[爱狗狗搜索]]></title>
@@ -564,51 +624,42 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
     <category scheme="http://www.liangpeng.net/categories/技术/" term="技术"/>
   </entry>
   <entry>
-    <title type="html"><![CDATA[第二次考核]]></title>
-    <link href="http://www.liangpeng.net/y2012/m09/di-er-ci-kao-he.html"/>
-    <id>http://www.liangpeng.net/y2012/m09/di-er-ci-kao-he.html</id>
-    <published>2012-09-07T09:46:57.000Z</published>
-    <updated>2013-11-21T04:14:38.000Z</updated>
-    <content type="html"><![CDATA[<p>考核，每月200，一年就是小2/3个ipad了，也还凑合。</p>
-<p>关于考核，一些想法（我的现行做法）：<br>1.考核内容，不是总量评比，而是增量评比，90到100增加10，50到70增加20，在很多考核方面，后者优于前者。。当然没有任何证据表明50到70，由于基数地，所以难度小，还是需要努力地<br>2.第一次考核的一些做法是为了影响公司决策，防止以统一标准衡量全公司人员，但是无论任何情况，部门内部总是相对公平。<br>3.个人认为，内部就这么几个人，评比还是客观准确地，影响结果的，主要还在于自己的增量<br>综上：每个人都有机会<br>另：争是一种信念，不争是一种状态，没有什么优劣。但，公司会尽量做到，平等竞争。没有得到，而想得到的部分人，奋斗吧。</p>
-]]></content>
-    <category scheme="http://www.liangpeng.net/categories/团队建设/" term="团队建设"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[高龄补贴项目]]></title>
-    <link href="http://www.liangpeng.net/y2012/m09/gao-ling-bu-tie-xiang-mu.html"/>
-    <id>http://www.liangpeng.net/y2012/m09/gao-ling-bu-tie-xiang-mu.html</id>
-    <published>2012-09-03T09:48:17.000Z</published>
-    <updated>2013-11-21T04:14:38.000Z</updated>
-    <content type="html"><![CDATA[<p>刚看到一个报道，说中国制造，就是量多质差，不用辩解，我们制作的软件，也是这样，幸好我们有一个愿意不断改进的团队。<br>关于用户体验，我们一直在努力，甚至都有钻牛角的态度了，相信只要有足够的资源（人才储备、时间）就能够打造一款不错的产品。<br>不过，目前来看，还是有些欠缺，主要是在知识量，实际上我们能够掌控的资源，也就是编码技术稍好，其他各个层面都还薄弱，人员激励、测试、设计等等。还好，我们现在所处的生产环境，还不需要我们在其他方面做的足够好，只要保证能用，稍微易用即可出炉。在没有吃饱的情况下，吃好就要推延。<br>目前我们要做的：<br>1.整合技术积累：形成一套基础程序<br>2.流水化生产线：需求[一直是本糊涂帐]、设计[一直都做不好]、DEMO[可用尝试]、编码[可以尝试]、测试[可以尝试]<br>3.提高个人技能：至少达到普通高速编码的水准<br>以前的成果：<br>1.技术积累<br>2.用户体验意识</p>
-<p>高领补贴，就是这样一个演练，在数据直报我们耗费了大量的时间，4、5、6、7、8，将近5个月的时间，才基本完工。<br>高龄补贴采用快速迭代的方法试试效果。<br>1.先做基本版本，不过多考虑易用性，只考虑功能性，不考虑特殊需求，只考虑公共需求，投石问路，钓出客户个性化需求<br>2.客户试用，提出改进意见，进行项目优化<br>3.总结，整合</p>
-<p>这样做也有坏处，如果不能很好的把握客户，第一次体验一个不够先进的版本，容易丢单，目前来看，这个方法还是更适合公司现在的状况，快速构造几个产品，快速占领空白市场，但是，为了维护客户利益，后期的优化，还是必须快速跟进。</p>
-]]></content>
-    <category scheme="http://www.liangpeng.net/categories/团队建设/" term="团队建设"/>
-    <category scheme="http://www.liangpeng.net/categories/团队建设/生活/" term="生活"/>
-  </entry>
-  <entry>
     <title type="html"><![CDATA[投票器]]></title>
     <link href="http://www.liangpeng.net/y2012/m08/voting-machine.html"/>
     <id>http://www.liangpeng.net/y2012/m08/voting-machine.html</id>
     <published>2012-08-03T02:19:18.000Z</published>
     <updated>2013-11-21T04:14:38.000Z</updated>
     <content type="html"><![CDATA[<p>原来是伪造投票，现在要防止伪造投票，总结下：</p>
-<p>1.IP限制，看来只要使用 REMOTE_ADDR 基本能防止IP伪造［原理上还是可以伪造，伪造IP包发送出去，返回数据就不能返回到本机了］，针对这个可以作2次请求，第一次http请求并不记录投票结果，返回一个加密唯一数据包，让js再次提交，之后再次验证IP，应该说，万无一失了<br>2.验证码限制，这个只要作高端的验证码生成器，绝无问题，国外网站的一些验证码，人都看不懂，崩溃<br>3.设置一些cookie、header头之类的，感觉没必要，太好伪装了</p>
-<p>最终能够防止的，也就是IP限制票数，其他的可以使用程序加人工（识别验证码验证问题等）实现快速投票 。<br>谁还有什么高招？哈哈，黑他服务器，黑他数据库，自己赶紧人工投几票，然后拒绝服务攻击，貌似法还不少类。</p>
-<p><strong>一些HTTP协议中的相关知识</strong><br>获取用户IP地址的三个属性的区别(HTTP_X_FORWARDED_FOR,HTTP_VIA,REMOTE_ADDR) 分五种情况：<br>一、没有使用代理服务器的情况：</p>
-<p>REMOTE_ADDR = 您的 IP<br>HTTP_VIA = 没数值或不显示<br>HTTP_X_FORWARDED_FOR = 没数值或不显示</p>
+<p>1.IP限制，看来只要使用 REMOTE_ADDR 基本能防止IP伪造［原理上还是可以伪造，伪造IP包发送出去，返回数据就不能返回到本机了］，针对这个可以作2次请求，第一次http请求并不记录投票结果，返回一个加密唯一数据包，让js再次提交，之后再次验证IP，应该说，万无一失了
+2.验证码限制，这个只要作高端的验证码生成器，绝无问题，国外网站的一些验证码，人都看不懂，崩溃
+3.设置一些cookie、header头之类的，感觉没必要，太好伪装了</p>
+<p>最终能够防止的，也就是IP限制票数，其他的可以使用程序加人工（识别验证码验证问题等）实现快速投票 。
+谁还有什么高招？哈哈，黑他服务器，黑他数据库，自己赶紧人工投几票，然后拒绝服务攻击，貌似法还不少类。</p>
+<p><strong>一些HTTP协议中的相关知识</strong>
+获取用户IP地址的三个属性的区别(HTTP_X_FORWARDED_FOR,HTTP_VIA,REMOTE_ADDR) 分五种情况：
+一、没有使用代理服务器的情况：</p>
+<p>REMOTE_ADDR = 您的 IP
+HTTP_VIA = 没数值或不显示
+HTTP_X_FORWARDED_FOR = 没数值或不显示</p>
 <p>二、使用透明代理服务器的情况：Transparent Proxies</p>
-<p>REMOTE_ADDR = 最后一个代理服务器 IP<br>HTTP_VIA = 代理服务器 IP<br>HTTP_X_FORWARDED_FOR = 您的真实 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 最后一个代理服务器 IP
+HTTP_VIA = 代理服务器 IP
+HTTP_X_FORWARDED_FOR = 您的真实 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>这类代理服务器还是将您的信息转发给您的访问对象，无法达到隐藏真实身份的目的。</p>
 <p>三、使用普通匿名代理服务器的情况：Anonymous Proxies</p>
-<p>REMOTE_ADDR = 最后一个代理服务器 IP<br>HTTP_VIA = 代理服务器 IP<br>HTTP_X_FORWARDED_FOR = 代理服务器 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 最后一个代理服务器 IP
+HTTP_VIA = 代理服务器 IP
+HTTP_X_FORWARDED_FOR = 代理服务器 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>隐藏了您的真实IP，但是向访问对象透露了您是使用代理服务器访问他们的。</p>
 <p>四、使用欺骗性代理服务器的情况：Distorting Proxies</p>
-<p>REMOTE_ADDR = 代理服务器 IP<br>HTTP_VIA = 代理服务器 IP<br>HTTP_X_FORWARDED_FOR = 随机的 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 代理服务器 IP
+HTTP_VIA = 代理服务器 IP
+HTTP_X_FORWARDED_FOR = 随机的 IP ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>告诉了访问对象您使用了代理服务器，但编造了一个虚假的随机IP代替您的真实IP欺骗它。</p>
 <p>五、使用高匿名代理服务器的情况：High Anonymity Proxies (Elite proxies)</p>
-<p>REMOTE_ADDR = 代理服务器 IP<br>HTTP_VIA = 没数值或不显示<br>HTTP_X_FORWARDED_FOR = 没数值或不显示 ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
+<p>REMOTE_ADDR = 代理服务器 IP
+HTTP_VIA = 没数值或不显示
+HTTP_X_FORWARDED_FOR = 没数值或不显示 ，经过多个代理服务器时，这个值类似如下：203.98.182.163, 203.98.182.163, 203.129.72.215。</p>
 <p>完全用代理服务器的信息替代了您的所有信息，就象您就是完全使用那台代理服务器直接访问对象。</p>
 ]]></content>
     <category scheme="http://www.liangpeng.net/categories/技术/" term="技术"/>
@@ -627,5 +678,73 @@ hou_test.js Date {Thu Aug 29 2013 14:44:04 GMT+0800 (CST)}
 <p>推演和演进，一个注重前期设计，一个注重快速迭代，哪个更合适？试试看吧。</p>
 ]]></content>
     <category scheme="http://www.liangpeng.net/categories/投资/" term="投资"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Ubuntu搭建Time Machine备份的问题]]></title>
+    <link href="http://www.liangpeng.net/y2012/m08/ubuntu-to-build-a-time-machine-backup.html"/>
+    <id>http://www.liangpeng.net/y2012/m08/ubuntu-to-build-a-time-machine-backup.html</id>
+    <published>2012-08-01T03:08:18.000Z</published>
+    <updated>2013-11-21T04:14:38.000Z</updated>
+    <content type="html"><![CDATA[<p>1.系统问题，ubuntu apt-get 安装的netatalk 不能读取配置文件，查看/etc/init.d/netatalk 可以看出，配置 /etc/netatalk/afpd.conf根本没用，这是最严重的问题，看来不能太相信一些不该出问题的东西</p>
+<p>2.登录问题。必须设置成能游客登录，才行，用系统帐号登录，总是登录不成功（目前还没解决），而且提示的是“请检查服务器名称或 IP 地址，然后再试一次。如果问题持续发生，请联系系统管理员。”，让人很疑惑，一直以为是网络配置问题，此时输入错误密码，会窗口晃动，表示登录失败。 -U uams_guest.so  是启动游客登录功能。</p>
+<p>其他配置就很简单了，跟网上搜到的教程基本一致：</p>
+<p><strong>/etc/netatalk/AppleVolumes.default </strong>
+/home/back &quot;TimeM&quot; options:tm</p>
+<p><strong>/etc/avahi/services/afpd.service
+</strong></p>
+<p>&lt;?xml version=&quot;1.0&quot; standalone=&#39;no&#39;?&gt;
+&lt;!--<em>-nxml-</em>--&gt;
+&lt;!DOCTYPE service-group SYSTEM &quot;avahi-service.dtd&quot;&gt;
+&lt;service-group&gt;
+&lt;name replace-wildcards=&quot;yes&quot;&gt;%h&lt;/name&gt;</p>
+<p>&lt;service&gt;
+&lt;type&gt;_afpovertcp._tcp&lt;/type&gt;
+&lt;port&gt;548&lt;/port&gt;
+&lt;/service&gt;</p>
+<p>&lt;service&gt;
+&lt;type&gt;_device-info._tcp&lt;/type&gt;
+&lt;port&gt;0&lt;/port&gt;
+&lt;txt-record&gt;model=Xserve&lt;/txt-record&gt;
+&lt;/service&gt;</p>
+<p>&lt;/service-group&gt;</p>
+<p>版本：ubuntu 12.04 server   afpd 2.2.1   avahi-daemon 0.6.30</p>
+<p>网上说的IPV6、cbd，貌似都不是问题；</p>
+]]></content>
+    <category scheme="http://www.liangpeng.net/categories/生活/" term="生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[她是警察]]></title>
+    <link href="http://www.liangpeng.net/y2012/m07/she-is-the-police.html"/>
+    <id>http://www.liangpeng.net/y2012/m07/she-is-the-police.html</id>
+    <published>2012-07-19T09:39:30.000Z</published>
+    <updated>2013-11-21T04:14:38.000Z</updated>
+    <content type="html"><![CDATA[<p>好长时间没理解这句话的意思。</p>
+<p>现在稍有感觉，貌似跟无为一个概念，人人无为，人人做好自己，则国顺民安。</p>
+<p>只是不明白，如此简单的道理，为啥这么难明白？</p>
+<p>贪？嗔？痴？</p>
+<p>还是此时的人文环境惹的祸？</p>
+<p>如果不大力提倡经济建设，应该会好很多吧，不过：貌似奢侈的生活比宁静的生活更有人缘。</p>
+<p>攀比，在佛法中归到那戒呢？</p>
+<p>&nbsp;</p>
+]]></content>
+    <category scheme="http://www.liangpeng.net/categories/生活/" term="生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[不能作自己的一些影响]]></title>
+    <link href="http://www.liangpeng.net/y2012/m06/can-not-make-some-of-their-own-influence.html"/>
+    <id>http://www.liangpeng.net/y2012/m06/can-not-make-some-of-their-own-influence.html</id>
+    <published>2012-06-13T04:18:50.000Z</published>
+    <updated>2013-11-21T04:14:38.000Z</updated>
+    <content type="html"><![CDATA[<p>现实中，有些因素，往往会让我们不能按照自己的意志来处理自己的事情，总结了一些简单明了的影响。</p>
+<ol>
+<li>扭曲个人心智，影响个人品格完善 ［总是不如愿］</li>
+<li>影响个人行为对这个社会的试探性，推迟对个人行为的把握度，不利于自己优势的拓展</li>
+<li>影响圈子人员对自己的认知度，从而影响自己的发展</li>
+<li>不能很好的处理大家庭的关系，从而影响自己自己最大的根据地（作为心灵归宿的意义更重要一点）
+这样说来，一个疑问有点隐隐显现。老爸为什么这么弱势--------老妈太强势了。
+有些事情我们无法改变，那就顺其自然，但是尝试还是可以有的。</li>
+</ol>
+]]></content>
+    <category scheme="http://www.liangpeng.net/categories/生活/" term="生活"/>
   </entry>
 </feed>

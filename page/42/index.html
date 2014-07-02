@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/page/42/' />
 </head>
 
 
@@ -206,23 +207,44 @@
     <div id="main-col" class="alignleft"><div id="wrapper">
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2008-12-26T06:36:22.000Z"><a href="/y2008/m12/081226-郁闷的一天，又被浏览器兼容性折腾了一天.html">2008-12-26</a></time>
+        <time datetime="2008-12-08T07:37:13.000Z"><a href="/y2008/m12/pslife_jindu_zongjie_081208.html">2008-12-08</a></time>
       
       
   
-    <h1 class="title"><a href="/y2008/m12/081226-郁闷的一天，又被浏览器兼容性折腾了一天.html">081226--郁闷的一天，又被浏览器兼容性折腾了一天</a></h1>
+    <h1 class="title"><a href="/y2008/m12/pslife_jindu_zongjie_081208.html">这次怎么这么注重界面</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>上午解决了，在ie下，是jquery的dialog根据 填充的内容，自动调整宽度的问题，在firefox下很容易解决的，但是在ie下就不行了。<br>1.firefox下，只要在open事件增加 $(this).css({width:“auto”,height:“auto”});即可。<br>2.ie下，则需要增加如下代码<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($.browser.msie)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if($(“.ui-dialog”).offset().left&lt;50) $(“.ui-dialog”).css(“left”,“300”);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(“.ui-dialog”).css(“width”,“100”);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;$(“.ui-dialog”).css({width:$(this).width()+32,height:$(this).height()+60});<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>真是麻烦。<br>现在的firefox的firebug真是牛叉的不得了，要不，都感觉没法搞了，还不如以前的web1.0好定位。<br>其实想想还不如继续用table，能省不少的开发时间呢。</p>
-<p>下午主要改造了ajax的数据返回，使用了json，php有两个函数处理json_decode和json_encode，js通过eval处理后，可以按照对象方式进行处理。</p>
-<p>晚上，针对json数据，增加页面的options数据。</p>
+        <p>这两天进度慢的出奇，回想下都是因为自己不太熟悉的界面，而且发觉自己现在对界面的美化很球重视，而又不擅长此道，导致进度缓慢，比如：优美的下拉框，虽然使用yui，能够实现，但是却不能获取val值，麻烦，还有各个窗体的界面等等，不过有了yui，确实好了不少。</p>
+<p>关于jquery和yui，不得不称赞yui的下载包，既包含demo，又有api doc，使用起来真是方便，而jquery和symfony怎么就不提供一个文章的api doc下载呢，不知道为啥，郁闷的很，严重影响了偶的使用（尤其是偶现在使用的是cdma上网）。</p>
+<p>无论如何，第一版本马上做好了，当然还有很多功能没有很好的实现，但是基本功能也都差不多，接下来就是：</p>
+<ol>
+<li>填充数据</li>
+<li>上线bate测试</li>
+<li>推广</li>
+<li>修正bug</li>
+<li>添加功能</li>
+<li>完善网站模块
+不知道这次的能否度过这道坎，反正是比以前努力了，呵呵。</li>
+</ol>
 
       
     </div>
@@ -242,28 +264,37 @@
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2008-12-25T07:46:54.000Z"><a href="/y2008/m12/xiaoduzhuangzi.html">2008-12-25</a></time>
+        <time datetime="2008-11-17T11:18:03.000Z"><a href="/y2008/m11/rish-click-web20-dev.html">2008-11-17</a></time>
       
       
   
-    <h1 class="title"><a href="/y2008/m12/xiaoduzhuangzi.html">小读庄子</a></h1>
+    <h1 class="title"><a href="/y2008/m11/rish-click-web20-dev.html">谈谈我当前对富客户端的看法</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>今天看书，讲的是庄周的一些故事，稍有感触，记录如下：</p>
-<p>1.关于生命的意义</p>
-<p>由生为始，由死为终，生命就是一种体验，活出自我，很是洒脱，无拘无束。由此也想到了佛教与基督，一个用轮回、因果来约束人的行为，一个用天堂和地狱来约束人的行为，貌似还是比较世俗的，有社会性的。</p>
-<p>2.身体</p>
-<p>小庄同志很是珍惜自己的身体，不之一次提到身体的重要性，不做任何影响自己身体的事情，一切都以自己的身体为导向，呵呵，偶想应该是叫身心的，由此想到了自己一直的远游计划，总是想着买个四驱就成行，看来是自己还未相通，像这样的准备需要的多了，貌似要导航，貌似要户外装备，貌似还需要个医生，其实放开要远游，一个背包足矣。</p>
-<p>3.无为</p>
-<p>小庄同志的无为貌似最为广播，今天看到的解释是：按照自己的价值取向随意发挥，实现了自己也就服务了社会，貌似有点道理，偶还是比较认同了，总不能无为就是懒惰吧。</p>
-<p>一直认为人类白活了5000年，老祖宗已经把各种各样的事情、感情全部总结一尽，怪不得现在很是物欲横流呢（不保证古代也是一样），原来精神上已经发展到头了，顶多也是对古人的解读而已，只能在物质上，在科技上有所发展，聊以自慰了。对于我个人来说，除了对先人的敬畏，也给自己找到那么一点点的感官上的舒适，一点意淫，不知道是否真正的对自己有所改变，对自己已经没有信心了，仅能的就是偶尔意淫一下而已。</p>
+        <p>正在制作一个web2.0的网站，鉴于装逼的最先进性，随想到了富客户端，为什么我们不用呢？
+为甚麽不使用象flash一样的富客户端，而要用php+js来构建web2.0呢，我自己认为是html更容易构建漂亮的界面，更容易来输出内容，而flash则每次界面变动都需要各种各样的调整，（如果现在的flash已经发展了，我不知道，只是根据自己以前的认知进行的总结），很容易针对某块进行局部调整，特别是div+css的模式下。
+而为什么需要php这样的后台语言呢，既然现在的事情全部都由js完成了，目前看来，php现在的主要功能是组织了各种各样的action，进行模块化开发，除此之外，php仅仅就是提供数据给前台展示了，完全可以推出一款统一的后台数据库接口，由js直接读取数据，进行展示即可，这样就仅仅需要前端编码了，可是，现在的前端数据展示功能也有些弱，如果不使用php进行基本html生成，貌似完全使用js进行定位填充，需要的代码量相当复杂。
+由此看来目前的技术前提下，php+div+css+js确实是最行之有效的方法。
+本人是php coder，所以仅仅拿php来分析，asp、jsp、ruby等皆可。</p>
 
       
     </div>
@@ -283,38 +314,34 @@
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2008-12-25T03:09:51.000Z"><a href="/y2008/m12/symfonytongguosession_idchuandisessinshujuflashshangchuanwenjian.html">2008-12-25</a></time>
+        <time datetime="2008-11-07T14:39:31.000Z"><a href="/y2008/m11/ziyoule_today.html">2008-11-07</a></time>
       
       
   
-    <h1 class="title"><a href="/y2008/m12/symfonytongguosession_idchuandisessinshujuflashshangchuanwenjian.html">Symfony通过session_id传递sessin数据,flash上传文件</a></h1>
+    <h1 class="title"><a href="/y2008/m11/ziyoule_today.html">今天算是自由了</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>最近在symfony框架下使用swfuploader上传文件，由于firefox的bug，flash不能正确的传递cookie，这样处理文件上传的action就不能正确的使用user数据，而在代码中通过session_id()和session_start()处理的session，由于user对象已经在这之前创建，所以通过user还是不能获取session信息，而且user还会将处理好的session清除，从而造成session的完全丢失，经过google，耗费偶近5个小时终于搞定：</p>
-<p>通过继承 sfSessionStorage 生成新的 MySessionStorage<br><code>class MySessionStorage extends sfSessionStorage
-{
-public function initialize($options)
-{
-//Shitty work-around for swfuploader
-if( isset($_POST[&quot;symfony&quot;]) )
-{
-session_id( $_POST[&quot;symfony&quot;] );
-}
-else if( isset($_GET[&quot;symfony&quot;]) )
-{
-session_id( $_GET[&quot;symfony&quot;] );
-}
-parent::initialize($options);
-}
-}</code>并修改app的 factories.yml<br>storage:<br>class: MySessionStorage<br>param:<br>session_name: symfony<br>则可以通过  ?symfony=session_id 来找到session。</p>
-<p>耗费如此多的时间，主要是因为偶的e文不好，而且开始想通过flash传递cookie实现，或者 提供php自动识别的 PHPSESSID 等来实现，均没有找到实现的方法，只好使用上面的方法了，主要不愿意重构symfony是因为偶对symfony还不够熟悉，如果那位朋友也在学习symfony可以一起学习。</p>
+        <p>有几天没有更新blog了，这几天过的有点混乱，前几天斟酌到底买哪个型号的笔记本，研究了2天，还是发现apple太贵，还不能分期付款，所以放弃了，看看其他品牌的新机器，虽然价格也不高，但是键盘跟原来的ibm不同，使用不便，刚好到二手市场转转，见到这台t43，看起来还不错，同时又是1400*1050的高分辨率，方便写代码，所以就买下来了，价格虽然不贵，但是对比新的神舟也算有点高了，只不过买过来，才发现有个问题，t43的通病，居然风扇不能停转，以前一直对ibm很欣赏就是，其散热系统较好，使用起来基本感觉不到风扇声音，而其他品牌的电脑则动不动就风扇狂转，声音巨大，哎，发现偶这个t43居然也这样。
+昨天，费了半天劲总算跟在t43上装上了apple系统，后来发现无论如何是驱动不了intel的无线网卡，同时显卡也不能很好的启动高分辨率，无法，只能还用windows了，算了，还是省点力还用原来的windows，迅速赚钱吧。</p>
 
       
     </div>
@@ -334,30 +361,39 @@ parent::initialize($options);
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2008-12-24T12:29:04.000Z"><a href="/y2008/m12/cookie_jinyong_shiyong_session.html">2008-12-24</a></time>
+        <time datetime="2008-10-27T13:04:10.000Z"><a href="/y2008/m10/mailege_xiangji_sony_a20.html">2008-10-27</a></time>
       
       
   
-    <h1 class="title"><a href="/y2008/m12/cookie_jinyong_shiyong_session.html">Cookie禁用下使用session</a></h1>
+    <h1 class="title"><a href="/y2008/m10/mailege_xiangji_sony_a20.html">今天买了个相机 Sony α200</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>抛开cookie使用session<br>PHP中SESSION不能跨页传递问题的解决办法</p>
-<p>在PHP中使用过SESSION的朋友可能会碰到这么一个问题，SESSION变量不能跨页传递。这令我苦恼了好些日子，最终通过查资料思考并解决了这个问题。我认为，出现这个问题的原因有以下几点：<br>1、客户端禁用了cookie<br>2、浏览器出现问题，暂时无法存取cookie<br>3、php.ini中的session.use_trans_sid = 0或者编译时没有打开—enable-trans-sid选项<br>
+        <p>今天有事去了科技市场，顺便看了看相机，果然还是我一贯的风格，随便看了看，就买了一个sony a200，嘿嘿，自己反正也不懂，除了d40就是这个了，听人介绍，就买了这个，回来试试，不甚懂，尤其是发现拍摄比较远的夜景，降噪要搞很长时间，看来真是不够傻瓜（本来就买的不是傻瓜相机嘛），看来下段时间有得玩了，不过最近的主要目标是赚钱，相机也是应老婆要求买个，给儿子照相用的，只是十分不喜欢卡片机，反正入门单反也便宜，就买个这吧，花钱3600大洋，打算买个背包，所以就没要他们的包，要了个滤镜。</p>
+<p>以后慢慢玩吧。</p>
+
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/y2008/m12/cookie_jinyong_shiyong_session.html#more" class="more-link">阅读全文</a>
-          </div>
         
         
       
@@ -372,21 +408,36 @@ parent::initialize($options);
 
   <article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2008-12-18T14:40:46.000Z"><a href="/y2008/m12/jqery_bug_darggable_helper_function.html">2008-12-18</a></time>
+        <time datetime="2008-10-23T08:39:16.000Z"><a href="/y2008/m10/likai_xinyang.html">2008-10-23</a></time>
       
       
   
-    <h1 class="title"><a href="/y2008/m12/jqery_bug_darggable_helper_function.html">居然让我找到一个jqery的bug</a></h1>
+    <h1 class="title"><a href="/y2008/m10/likai_xinyang.html">离开信阳</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>在目前的最新版本1.6rc2中，draggable的代码中的createHelper: function() 没有参数e，而且在调用的时候也没有传递参数e，所以导致helper是function的时候，出错，从而导致对象不能拖动，这要增加参数，例如：createHelper: function(e) ，然后在调用的时候增加参数e则解决。嘿嘿，虽然问题很郁闷，浪费不少时间，但是还是有那么点成绩。</p>
+        <p>东西都已收拾完毕，还有点时间，没事就随便写两句.</p>
+<p>信阳这地方还是个不错的地方，环境很好，人们生活似乎有点懒散，如此，这里的人貌似生活的更好一点。
+其实这些都是别人的，重要的是在这工作的这段时间，还算是不错的，同事合作伙伴相处的都很融洽，彼此打打闹闹，唧唧歪歪，还是蛮合得来的，不过这一成为过去，今天我要离开信阳了。</p>
+<p>哈哈，无病呻吟。16：38差不多了，关机走人。</p>
 
       
     </div>
@@ -413,14 +464,52 @@ parent::initialize($options);
     <a href="/page/43/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
-</nav></div></div>
+</nav>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -428,23 +517,23 @@ parent::initialize($options);
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -460,12 +549,18 @@ parent::initialize($options);
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -474,7 +569,7 @@ parent::initialize($options);
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>

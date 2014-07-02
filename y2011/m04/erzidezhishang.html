@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  <link rel='canonical' href='http://www.liangpeng.net/y2011/m04/erzidezhishang.html' />
 </head>
 
 
@@ -205,6 +206,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -221,18 +234,13 @@
       
         <p>小丁丁2岁多了，能说一些简单的话了，也就可以和其他人有些简单的交流了。初次感到丁丁的智商是我和他在外面玩耍的时候，当时只有我们两个，不记得是为了什么，他又一次任性的趴到了地上，无论如何就不起来，偶怒了，屁股上给了一巴掌（不重），命令他“起来”，他居然真的就爬起来了（以前他才不鸟你呢），再接再厉，命令道“不许哭”，结果人家就硬生生的停止了哭，抱着他走的时候，我忍不住笑了一路，这家伙还是很好对付的。而在家里不好对付的原因，应该就是有其他人在的缘故，他会期待其他人护着他。教育这个大难题，应该难就难在不能一以贯之。</p>
 <p>第二次同样的情况，同样的命令，依然好使，前提是必须只有我们两个，看来这家伙真的长大了，有智商了，而所谓的教育也应该开始了。而应该从哪里开始，要培养什么却不是我所知道的，而像我现在的意识形态，是倾向于“不教”的，所有的教育来自于他的眼睛，来自于他的思考。也许我们可以在处理一些事情的时候在一起探讨而已。事实却肯定不能如愿，周围的其他人都还是倾向于子不教父之过的，而且都很有好坏之分，让我感觉自己很不是人，反正我给自己的任务就是：能尽量的增加和他在一起玩耍的时间，能让他吃饱、不冷就行，而其他的，我就爱莫能助了。</p>
-<p>貌似现在自己还是有点容易怒，虽然已经改观很对了，其实想来，这样的改观，有一部分来自于自己的需要，而更大的原因应该是我对于现实的无奈，无论怎么做，其实结果又能改变多少，还不如放弃来的划算。想放弃，而又不能放弃，无奈无聊无助，就是不能无���无天，现在想来，想做个混蛋真的很难，貌似什么都是注定的。</p>
+<p>貌似现在自己还是有点容易怒，虽然已经改观很对了，其实想来，这样的改观，有一部分来自于自己的需要，而更大的原因应该是我对于现实的无奈，无论怎么做，其实结果又能改变多少，还不如放弃来的划算。想放弃，而又不能放弃，无奈无聊无助，就是不能无法无天，现在想来，想做个混蛋真的很难，貌似什么都是注定的。</p>
 
       
     </div>
     <footer>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/生活/">生活</a>
-  </div>
-
+        <!-- partial('post/category') -->
         
   
   <div class="tags">
@@ -284,11 +292,48 @@
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
+<!--
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:www.liangpeng.net">
   </form>
+-->
+
+
+    <form action="http://www.so.com/s" target="_blank" id="so360form">
+        <input type="text" x-webkit-speech="" autocomplete="off" name="q" id="so360_keyword" placeholder="搜索">
+        <input type="hidden" name="ie" value="utf8">
+        <input type="hidden" name="src" value="zz">
+        <input type="hidden" name="site" value="liangpeng.net">
+        <input type="hidden" name="rg" value="1">
+    </form>
+<script type="text/javascript">
+(function() {
+    function $(id) {
+       return document.getElementById(id);
+    }
+    function addEvent(node , type , fn) {
+        if(node.addEventListener) {
+            node.addEventListener(type , fn , false);
+        } else if(node.attachEvent){
+            node.attachEvent("on" + type , fn);
+        } else {
+            node["on" + type] = fn;
+        }
+    };
+    var form = $("so360form");
+    if(!form) {
+        return;
+    }
+    addEvent(form , "submit" , function() {
+        form.src.value = "zz_" + window.location.host.replace(/\./g , "_");
+        return true;
+    });
+})();
+</script>
+
 </div>
+
 
   
 <div class="widget tag">
@@ -296,23 +341,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/y2013/m11/project-design-and-code-organization-case-study.html">项目设计与代码组织-案例分析</a>
+        <a href="/y2014/m07/project_summary_for_unified_authentication.html">项目总结（统一认证平台）</a>
       </li>
     
       <li>
-        <a href="/y2013/m11/fight-for-their-own-interests-new-employees-series.html">为自己的利益而奋斗－新员工系列</a>
+        <a href="/y2014/m02/closed_a_door_open_a_window.html">Closed a Door Open a Window</a>
       </li>
     
       <li>
-        <a href="/y2013/m09/write-a-meaningful-requirements-document.html">写出一份有意义的需求文档</a>
+        <a href="/y2014/m02/no_goal.html">Goal</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/javascript-run-in-ajax.html">谨慎使用ajax动态引入js(附代码与结果)</a>
+        <a href="/y2014/m01/build_trend.html">构筑趋势</a>
       </li>
     
       <li>
-        <a href="/y2013/m08/i-have-in-mind-the-companys-products-should-be-so.html">好的产品应该是这样的</a>
+        <a href="/y2014/m01/hearthstone-Teach_you_as_a_person.html">炉石传说 教你作人</a>
       </li>
     
   </ul>
@@ -328,12 +373,18 @@
 </div>
 
 
-  
+  <div class="widget tag">
+<h3 class="title"><a href="http://www.douban.com/people/liangpeng_net" target="_blank">我的豆瓣</a></h3>
+<div style="padding:30px">
+    <script type="text/javascript" src="http://www.douban.com/service/badge/liangpeng_net/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=collection&amp;n=9&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
+</div>
+</div>
+
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://gtd.im" title="GTD 社区">GTD.im</a></li>
+<li><a href="http://www.flive.me" title="赏花赏月赏秋香">花样年华</a></li>
 </ul>
 </div>
 
@@ -342,7 +393,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 张飞
+  &copy; 2014 张飞
   
 </div>
 <div class="clearfix"></div></footer>
